@@ -10,32 +10,36 @@ quizzes:
       - "Loops and iteration"
     
   - id: "quiz3"
-    title: "Lecture 3 Quiz: Python Practice"
+    title: "Lecture 3 Quiz: NumPy & Pandas"
     week: 3
-    description: "Practice exercises for Python programming concepts."
+    description: "Quiz on Python data science libraries including NumPy arrays and Pandas DataFrames."
     link: "quiz/Lec03_quiz/index.html"
     topics:
-      - "Functions"
-      - "Lists and dictionaries"
-      - "String manipulation"
+      - "NumPy arrays and operations"
+      - "Pandas DataFrames"
+      - "Data manipulation basics"
     
   - id: "quiz4"
-    title: "Lecture 4 Quiz: NumPy and Pandas"
+    title: "Lecture 4 Quiz: Nhập và Lưu Trữ Dữ Liệu với Python"
     week: 4
-    description: "Quiz on Python data science libraries and DataFrame operations."
+    description: "30 câu hỏi trắc nghiệm về đọc và ghi dữ liệu từ CSV, JSON, Web, RSS/XML, Excel, API và SQL Database."
     link: "quiz/Lec04_quiz/index.html"
     topics:
-      - "NumPy arrays"
-      - "Pandas DataFrames"
-      - "Data manipulation"
+      - "CSV, JSON, Excel file operations"
+      - "Web scraping with read_html()"
+      - "RSS Feed parsing with BeautifulSoup"
+      - "Web API interaction"
+      - "SQL Database operations"
     
   - id: "quiz5"
-    title: "Lecture 5 Quiz: Advanced Data Operations"
+    title: "Lecture 5 Quiz: Làm sạch và chuẩn bị dữ liệu"
     week: 5
-    description: "Test your skills with advanced NumPy and Pandas operations."
+    description: "Kiểm tra kiến thức về data cleaning, preprocessing, và feature engineering."
     link: "quiz/Lec05_quiz/index.html"
     topics:
-      - "Array operations"
-      - "DataFrame transformations"
-      - "Performance optimization"
+      - "Data cleaning techniques"
+      - "Handling missing values"
+      - "Outlier detection and treatment"
+      - "Data transformation"
+      - "Feature engineering"
 
