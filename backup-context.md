@@ -846,3 +846,104 @@ df_excel_sheet1 = xlsx.parse(sheet_name="Sheet1")
 - Assign practice exercises as homework
 - Use comparison tables for Q&A sessions
 
+---
+
+### October 8, 2025 - Quiz and Practice Exercises Alignment
+
+**Change:** Aligned Lecture 4 quiz with improved notebook practice exercises for better learning consistency.
+
+**Problem:**
+- Quiz and practice exercises were disconnected
+- Students didn't know quiz questions related to which notebook sections
+- Practice exercises didn't reference quiz content
+- No clear progression from quiz → practice
+
+**Solution - Updated Notebook Practice Exercises:**
+
+**1. Restructured Practice Section:**
+- Split into 2 parts: A (Quiz) and B (Code exercises)
+- Added link to online quiz at top
+- Clear note: "Do quiz BEFORE code exercises"
+- Organized exercises into 3 groups matching quiz difficulty
+
+**2. Aligned 9 Exercises with Quiz:**
+- **Group 1 (⭐ Easy)** → Quiz questions 1-10
+  - Bài 1.1: CSV operations → Quiz câu 1, 2, 3
+  - Bài 1.2: Missing data → Quiz câu 7, 9, 10
+  
+- **Group 2 (⭐⭐ Medium)** → Quiz questions 11-20
+  - Bài 2.1: Web scraping → Quiz câu 11, 12, 13, 14
+  - Bài 2.2: Excel multi-sheet → Quiz câu 17, 18, 19
+  - Bài 2.3: RSS Feed → Quiz câu 15, 16, 27
+  
+- **Group 3 (⭐⭐⭐ Hard)** → Quiz questions 21-30
+  - Bài 3.1: Web API → Quiz câu 20, 21
+  - Bài 3.2: SQL Database → Quiz câu 22, 23, 24
+  - Bài 3.3: Mini Project → Quiz câu 25-30
+
+**3. Enhanced Exercise Details:**
+- Added "Liên quan đến" (Related to) linking to quiz questions
+- More detailed requirements (numbered steps)
+- Better hints referencing specific functions
+- Added grading rubric for mini project
+
+**Solution - Updated Quiz:**
+
+**Files Modified:**
+- `Quiz/Lec04_quiz/index.html`
+- `Quiz/Lec04_quiz/app.js`
+
+**1. Homepage Improvements:**
+- Updated title: "Quiz Lecture 4 - Nhập và Lưu Trữ Dữ Liệu Python"
+- Added quiz structure info (30 questions, unlimited time, has hints)
+- Added topic breakdown (CSV 6q, JSON 3q, Web 4q, etc.)
+- Added note: "Do quiz BEFORE code exercises in notebook"
+
+**2. Quiz Question Enhancements:**
+- Updated 6 key question hints to reference notebook sections
+- Question 11: References Section 3.1 (list vs DataFrame)
+- Question 12: References Section 3.1 BƯỚC 5
+- Question 14: References Section 3.3 (save to CSV)
+- Question 15: References Section 4.2 BƯỚC 4 (Parse XML)
+- Question 16: References Section 4.2 BƯỚC 5 (find_all)
+- Question 27: References Section 4.3 (str.contains filtering)
+- Question 28: References Section 3.4 BƯỚC 2 (dt.year)
+- Question 29: References Section 3.4 BƯỚC 3 (value_counts)
+
+**3. End Page Improvements:**
+- Updated completion message
+- Added "Next Steps" section:
+  - Review wrong answers
+  - Do 9 code exercises in notebook
+  - Review summary sections
+
+**Impact:**
+- ✅ Clear connection between quiz and practice
+- ✅ Students understand which notebook section each quiz question tests
+- ✅ Better learning flow: Quiz → Review → Code Practice
+- ✅ Hints now provide educational value (reference sections)
+- ✅ More structured practice progression
+
+**Integration:**
+- Quiz embedded in course website at `/quiz/Lec04_quiz/index.html`
+- Linked from homepage quizzes section
+- Linked from notebook practice exercises
+- Auto-copied to `/docs` during build
+
+**Student Workflow:**
+1. Read Notebook sections 1-7
+2. Take online quiz (30 questions) - test understanding
+3. Review quiz results and wrong answers
+4. Do code exercises (9 exercises) - practice skills
+5. Review summary sections in notebook
+6. Ready for Knowledge Check 1!
+
+**Files Updated:**
+- `notebook/T6_nhập_và_lưu_trữ_dữ_liệu_Python.ipynb` (Practice exercises section)
+- `Quiz/Lec04_quiz/index.html` (Homepage and end page)
+- `Quiz/Lec04_quiz/app.js` (Question hints)
+- `docs/quiz/Lec04_quiz/*` (Rebuilt with changes)
+
+**Build Status:** ✅ Rebuilt successfully  
+**Deployment Status:** Pending commit & push
+

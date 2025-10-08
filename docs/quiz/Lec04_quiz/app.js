@@ -153,7 +153,7 @@ const quizData = {
         "<class 'tuple'>"
       ],
       "correct": 1,
-      "hint": "read_html() trả về list các DataFrame, mỗi DataFrame tương ứng với 1 bảng HTML"
+      "hint": "⚠️ ĐÂY LÀ LỖI PHỔ BIẾN NHẤT! read_html() trả về LIST các DataFrame, không phải DataFrame đơn lẻ. Xem lại Section 3.1 trong notebook!"
     },
     {
       "id": 12,
@@ -167,7 +167,7 @@ const quizData = {
         "'HTML'"
       ],
       "correct": 1,
-      "hint": "tables[0] là DataFrame đầu tiên trong list, __class__.__name__ trả về tên class"
+      "hint": "tables[0] lấy phần tử đầu tiên (BƯỚC 5 trong Section 3.1). Vì tables là list chứa DataFrame, nên tables[0] sẽ là DataFrame"
     },
     {
       "id": 13,
@@ -195,7 +195,7 @@ const quizData = {
         "Xóa tất cả index"
       ],
       "correct": 0,
-      "hint": "index=False ngăn pandas ghi cột index (0,1,2...) vào file CSV"
+      "hint": "index=False ngăn pandas ghi cột index (0,1,2...) vào file CSV. Xem Section 3.3 - chúng ta lưu dữ liệu web ra CSV với index=False!"
     },
     {
       "id": 15,
@@ -209,7 +209,7 @@ const quizData = {
         "<class 'xml.etree.ElementTree'>"
       ],
       "correct": 1,
-      "hint": "BeautifulSoup() tạo object BeautifulSoup để parse XML/HTML"
+      "hint": "BeautifulSoup() tạo object BeautifulSoup để parse XML/HTML. Đây là BƯỚC 4 trong quy trình RSS (Section 4.2) - Parse XML!"
     },
     {
       "id": 16,
@@ -223,7 +223,7 @@ const quizData = {
         "Error"
       ],
       "correct": 2,
-      "hint": "find_all('item') tìm tất cả thẻ <item>, ở đây có 2 thẻ"
+      "hint": "find_all('item') tìm TẤT CẢ thẻ <item> (BƯỚC 5 trong Section 4.2). Có 2 thẻ <item> → len = 2"
     },
     {
       "id": 17,
@@ -237,7 +237,7 @@ const quizData = {
         "<class 'tuple'>"
       ],
       "correct": 1,
-      "hint": "sheet_names trả về list tên các sheet trong file Excel"
+      "hint": "sheet_names trả về LIST tên các sheet. Giống như read_html() trả về list, Excel cũng có thể có nhiều sheet! (Section 5.1)"
     },
     {
       "id": 18,
@@ -279,7 +279,7 @@ const quizData = {
         "Không có dữ liệu"
       ],
       "correct": 1,
-      "hint": "Status code 200 có nghĩa là HTTP request thành công"
+      "hint": "Status code 200 = Thành công! Luôn kiểm tra status_code trước khi xử lý dữ liệu (Section 6 - API)"
     },
     {
       "id": 21,
@@ -377,7 +377,7 @@ const quizData = {
         "3"
       ],
       "correct": 1,
-      "hint": "str.contains('Data') chỉ match với 'Data Science', nên có 1 kết quả"
+      "hint": "str.contains('Data') tìm chuỗi chứa 'Data', chỉ match với 'Data Science' → 1 kết quả. Kỹ thuật này được dùng trong Section 4.3 để lọc tin về Vietnam Airlines!"
     },
     {
       "id": 28,
@@ -391,7 +391,7 @@ const quizData = {
         "23"
       ],
       "correct": 1,
-      "hint": "dt.year trích xuất năm từ datetime, trả về integer"
+      "hint": "dt.year trích xuất năm từ datetime, trả về integer (BƯỚC 2 trong Section 3.4 - Phân tích ngân hàng phá sản theo năm)"
     },
     {
       "id": 29,
@@ -405,7 +405,7 @@ const quizData = {
         "5"
       ],
       "correct": 1,
-      "hint": "value_counts() đếm số lần xuất hiện, 'A' xuất hiện 3 lần"
+      "hint": "value_counts() đếm tần suất xuất hiện (BƯỚC 3 trong Section 3.4). 'A' xuất hiện 3 lần → kết quả = 3"
     },
     {
       "id": 30,
