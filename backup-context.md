@@ -945,5 +945,54 @@ df_excel_sheet1 = xlsx.parse(sheet_name="Sheet1")
 - `docs/quiz/Lec04_quiz/*` (Rebuilt with changes)
 
 **Build Status:** ✅ Rebuilt successfully  
-**Deployment Status:** Pending commit & push
+**Deployment Status:** ✅ Committed (03112e6) and pushed to GitHub
+
+---
+
+### October 8, 2025 - Quiz Names Corrected on Website
+
+**Change:** Updated quiz names on course website to accurately reflect lecture content.
+
+**Problem:**
+- Quiz names didn't match actual lecture content
+- Lecture 3 quiz was called "Python Practice" but covered NumPy & Pandas
+- Lecture 4 quiz was called "NumPy and Pandas" but covered Data I/O
+- Lecture 5 quiz was generic "Advanced Operations"
+
+**Solution:**
+Updated `src/data/quizzes.yml` with correct names:
+
+| Quiz | Old Name | New Name | Content |
+|------|----------|----------|---------|
+| Lec 2 | Python Basics | Python Basics | ✅ Unchanged (correct) |
+| Lec 3 | Python Practice | **NumPy & Pandas** | Libraries & DataFrames |
+| Lec 4 | NumPy and Pandas | **Nhập và Lưu Trữ Dữ Liệu với Python** | CSV, JSON, Web, RSS, Excel, API, SQL |
+| Lec 5 | Advanced Data Operations | **Làm sạch và chuẩn bị dữ liệu** | Data cleaning, preprocessing, feature engineering |
+
+**Lecture 4 Quiz - Enhanced Details:**
+- Title: "Lecture 4 Quiz: Nhập và Lưu Trữ Dữ Liệu với Python"
+- Description: "30 câu hỏi trắc nghiệm về đọc và ghi dữ liệu từ CSV, JSON, Web, RSS/XML, Excel, API và SQL Database"
+- Topics updated to show 5 categories:
+  1. CSV, JSON, Excel file operations
+  2. Web scraping with read_html()
+  3. RSS Feed parsing with BeautifulSoup
+  4. Web API interaction
+  5. SQL Database operations
+
+**Files Modified:**
+- `src/data/quizzes.yml`
+- `docs/index.html` (rebuilt)
+
+**Build Status:** ✅ Rebuilt successfully  
+**Deployment Status:** ✅ Committed (696d870) and pushed to GitHub  
+**Live Status:** Updates will appear on GitHub Pages in 1-2 minutes
+
+**Website Quiz Section URL:**
+https://nghianguyen7171.github.io/DS_for_Bussiness/index.html#quizzes
+
+**Impact:**
+- ✅ Quiz names now accurately reflect content
+- ✅ Students won't be confused about which quiz to take
+- ✅ Better alignment with lecture schedule
+- ✅ Lecture 4 quiz now prominently featured with full details
 
