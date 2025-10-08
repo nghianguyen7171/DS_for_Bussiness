@@ -4,8 +4,8 @@ const quizData = {
     {
       "id": 1,
       "category": "CSV Basic",
-      "code": "import pandas as pd\ndf = pd.read_csv('ex1.csv')\nprint(df.head(2))",
-      "question": "Output của đoạn code trên khi file ex1.csv có header là gì?",
+      "code": "# File ex1.csv có nội dung:\n# Diem 1,Diem 2,Diem 3,Diem 4,Nhan xet\n# 1,2,3,4,Hoc luc yeu\n# 5,6,7,8,Hoc luc trung binh kha\n# 9,10,9,10,Hoc luc xuat sac\n\nimport pandas as pd\ndf = pd.read_csv('ex1.csv')\nprint(df.head(2))",
+      "question": "Output của đoạn code trên là gì?",
       "options": [
         "   Diem 1  Diem 2  Diem 3  Diem 4                Nhan xet\n0       1       2       3       4             Hoc luc yeu\n1       5       6       7       8  Hoc luc trung binh kha",
         "0  1  2  3  4  Hoc luc yeu\n1  5  6  7  8  Hoc luc trung binh kha",
@@ -13,13 +13,13 @@ const quizData = {
         "Error: File not found"
       ],
       "correct": 0,
-      "hint": "read_csv() mặc định coi dòng đầu tiên là header và tạo DataFrame với index 0,1,2..."
+      "hint": "read_csv() mặc định coi dòng đầu tiên (Diem 1,Diem 2...) là header và tạo DataFrame với index 0,1,2..."
     },
     {
       "id": 2,
       "category": "CSV Header",
-      "code": "import pandas as pd\ndf = pd.read_csv('ex2.csv', header=None)\nprint(df.columns.tolist())",
-      "question": "Kết quả của đoạn code khi file không có header:",
+      "code": "# File ex2.csv có nội dung (KHÔNG CÓ HEADER):\n# 1,2000,2000,But chi,1\n# 5,6000,30000,Vo ghi chu,2\n# 9,10000,90000,Hop but chi mau,3\n# 5,6000,30000,Hop but bi Thien Long,4\n\nimport pandas as pd\ndf = pd.read_csv('ex2.csv', header=None)\nprint(df.columns.tolist())",
+      "question": "Kết quả của đoạn code khi đọc file KHÔNG CÓ HEADER:",
       "options": [
         "[0, 1, 2, 3, 4]",
         "['0', '1', '2', '3', '4']",
@@ -27,12 +27,12 @@ const quizData = {
         "['A', 'B', 'C', 'D', 'E']"
       ],
       "correct": 0,
-      "hint": "header=None khiến pandas gán tên cột là số nguyên bắt đầu từ 0"
+      "hint": "header=None khiến pandas gán tên cột là số nguyên bắt đầu từ 0 (vì file không có header)"
     },
     {
       "id": 3,
       "category": "CSV Names",
-      "code": "import pandas as pd\nnames = ['So luong', 'Don gia', 'Thanh tien', 'Ten san pham', 'ID']\ndf = pd.read_csv('ex2.csv', names=names)\nprint(len(df.columns))",
+      "code": "# File ex2.csv có nội dung:\n# 1,2000,2000,But chi,1\n# 5,6000,30000,Vo ghi chu,2\n# 9,10000,90000,Hop but chi mau,3\n\nimport pandas as pd\nnames = ['So luong', 'Don gia', 'Thanh tien', 'Ten san pham', 'ID']\ndf = pd.read_csv('ex2.csv', names=names)\nprint(len(df.columns))",
       "question": "Kết quả in ra là:",
       "options": [
         "4",
@@ -41,12 +41,12 @@ const quizData = {
         "Error"
       ],
       "correct": 1,
-      "hint": "names parameter định nghĩa tên cho tất cả các cột, ở đây có 5 tên"
+      "hint": "names parameter định nghĩa tên cho TẤT CẢ các cột. File có 5 cột → danh sách names có 5 tên → kết quả = 5"
     },
     {
       "id": 4,
       "category": "CSV Index",
-      "code": "import pandas as pd\nnames = ['So luong', 'Don gia', 'Thanh tien', 'Ten san pham', 'ID']\ndf = pd.read_csv('ex2.csv', names=names, index_col='ID')\nprint(df.index.name)",
+      "code": "# File ex2.csv:\n# 1,2000,2000,But chi,1\n# 5,6000,30000,Vo ghi chu,2\n# 9,10000,90000,Hop but chi mau,3\n\nimport pandas as pd\nnames = ['So luong', 'Don gia', 'Thanh tien', 'Ten san pham', 'ID']\ndf = pd.read_csv('ex2.csv', names=names, index_col='ID')\nprint(df.index.name)",
       "question": "Output của đoạn code:",
       "options": [
         "None",
@@ -55,12 +55,12 @@ const quizData = {
         "0"
       ],
       "correct": 2,
-      "hint": "index_col='ID' đặt cột ID làm index, nên df.index.name sẽ trả về 'ID'"
+      "hint": "index_col='ID' đặt cột ID làm index. df.index.name trả về tên của index (không có dấu ngoặc) → ID"
     },
     {
       "id": 5,
       "category": "CSV Separator",
-      "code": "import pandas as pd\ndf = pd.read_csv('ex3.txt', sep=r'\\s+')\nprint(type(df.sep))",
+      "code": "# File ex3.txt có nội dung (phân tách bởi KHOẢNG TRẮNG):\n# A B C D\n# aaa -0.264438 -1.026059 -0.619500\n# bbb  0.927272  0.302904 -0.032399\n# ccc -0.264273 -0.386314 -0.217601\n\nimport pandas as pd\ndf = pd.read_csv('ex3.txt', sep=r'\\s+')\nprint(type(df.sep))",
       "question": "Kết quả của code trên:",
       "options": [
         "<class 'str'>",
@@ -69,13 +69,13 @@ const quizData = {
         "regex"
       ],
       "correct": 1,
-      "hint": "DataFrame không có attribute 'sep', sep chỉ là parameter của read_csv()"
+      "hint": "DataFrame KHÔNG CÓ attribute 'sep'! sep chỉ là parameter của read_csv(), không phải thuộc tính của DataFrame"
     },
     {
       "id": 6,
       "category": "CSV Skip Rows",
-      "code": "import pandas as pd\ndf = pd.read_csv('ex4.csv', skiprows=[0, 2, 3])\nprint(df.shape[0])",
-      "question": "Nếu file ex4.csv có 10 dòng ban đầu, kết quả in ra là:",
+      "code": "# File ex4.csv có 10 dòng:\n# 0: Hey!\n# 1: Diem 1,Diem 2,Diem 3,Diem 4,Nhan xet\n# 2: just wanted to make things more difficult\n# 3: who reads CSV files with computers anyway?\n# 4-9: Dữ liệu thực tế (6 dòng)\n\nimport pandas as pd\ndf = pd.read_csv('ex4.csv', skiprows=[0, 2, 3])\nprint(df.shape[0])",
+      "question": "Kết quả in ra là:",
       "options": [
         "7",
         "6",
@@ -83,12 +83,12 @@ const quizData = {
         "10"
       ],
       "correct": 1,
-      "hint": "skiprows=[0,2,3] bỏ 3 dòng, nhưng dòng 1 trở thành header, nên còn lại 10-3-1=6 dòng dữ liệu"
+      "hint": "skiprows=[0,2,3] bỏ 3 dòng rác. Dòng 1 thành header. Còn 10-3-1=6 dòng dữ liệu!"
     },
     {
       "id": 7,
       "category": "Missing Data",
-      "code": "import pandas as pd\ndf = pd.read_csv('ex5.csv')\nprint(df.isnull().sum().sum())",
+      "code": "# File ex5.csv có dữ liệu điểm sinh viên (có giá trị thiếu):\n# Ho va ten,Diem_Toan,Diem_Van,Diem_Anh,Diem_Ly,Ghi_chu\n# An,88,85.0,65.0,96.0,\n# Bình,92,57.0,98.0,52.0,Ko co gi dac biet\n# Chi,51,73.0,,87.0,  ← Thiếu Diem_Anh\n# ... (có thêm các dòng khác với giá trị thiếu)\n\nimport pandas as pd\ndf = pd.read_csv('ex5.csv')\nprint(df.isnull().sum().sum())",
       "question": "Code này dùng để:",
       "options": [
         "Đếm số cột có giá trị null",
@@ -97,12 +97,12 @@ const quizData = {
         "Xóa tất cả null values"
       ],
       "correct": 1,
-      "hint": "isnull().sum().sum() tính tổng số lượng giá trị null trong tất cả các cột"
+      "hint": "isnull().sum() đếm null mỗi cột → .sum() lần 2 cộng tất cả lại = TỔNG SỐ giá trị null trong toàn bộ DataFrame"
     },
     {
       "id": 8,
       "category": "JSON Basic",
-      "code": "import pandas as pd\ndf = pd.read_json('student.json')\nprint(df.dtypes['diem_toan'])",
+      "code": "# File student.json chứa dữ liệu điểm sinh viên:\n# [{\"ten\": \"An\", \"diem_toan\": 85, \"diem_van\": 78},\n#  {\"ten\": \"Binh\", \"diem_toan\": 70, \"diem_van\": 88},\n#  {\"ten\": \"Chi\", \"diem_toan\": 92, \"diem_van\": null},\n#  ... ]\n\nimport pandas as pd\ndf = pd.read_json('student.json')\nprint(df.dtypes['diem_toan'])",
       "question": "Kiểu dữ liệu của cột diem_toan là:",
       "options": [
         "object",
@@ -111,13 +111,13 @@ const quizData = {
         "string"
       ],
       "correct": 1,
-      "hint": "Pandas tự động suy luận kiểu dữ liệu, điểm toán là số nguyên nên sẽ là int64"
+      "hint": "Pandas tự động suy luận kiểu dữ liệu. Trong JSON, điểm toán là số nguyên (85, 70, 92) → int64"
     },
     {
       "id": 9,
       "category": "JSON Missing Data",
-      "code": "import pandas as pd\ndf = pd.read_json('student.json')\ndf_clean = df.dropna()\nprint(len(df_clean))",
-      "question": "Nếu df có 10 hàng và 3 hàng có giá trị null, kết quả là:",
+      "code": "# File student.json có 10 sinh viên, trong đó:\n# - An: đầy đủ điểm\n# - Binh: thiếu diem_anh (null)\n# - Chi: thiếu diem_van (null)\n# - Dung đến Ngoc: đầy đủ (7 người)\n# → Tổng 10 hàng, 3 hàng có null (Binh, Chi, và 1 người nữa)\n\nimport pandas as pd\ndf = pd.read_json('student.json')\ndf_clean = df.dropna()\nprint(len(df_clean))",
+      "question": "Kết quả in ra là:",
       "options": [
         "10",
         "7",
@@ -125,7 +125,7 @@ const quizData = {
         "Error"
       ],
       "correct": 1,
-      "hint": "dropna() xóa tất cả hàng có chứa ít nhất 1 giá trị null"
+      "hint": "dropna() xóa TẤT CẢ hàng có chứa ít nhất 1 giá trị null. 10 hàng - 3 hàng có null = 7 hàng còn lại"
     },
     {
       "id": 10,
@@ -228,7 +228,7 @@ const quizData = {
     {
       "id": 17,
       "category": "Excel File",
-      "code": "import pandas as pd\nxlsx = pd.ExcelFile('data.xlsx')\nprint(type(xlsx.sheet_names))",
+      "code": "# File data.xlsx có cấu trúc:\n# - Sheet1: Dữ liệu điểm sinh viên (10 dòng)\n# - Sheet2: Dữ liệu giá cổ phiếu (10 dòng)\n# - Sheet3: Dữ liệu bán hàng (5 dòng)\n\nimport pandas as pd\nxlsx = pd.ExcelFile('data.xlsx')\nprint(type(xlsx.sheet_names))",
       "question": "Kiểu dữ liệu của xlsx.sheet_names:",
       "options": [
         "<class 'str'>",
@@ -242,7 +242,7 @@ const quizData = {
     {
       "id": 18,
       "category": "Excel Parse",
-      "code": "import pandas as pd\nxlsx = pd.ExcelFile('data.xlsx')\ndf = xlsx.parse(sheet_name='Sheet1')\nprint(type(df))",
+      "code": "# File data.xlsx:\n# Sheet1 (Điểm sinh viên):\n#   Ho va ten | Diem_Toan | Diem_Van | Diem_Anh\n#   An        | 88        | 85       | 65\n#   Bình      | 92        | 57       | 98\n\nimport pandas as pd\nxlsx = pd.ExcelFile('data.xlsx')\ndf = xlsx.parse(sheet_name='Sheet1')\nprint(type(df))",
       "question": "Kiểu dữ liệu của df:",
       "options": [
         "<class 'pandas.ExcelFile'>",
@@ -251,7 +251,7 @@ const quizData = {
         "<class 'list'>"
       ],
       "correct": 1,
-      "hint": "parse() method trả về DataFrame từ sheet được chỉ định"
+      "hint": "parse(sheet_name='Sheet1') đọc Sheet1 và trả về DataFrame (không phải ExcelFile nữa!)"
     },
     {
       "id": 19,
