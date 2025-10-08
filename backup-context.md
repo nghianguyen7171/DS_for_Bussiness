@@ -996,3 +996,83 @@ https://nghianguyen7171.github.io/DS_for_Bussiness/index.html#quizzes
 - ✅ Better alignment with lecture schedule
 - ✅ Lecture 4 quiz now prominently featured with full details
 
+---
+
+### October 8, 2025 - Quiz Questions Enhanced with File Visualizations
+
+**Change:** Added file content visualizations to quiz questions that reference external files.
+
+**Critical Problem Identified:**
+- 7 quiz questions referenced files (ex1.csv, ex2.csv, etc.) without showing their content
+- Students couldn't answer these questions without knowing the file structure
+- Questions were impossible to solve independently
+- Example: "What is output of `pd.read_csv('ex1.csv')`?" without showing ex1.csv content
+
+**Solution Applied:**
+
+**Questions Enhanced (7 questions):**
+
+1. **Question 1 (CSV Basic):**
+   - Added ex1.csv content visualization
+   - Shows: Header line + 3 data rows
+   - Format: Diem 1, Diem 2, Diem 3, Diem 4, Nhan xet
+
+2. **Question 2 (CSV Header):**
+   - Added ex2.csv content (no header)
+   - Shows: 4 data rows without header
+   - Emphasizes: "KHÔNG CÓ HEADER"
+
+3. **Question 3 (CSV Names):**
+   - Added ex2.csv content
+   - Shows same file as Q2
+   - Context for names parameter
+
+4. **Question 4 (CSV Index):**
+   - Added ex2.csv content
+   - Shows file structure for index_col understanding
+
+5. **Question 5 (CSV Separator):**
+   - Added ex3.txt content
+   - Shows space-separated data
+   - Visualizes: A B C D format
+
+6. **Question 6 (CSV Skip Rows):**
+   - Added ex4.csv structure with junk rows
+   - Shows: Rows 0,2,3 are garbage text
+   - Clear visualization of what gets skipped
+
+7. **Question 7 (Missing Data):**
+   - Added ex5.csv description
+   - Shows: File with missing values marked
+   - Example: Chi thiếu Diem_Anh
+
+**Bonus Enhancements:**
+8. **Question 8 (JSON):** Added student.json structure
+9. **Question 9 (JSON Missing):** Added missing data pattern
+10. **Question 17-18 (Excel):** Added data.xlsx multi-sheet structure
+
+**Visualization Format:**
+```javascript
+"code": "# File ex1.csv có nội dung:\n# Diem 1,Diem 2,Diem 3,Diem 4,Nhan xet\n# 1,2,3,4,Hoc luc yeu\n# 5,6,7,8,Hoc luc trung binh kha\n\nimport pandas as pd\ndf = pd.read_csv('ex1.csv')\nprint(df.head(2))"
+```
+
+**Files Modified:**
+- `Quiz/Lec04_quiz/app.js` (7 core questions + 3 bonus)
+- `docs/quiz/Lec04_quiz/app.js` (rebuilt)
+
+**Impact:**
+- ✅ Quiz is now completely self-contained
+- ✅ Students can solve ALL questions independently
+- ✅ Better pedagogical value (shows file structure concepts)
+- ✅ Professional quiz quality
+- ✅ No confusion about file formats
+- ✅ Visual learning enhanced
+
+**Student Experience:**
+- **Before:** "I don't know what's in ex1.csv, how can I answer this?" 😕
+- **After:** "Oh! The file has header 'Diem 1, Diem 2...', so read_csv() will use that as column names!" 😊
+
+**Build Status:** ✅ Rebuilt successfully  
+**Deployment Status:** ✅ Committed (e75c6c5) and pushed to GitHub  
+**Live Quiz:** https://nghianguyen7171.github.io/DS_for_Bussiness/quiz/Lec04_quiz/index.html
+
