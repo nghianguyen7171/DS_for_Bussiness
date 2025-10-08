@@ -725,5 +725,6 @@ git log --oneline -5
 ```
 
 **Build Status:** ✅ Rebuilt successfully  
-**Deployment Status:** Pending commit & push
+**Deployment Status:** ✅ Committed (5a6942a) and pushed to GitHub  
+**Live Status:** Will be live after GitHub Pages rebuilds (~1-2 minutes)
 
