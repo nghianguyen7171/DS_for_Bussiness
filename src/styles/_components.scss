@@ -385,6 +385,17 @@
       margin-bottom: $space-2;
     }
 
+    .instructor-name-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color $transition-fast;
+      
+      &:hover {
+        color: $color-primary;
+        text-decoration: none;
+      }
+    }
+
     .role {
       color: $color-primary;
       font-weight: $font-weight-medium;

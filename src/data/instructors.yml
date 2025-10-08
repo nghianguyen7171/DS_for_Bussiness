@@ -3,17 +3,20 @@ instructors:
     email: "nghiant@neu.edu.vn"
     role: "Lecture"
     image: "assets/images/Dr.TrongNghiaNguyen.jpeg"
+    website: "https://nghianguyen7171.github.io/"
     bio: "Member of the Business AI Lab (BAI LAB) research group and lecturer at the Department of Data Science and Artificial Intelligence, School of Technology, National Economics University. Holds a PhD in Computer Science from Chonnam National University, Korea (2025), with expertise in AI applications for business."
   
   - name: "MSc. Nguyen Thi Minh Trang"
     email: "ntmtrang@neu.edu.vn"
     role: "Tutorial"
     image: "assets/images/minhtrang.jpg"
+    website: "https://fda.neu.edu.vn/fda-members/ths-nguyen-thi-minh-trang/"
     bio: "Lecturer at the Department of Data Science and Artificial Intelligence, School of Technology, National Economics University. Member of the Lab for Research and Technology Transfer of Data Science and Artificial Intelligence. Holds a Master's degree in Business Analytics from Nottingham Trent University, UK (2023)."
   
   - name: "MSc. Dam Tien Thanh"
     email: "thanhtd@neu.edu.vn"
     role: "Tutorial"
     image: "assets/images/damtienthanh.jpg"
+    website: "https://fda.neu.edu.vn/fda-members/ths-dam-tien-thanh/"
     bio: "Member of the DataOptLab research team, Department of Data Science and Artificial Intelligence, School of Technology, National Economics University. Graduated with Honors from the University of Technology – VNU (2020) and holds a Master's degree from Phenikaa University (2023)."
 

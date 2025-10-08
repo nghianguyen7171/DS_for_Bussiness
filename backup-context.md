@@ -189,7 +189,7 @@ docs/                            # GitHub Pages serves from here
 
 **instructors.yml** contains:
 - 3 instructors: Dr. Nguyen Trong Nghia, MSc. Nguyen Thi Minh Trang, MSc. Dam Tien Thanh
-- Each with: name, email, role, image path, bio
+- Each with: name, email, role, image path, website URL, bio
 
 **lectures.yml** contains:
 - 15 weeks of content
@@ -675,4 +675,55 @@ git log --oneline -5
 **Last Updated:** October 8, 2025  
 **Next Session:** Read this file first, then proceed with any requested updates  
 **AI Readiness:** 100% - All context preserved
+
+---
+
+## 📝 Change Log
+
+### October 8, 2025 - Instructor Website Links Added
+
+**Change:** Added personal website links to instructor profiles
+
+**Files Modified:**
+1. `src/data/instructors.yml` - Added `website` field for each instructor
+2. `src/partials/sections/instructors.hbs` - Updated template to make names clickable
+3. `src/styles/_components.scss` - Added `.instructor-name-link` styling
+
+**Implementation Details:**
+- Each instructor name now links to their personal website
+- Links open in new tab (`target="_blank"`)
+- Added security attributes (`rel="noopener noreferrer"`)
+- Hover effect: name changes to primary color (#2563eb)
+- Smooth transition animation on hover
+
+**Instructor Website URLs:**
+- Dr. Nguyen Trong Nghia: https://nghianguyen7171.github.io/
+- MSc. Nguyen Thi Minh Trang: https://fda.neu.edu.vn/fda-members/ths-nguyen-thi-minh-trang/
+- MSc. Dam Tien Thanh: https://fda.neu.edu.vn/fda-members/ths-dam-tien-thanh/
+
+**CSS Styling:**
+```scss
+.instructor-name-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 150ms ease-in-out;
+  
+  &:hover {
+    color: $color-primary;
+    text-decoration: none;
+  }
+}
+```
+
+**Template Logic:**
+```handlebars
+{{#if website}}
+  <h3><a href="{{website}}" target="_blank" rel="noopener noreferrer" class="instructor-name-link">{{name}}</a></h3>
+{{else}}
+  <h3>{{name}}</h3>
+{{/if}}
+```
+
+**Build Status:** ✅ Rebuilt successfully  
+**Deployment Status:** Pending commit & push
 

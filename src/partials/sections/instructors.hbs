@@ -9,7 +9,11 @@
                     <img src="{{image}}" alt="{{name}}" loading="lazy">
                 </div>
                 <div class="instructor-info">
+                    {{#if website}}
+                    <h3><a href="{{website}}" target="_blank" rel="noopener noreferrer" class="instructor-name-link">{{name}}</a></h3>
+                    {{else}}
                     <h3>{{name}}</h3>
+                    {{/if}}
                     <p class="role">{{role}}</p>
                     <p class="bio">{{bio}}</p>
                     <a href="mailto:{{email}}" class="email">{{email}}</a>
