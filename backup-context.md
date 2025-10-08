@@ -728,3 +728,38 @@ git log --oneline -5
 **Deployment Status:** ✅ Committed (5a6942a) and pushed to GitHub  
 **Live Status:** Will be live after GitHub Pages rebuilds (~1-2 minutes)
 
+---
+
+### October 8, 2025 - Fixed openpyxl Version Issue in Notebook
+
+**Issue:** ImportError when reading Excel files in Jupyter notebook
+- Error: `Pandas requires version '3.1.0' or newer of 'openpyxl' (version '3.0.10' currently installed)`
+- Location: `notebook/T6_nhập_và_lưu_trữ_dữ_liệu_Python.ipynb` - Cell 20 (Section 5.1)
+
+**Root Cause:**
+- Pandas version compatibility issue with openpyxl
+- Had openpyxl 3.0.10, but pandas requires 3.1.0+
+
+**Solution:**
+```bash
+pip install --upgrade openpyxl
+```
+
+**Result:**
+- ✅ Upgraded openpyxl from 3.0.10 → 3.1.5
+- ✅ Excel file reading now works correctly
+- ✅ Dependencies: et-xmlfile 2.0.0 also installed
+
+**Affected Code:**
+```python
+import pandas as pd
+xlsx = pd.ExcelFile("https://raw.githubusercontent.com/tranhungemail/DSImageCourse/main/ex6.xlsx")
+df_excel_sheet2 = xlsx.parse(sheet_name="Sheet2")
+df_excel_sheet1 = xlsx.parse(sheet_name="Sheet1")
+```
+
+**Prevention:**
+- Always check pandas and openpyxl compatibility
+- Keep dependencies updated in requirements.txt
+- Document version requirements clearly
+
