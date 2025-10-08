@@ -1,0 +1,227 @@
+lectures:
+  - id: 1
+    week: 1
+    type: "Lecture"
+    title: "Introduction to Data Science and Applications in Economics and Business"
+    topics:
+      - "Core concepts in data science"
+      - "Data analysis vs. data science"
+      - "What is modeling?"
+      - "Introduction to Python"
+    materials: "Chapters 1, 2, 3"
+    activities:
+      - "Introduce course resources and platforms"
+      - "Deliver lecture content"
+      - "Guide steps in a data science workflow: use Hanoi house prices, Iris classification, or customer search in a marketing campaign"
+    assessment: "In-class discussion"
+
+  - id: 2
+    week: 2
+    type: "Lecture"
+    title: "Python Programming Language"
+    topics:
+      - "Variables in Python"
+      - "Vectors and sequential data types"
+      - "Conditional statements"
+      - "Loops"
+      - "Functions"
+    materials: "Chapter 4"
+    activities:
+      - "Guide installing Jupyter Notebook or other Python execution platforms"
+      - "Deliver lecture content"
+      - "Demonstrate running Python on SmartDoc or Jupyter Notebook"
+    assessment: "In-class discussion; homework"
+
+  - id: 3
+    week: 3
+    type: "Practice"
+    title: "Python Programming Practice"
+    topics:
+      - "Variables in Python"
+      - "Vectors and sequential data types"
+      - "Conditional statements"
+      - "Loops"
+      - "Functions"
+    materials: "Basic Python practice"
+    activities:
+      - "Q&A from lecture"
+      - "Guide practice exercises"
+    assessment: "In-class discussion; homework"
+
+  - id: 4
+    week: 4
+    type: "Lecture"
+    title: "Python Libraries for Data Science"
+    topics:
+      - "Data science libraries overview"
+      - "NumPy arrays"
+      - "Pandas DataFrame"
+    materials: "Chapters 5, 6"
+    activities:
+      - "Guide installing Python add-on libraries"
+      - "Deliver lecture content"
+      - "Support executing example code"
+    assessment: "In-class discussion; homework"
+
+  - id: 5
+    week: 5
+    type: "Practice"
+    title: "Python with NumPy and Pandas"
+    topics:
+      - "Work with NumPy arrays"
+      - "Evaluate NumPy performance vs. native arrays"
+      - "Practice basic Pandas DataFrame operations"
+    materials: "NumPy practice; Pandas practice"
+    activities:
+      - "Q&A from lecture"
+      - "Guide practice exercises"
+    assessment: "In-class discussion; homework"
+
+  - id: 6
+    week: 6
+    type: "Lecture"
+    title: "Data Input and Storage"
+    topics:
+      - "Read and write text formats"
+      - "Web data collection"
+      - "Read from Microsoft Excel"
+      - "Interact with Web APIs"
+      - "Interact with databases"
+    materials: "Chapter 7"
+    activities:
+      - "Introduce accessible data sources"
+      - "Introduce libraries for multi-source ingestion"
+      - "Deliver lecture per textbook"
+    assessment: ""
+
+  - id: 7
+    week: 7
+    type: "Practice"
+    title: "Data Input and Storage Practice"
+    topics:
+      - "Read and write text formats"
+      - "Web scraping/collection"
+      - "Read Excel"
+      - "Interact with Web APIs"
+      - "Interact with databases"
+    materials: "Practice on data input and storage"
+    activities:
+      - "Execute SmartDoc commands to pull data in different formats"
+      - "Modify parameters to collect data"
+    assessment: ""
+
+  - id: 8
+    week: 8
+    type: "Midterm"
+    title: "Midterm 1 & Data Preprocessing Lecture"
+    topics:
+      - "Midterm Exam 1"
+      - "Format data aligned to research goals"
+      - "Handle outliers and missing values"
+    materials: ""
+    activities:
+      - "Administer Midterm 1"
+      - "Lecture on preprocessing"
+    assessment: "Midterm 1"
+
+  - id: 9
+    week: 9
+    type: "Practice"
+    title: "Data Preprocessing Practice"
+    topics:
+      - "Clean data, transform to desired formats"
+      - "Detect and handle outliers with boxplots, Z-scores"
+      - "Handle missing data by deletion, imputation, etc."
+    materials: "Preprocessing practice"
+    activities:
+      - "Guide practice on data cleaning"
+    assessment: "In-class discussion; homework"
+
+  - id: 10
+    week: 10
+    type: "Lecture"
+    title: "Data Transformation and Feature Engineering"
+    topics:
+      - "Reshape data between wide and long formats"
+      - "Encode categorical variables"
+      - "Normalize quantitative variables"
+      - "Create new features from raw attributes"
+    materials: "Chapter 8"
+    activities:
+      - "Deliver content"
+      - "Q&A and examples"
+    assessment: "In-class discussion; homework"
+
+  - id: 11
+    week: 11
+    type: "Practice"
+    title: "Data Transformation Practice"
+    topics:
+      - "Reshape wide/long"
+      - "Encode categorical variables"
+      - "Normalize quantitative variables"
+      - "Create new features"
+    materials: "Data transformation practice"
+    activities:
+      - "Apply practical data transformation techniques"
+    assessment: "In-class discussion; homework"
+
+  - id: 12
+    week: 12
+    type: "Lecture"
+    title: "Data Visualization"
+    topics:
+      - "Basic charts: histogram, scatter, bar"
+      - "Principles for selecting appropriate charts for one or multiple variables"
+      - "Use of color, shape, and size to enhance interpretability"
+      - "Interpret data via visualization"
+    materials: "Chapter 10"
+    activities:
+      - "Present theory and examples"
+      - "Guide data storytelling"
+    assessment: "In-class discussion; homework"
+
+  - id: 13
+    week: 13
+    type: "Practice"
+    title: "Data Visualization Practice"
+    topics:
+      - "Plot with Matplotlib and Seaborn"
+      - "Apply visualization in analysis"
+      - "Create simple dashboards in Python"
+    materials: "Visualization practice"
+    activities:
+      - "Implement illustrative charts"
+    assessment: "In-class discussion; homework"
+
+  - id: 14
+    week: 14
+    type: "Lecture"
+    title: "Modeling with Data (Machine Learning)"
+    topics:
+      - "Core ML concepts"
+      - "Linear models for regression and classification"
+      - "Decision trees"
+      - "Tree ensembles"
+      - "Model evaluation metrics"
+    materials: "Chapter 11"
+    activities:
+      - "Supervised learning lecture"
+      - "Example: house price prediction or customer classification"
+    assessment: "In-class discussion; homework"
+
+  - id: 15
+    week: 15
+    type: "Midterm & Practice"
+    title: "Midterm 2 & Machine Learning Modeling Practice"
+    topics:
+      - "Midterm Exam 2"
+      - "Linear models for regression and classification"
+      - "Decision trees"
+      - "Tree ensembles"
+    materials: "Modeling practice"
+    activities:
+      - "Run scikit-learn models"
+      - "Interpret model outputs"
+    assessment: "Midterm 2"
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập trắc nghiệm: Làm sạch và chuẩn bị dữ liệu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Header -->
+        <header class="slide-header">
+            <h1 class="slide-title">Bài tập trắc nghiệm: Làm sạch và chuẩn bị dữ liệu</h1>
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span class="current-question">1</span> / <span class="total-questions">30</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="slide-content">
+            <div class="question-container">
+                <!-- Code Block -->
+                <div class="code-container">
+                    <div class="code-header">
+                        <span class="code-label">Python Code</span>
+                    </div>
+                    <pre class="code-block"><code class="language-python" id="question-code"></code></pre>
+                </div>
+
+                <!-- Question Text -->
+                <div class="question-text">
+                    <h2 id="question-title"></h2>
+                </div>
+
+                <!-- Answer Options -->
+                <div class="options-container">
+                    <div class="option" data-option="0">
+                        <input type="radio" name="answer" id="option-0" value="0">
+                        <label for="option-0">
+                            <span class="option-letter">A</span>
+                            <span class="option-text" id="option-0-text"></span>
+                        </label>
+                    </div>
+                    <div class="option" data-option="1">
+                        <input type="radio" name="answer" id="option-1" value="1">
+                        <label for="option-1">
+                            <span class="option-letter">B</span>
+                            <span class="option-text" id="option-1-text"></span>
+                        </label>
+                    </div>
+                    <div class="option" data-option="2">
+                        <input type="radio" name="answer" id="option-2" value="2">
+                        <label for="option-2">
+                            <span class="option-letter">C</span>
+                            <span class="option-text" id="option-2-text"></span>
+                        </label>
+                    </div>
+                    <div class="option" data-option="3">
+                        <input type="radio" name="answer" id="option-3" value="3">
+                        <label for="option-3">
+                            <span class="option-letter">D</span>
+                            <span class="option-text" id="option-3-text"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Explanation -->
+                <div class="explanation-container hidden" id="explanation-container">
+                    <div class="explanation-header">
+                        <span class="explanation-label">Giải thích</span>
+                    </div>
+                    <div class="explanation-text" id="explanation-text"></div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-container">
+                    <button class="btn btn--outline" id="hint-button">Gợi ý/Xem đáp án</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer with Navigation -->
+        <footer class="slide-footer">
+            <div class="section-info">
+                <span class="section-label">Chủ đề:</span>
+                <span class="section-name" id="section-name"></span>
+            </div>
+            <div class="navigation">
+                <button class="btn btn--secondary" id="prev-button" disabled>
+                    <span class="nav-icon">‹</span>
+                    Câu trước
+                </button>
+                <button class="btn btn--primary" id="next-button">
+                    Câu tiếp
+                    <span class="nav-icon">›</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

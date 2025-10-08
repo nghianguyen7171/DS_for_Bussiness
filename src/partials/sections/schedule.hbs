@@ -1,0 +1,44 @@
+<section id="schedule" class="section schedule">
+    <div class="container">
+        <h2 class="section-title">Course Schedule</h2>
+        
+        <div class="schedule-table-wrapper">
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Type</th>
+                        <th>Topic</th>
+                        <th>Materials</th>
+                        <th>Assessment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each lectures.lectures}}
+                    <tr class="{{#if (eq type 'Midterm')}}midterm-row{{/if}}">
+                        <td data-label="Week">{{week}}</td>
+                        <td data-label="Type"><span class="badge badge-{{type}}">{{type}}</span></td>
+                        <td data-label="Topic">
+                            <strong>{{title}}</strong>
+                            {{#if topics}}
+                            <ul class="topic-list">
+                                {{#each topics}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                            {{/if}}
+                        </td>
+                        <td data-label="Materials">{{materials}}</td>
+                        <td data-label="Assessment">{{assessment}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="schedule-note">
+            <p><strong>Note:</strong> Schedule is subject to change. Check course announcements for updates.</p>
+        </div>
+    </div>
+</section>
+

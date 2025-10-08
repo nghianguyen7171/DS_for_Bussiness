@@ -1,0 +1,33 @@
+<section id="quizzes" class="section quizzes">
+    <div class="container">
+        <h2 class="section-title">Practice Quizzes</h2>
+        
+        <div class="quizzes-intro">
+            <p>Test your understanding with these interactive quizzes. Each quiz corresponds to lecture material and helps reinforce key concepts.</p>
+        </div>
+        
+        <div class="quizzes-grid">
+            {{#each quizzes.quizzes}}
+            <div class="quiz-card">
+                <div class="quiz-header">
+                    <h3>{{title}}</h3>
+                    <span class="quiz-week badge">Week {{week}}</span>
+                </div>
+                <p class="quiz-description">{{description}}</p>
+                {{#if topics}}
+                <div class="quiz-topics">
+                    <strong>Topics covered:</strong>
+                    <ul>
+                        {{#each topics}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+                <a href="{{link}}" class="btn btn-quiz" target="_blank">Start Quiz</a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+

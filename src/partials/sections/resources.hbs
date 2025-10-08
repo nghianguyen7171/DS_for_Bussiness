@@ -1,0 +1,40 @@
+<section id="resources" class="section resources">
+    <div class="container">
+        <h2 class="section-title">Course Resources</h2>
+        
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">📚</div>
+                <h3>Course Textbook</h3>
+                <p>Data Science in Economics and Business (Python Applications)</p>
+                <a href="{{course.links.book}}" class="btn btn-resource" target="_blank" rel="noopener">Access Textbook</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">📊</div>
+                <h3>Slide Deck</h3>
+                <p>Weekly lecture slides and presentation materials</p>
+                <a href="{{course.links.slides}}" class="btn btn-resource" target="_blank" rel="noopener">View Slides</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">💻</div>
+                <h3>GitHub Repository</h3>
+                <p>Code examples, datasets, and supplementary materials</p>
+                <a href="{{course.links.github}}" class="btn btn-resource" target="_blank" rel="noopener">Visit GitHub</a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">🔧</div>
+                <h3>Software & Tools</h3>
+                <ul class="software-list">
+                    {{#each course.software}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                <a href="resources.html" class="btn btn-resource">Setup Guide</a>
+            </div>
+        </div>
+    </div>
+</section>
+

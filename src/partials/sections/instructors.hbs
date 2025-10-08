@@ -1,0 +1,22 @@
+<section id="instructors" class="section instructors">
+    <div class="container">
+        <h2 class="section-title">Instructors</h2>
+        
+        <div class="instructors-grid">
+            {{#each instructors.instructors}}
+            <div class="instructor-card">
+                <div class="instructor-image">
+                    <img src="{{image}}" alt="{{name}}" loading="lazy">
+                </div>
+                <div class="instructor-info">
+                    <h3>{{name}}</h3>
+                    <p class="role">{{role}}</p>
+                    <p class="bio">{{bio}}</p>
+                    <a href="mailto:{{email}}" class="email">{{email}}</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,65 @@
+assignments:
+  - id: "hw1"
+    title: "Python Basics Practice"
+    due: "Week 3"
+    description: "Complete Python fundamentals exercises covering variables, data types, loops, and functions."
+    deliverables:
+      - "Notebook (.ipynb) or .py file"
+      - "Short reflection (200–300 words)"
+    grading:
+      - "Correctness (60%)"
+      - "Code readability (20%)"
+      - "Completion (20%)"
+
+  - id: "hw2"
+    title: "NumPy and Pandas Practice"
+    due: "Week 5"
+    description: "Work with NumPy arrays and Pandas DataFrames to perform data manipulation tasks."
+    deliverables:
+      - "Jupyter notebook with solutions"
+      - "Brief documentation of approach"
+    grading:
+      - "Correctness (60%)"
+      - "Code efficiency (20%)"
+      - "Documentation (20%)"
+
+  - id: "hw3"
+    title: "Data Collection and Cleaning"
+    due: "Week 9"
+    description: "Collect data from web sources, clean and preprocess it for analysis."
+    deliverables:
+      - "Python script or notebook"
+      - "Cleaned dataset (CSV)"
+      - "Process documentation"
+    grading:
+      - "Data quality (40%)"
+      - "Code quality (30%)"
+      - "Documentation (30%)"
+
+  - id: "hw4"
+    title: "Data Visualization Project"
+    due: "Week 13"
+    description: "Create comprehensive visualizations to explore and present insights from a business dataset."
+    deliverables:
+      - "Jupyter notebook with visualizations"
+      - "Written analysis (500–700 words)"
+    grading:
+      - "Visualization quality (40%)"
+      - "Insight generation (40%)"
+      - "Presentation (20%)"
+
+  - id: "final-project"
+    title: "Machine Learning Business Application"
+    due: "Week 15"
+    description: "Build and evaluate a machine learning model to solve a business prediction problem."
+    deliverables:
+      - "Complete Jupyter notebook"
+      - "Dataset and preprocessing code"
+      - "Final report with model evaluation"
+      - "5-minute presentation"
+    grading:
+      - "Model performance (30%)"
+      - "Code quality (25%)"
+      - "Report quality (25%)"
+      - "Presentation (20%)"
+

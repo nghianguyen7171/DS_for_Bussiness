@@ -1,0 +1,48 @@
+<section id="overview" class="section overview">
+    <div class="container">
+        <h2 class="section-title">Course Overview</h2>
+        
+        <div class="overview-grid">
+            <div class="overview-card">
+                <h3>📊 Course Information</h3>
+                <ul class="info-list">
+                    <li><strong>Course Code:</strong> {{course.code}}</li>
+                    <li><strong>Credits:</strong> {{course.credits}}</li>
+                    <li><strong>In-Class Hours:</strong> {{course.hours.in_class}}</li>
+                    <li><strong>Self-Study Hours:</strong> {{course.hours.self_study}}</li>
+                    <li><strong>Program:</strong> {{course.program}}</li>
+                </ul>
+            </div>
+            
+            <div class="overview-card">
+                <h3>📚 Prerequisites</h3>
+                <ul class="info-list">
+                    {{#each course.prerequisites}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            
+            <div class="overview-card">
+                <h3>🎯 Course Objectives</h3>
+                <ul class="objectives-list">
+                    {{#each course.objectives}}
+                    <li>
+                        <strong>{{id}}:</strong> {{description}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            
+            <div class="overview-card">
+                <h3>💻 Required Software</h3>
+                <ul class="info-list">
+                    {{#each course.software}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+

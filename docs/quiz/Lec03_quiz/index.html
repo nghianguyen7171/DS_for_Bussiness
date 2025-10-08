@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Trắc Nghiệm: NumPy & Pandas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="quiz-header">
+            <h1>Bài Tập Trắc Nghiệm: NumPy & Pandas</h1>
+            <div class="quiz-info">
+                <span class="question-counter">Câu <span id="current-question">1</span>/<span id="total-questions">30</span></span>
+                <span class="score">Điểm: <span id="current-score">0</span></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </header>
+
+        <!-- Quiz Content -->
+        <main class="quiz-content" id="quiz-container">
+            <div class="question-slide" id="question-slide">
+                <div class="question-section">
+                    <h2>Câu hỏi:</h2>
+                    <div class="code-block" id="question-code">
+                        <!-- Question code will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="options-section">
+                    <h3>Chọn kết quả đúng:</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" id="option-0" data-option="0">
+                            <span class="option-label">A.</span>
+                            <span class="option-text"></span>
+                        </button>
+                        <button class="option-btn" id="option-1" data-option="1">
+                            <span class="option-label">B.</span>
+                            <span class="option-text"></span>
+                        </button>
+                        <button class="option-btn" id="option-2" data-option="2">
+                            <span class="option-label">C.</span>
+                            <span class="option-text"></span>
+                        </button>
+                        <button class="option-btn" id="option-3" data-option="3">
+                            <span class="option-label">D.</span>
+                            <span class="option-text"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="actions-section">
+                    <div class="helper-buttons">
+                        <button class="btn btn--secondary" id="hint-btn">💡 Xem gợi ý</button>
+                        <button class="btn btn--secondary" id="answer-btn" disabled>📖 Hiển thị đáp án</button>
+                    </div>
+                    <button class="btn btn--primary" id="next-btn" disabled>Câu tiếp theo ➡️</button>
+                </div>
+
+                <!-- Hint Display -->
+                <div class="hint-display hidden" id="hint-display">
+                    <h4>💡 Gợi ý:</h4>
+                    <p id="hint-text"></p>
+                </div>
+
+                <!-- Answer Display -->
+                <div class="answer-display hidden" id="answer-display">
+                    <h4>📖 Giải thích đáp án:</h4>
+                    <p id="explanation-text"></p>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div class="results-screen hidden" id="results-screen">
+                <div class="results-card">
+                    <h2>🎉 Hoàn thành bài tập!</h2>
+                    <div class="results-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="final-score">0</span>
+                            <span class="stat-label">Điểm số</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="correct-count">0</span>
+                            <span class="stat-label">Câu đúng</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="accuracy-percent">0%</span>
+                            <span class="stat-label">Tỷ lệ chính xác</span>
+                        </div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="btn btn--primary btn--lg" id="restart-btn">🔄 Làm lại từ đầu</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

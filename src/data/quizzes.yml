@@ -1,0 +1,41 @@
+quizzes:
+  - id: "quiz2"
+    title: "Lecture 2 Quiz: Python Basics"
+    week: 2
+    description: "Test your understanding of Python fundamentals including variables, data types, and control structures."
+    link: "quiz/Lec02_quiz/index.html"
+    topics:
+      - "Variables and data types"
+      - "Conditional statements"
+      - "Loops and iteration"
+    
+  - id: "quiz3"
+    title: "Lecture 3 Quiz: Python Practice"
+    week: 3
+    description: "Practice exercises for Python programming concepts."
+    link: "quiz/Lec03_quiz/index.html"
+    topics:
+      - "Functions"
+      - "Lists and dictionaries"
+      - "String manipulation"
+    
+  - id: "quiz4"
+    title: "Lecture 4 Quiz: NumPy and Pandas"
+    week: 4
+    description: "Quiz on Python data science libraries and DataFrame operations."
+    link: "quiz/Lec04_quiz/index.html"
+    topics:
+      - "NumPy arrays"
+      - "Pandas DataFrames"
+      - "Data manipulation"
+    
+  - id: "quiz5"
+    title: "Lecture 5 Quiz: Advanced Data Operations"
+    week: 5
+    description: "Test your skills with advanced NumPy and Pandas operations."
+    link: "quiz/Lec05_quiz/index.html"
+    topics:
+      - "Array operations"
+      - "DataFrame transformations"
+      - "Performance optimization"
+

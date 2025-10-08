@@ -1,0 +1,48 @@
+<section id="assessment" class="section assessment">
+    <div class="container">
+        <h2 class="section-title">Assessment & Grading</h2>
+        
+        <div class="assessment-table-wrapper">
+            <table class="assessment-table">
+                <thead>
+                    <tr>
+                        <th>Assessment Method</th>
+                        <th>Week</th>
+                        <th>Description</th>
+                        <th>Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each course.assessment.items}}
+                    <tr>
+                        <td data-label="Method"><strong>{{name}}</strong></td>
+                        <td data-label="Week">{{week}}</td>
+                        <td data-label="Description">{{description}}</td>
+                        <td data-label="Weight"><span class="weight-badge">{{weight}}</span></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="policies-summary">
+            <h3>Key Policies</h3>
+            <div class="policies-grid">
+                <div class="policy-card">
+                    <h4>📋 Eligibility</h4>
+                    <p>{{course.policies.eligibility}}</p>
+                </div>
+                <div class="policy-card">
+                    <h4>📅 Attendance</h4>
+                    <p>{{course.policies.attendance}}</p>
+                </div>
+                <div class="policy-card">
+                    <h4>📝 Submissions</h4>
+                    <p>{{course.policies.submission}}</p>
+                </div>
+            </div>
+            <a href="policies.html" class="btn btn-secondary">View Full Policies</a>
+        </div>
+    </div>
+</section>
+

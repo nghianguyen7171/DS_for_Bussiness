@@ -1,0 +1,26 @@
+{
+  "name": "ds-for-business-website",
+  "version": "1.0.0",
+  "description": "Static website for Basic Data Science in Economics and Business course",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && node server.js",
+    "clean": "rm -rf docs"
+  },
+  "keywords": ["data-science", "course", "github-pages"],
+  "author": "Dr. Nguyen Trong Nghia",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "js-yaml": "^4.1.0",
+    "marked": "^11.1.1",
+    "sass": "^1.69.5",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
+

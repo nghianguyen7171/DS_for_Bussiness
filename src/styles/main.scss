@@ -1,0 +1,63 @@
+// Import variables first
+@import 'variables';
+
+// Theme Variables (CSS Custom Properties)
+:root {
+  --bg-primary: #{$light-bg-primary};
+  --bg-secondary: #{$light-bg-secondary};
+  --bg-tertiary: #{$light-bg-tertiary};
+  --text-primary: #{$light-text-primary};
+  --text-secondary: #{$light-text-secondary};
+  --text-tertiary: #{$light-text-tertiary};
+  --border-color: #{$light-border};
+  --shadow-color: #{$light-shadow};
+}
+
+[data-theme="dark"] {
+  --bg-primary: #{$dark-bg-primary};
+  --bg-secondary: #{$dark-bg-secondary};
+  --bg-tertiary: #{$dark-bg-tertiary};
+  --text-primary: #{$dark-text-primary};
+  --text-secondary: #{$dark-text-secondary};
+  --text-tertiary: #{$dark-text-tertiary};
+  --border-color: #{$dark-border};
+  --shadow-color: #{$dark-shadow};
+}
+
+// Auto dark mode based on system preference
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary: #{$dark-bg-primary};
+    --bg-secondary: #{$dark-bg-secondary};
+    --bg-tertiary: #{$dark-bg-tertiary};
+    --text-primary: #{$dark-text-primary};
+    --text-secondary: #{$dark-text-secondary};
+    --text-tertiary: #{$dark-text-tertiary};
+    --border-color: #{$dark-border};
+    --shadow-color: #{$dark-shadow};
+  }
+}
+
+// Import layout and components
+@import 'layout';
+@import 'components';
+
+// Print styles
+@media print {
+  .navbar,
+  .footer,
+  .btn,
+  .theme-toggle {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}
+

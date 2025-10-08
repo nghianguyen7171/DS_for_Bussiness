@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{course.title}} - {{course.code}}">
+    <title>{{course.title}} | National Economics University</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    {{> navbar}}
+    
+    <main id="main-content">
+        {{> hero}}
+        {{> sections/overview}}
+        {{> sections/this-week}}
+        {{> sections/instructors}}
+        {{> sections/outcomes}}
+        {{> sections/schedule}}
+        {{> sections/quizzes}}
+        {{> sections/assessment}}
+        {{> sections/resources}}
+    </main>
+    
+    {{> footer}}
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

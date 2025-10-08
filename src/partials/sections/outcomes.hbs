@@ -1,0 +1,29 @@
+<section id="outcomes" class="section outcomes">
+    <div class="container">
+        <h2 class="section-title">Course Learning Outcomes (CLOs)</h2>
+        
+        <div class="outcomes-intro">
+            <p>By the end of this course, students will be able to:</p>
+        </div>
+        
+        <div class="outcomes-by-objective">
+            {{#each course.objectives}}
+            <div class="objective-group">
+                <h3 class="objective-title">{{id}}: {{description}}</h3>
+                <div class="clos-list">
+                    {{#each ../course.learning_outcomes}}
+                    {{#if (eq objective ../id)}}
+                    <div class="clo-item">
+                        <span class="clo-id">{{id}}</span>
+                        <span class="clo-description">{{description}}</span>
+                        <span class="clo-level badge">Level {{level}}</span>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+

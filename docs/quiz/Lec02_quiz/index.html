@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Python - 35 Câu Hỏi Trắc Nghiệm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Header -->
+        <header class="quiz-header">
+            <h1>Quiz Python</h1>
+            <div class="question-counter">
+                <span id="current-question">1</span> / <span id="total-questions">35</span>
+            </div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Main Quiz Area -->
+        <main class="quiz-main">
+            <!-- Section Title -->
+            <div class="section-title" id="section-title">
+                1. Các kiểu dữ liệu cơ bản trong Python
+            </div>
+
+            <!-- Code Display -->
+            <div class="code-container">
+                <pre><code class="language-python" id="code-display">type("Hello")</code></pre>
+            </div>
+
+            <!-- Options -->
+            <div class="options-container">
+                <button class="option-btn" data-option="A" id="option-A">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">&lt;class 'string'&gt;</span>
+                </button>
+                <button class="option-btn" data-option="B" id="option-B">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">&lt;class 'str'&gt;</span>
+                </button>
+                <button class="option-btn" data-option="C" id="option-C">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">&lt;class 'text'&gt;</span>
+                </button>
+                <button class="option-btn" data-option="D" id="option-D">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">&lt;class 'char'&gt;</span>
+                </button>
+            </div>
+
+            <!-- Show Answer Button -->
+            <div class="answer-controls">
+                <button class="btn btn--primary" id="show-answer-btn">Hiển thị đáp án</button>
+            </div>
+
+            <!-- Explanation -->
+            <div class="explanation-container hidden" id="explanation-container">
+                <h3>Giải thích:</h3>
+                <p id="explanation-text">Chuỗi ký tự trong Python thuộc kiểu str.</p>
+            </div>
+        </main>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="btn btn--secondary" id="prev-btn" disabled>
+                ← Câu trước
+            </button>
+            <button class="btn btn--secondary" id="next-btn">
+                Câu tiếp →
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="quiz-footer">
+            <p>Quiz Python - 35 câu hỏi chia thành 10 phần theo nội dung bài giảng</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

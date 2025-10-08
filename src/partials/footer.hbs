@@ -1,0 +1,45 @@
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>{{course.title}}</h3>
+                <p>{{course.code}} | {{course.credits}} Credits</p>
+                <p>National Economics University</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="grading.html">Grading</a></li>
+                    <li><a href="policies.html">Policies</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Course Resources</h3>
+                <ul>
+                    <li><a href="{{course.links.slides}}" target="_blank" rel="noopener">Slide Deck</a></li>
+                    <li><a href="{{course.links.book}}" target="_blank" rel="noopener">Course Textbook</a></li>
+                    <li><a href="{{course.links.github}}" target="_blank" rel="noopener">GitHub Repository</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    {{#each instructors.instructors}}
+                    <li><a href="mailto:{{email}}">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 National Economics University. All rights reserved.</p>
+            <p>Faculty of Data Science and Artificial Intelligence</p>
+        </div>
+    </div>
+</footer>
+
