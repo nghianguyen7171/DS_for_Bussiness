@@ -28,7 +28,12 @@
                             </ul>
                             {{/if}}
                         </td>
-                        <td data-label="Materials">{{materials}}</td>
+                        <td data-label="Materials">
+                            {{#if materials}}{{materials}}{{/if}}
+                            {{#if notebook}}
+                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
+                            {{/if}}
+                        </td>
                         <td data-label="Assessment">{{assessment}}</td>
                     </tr>
                     {{/each}}

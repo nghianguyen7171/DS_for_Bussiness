@@ -9,6 +9,7 @@ lectures:
       - "What is modeling?"
       - "Introduction to Python"
     materials: "Chapters 1, 2, 3"
+    notebook: "notebook/Lec1_Giới thiệu về Khoa học dữ liệu.ipynb"
     activities:
       - "Introduce course resources and platforms"
       - "Deliver lecture content"
@@ -26,6 +27,7 @@ lectures:
       - "Loops"
       - "Functions"
     materials: "Chapter 4"
+    notebook: "notebook/Lec2_Giới thiệu ngôn ngữ Python.ipynb"
     activities:
       - "Guide installing Jupyter Notebook or other Python execution platforms"
       - "Deliver lecture content"
@@ -43,6 +45,7 @@ lectures:
       - "Loops"
       - "Functions"
     materials: "Basic Python practice"
+    notebook: "notebook/Tur2_Giới thiệu ngôn ngữ Python.ipynb"
     activities:
       - "Q&A from lecture"
       - "Guide practice exercises"
@@ -57,6 +60,7 @@ lectures:
       - "NumPy arrays"
       - "Pandas DataFrame"
     materials: "Chapters 5, 6"
+    notebook: "notebook/Lec3_Các thư viện quan trọng trong KHDL của Python.ipynb"
     activities:
       - "Guide installing Python add-on libraries"
       - "Deliver lecture content"
@@ -72,6 +76,7 @@ lectures:
       - "Evaluate NumPy performance vs. native arrays"
       - "Practice basic Pandas DataFrame operations"
     materials: "NumPy practice; Pandas practice"
+    notebook: "notebook/Tur3_Các thư viện quan trọng trong KHDL của Python.ipynb"
     activities:
       - "Q&A from lecture"
       - "Guide practice exercises"
@@ -88,6 +93,7 @@ lectures:
       - "Interact with Web APIs"
       - "Interact with databases"
     materials: "Chapter 7"
+    notebook: "notebook/Lec4_nhập_và_lưu_trữ_dữ_liệu_Python.ipynb"
     activities:
       - "Introduce accessible data sources"
       - "Introduce libraries for multi-source ingestion"
@@ -105,6 +111,7 @@ lectures:
       - "Interact with Web APIs"
       - "Interact with databases"
     materials: "Practice on data input and storage"
+    notebook: "notebook/Tur4_nhập_và_lưu_trữ_dữ_liệu.ipynb"
     activities:
       - "Execute SmartDoc commands to pull data in different formats"
       - "Modify parameters to collect data"

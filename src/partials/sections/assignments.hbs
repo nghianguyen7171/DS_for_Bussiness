@@ -1,0 +1,63 @@
+<section id="assignments" class="section assignments">
+    <div class="container">
+        <h2 class="section-title">Homework Assignments</h2>
+        <p class="section-intro">Complete and submit your homework assignments via the Google Drive links below. All submissions must be in <code>.ipynb</code> (Jupyter Notebook) format.</p>
+        
+        <div class="assignments-grid">
+            {{#each assignments.assignments}}
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <span class="assignment-badge">{{id}}</span>
+                    <h3>{{title}}</h3>
+                </div>
+                
+                <div class="assignment-meta">
+                    <span class="assignment-due">
+                        📅 <strong>Due:</strong> {{due}}
+                    </span>
+                </div>
+                
+                <div class="assignment-description">
+                    <p>{{description}}</p>
+                </div>
+                
+                {{#if submission}}
+                <div class="assignment-submission">
+                    <a href="{{submission}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        📤 Submit on Google Drive
+                    </a>
+                    <p class="submission-note">Upload your <code>.ipynb</code> file to the shared folder</p>
+                </div>
+                {{/if}}
+                
+                {{#if deliverables}}
+                <div class="assignment-details">
+                    <h4>Deliverables:</h4>
+                    <ul>
+                        {{#each deliverables}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+                
+                {{#if grading}}
+                <div class="assignment-grading">
+                    <h4>Grading Criteria:</h4>
+                    <ul>
+                        {{#each grading}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        
+        <div class="assignments-note">
+            <p><strong>Important:</strong> Late submissions will be penalized 1 point per day. Missing submissions receive 0 points. Make sure to name your file properly: <code>StudentID_HW#.ipynb</code></p>
+        </div>
+    </div>
+</section>
+

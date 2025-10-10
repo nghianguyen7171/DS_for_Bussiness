@@ -154,6 +154,28 @@ function copyQuizzes() {
   }
 }
 
+// Copy notebook files
+function copyNotebooks() {
+  console.log('📓 Copying notebook files...');
+  
+  const notebookSrc = path.join(__dirname, 'notebook');
+  const notebookDest = path.join(DOCS_DIR, 'notebook');
+  
+  if (fs.existsSync(notebookSrc)) {
+    fs.ensureDirSync(notebookDest);
+    
+    // Copy only .ipynb files (not the guides)
+    const notebooks = fs.readdirSync(notebookSrc).filter(f => f.endsWith('.ipynb'));
+    
+    notebooks.forEach(file => {
+      const srcPath = path.join(notebookSrc, file);
+      const destPath = path.join(notebookDest, file);
+      fs.copySync(srcPath, destPath);
+      console.log(`  ✓ Copied ${file}`);
+    });
+  }
+}
+
 // Render index.html from Handlebars template
 function renderIndex(data) {
   console.log('📄 Rendering index.html...');
@@ -304,6 +326,10 @@ async function build() {
     
     // Copy quizzes
     copyQuizzes();
+    console.log('');
+    
+    // Copy notebooks
+    copyNotebooks();
     console.log('');
     
     // Render index

@@ -1076,3 +1076,147 @@ https://nghianguyen7171.github.io/DS_for_Bussiness/index.html#quizzes
 **Deployment Status:** ✅ Committed (e75c6c5) and pushed to GitHub  
 **Live Quiz:** https://nghianguyen7171.github.io/DS_for_Bussiness/quiz/Lec04_quiz/index.html
 
+
+---
+
+### October 8, 2025 - RISE Slideshow Integration for Teaching
+
+**Change:** Added professional slideshow presentation capability to Jupyter notebook.
+
+**User Request:** "Back to the notebook, It look ok now. But I prefer present the notebook as a slide for presentation."
+
+**Solution: RISE Extension Integration**
+
+**What Was Installed:**
+```bash
+pip install RISE  # Version 5.7.1
+```
+
+**RISE (Reveal.js - Jupyter/IPython Slideshow Extension) Features:**
+- ✅ Live, interactive slideshow presentations
+- ✅ Execute code during presentation (Shift+Enter)
+- ✅ Professional reveal.js-based slides
+- ✅ Keyboard navigation
+- ✅ Speaker notes view
+- ✅ Chalkboard drawing mode
+- ✅ Custom theming support
+
+**Created Documentation:**
+
+**File:** `notebook/SLIDESHOW_GUIDE.md` (comprehensive 200+ line guide)
+
+**Guide Contents:**
+1. **Quick Start**
+   - How to launch slideshow: `Alt+R` or toolbar button
+   - Navigation: Space, arrows, Esc
+   - Live coding during presentation
+
+2. **Slide Type Configuration**
+   - Slide: Main topics (20 slides recommended)
+   - Sub-Slide: Detailed examples (40-50 slides)
+   - Fragment: Step-by-step reveals (10-15)
+   - Skip: Backup content (5-10)
+   - Notes: Teaching reminders (15)
+
+3. **Recommended Structure for Lecture 4**
+   ```
+   📑 SECTION 1: CSV FILES
+     ├─ Slide: Section header with objectives
+     ├─ Sub-Slide: Code example
+     ├─ Sub-Slide: Output + explanation
+     └─ Skip: Advanced content
+   
+   📑 SECTION 2: JSON FILES
+     ├─ Slide: Section header
+     └─ Sub-Slides: Examples
+   
+   [... 7 sections total]
+   ```
+
+4. **Keyboard Shortcuts**
+   - `Alt+R`: Enter/Exit slideshow
+   - `Space`/`→`: Next slide
+   - `Shift+Space`/`←`: Previous slide
+   - `Shift+↑`/`↓`: Navigate sub-slides
+   - `F`: Fullscreen
+   - `S`: Speaker notes view
+   - `C`: Toggle chalkboard
+   - `B`: Pause (black screen)
+
+5. **Advanced Features**
+   - Custom CSS theming
+   - Auto-launch on notebook open
+   - Chalkboard mode for drawing/annotations
+   - Export to static HTML slides
+   - Export to PDF (with decktape)
+
+6. **Teaching Workflow**
+   - **Before Class:** Configure slide types, test slideshow
+   - **During Class:** Navigate slides, live-code, use chalkboard
+   - **After Class:** Save changes, share notebook
+
+7. **Export Options**
+   ```bash
+   # Static HTML slides
+   jupyter nbconvert notebook.ipynb --to slides --post serve
+   
+   # PDF export
+   decktape rise http://localhost:8888/notebooks/... slides.pdf
+   ```
+
+**Setup Checklist for User:**
+- [x] RISE installed
+- [ ] Open notebook in Jupyter
+- [ ] Enable `View → Cell Toolbar → Slideshow`
+- [ ] Configure slide types (see guide)
+- [ ] Press `Alt+R` to test
+- [ ] Customize theme (optional)
+- [ ] Enable chalkboard (optional)
+
+**Expected Presentation:**
+- **Slides:** 60-70 total (configured from notebook cells)
+- **Duration:** ~90 minutes
+- **Style:** Professional reveal.js theme
+- **Interactivity:** Full Jupyter capabilities preserved
+
+**Benefits:**
+1. **For Instructor:**
+   - Professional presentation without PowerPoint
+   - Live code execution during teaching
+   - Easy updates (just edit notebook cells)
+   - Draw/annotate on slides
+   - Speaker notes hidden from students
+
+2. **For Students:**
+   - Same notebook = notes + slides
+   - Can practice with exact examples shown in class
+   - No context switching between slides and code
+   - Can re-run slideshow themselves
+
+**Technical Advantages:**
+- No separate slide deck to maintain
+- Code guaranteed to work (it's the actual notebook)
+- Visual elements (boxes, diagrams) display beautifully
+- Dark/light theme support
+- Responsive on any screen size
+
+**Files Created:**
+- `notebook/SLIDESHOW_GUIDE.md`: Comprehensive guide
+
+**Dependencies Installed:**
+- RISE 5.7.1
+- notebook 7.4.7
+- jupyter-server 2.17.0
+- jupyterlab 4.4.9
+- reveal.js (bundled with RISE)
+- + 50+ dependencies (see pip install output)
+
+**Next Steps for User:**
+1. ✅ Run: `jupyter notebook T6_nhập_và_lưu_trữ_dữ_liệu_Python.ipynb` (already started in background)
+2. Enable slide view: `View → Cell Toolbar → Slideshow`
+3. Set each cell type (Slide/Sub-Slide/Fragment/Skip/Notes)
+4. Test: Press `Alt+R`
+5. Read full guide in `SLIDESHOW_GUIDE.md`
+
+**Status:** ✅ Complete - Notebook now presentation-ready!
+
