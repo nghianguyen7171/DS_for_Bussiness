@@ -1220,3 +1220,203 @@ pip install RISE  # Version 5.7.1
 
 **Status:** ✅ Complete - Notebook now presentation-ready!
 
+
+---
+
+### October 10, 2025 - Notebook Materials & Homework Submission Integration
+
+**Change:** Added course notebook materials to schedule and created homework submission system with Google Drive integration.
+
+**User Request:** 
+1. "Add notebook files to course schedule (Lec1-4, Tur2-4) corresponding to each week"
+2. "Create space for homework submission with Google Drive links for student uploads (.ipynb files)"
+
+**Solution Implemented:**
+
+**1. Notebook Materials Added to Schedule:**
+
+**Files Modified:**
+- `src/data/lectures.yml` - Added `notebook` field to weeks 1-7
+
+**Notebook Mapping:**
+| Week | Type | Notebook File |
+|------|------|---------------|
+| Week 1 | Lecture | `notebook/Lec1_Giới thiệu về Khoa học dữ liệu.ipynb` |
+| Week 2 | Lecture | `notebook/Lec2_Giới thiệu ngôn ngữ Python.ipynb` |
+| Week 3 | Practice | `notebook/Tur2_Giới thiệu ngôn ngữ Python.ipynb` |
+| Week 4 | Lecture | `notebook/Lec3_Các thư viện quan trọng trong KHDL của Python.ipynb` |
+| Week 5 | Practice | `notebook/Tur3_Các thư viện quan trọng trong KHDL của Python.ipynb` |
+| Week 6 | Lecture | `notebook/Lec4_nhập_và_lưu_trữ_dữ_liệu_Python.ipynb` |
+| Week 7 | Practice | `notebook/Tur4_nhập_và_lưu_trữ_dữ_liệu.ipynb` |
+
+**2. Homework Submission System Created:**
+
+**Files Modified:**
+- `src/data/assignments.yml` - Added `submission` field with Google Drive links
+- `src/partials/sections/assignments.hbs` - New section template
+- `src/index.hbs` - Added assignments section
+- `src/partials/navbar.hbs` - Added "Assignments" link
+- `src/styles/_components.scss` - Added assignment card styles
+- `src/partials/sections/schedule.hbs` - Added notebook download links
+- `build.js` - Added `copyNotebooks()` function
+
+**Google Drive Submission Links:**
+```yaml
+hw1 (Week 3 - Oct 03):
+  submission: "https://drive.google.com/drive/folders/1jRSPbZDpcfBYiTxWUkGzKOy1RB9xdwFD?usp=drive_link"
+  
+hw2 (Week 5 - Oct 10):
+  submission: "https://drive.google.com/drive/folders/1f-Zw4LWE-OIRG0vFA0zBTIs4I5Z7CrEL?usp=drive_link"
+```
+
+**3. New Assignments Section Features:**
+
+**Template Structure** (`assignments.hbs`):
+- Assignment grid layout (responsive cards)
+- Assignment badge (hw1, hw2, etc.)
+- Due date display with 📅 emoji
+- Description and deliverables
+- **Submission button** → Opens Google Drive folder in new tab
+- Submission note: "Upload your .ipynb file"
+- Grading criteria display
+- Important notes about late submissions
+
+**CSS Styling** (`_components.scss`):
+- `.assignments-grid` - Responsive grid (auto-fit, min 300px)
+- `.assignment-card` - Card with hover effect (lift + shadow)
+- `.assignment-badge` - Primary color badge (rounded)
+- `.assignment-submission` - Highlighted submission area with primary color border
+- `.btn-primary` - Full-width submit button
+- `.assignments-note` - Warning-colored note box
+- `.notebook-link` - Inline link styling for schedule
+
+**4. Build System Updates:**
+
+**New Function** (`build.js`):
+```javascript
+function copyNotebooks() {
+  // Copies only .ipynb files from notebook/ to docs/notebook/
+  // Excludes .md guide files
+  // Logs each copied file
+}
+```
+
+**Build Output:**
+```
+📓 Copying notebook files...
+  ✓ Copied Lec1_Giới thiệu về Khoa học dữ liệu.ipynb
+  ✓ Copied Lec2_Giới thiệu ngôn ngữ Python.ipynb
+  ✓ Copied Lec3_Các thư viện quan trọng trong KHDL của Python.ipynb
+  ✓ Copied Lec4_nhập_và_lưu_trữ_dữ_liệu_Python.ipynb
+  ✓ Copied Tur2_Giới thiệu ngôn ngữ Python.ipynb
+  ✓ Copied Tur3_Các thư viện quan trọng trong KHDL của Python.ipynb
+  ✓ Copied Tur4_nhập_và_lưu_trữ_dữ_liệu.ipynb
+```
+
+**5. User Experience:**
+
+**For Students:**
+1. **Browse Schedule** → See "📓 Notebook" download links
+2. **Click Notebook** → Download .ipynb file directly
+3. **Complete Assignment** → Work in Jupyter
+4. **Go to Assignments Section** → See assignment details
+5. **Click "📤 Submit on Google Drive"** → Opens Google Drive folder
+6. **Upload .ipynb** → Submit homework (format: `StudentID_HW#.ipynb`)
+
+**For Instructors:**
+- All submissions in one Google Drive folder per homework
+- Easy to download and grade
+- Can check submission timestamps
+- Students can see deliverables and grading criteria upfront
+
+**6. Technical Details:**
+
+**Schedule Display:**
+```handlebars
+<td data-label="Materials">
+  {{#if materials}}{{materials}}{{/if}}
+  {{#if notebook}}
+  <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
+  {{/if}}
+</td>
+```
+
+**Assignment Submission Button:**
+```handlebars
+{{#if submission}}
+<div class="assignment-submission">
+  <a href="{{submission}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+    📤 Submit on Google Drive
+  </a>
+  <p class="submission-note">Upload your <code>.ipynb</code> file to the shared folder</p>
+</div>
+{{/if}}
+```
+
+**Responsive Design:**
+- Assignment cards: Min 300px, auto-fit grid
+- Notebook links: Small, inline, downloadable
+- Mobile-friendly buttons and cards
+- Hover effects on desktop
+
+**7. Files Created/Modified:**
+
+**New Files:**
+- `src/partials/sections/assignments.hbs` (57 lines)
+- `docs/notebook/*.ipynb` (7 notebook files, ~22,000 lines total)
+
+**Modified Files:**
+- `src/data/lectures.yml` (+7 notebook fields)
+- `src/data/assignments.yml` (+2 submission fields)
+- `src/index.hbs` (+1 line for assignments section)
+- `src/partials/navbar.hbs` (+1 assignments link)
+- `src/partials/sections/schedule.hbs` (+4 lines for notebook links)
+- `src/styles/_components.scss` (+142 lines for assignments styling)
+- `build.js` (+18 lines for copyNotebooks function)
+
+**8. Navigation Updates:**
+
+**Navbar Order:**
+1. Home
+2. Overview
+3. Instructors
+4. Schedule
+5. **Assignments** ← NEW
+6. Quizzes
+7. Syllabus
+8. Resources
+
+**9. Assignment Policies Displayed:**
+
+**Important Notes Box:**
+- Late submissions: -1 point/day
+- Missing submissions: 0 points
+- File format required: `.ipynb`
+- Naming convention: `StudentID_HW#.ipynb`
+
+**Impact:**
+- ✅ Students can easily download lecture materials
+- ✅ Clear submission process with Google Drive
+- ✅ All deliverables and grading visible upfront
+- ✅ Organized homework management
+- ✅ Professional assignment interface
+- ✅ Mobile-responsive design
+- ✅ Integrated into existing website structure
+
+**Build Status:** ✅ Build completed successfully (7 notebooks copied)  
+**Deployment Status:** ✅ Committed (d8c7c1d) and pushed to GitHub  
+**Live Status:** Updates will appear on GitHub Pages in 1-2 minutes  
+
+**Website URLs:**
+- Schedule with notebooks: https://nghianguyen7171.github.io/DS_for_Bussiness/index.html#schedule
+- Assignments section: https://nghianguyen7171.github.io/DS_for_Bussiness/index.html#assignments
+- Direct notebook downloads: https://nghianguyen7171.github.io/DS_for_Bussiness/notebook/[filename].ipynb
+
+**Student Workflow:**
+1. Read lecture → Download notebook from Schedule
+2. Complete exercises → Do homework
+3. Go to Assignments → Click "Submit on Google Drive"
+4. Upload `.ipynb` → Assignment submitted ✅
+
+**Status:** ✅ Complete - All notebook materials and homework submissions integrated!
+

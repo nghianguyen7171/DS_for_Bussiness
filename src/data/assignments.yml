@@ -1,28 +1,29 @@
 assignments:
   - id: "hw1"
-    title: "Python Basics Practice"
-    due: "Week 3 (Oct 03)"
-    description: "Complete Python fundamentals exercises covering variables, data types, loops, and functions."
+    title: "NumPy and Pandas Practice"
+    due: "22:00 Oct 09, 2025"
+    description: "Work with NumPy arrays and Pandas DataFrames to perform data manipulation tasks. Practice array operations, DataFrame creation, data selection, and basic statistical analysis."
     submission: "https://drive.google.com/drive/folders/1jRSPbZDpcfBYiTxWUkGzKOy1RB9xdwFD?usp=drive_link"
     deliverables:
-      - "Notebook (.ipynb) or .py file"
-      - "Short reflection (200–300 words)"
-    grading:
-      - "Correctness (60%)"
-      - "Code readability (20%)"
-      - "Completion (20%)"
-
-  - id: "hw2"
-    title: "NumPy and Pandas Practice"
-    due: "Week 5 (Oct 10)"
-    description: "Work with NumPy arrays and Pandas DataFrames to perform data manipulation tasks."
-    submission: "https://drive.google.com/drive/folders/1f-Zw4LWE-OIRG0vFA0zBTIs4I5Z7CrEL?usp=drive_link"
-    deliverables:
-      - "Jupyter notebook with solutions"
+      - "Jupyter notebook (.ipynb) with solutions"
       - "Brief documentation of approach"
     grading:
       - "Correctness (60%)"
       - "Code efficiency (20%)"
+      - "Documentation (20%)"
+
+  - id: "hw2"
+    title: "Data Input and Storage"
+    due: "22:00 Oct 16, 2025"
+    description: "Practice reading and writing data from multiple sources including CSV, JSON, Excel files, web scraping, RSS feeds, Web APIs, and SQL databases."
+    submission: "https://drive.google.com/drive/folders/1f-Zw4LWE-OIRG0vFA0zBTIs4I5Z7CrEL?usp=drive_link"
+    deliverables:
+      - "Jupyter notebook (.ipynb) with data collection code"
+      - "Sample datasets collected (CSV/JSON)"
+      - "Documentation of data sources used"
+    grading:
+      - "Correctness (60%)"
+      - "Code quality (20%)"
       - "Documentation (20%)"
 
   - id: "hw3"
