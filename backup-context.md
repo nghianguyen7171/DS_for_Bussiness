@@ -1463,3 +1463,91 @@ function copyNotebooks() {
 
 **Website URL:** https://nghianguyen7171.github.io/DS_for_Bussiness/#assignments
 
+
+---
+
+### October 10, 2025 - Quiz 5 Temporarily Disabled (Updating)
+
+**Change:** Temporarily hid Lecture 5 quiz and displayed "Updating..." message with disabled button.
+
+**User Request:** "For the quizz, temporary hide Lecture 5 Quiz: Làm sạch và chuẩn bị dữ liệu. Replace by 'Lecture 5 Quiz: Updating ...'"
+
+**Solution Implemented:**
+
+**Quiz 5 Status:**
+- ❌ **Previous:** "Lecture 5 Quiz: Làm sạch và chuẩn bị dữ liệu" (Active)
+- ✅ **Current:** "Lecture 5 Quiz: Updating..." (Disabled)
+
+**Changes Made:**
+
+1. **Updated Quiz Metadata** (`src/data/quizzes.yml`):
+   ```yaml
+   - id: "quiz5"
+     title: "Lecture 5 Quiz: Updating..."
+     week: 5
+     description: "⚠️ This quiz is currently being updated. Please check back later."
+     link: ""
+     status: "updating"
+     topics:
+       - "Coming soon"
+   ```
+
+2. **Updated Quiz Template** (`src/partials/sections/quizzes.hbs`):
+   - Added conditional logic to check if `link` is empty
+   - If link exists: Show "Start Quiz" button (active)
+   - If link is empty: Show "Coming Soon" button (disabled)
+   ```handlebars
+   {{#if link}}
+   <a href="{{link}}" class="btn btn-quiz" target="_blank">Start Quiz</a>
+   {{else}}
+   <button class="btn btn-quiz-disabled" disabled>Coming Soon</button>
+   {{/if}}
+   ```
+
+3. **Added Disabled Button Styling** (`src/styles/_components.scss`):
+   ```scss
+   .btn-quiz-disabled {
+     background-color: var(--text-tertiary);
+     color: var(--text-secondary);
+     cursor: not-allowed;
+     opacity: 0.6;
+     
+     &:hover {
+       background-color: var(--text-tertiary);
+       transform: none;
+     }
+   }
+   ```
+
+**Visual Changes:**
+- **Quiz 5 Card:**
+  - Title: "Lecture 5 Quiz: Updating..."
+  - Description: "⚠️ This quiz is currently being updated. Please check back later."
+  - Topics: "Coming soon"
+  - Button: Gray "Coming Soon" button (disabled, no hover effect)
+
+**User Experience:**
+- Students see Quiz 5 card but cannot access it
+- Clear message that content is being updated
+- Disabled button provides visual feedback (gray, no cursor change)
+- Other quizzes (2, 3, 4) remain fully functional
+
+**Files Modified:**
+- `src/data/quizzes.yml` - Updated quiz5 metadata
+- `src/partials/sections/quizzes.hbs` - Added conditional button logic
+- `src/styles/_components.scss` - Added disabled button styling
+
+**Build Status:** ✅ Built successfully  
+**Deployment Status:** ✅ Committed (865b9d7) and pushed to GitHub  
+**Live Status:** Quiz 5 will show as "Updating..." in 1-2 minutes
+
+**Website URL:** https://nghianguyen7171.github.io/DS_for_Bussiness/#quizzes
+
+**To Re-enable Quiz 5 Later:**
+1. Update `quizzes.yml` with correct title, description, and topics
+2. Add link: `quiz/Lec05_quiz/index.html`
+3. Remove or update `status` field
+4. Rebuild and deploy
+
+**Status:** ✅ Complete - Quiz 5 temporarily disabled with clear "Updating..." message!
+

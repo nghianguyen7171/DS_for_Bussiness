@@ -1,23 +1,24 @@
-week_current: 1
+week_current: 6
 highlights:
-  - "📚 Install Python 13.0+ and Jupyter Notebook"
-  - "📖 Read Chapters 1–3 from the course textbook"
-  - "💻 Complete Python basics practice exercises"
-  - "🔗 Access course materials on SmartDoc platform"
-  - "✅ Join the course discussion forum"
+  - "📊 Learn to read and write data in CSV, JSON, and Excel formats"
+  - "🌐 Practice web scraping and data collection from websites"
+  - "📖 Read Chapter 7 from the course textbook"
+  - "📓 Download Lecture 4 notebook from course schedule"
+  - "💻 Complete data input/output exercises"
+  - "📤 Submit Homework 2 by Oct 16, 22:00"
 
 announcements:
-  - title: "Welcome to Data Science for Business!"
-    date: "2025-10-08"
-    content: "We're excited to begin this journey into data science. Please ensure you have Python and Jupyter installed before Week 2."
+  - title: "Homework 2 Due Soon!"
+    date: "2025-10-10"
+    content: "Homework 2 (Data Input and Storage) is due on Oct 16 at 22:00. Submit your .ipynb file via Google Drive. Practice with CSV, JSON, Excel, web scraping, and APIs."
   
-  - title: "Office Hours"
-    date: "2025-10-08"
-    content: "Instructors are available for questions every Thursday 2-4 PM. Check syllabus for room locations."
+  - title: "Lecture 4 Quiz Available"
+    date: "2025-10-10"
+    content: "Quiz on Data Input and Storage is now available! Test your understanding of CSV, JSON, Web scraping, RSS feeds, APIs, and SQL databases. 30 questions with hints."
 
 upcoming:
-  - event: "Week 2: Python Programming Lecture"
+  - event: "Week 7: Data Input and Storage Practice"
     date: "Next week"
-  - event: "Homework 1 Due"
-    date: "Week 3"
+  - event: "Week 8: Midterm 1 & Data Preprocessing"
+    date: "In 2 weeks"
 
