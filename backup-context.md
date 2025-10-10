@@ -1420,3 +1420,46 @@ function copyNotebooks() {
 
 **Status:** ✅ Complete - All notebook materials and homework submissions integrated!
 
+
+---
+
+### October 10, 2025 - Homework Assignment Correction
+
+**Change:** Corrected homework assignment titles, descriptions, and due dates to match actual course content.
+
+**Issue:** Homework assignments were incorrectly assigned:
+- ❌ HW1 was "Python Basics Practice" (incorrect)
+- ❌ HW2 was "NumPy and Pandas Practice" (incorrect)
+
+**Correction Applied:**
+
+**HW1 (Homework Opened Oct 03):**
+- ✅ **Title:** NumPy and Pandas Practice
+- ✅ **Due:** 22:00 Oct 09, 2025
+- ✅ **Content:** NumPy arrays, Pandas DataFrames, array operations, data selection, statistical analysis
+- ✅ **Submission:** https://drive.google.com/drive/folders/1jRSPbZDpcfBYiTxWUkGzKOy1RB9xdwFD
+- ✅ **Deliverables:**
+  - Jupyter notebook (.ipynb) with solutions
+  - Brief documentation of approach
+- ✅ **Grading:** Correctness (60%), Code efficiency (20%), Documentation (20%)
+
+**HW2 (Homework Opened Oct 10):**
+- ✅ **Title:** Data Input and Storage
+- ✅ **Due:** 22:00 Oct 16, 2025
+- ✅ **Content:** CSV, JSON, Excel, web scraping, RSS feeds, Web APIs, SQL databases
+- ✅ **Submission:** https://drive.google.com/drive/folders/1f-Zw4LWE-OIRG0vFA0zBTIs4I5Z7CrEL
+- ✅ **Deliverables:**
+  - Jupyter notebook (.ipynb) with data collection code
+  - Sample datasets collected (CSV/JSON)
+  - Documentation of data sources used
+- ✅ **Grading:** Correctness (60%), Code quality (20%), Documentation (20%)
+
+**Files Modified:**
+- `src/data/assignments.yml` - Updated hw1 and hw2 entries
+
+**Build Status:** ✅ Rebuilt successfully  
+**Deployment Status:** ✅ Committed (ee3542d) and pushed to GitHub  
+**Live Status:** Corrected assignments will appear in 1-2 minutes
+
+**Website URL:** https://nghianguyen7171.github.io/DS_for_Bussiness/#assignments
+

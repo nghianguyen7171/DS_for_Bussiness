@@ -32,14 +32,11 @@ quizzes:
       - "SQL Database operations"
     
   - id: "quiz5"
-    title: "Lecture 5 Quiz: Làm sạch và chuẩn bị dữ liệu"
+    title: "Lecture 5 Quiz: Updating..."
     week: 5
-    description: "Kiểm tra kiến thức về data cleaning, preprocessing, và feature engineering."
-    link: "quiz/Lec05_quiz/index.html"
+    description: "⚠️ This quiz is currently being updated. Please check back later."
+    link: ""
+    status: "updating"
     topics:
-      - "Data cleaning techniques"
-      - "Handling missing values"
-      - "Outlier detection and treatment"
-      - "Data transformation"
-      - "Feature engineering"
+      - "Coming soon"
 

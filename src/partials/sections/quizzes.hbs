@@ -24,7 +24,11 @@
                     </ul>
                 </div>
                 {{/if}}
+                {{#if link}}
                 <a href="{{link}}" class="btn btn-quiz" target="_blank">Start Quiz</a>
+                {{else}}
+                <button class="btn btn-quiz-disabled" disabled>Coming Soon</button>
+                {{/if}}
             </div>
             {{/each}}
         </div>
