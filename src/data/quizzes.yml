@@ -32,11 +32,14 @@ quizzes:
       - "SQL Database operations"
     
   - id: "quiz5"
-    title: "Lecture 5 Quiz: Updating..."
+    title: "Lecture 5 Quiz: Làm sạch và chuẩn bị dữ liệu"
     week: 5
-    description: "⚠️ This quiz is currently being updated. Please check back later."
-    link: ""
-    status: "updating"
+    description: "30 câu hỏi trắc nghiệm về xử lý dữ liệu thiếu, trùng lặp, chuẩn hóa dữ liệu, xử lý chuỗi ký tự và mã hóa dữ liệu phân loại."
+    link: "quiz/Lec05_quiz/index.html"
     topics:
-      - "Coming soon"
+      - "Xử lý dữ liệu thiếu (Missing Data)"
+      - "Xử lý dữ liệu trùng lặp (Duplicate Data)"
+      - "Chuẩn hóa và biến đổi dữ liệu"
+      - "Xử lý chuỗi ký tự (String Processing)"
+      - "Mã hóa dữ liệu phân loại (Categorical Encoding)"
 

@@ -126,6 +126,7 @@ lectures:
       - "Format data aligned to research goals"
       - "Handle outliers and missing values"
     materials: ""
+    notebook: "notebook/Lec5_Làm sạch và chuẩn bị dữ liệu.ipynb"
     activities:
       - "Administer Midterm 1"
       - "Lecture on preprocessing"
@@ -140,6 +141,7 @@ lectures:
       - "Detect and handle outliers with boxplots, Z-scores"
       - "Handle missing data by deletion, imputation, etc."
     materials: "Preprocessing practice"
+    notebook: "notebook/Tur5_Làm sạch và chuẩn bị dữ liệu.ipynb"
     activities:
       - "Guide practice on data cleaning"
     assessment: "In-class discussion; homework"

@@ -1551,3 +1551,87 @@ function copyNotebooks() {
 
 **Status:** ✅ Complete - Quiz 5 temporarily disabled with clear "Updating..." message!
 
+
+---
+
+### October 10, 2025 - This Week Updated to Week 6 (Data Input and Storage)
+
+**Change:** Updated "This Week" section to reflect current Week 6 content on Data Input and Storage.
+
+**User Request:** "Change This week from week 1 to week 6 Data Input and Storage"
+
+**Solution Implemented:**
+
+**Week Update:**
+- ❌ **Previous:** Week 1 - Introduction to Data Science
+- ✅ **Current:** Week 6 - Data Input and Storage
+
+**Updated Content:**
+
+**1. Week Number:**
+```yaml
+week_current: 6
+```
+
+**2. Highlights (6 items):**
+- 📊 Learn to read and write data in CSV, JSON, and Excel formats
+- 🌐 Practice web scraping and data collection from websites
+- 📖 Read Chapter 7 from the course textbook
+- 📓 Download Lecture 4 notebook from course schedule
+- 💻 Complete data input/output exercises
+- 📤 Submit Homework 2 by Oct 16, 22:00
+
+**3. Announcements (2 items):**
+
+**Announcement 1: Homework 2 Due Soon!**
+- Date: Oct 10, 2025
+- Content: "Homework 2 (Data Input and Storage) is due on Oct 16 at 22:00. Submit your .ipynb file via Google Drive. Practice with CSV, JSON, Excel, web scraping, and APIs."
+
+**Announcement 2: Lecture 4 Quiz Available**
+- Date: Oct 10, 2025
+- Content: "Quiz on Data Input and Storage is now available! Test your understanding of CSV, JSON, Web scraping, RSS feeds, APIs, and SQL databases. 30 questions with hints."
+
+**4. Upcoming Events:**
+- Week 7: Data Input and Storage Practice (Next week)
+- Week 8: Midterm 1 & Data Preprocessing (In 2 weeks)
+
+**Content Alignment:**
+- ✅ Matches Lecture 4 notebook content
+- ✅ References Homework 2 deadline
+- ✅ Promotes Lecture 4 Quiz availability
+- ✅ Guides students to download notebook materials
+- ✅ Prepares students for upcoming midterm
+
+**User Experience:**
+Students landing on homepage will see:
+1. **Current week:** Week 6
+2. **This week's focus:** Data Input and Storage
+3. **Key tasks:**
+   - Read Chapter 7
+   - Download and work through Lecture 4 notebook
+   - Complete data I/O exercises
+   - Submit Homework 2 by Oct 16, 22:00
+4. **Available resources:**
+   - Lecture 4 Quiz (30 questions)
+   - Notebook materials on schedule
+5. **What's coming:**
+   - Practice session next week
+   - Midterm 1 in 2 weeks
+
+**Files Modified:**
+- `src/data/this-week.yml` - Complete content update
+
+**Build Status:** ✅ Built successfully  
+**Deployment Status:** ✅ Committed (4ebbe72) and pushed to GitHub  
+**Live Status:** This Week section will show Week 6 in 1-2 minutes
+
+**Website URL:** https://nghianguyen7171.github.io/DS_for_Bussiness/
+
+**Visual Changes:**
+- "This Week" section at top of homepage now shows Week 6
+- Highlights box updated with current week's tasks
+- Announcements relevant to Data Input and Storage
+- Upcoming events show Week 7 and Week 8 Midterm
+
+**Status:** ✅ Complete - This Week section updated to Week 6!
+
