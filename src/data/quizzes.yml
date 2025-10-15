@@ -42,4 +42,16 @@ quizzes:
       - "Chuẩn hóa và biến đổi dữ liệu"
       - "Xử lý chuỗi ký tự (String Processing)"
       - "Mã hóa dữ liệu phân loại (Categorical Encoding)"
+    
+  - id: "quiz6"
+    title: "Lecture 6 Quiz: Sắp xếp và biến đổi dữ liệu"
+    week: 6
+    description: "30 câu hỏi trắc nghiệm về MultiIndex, Data Merging, Concatenation, và Data Reshaping trong Pandas."
+    link: "quiz/Lec06_quiz/index.html"
+    topics:
+      - "Hierarchical Indexing (MultiIndex)"
+      - "Data Merging với pandas.merge"
+      - "Data Concatenation với pandas.concat"
+      - "Data Reshaping (melt, pivot, stack, unstack)"
+      - "Advanced data transformation techniques"
 

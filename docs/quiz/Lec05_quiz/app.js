@@ -100,413 +100,322 @@ class QuizApp {
             {
                 "id": 11,
                 "section": "Xử lý dữ liệu trùng lặp",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 1, 3], 'B': [4, 5, 4, 6]})\nresult = df.duplicated().sum()\nprint(result)",
-                "question": "Số hàng bị trùng lặp là?",
+                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 2, 3], 'B': [4, 5, 5, 6]})\nresult = df.duplicated().sum()\nprint(result)",
+                "question": "Số lượng hàng trùng lặp được phát hiện là?",
                 "options": ["0", "1", "2", "3"],
                 "correct": 1,
-                "explanation": "Hàng [1, 4] xuất hiện 2 lần (index 0 và 2). duplicated() trả về True cho lần xuất hiện thứ 2."
+                "explanation": "duplicated() trả về True cho hàng thứ 3 (index 2) vì giống hệt hàng thứ 2 (index 1)."
             },
             {
                 "id": 12,
                 "section": "Xử lý dữ liệu trùng lặp",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 1, 2, 2], 'B': [3, 3, 4, 4]})\nresult = df.drop_duplicates()\nprint(len(result))",
-                "question": "Số hàng còn lại sau drop_duplicates() là?",
-                "options": ["1", "2", "3", "4"],
+                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 2, 3], 'B': [4, 5, 5, 6]})\nresult = df.drop_duplicates()\nprint(len(result))",
+                "question": "Số hàng còn lại sau khi loại bỏ trùng lặp là?",
+                "options": ["2", "3", "4", "1"],
                 "correct": 1,
-                "explanation": "Có 2 hàng duy nhất: [1, 3] và [2, 4]. Các bản sao được loại bỏ."
+                "explanation": "drop_duplicates() loại bỏ hàng trùng lặp đầu tiên, giữ lại hàng đầu tiên của mỗi nhóm trùng lặp."
             },
             {
                 "id": 13,
                 "section": "Xử lý dữ liệu trùng lặp",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 1], 'B': [3, 4, 5]})\nresult = df.duplicated(subset=['A']).sum()\nprint(result)",
-                "question": "Số hàng trùng lặp theo cột A là?",
-                "options": ["0", "1", "2", "3"],
-                "correct": 1,
-                "explanation": "Cột A có giá trị 1 xuất hiện 2 lần. duplicated() đánh dấu lần xuất hiện thứ 2."
+                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 2, 2], 'B': [4, 5, 5, 6]})\nresult = df.drop_duplicates(subset=['A'])\nprint(len(result))",
+                "question": "Số hàng còn lại khi chỉ xét trùng lặp cột A là?",
+                "options": ["2", "3", "4", "1"],
+                "correct": 0,
+                "explanation": "subset=['A'] chỉ xét trùng lặp trong cột A. Có 3 giá trị khác nhau: 1, 2, 2 (chỉ giữ 1 giá trị 2)."
             },
             {
                 "id": 14,
-                "section": "Chuẩn hóa dữ liệu",
-                "code": "from sklearn.preprocessing import MinMaxScaler\nimport pandas as pd\ndf = pd.DataFrame({'A': [0, 5, 10]})\nscaler = MinMaxScaler()\nresult = scaler.fit_transform(df[['A']])\nprint(result.flatten().tolist())",
-                "question": "Kết quả sau Min-Max scaling là?",
-                "options": ["[0.0, 0.5, 1.0]", "[0, 5, 10]", "[-1, 0, 1]", "[0.1, 0.5, 0.9]"],
-                "correct": 0,
-                "explanation": "Min-Max: (X-min)/(max-min) = (0-0)/(10-0)=0, (5-0)/(10-0)=0.5, (10-0)/(10-0)=1"
+                "section": "Xử lý dữ liệu trùng lặp",
+                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 2, 3], 'B': [4, 5, 5, 6]})\nresult = df.drop_duplicates(keep='last')\nprint(result.index.tolist())",
+                "question": "Index của các hàng còn lại với keep='last' là?",
+                "options": ["[0, 1, 3]", "[0, 2, 3]", "[0, 1, 2]", "[1, 2, 3]"],
+                "correct": 1,
+                "explanation": "keep='last' giữ lại hàng cuối cùng của mỗi nhóm trùng lặp. Hàng index 2 được giữ thay vì index 1."
             },
             {
                 "id": 15,
                 "section": "Chuẩn hóa dữ liệu",
-                "code": "from sklearn.preprocessing import StandardScaler\nimport pandas as pd\ndf = pd.DataFrame({'A': [0, 3, 6]})\nscaler = StandardScaler()\nresult = scaler.fit_transform(df[['A']])\nprint(round(result[1][0], 2))",
-                "question": "Giá trị sau Standard scaling tại vị trí giữa (làm tròn 2 chữ số) là?",
-                "options": ["0.0", "1.0", "-1.0", "0.5"],
+                "code": "from sklearn.preprocessing import MinMaxScaler\nimport pandas as pd\ndata = [[1], [2], [3], [4], [5]]\nscaler = MinMaxScaler()\nresult = scaler.fit_transform(data)\nprint(result[0][0])",
+                "question": "Giá trị đầu tiên sau khi MinMaxScaler là?",
+                "options": ["0.0", "0.25", "0.5", "1.0"],
                 "correct": 0,
-                "explanation": "Mean=[0,3,6] = 3, Std≈2.45. Z-score tại 3: (3-3)/2.45 = 0"
+                "explanation": "MinMaxScaler: (1-1)/(5-1) = 0/4 = 0.0"
             },
             {
                 "id": 16,
                 "section": "Chuẩn hóa dữ liệu",
-                "code": "from sklearn.preprocessing import RobustScaler\nimport pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3, 100]})  # có outlier\nscaler = RobustScaler()\nresult = scaler.fit_transform(df[['A']])\nprint(result[1][0])",
-                "question": "Giá trị sau Robust scaling tại index 1 là?",
-                "options": ["-0.5", "0.0", "0.5", "1.0"],
+                "code": "from sklearn.preprocessing import StandardScaler\nimport pandas as pd\ndata = [[1], [2], [3], [4], [5]]\nscaler = StandardScaler()\nresult = scaler.fit_transform(data)\nprint(round(result[2][0], 2))",
+                "question": "Giá trị ở giữa (index 2) sau StandardScaler là?",
+                "options": ["0.0", "1.0", "-1.0", "2.0"],
                 "correct": 0,
-                "explanation": "Median=2.5, IQR=Q3-Q1=3-2=1. Robust: (2-2.5)/1 = -0.5"
+                "explanation": "StandardScaler chuẩn hóa về mean=0, std=1. Giá trị 3 ở giữa sẽ có z-score ≈ 0.0"
             },
             {
                 "id": 17,
                 "section": "Chuẩn hóa dữ liệu",
-                "code": "from sklearn.preprocessing import MinMaxScaler\nimport pandas as pd\ndf = pd.DataFrame({'A': [10, 20, 30, 40]})\nscaler = MinMaxScaler(feature_range=(0, 5))\nresult = scaler.fit_transform(df[['A']])\nprint(result[2][0])",
-                "question": "Giá trị sau Min-Max scaling với range (0,5) tại index 2 là?",
-                "options": ["2.5", "3.0", "3.33", "10.0"],
-                "correct": 2,
-                "explanation": "Min-Max với range (0,5): 5*(30-10)/(40-10) = 5*20/30 = 100/30 ≈ 3.33"
+                "code": "from sklearn.preprocessing import RobustScaler\nimport pandas as pd\ndata = [[1], [2], [3], [4], [100]]\nscaler = RobustScaler()\nresult = scaler.fit_transform(data)\nprint(round(result[0][0], 2))",
+                "question": "Giá trị đầu tiên sau RobustScaler với outlier 100 là?",
+                "options": ["-1.0", "0.0", "1.0", "-0.5"],
+                "correct": 0,
+                "explanation": "RobustScaler sử dụng median và IQR, ít bị ảnh hưởng bởi outlier. Giá trị 1 sẽ được chuẩn hóa về khoảng -1.0"
             },
             {
                 "id": 18,
                 "section": "Chuẩn hóa dữ liệu",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [2, 4, 6, 8, 10]})\nnormalized = (df['A'] - df['A'].min()) / (df['A'].max() - df['A'].min())\nprint(normalized[2])",
-                "question": "Giá trị chuẩn hóa Min-Max tại index 2 là?",
-                "options": ["0.25", "0.5", "0.75", "1.0"],
-                "correct": 1,
-                "explanation": "(6-2)/(10-2) = 4/8 = 0.5"
+                "code": "from sklearn.preprocessing import MinMaxScaler\nimport pandas as pd\ndf = pd.DataFrame({'A': [10, 20, 30], 'B': [1, 2, 3]})\nscaler = MinMaxScaler()\nresult = scaler.fit_transform(df)\nprint(result[0][1])",
+                "question": "Giá trị của cột B (index 1) ở hàng đầu tiên sau MinMaxScaler là?",
+                "options": ["0.0", "0.5", "1.0", "0.25"],
+                "correct": 0,
+                "explanation": "Cột B: [1, 2, 3] → MinMaxScaler: (1-1)/(3-1) = 0/2 = 0.0"
             },
             {
                 "id": 19,
-                "section": "Chuẩn hóa dữ liệu",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 3, 5, 7, 9]})\nstandardized = (df['A'] - df['A'].mean()) / df['A'].std()\nprint(round(standardized[4], 2))",
-                "question": "Giá trị standardized tại index 4 (làm tròn 2 chữ số) là?",
-                "options": ["1.26", "1.41", "1.5", "2.0"],
+                "section": "Xử lý chuỗi ký tự",
+                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['  Hello  ', '  World  ', 'Python']})\nresult = df['text'].str.strip()\nprint(result[0])",
+                "question": "Kết quả của str.strip() trên chuỗi đầu tiên là?",
+                "options": ["'  Hello  '", "'Hello'", "'Hello  '", "'  Hello'"],
                 "correct": 1,
-                "explanation": "Mean=5, Std≈2.83. Z-score tại 9: (9-5)/2.83 ≈ 1.41"
+                "explanation": "str.strip() loại bỏ khoảng trắng ở đầu và cuối chuỗi."
             },
             {
                 "id": 20,
                 "section": "Xử lý chuỗi ký tự",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['  Hello World  ', 'Python', '  Data  ']})\nresult = df['text'].str.strip().str.upper()\nprint(result.tolist())",
-                "question": "Kết quả sau khi strip() và upper() là?",
-                "options": ["['HELLO WORLD', 'PYTHON', 'DATA']", "['  HELLO WORLD  ', 'PYTHON', '  DATA  ']", 
-                          "['hello world', 'python', 'data']", "['Hello World', 'Python', 'Data']"],
-                "correct": 0,
-                "explanation": "strip() loại bỏ khoảng trắng đầu cuối, upper() chuyển thành chữ hoa"
+                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['hello world', 'python programming', 'data science']})\nresult = df['text'].str.upper()\nprint(result[0])",
+                "question": "Kết quả của str.upper() trên chuỗi đầu tiên là?",
+                "options": ["'hello world'", "'HELLO WORLD'", "'Hello World'", "'Hello WORLD'"],
+                "correct": 1,
+                "explanation": "str.upper() chuyển tất cả ký tự thành chữ hoa."
             },
             {
                 "id": 21,
                 "section": "Xử lý chuỗi ký tự",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['apple', 'banana', 'cherry']})\nresult = df['text'].str.contains('an')\nprint(result.tolist())",
-                "question": "Kết quả kiểm tra contains('an') là?",
-                "options": ["[False, True, False]", "[True, True, False]", "[False, False, True]", "[True, False, True]"],
-                "correct": 0,
-                "explanation": "Chỉ 'banana' chứa chuỗi 'an'"
+                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['Hello World', 'Python Programming', 'Data Science']})\nresult = df['text'].str.split()\nprint(len(result[0]))",
+                "question": "Số từ trong chuỗi đầu tiên sau str.split() là?",
+                "options": ["1", "2", "3", "4"],
+                "correct": 1,
+                "explanation": "str.split() tách chuỗi thành list các từ. 'Hello World' → ['Hello', 'World'] → 2 từ."
             },
             {
                 "id": 22,
                 "section": "Xử lý chuỗi ký tự",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['Hello World', 'Python Data', 'Machine Learning']})\nresult = df['text'].str.split().str[0]\nprint(result.tolist())",
-                "question": "Kết quả lấy từ đầu tiên sau split() là?",
-                "options": ["['Hello', 'Python', 'Machine']", "['World', 'Data', 'Learning']", 
-                          "['Hello World', 'Python Data', 'Machine Learning']", "['H', 'P', 'M']"],
-                "correct": 0,
-                "explanation": "split() tách theo khoảng trắng, [0] lấy phần tử đầu tiên"
+                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['hello', 'world', 'python']})\nresult = df['text'].str.contains('o')\nprint(result.sum())",
+                "question": "Số chuỗi chứa ký tự 'o' là?",
+                "options": ["1", "2", "3", "0"],
+                "correct": 1,
+                "explanation": "str.contains('o') kiểm tra chuỗi nào chứa 'o'. 'hello' và 'world' chứa 'o' → 2 chuỗi."
             },
             {
                 "id": 23,
                 "section": "Xử lý chuỗi ký tự",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['abc123def', '456ghi789', 'xyz000']})\nresult = df['text'].str.extract(r'(\\\\d+)')\nprint(result[0].tolist())",
-                "question": "Kết quả extract số từ chuỗi là?",
-                "options": ["['123', '456', '000']", "['abc', 'ghi', 'xyz']", "['def', '789', '000']", "['123', '789', '000']"],
-                "correct": 0,
-                "explanation": "Regex \\\\d+ tìm chuỗi số đầu tiên: 123, 456, 000"
+                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['123abc', '456def', '789ghi']})\nresult = df['text'].str.replace(r'[0-9]', '', regex=True)\nprint(result[0])",
+                "question": "Kết quả của regex replace trên chuỗi đầu tiên là?",
+                "options": ["'123abc'", "'abc'", "'123'", "'123abc'"],
+                "correct": 1,
+                "explanation": "Regex [0-9] khớp với số từ 0-9. str.replace() thay thế tất cả số bằng chuỗi rỗng."
             },
             {
                 "id": 24,
-                "section": "Xử lý chuỗi ký tự",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'text': ['apple,banana', 'orange;grape', 'cherry:lemon']})\nresult = df['text'].str.replace(r'[,;:]', '-', regex=True)\nprint(result.tolist())",
-                "question": "Kết quả sau khi replace các ký tự đặc biệt bằng '-' là?",
-                "options": ["['apple-banana', 'orange-grape', 'cherry-lemon']", "['apple,banana', 'orange;grape', 'cherry:lemon']",
-                          "['apple banana', 'orange grape', 'cherry lemon']", "['apple_banana', 'orange_grape', 'cherry_lemon']"],
+                "section": "Dữ liệu phân loại",
+                "code": "from sklearn.preprocessing import LabelEncoder\nimport pandas as pd\nle = LabelEncoder()\ndata = ['red', 'blue', 'red', 'green']\nresult = le.fit_transform(data)\nprint(result)",
+                "question": "Kết quả của LabelEncoder là?",
+                "options": ["[0, 1, 0, 2]", "[1, 2, 1, 3]", "[2, 0, 2, 1]", "[0, 1, 2, 0]"],
                 "correct": 0,
-                "explanation": "Regex [,;:] khớp với bất kỳ ký tự nào trong ngoặc vuông và thay bằng '-'"
+                "explanation": "LabelEncoder gán số cho mỗi giá trị duy nhất: blue=0, green=1, red=2. Nhưng thứ tự alphabet: blue=0, green=1, red=2."
             },
             {
                 "id": 25,
-                "section": "Xử lý chuỗi ký tự",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'email': ['user@gmail.com', 'test@yahoo.com', 'admin@hotmail.com']})\nresult = df['email'].str.extract(r'(.+)@(.+)\\\\.(.+)')\nprint(result[1].tolist())",
-                "question": "Kết quả extract domain (phần giữa @ và dấu .) là?",
-                "options": ["['gmail', 'yahoo', 'hotmail']", "['user', 'test', 'admin']", "['com', 'com', 'com']", "['gmail.com', 'yahoo.com', 'hotmail.com']"],
-                "correct": 0,
-                "explanation": "Group thứ 2 (.+) trong regex capture domain name: gmail, yahoo, hotmail"
+                "section": "Dữ liệu phân loại",
+                "code": "import pandas as pd\ndf = pd.DataFrame({'color': ['red', 'blue', 'red', 'green']})\nresult = pd.get_dummies(df['color'])\nprint(result.shape[1])",
+                "question": "Số cột sau One-Hot Encoding là?",
+                "options": ["1", "2", "3", "4"],
+                "correct": 2,
+                "explanation": "get_dummies() tạo một cột cho mỗi giá trị duy nhất. Có 3 giá trị: blue, green, red → 3 cột."
             },
             {
                 "id": 26,
-                "section": "Xử lý dữ liệu phân loại",
-                "code": "from sklearn.preprocessing import LabelEncoder\nimport pandas as pd\ndf = pd.DataFrame({'color': ['red', 'blue', 'green', 'red', 'blue']})\nle = LabelEncoder()\nencoded = le.fit_transform(df['color'])\nprint(encoded.tolist())",
-                "question": "Kết quả Label Encoding là?",
-                "options": ["[2, 0, 1, 2, 0]", "[0, 1, 2, 0, 1]", "[1, 2, 3, 1, 2]", "[0, 2, 1, 0, 2]"],
+                "section": "Dữ liệu phân loại",
+                "code": "import pandas as pd\ndf = pd.DataFrame({'size': ['S', 'M', 'L', 'S', 'M']})\nresult = df['size'].astype('category').cat.codes\nprint(result.tolist())",
+                "question": "Kết quả của categorical encoding là?",
+                "options": ["[0, 1, 2, 0, 1]", "[1, 2, 0, 1, 2]", "[2, 1, 0, 2, 1]", "[0, 2, 1, 0, 2]"],
                 "correct": 0,
-                "explanation": "LabelEncoder sắp xếp alphabetically: blue=0, green=1, red=2"
+                "explanation": "astype('category').cat.codes gán số theo thứ tự alphabet: L=0, M=1, S=2."
             },
             {
                 "id": 27,
-                "section": "Xử lý dữ liệu phân loại",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'animal': ['cat', 'dog', 'cat']})\nresult = pd.get_dummies(df['animal'])\nprint(result.columns.tolist())",
-                "question": "Tên các cột sau One-Hot Encoding là?",
-                "options": ["['cat', 'dog']", "['animal_cat', 'animal_dog']", "['0', '1']", "['cat_1', 'dog_1']"],
-                "correct": 0,
-                "explanation": "get_dummies() tạo cột với tên là các giá trị unique: 'cat', 'dog'"
+                "section": "Xử lý dữ liệu thiếu",
+                "code": "from sklearn.impute import KNNImputer\nimport pandas as pd\ndf = pd.DataFrame({'A': [1, 2, None], 'B': [4, None, 6]})\nimputer = KNNImputer(n_neighbors=2)\nresult = imputer.fit_transform(df)\nprint(round(result[1][1], 1))",
+                "question": "Giá trị được điền vào vị trí [1,1] bằng KNNImputer là?",
+                "options": ["4.0", "5.0", "6.0", "3.0"],
+                "correct": 1,
+                "explanation": "KNNImputer sử dụng k=2 neighbors gần nhất để dự đoán giá trị thiếu. Giá trị được điền sẽ là trung bình của neighbors."
             },
             {
                 "id": 28,
-                "section": "Xử lý dữ liệu phân loại",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'size': ['S', 'M', 'L', 'M', 'S']})\ndummies = pd.get_dummies(df['size'])\nprint(dummies.loc[1].tolist())",
-                "question": "Giá trị One-Hot tại hàng index 1 (size='M') là?",
-                "options": ["[0, 1, 0]", "[1, 0, 0]", "[0, 0, 1]", "[1, 1, 1]"],
+                "section": "Xử lý dữ liệu thiếu",
+                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, None, 4], 'B': [5, None, 7, 8]})\nresult = df.fillna({'A': df['A'].mean(), 'B': df['B'].median()})\nprint(round(result['A'][2], 1))",
+                "question": "Giá trị được điền vào cột A với fillna dictionary là?",
+                "options": ["2.3", "2.5", "2.0", "3.0"],
                 "correct": 0,
-                "explanation": "Với order [L, M, S], giá trị 'M' được encode thành [0, 1, 0]"
+                "explanation": "fillna({'A': mean, 'B': median}) điền từng cột với phương pháp khác nhau. Mean của [1,2,4] = 7/3 ≈ 2.3"
             },
             {
                 "id": 29,
-                "section": "Xử lý dữ liệu phân loại",
-                "code": "from sklearn.preprocessing import OneHotEncoder\nimport pandas as pd\ndf = pd.DataFrame({'grade': ['A', 'B', 'C', 'A']})\nencoder = OneHotEncoder(sparse_output=False)\nencoded = encoder.fit_transform(df[['grade']])\nprint(encoded.shape)",
-                "question": "Kích thước ma trận sau One-Hot Encoding là?",
-                "options": ["(4, 3)", "(3, 4)", "(4, 1)", "(1, 3)"],
-                "correct": 0,
-                "explanation": "4 hàng và 3 cột (A, B, C)"
+                "section": "Xử lý dữ liệu trùng lặp",
+                "code": "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 2, 3], 'B': [4, 5, 5, 6]})\nresult = df.drop_duplicates(inplace=False)\nprint(df.shape[0])",
+                "question": "Số hàng của DataFrame gốc sau drop_duplicates(inplace=False) là?",
+                "options": ["3", "4", "2", "1"],
+                "correct": 1,
+                "explanation": "inplace=False không thay đổi DataFrame gốc, chỉ trả về DataFrame mới. DataFrame gốc vẫn có 4 hàng."
             },
             {
                 "id": 30,
-                "section": "Xử lý dữ liệu phân loại",
-                "code": "import pandas as pd\ndf = pd.DataFrame({'city': ['HN', 'HCM', 'DN', 'HN', 'HCM']})\nencoded = pd.get_dummies(df['city'], prefix='city')\nprint(encoded.sum().tolist())",
-                "question": "Tổng giá trị mỗi cột One-Hot là?",
-                "options": ["[1, 2, 2]", "[2, 1, 2]", "[2, 2, 1]", "[1, 1, 1]"],
-                "correct": 2,
-                "explanation": "HN xuất hiện 2 lần, HCM 2 lần, DN 1 lần → [2, 2, 1]"
+                "section": "Chuẩn hóa dữ liệu",
+                "code": "from sklearn.preprocessing import StandardScaler\nimport pandas as pd\ndata = [[1], [2], [3], [4], [5]]\nscaler = StandardScaler()\nscaler.fit(data)\nresult = scaler.transform([[6]])\nprint(round(result[0][0], 2))",
+                "question": "Giá trị chuẩn hóa của số 6 với scaler đã fit là?",
+                "options": ["1.41", "2.0", "1.0", "0.0"],
+                "correct": 0,
+                "explanation": "Scaler fit với mean=3, std≈1.58. Transform(6): (6-3)/1.58 ≈ 1.41"
             }
         ];
         
-        this.currentQuestionIndex = 0;
-        this.selectedAnswer = null;
-        this.answerRevealed = false;
-        this.questionStates = {}; // Store states for each question
+        this.currentQuestion = 0;
+        this.totalQuestions = this.questions.length;
+        this.userAnswers = new Array(this.totalQuestions).fill(null);
+        this.showAnswer = false;
         
-        this.initializeElements();
+        this.init();
+    }
+    
+    init() {
+        this.updateQuestion();
         this.bindEvents();
-        this.displayQuestion();
     }
-
-    initializeElements() {
-        // Get DOM elements
-        this.currentQuestionEl = document.querySelector('.current-question');
-        this.totalQuestionsEl = document.querySelector('.total-questions');
-        this.progressFillEl = document.querySelector('.progress-fill');
-        this.sectionNameEl = document.getElementById('section-name');
-        this.questionCodeEl = document.getElementById('question-code');
-        this.questionTitleEl = document.getElementById('question-title');
-        this.explanationContainer = document.getElementById('explanation-container');
-        this.explanationText = document.getElementById('explanation-text');
-        this.hintButton = document.getElementById('hint-button');
-        this.prevButton = document.getElementById('prev-button');
-        this.nextButton = document.getElementById('next-button');
-        
-        // Get option elements
-        this.optionElements = [];
-        this.optionTextElements = [];
-        this.radioInputs = [];
-        for (let i = 0; i < 4; i++) {
-            this.optionElements.push(document.querySelector(`[data-option="${i}"]`));
-            this.optionTextElements.push(document.getElementById(`option-${i}-text`));
-            this.radioInputs.push(document.getElementById(`option-${i}`));
-        }
-        
-        // Set total questions
-        this.totalQuestionsEl.textContent = this.questions.length;
-    }
-
+    
     bindEvents() {
         // Option selection
-        this.optionElements.forEach((optionEl, index) => {
-            optionEl.addEventListener('click', () => {
-                if (!this.answerRevealed) {
-                    this.selectAnswer(index);
-                }
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                if (this.showAnswer) return;
+                
+                const optionIndex = parseInt(e.currentTarget.dataset.option);
+                this.userAnswers[this.currentQuestion] = optionIndex;
+                
+                // Update UI
+                document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+                e.currentTarget.classList.add('selected');
+                
+                // Enable hint button
+                document.getElementById('hint-button').disabled = false;
             });
         });
-
+        
         // Hint/Answer button
-        this.hintButton.addEventListener('click', () => {
-            if (!this.answerRevealed) {
-                this.showAnswer();
-            } else {
-                this.nextQuestion();
+        document.getElementById('hint-button').addEventListener('click', () => {
+            this.showAnswer = !this.showAnswer;
+            this.updateAnswerDisplay();
+        });
+        
+        // Navigation buttons
+        document.getElementById('prev-button').addEventListener('click', () => {
+            if (this.currentQuestion > 0) {
+                this.currentQuestion--;
+                this.showAnswer = false;
+                this.updateQuestion();
             }
         });
-
-        // Navigation buttons
-        this.prevButton.addEventListener('click', () => {
-            this.prevQuestion();
+        
+        document.getElementById('next-button').addEventListener('click', () => {
+            if (this.currentQuestion < this.totalQuestions - 1) {
+                this.currentQuestion++;
+                this.showAnswer = false;
+                this.updateQuestion();
+            }
         });
-
-        this.nextButton.addEventListener('click', () => {
-            this.nextQuestion();
-        });
     }
-
-    selectAnswer(answerIndex) {
-        // Save current state before changing
-        this.saveQuestionState();
-        
-        // Remove previous selection
-        this.optionElements.forEach(el => el.classList.remove('selected'));
-        this.radioInputs.forEach(input => input.checked = false);
-        
-        // Add selection to clicked option
-        this.optionElements[answerIndex].classList.add('selected');
-        this.radioInputs[answerIndex].checked = true;
-        this.selectedAnswer = answerIndex;
-        
-        // Update saved state
-        this.saveQuestionState();
-    }
-
-    showAnswer() {
-        const currentQuestion = this.questions[this.currentQuestionIndex];
-        
-        // Show correct answer with enhanced highlighting
-        this.optionElements[currentQuestion.correct].classList.add('correct');
-        
-        // Show explanation
-        this.explanationText.textContent = currentQuestion.explanation;
-        this.explanationContainer.classList.remove('hidden');
-        
-        // Change button text
-        this.hintButton.textContent = 'Câu tiếp theo';
-        
-        this.answerRevealed = true;
-        this.saveQuestionState();
-    }
-
-    displayQuestion() {
-        const currentQuestion = this.questions[this.currentQuestionIndex];
+    
+    updateQuestion() {
+        const question = this.questions[this.currentQuestion];
         
         // Update progress
-        this.currentQuestionEl.textContent = this.currentQuestionIndex + 1;
-        const progressPercent = ((this.currentQuestionIndex + 1) / this.questions.length) * 100;
-        this.progressFillEl.style.width = `${progressPercent}%`;
+        document.querySelector('.current-question').textContent = this.currentQuestion + 1;
+        document.querySelector('.progress-fill').style.width = 
+            `${((this.currentQuestion + 1) / this.totalQuestions) * 100}%`;
         
         // Update section
-        this.sectionNameEl.textContent = currentQuestion.section;
+        document.getElementById('section-name').textContent = question.section;
         
-        // Update code block
-        this.questionCodeEl.textContent = currentQuestion.code;
-        hljs.highlightElement(this.questionCodeEl);
+        // Update code
+        document.getElementById('question-code').textContent = question.code;
         
         // Update question
-        this.questionTitleEl.textContent = currentQuestion.question;
+        document.getElementById('question-title').textContent = question.question;
         
         // Update options
-        currentQuestion.options.forEach((option, index) => {
-            this.optionTextElements[index].textContent = option;
+        question.options.forEach((option, index) => {
+            document.getElementById(`option-${index}-text`).textContent = option;
         });
         
-        // Reset UI state first
-        this.resetQuestionState();
+        // Reset UI
+        document.querySelectorAll('.option').forEach(opt => {
+            opt.classList.remove('selected', 'correct', 'incorrect');
+        });
         
-        // Then restore saved state if it exists
-        this.restoreQuestionState();
+        // Restore user answer if exists
+        if (this.userAnswers[this.currentQuestion] !== null) {
+            const selectedOption = document.querySelector(`[data-option="${this.userAnswers[this.currentQuestion]}"]`);
+            selectedOption.classList.add('selected');
+        }
         
         // Update navigation buttons
-        this.updateNavigationButtons();
+        document.getElementById('prev-button').disabled = this.currentQuestion === 0;
+        document.getElementById('next-button').disabled = this.currentQuestion === this.totalQuestions - 1;
+        
+        // Reset answer display
+        document.getElementById('explanation-container').classList.add('hidden');
+        document.getElementById('hint-button').textContent = 'Gợi ý/Xem đáp án';
+        document.getElementById('hint-button').disabled = this.userAnswers[this.currentQuestion] === null;
+        
+        // Highlight code
+        if (window.hljs) {
+            hljs.highlightAll();
+        }
     }
-
-    resetQuestionState() {
-        // Clear all selections and highlights
-        this.optionElements.forEach(el => {
-            el.classList.remove('selected', 'correct');
-        });
-        this.radioInputs.forEach(input => {
-            input.checked = false;
-        });
+    
+    updateAnswerDisplay() {
+        const question = this.questions[this.currentQuestion];
+        const explanationContainer = document.getElementById('explanation-container');
+        const hintButton = document.getElementById('hint-button');
         
-        // Hide explanation
-        this.explanationContainer.classList.add('hidden');
-        
-        // Reset button text
-        this.hintButton.textContent = 'Gợi ý/Xem đáp án';
-        
-        // Reset state variables
-        this.selectedAnswer = null;
-        this.answerRevealed = false;
-    }
-
-    saveQuestionState() {
-        this.questionStates[this.currentQuestionIndex] = {
-            selectedAnswer: this.selectedAnswer,
-            answerRevealed: this.answerRevealed
-        };
-    }
-
-    restoreQuestionState() {
-        const savedState = this.questionStates[this.currentQuestionIndex];
-        
-        if (savedState) {
-            this.selectedAnswer = savedState.selectedAnswer;
-            this.answerRevealed = savedState.answerRevealed;
+        if (this.showAnswer) {
+            // Show explanation
+            document.getElementById('explanation-text').textContent = question.explanation;
+            explanationContainer.classList.remove('hidden');
+            hintButton.textContent = 'Ẩn đáp án';
             
-            // Restore selection
-            if (this.selectedAnswer !== null) {
-                this.optionElements[this.selectedAnswer].classList.add('selected');
-                this.radioInputs[this.selectedAnswer].checked = true;
-            }
+            // Highlight correct answer
+            document.querySelectorAll('.option').forEach((opt, index) => {
+                opt.classList.remove('correct', 'incorrect');
+                if (index === question.correct) {
+                    opt.classList.add('correct');
+                } else if (this.userAnswers[this.currentQuestion] === index) {
+                    opt.classList.add('incorrect');
+                }
+            });
+        } else {
+            // Hide explanation
+            explanationContainer.classList.add('hidden');
+            hintButton.textContent = 'Gợi ý/Xem đáp án';
             
-            // Restore answer reveal state
-            if (this.answerRevealed) {
-                const currentQuestion = this.questions[this.currentQuestionIndex];
-                this.optionElements[currentQuestion.correct].classList.add('correct');
-                this.explanationText.textContent = currentQuestion.explanation;
-                this.explanationContainer.classList.remove('hidden');
-                this.hintButton.textContent = 'Câu tiếp theo';
-            }
+            // Remove highlighting
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
         }
-    }
-
-    updateNavigationButtons() {
-        // Previous button
-        this.prevButton.disabled = (this.currentQuestionIndex === 0);
-        
-        // Next button - always enabled, will handle end case
-        this.nextButton.disabled = false;
-        
-        // Update next button text for last question
-        if (this.currentQuestionIndex === this.questions.length - 1) {
-            this.nextButton.textContent = 'Hoàn thành';
-        } else {
-            this.nextButton.innerHTML = 'Câu tiếp <span class="nav-icon">›</span>';
-        }
-    }
-
-    prevQuestion() {
-        if (this.currentQuestionIndex > 0) {
-            this.saveQuestionState();
-            this.currentQuestionIndex--;
-            this.displayQuestion();
-        }
-    }
-
-    nextQuestion() {
-        if (this.currentQuestionIndex < this.questions.length - 1) {
-            this.saveQuestionState();
-            this.currentQuestionIndex++;
-            this.displayQuestion();
-        } else {
-            // End of quiz
-            this.showCompletionMessage();
-        }
-    }
-
-    showCompletionMessage() {
-        alert('Chúc mừng! Bạn đã hoàn thành tất cả 30 câu hỏi.');
     }
 }
 
-// Initialize the quiz when the page loads
+// Initialize quiz when page loads
 document.addEventListener('DOMContentLoaded', () => {
     new QuizApp();
 });

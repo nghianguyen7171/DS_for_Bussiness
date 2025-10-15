@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Lecture 6 - Sắp xếp và biến đổi dữ liệu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Trang chủ -->
+    <div id="homepage" class="screen active">
+        <div class="container">
+            <div class="hero-content">
+                <h1>📊 Quiz Lecture 6</h1>
+                <h2>Sắp xếp và biến đổi dữ liệu</h2>
+                <p class="subtitle">30 câu hỏi trắc nghiệm tự động chấm điểm</p>
+                <p class="description">Kiểm tra kiến thức về MultiIndex, Data Merging, Concatenation, và Data Reshaping</p>
+                <div class="quiz-info">
+                    <div class="info-item">📝 30 câu hỏi</div>
+                    <div class="info-item">⏱️ Không giới hạn thời gian</div>
+                    <div class="info-item">💡 Có gợi ý</div>
+                </div>
+                <button class="btn btn--primary btn--lg" id="startBtn">
+                    <span>🚀</span> Bắt đầu làm bài
+                </button>
+                <p class="note">💡 Làm quiz này TRƯỚC KHI làm bài tập code trong notebook!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trang câu hỏi -->
+    <div id="quizpage" class="screen">
+        <div class="container">
+            <!-- Progress bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">Câu 1/30</div>
+            </div>
+
+            <!-- Card câu hỏi -->
+            <div class="quiz-card">
+                <!-- Header với category -->
+                <div class="quiz-header">
+                    <span class="category-badge" id="categoryBadge">MultiIndex</span>
+                    <h2 class="question-title" id="questionTitle">Câu 1/30</h2>
+                </div>
+
+                <!-- Code block -->
+                <div class="code-container">
+                    <pre><code id="codeBlock">import pandas as pd
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+df_indexed = df.set_index(['A', 'B'])
+print(df_indexed.index)</code></pre>
+                </div>
+
+                <!-- Question text -->
+                <div class="question-text" id="questionText">
+                    Kết quả của đoạn code trên là gì?
+                </div>
+
+                <!-- Options -->
+                <div class="options-container" id="optionsContainer">
+                    <div class="option" data-option="0">
+                        <span class="option-label">A</span>
+                        <span class="option-text"></span>
+                    </div>
+                    <div class="option" data-option="1">
+                        <span class="option-label">B</span>
+                        <span class="option-text"></span>
+                    </div>
+                    <div class="option" data-option="2">
+                        <span class="option-label">C</span>
+                        <span class="option-text"></span>
+                    </div>
+                    <div class="option" data-option="3">
+                        <span class="option-label">D</span>
+                        <span class="option-text"></span>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="quiz-actions">
+                    <button class="btn btn--secondary" id="hintBtn">
+                        💡 Gợi ý
+                    </button>
+                    <button class="btn btn--outline" id="showAnswerBtn">
+                        👁️ Xem đáp án
+                    </button>
+                    <button class="btn btn--primary hidden" id="nextBtn">
+                        ➡️ Câu tiếp theo
+                    </button>
+                </div>
+
+                <!-- Hint tooltip -->
+                <div class="hint-tooltip hidden" id="hintTooltip">
+                    <div class="hint-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trang kết thúc -->
+    <div id="endpage" class="screen">
+        <div class="container">
+            <div class="end-content">
+                <div class="end-icon">🎉</div>
+                <h1>Hoàn thành Quiz!</h1>
+                <p class="end-message">Bạn đã hoàn thành tất cả 30 câu hỏi về Sắp xếp và biến đổi dữ liệu</p>
+                <div class="end-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Câu hỏi</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">✅</span>
+                        <span class="stat-label">Hoàn thành</span>
+                    </div>
+                </div>
+                <div class="next-steps">
+                    <h3>🎯 Bước tiếp theo:</h3>
+                    <p>✅ Xem lại các câu sai (nếu có)</p>
+                    <p>✅ Làm bài tập code trong Notebook</p>
+                    <p>✅ Ôn tập phần tóm tắt trong Notebook</p>
+                </div>
+                <button class="btn btn--primary btn--lg" id="restartBtn">
+                    🔄 Làm lại từ đầu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
