@@ -690,6 +690,51 @@ git log --oneline -5
 
 ---
 
+## 🤖 Automatic Session Management Setup
+
+### For Future AI Sessions:
+**MANDATORY:** Always start by reading `backup-context.md` to understand current project status.
+
+### Setting Up Automatic Session Management:
+
+#### Option 1: Custom Instructions (Recommended)
+Add this to your AI assistant's custom instructions:
+```
+AUTOMATIC SESSION MANAGEMENT:
+1. ALWAYS start each session by reading backup-context.md
+2. ALWAYS update backup-context.md at the end of each session
+3. Include all changes made, files modified, and current status
+4. Update the "Change Log" section with detailed entries
+5. Update "Last Updated" timestamp
+6. Ensure "AI Readiness" remains at 100%
+```
+
+#### Option 2: Session Prompt Template
+Use this template at the start of each session:
+```
+"Please read backup-context.md first to understand the current project status, then proceed with my request: [YOUR REQUEST HERE]"
+```
+
+#### Option 3: End-of-Session Checklist
+Always end sessions with:
+```
+"Please update backup-context.md with all changes made in this session, including:
+- Files modified
+- New features added
+- Current project status
+- Any issues resolved
+- Next steps for future sessions"
+```
+
+### Benefits of Automatic Management:
+- ✅ **Zero Context Loss:** Every session starts with complete understanding
+- ✅ **Change Tracking:** Full history of all modifications
+- ✅ **Status Updates:** Always know current project state
+- ✅ **Efficient Onboarding:** New AI sessions can start immediately
+- ✅ **Documentation:** Self-maintaining project documentation
+
+---
+
 ## 📝 Change Log
 
 ### October 8, 2025 - Instructor Website Links Added
@@ -1772,3 +1817,156 @@ Students landing on homepage will see:
 
 **Status:** ✅ Complete - This Week section updated to Week 6!
 
+---
+
+### October 15, 2025 - Lec06_quiz Enhanced with Explanations and Fixed Answer Button
+
+**Change:** Fixed Lec06_quiz to ensure "Xem đáp án" button is available for all questions and added comprehensive explanations.
+
+**User Request:** "In quiz 6, we should have 'xem đáp án' button in all question. After show the answer, we should have explanation"
+
+**Problem Identified:**
+- "Xem đáp án" button was only enabled after selecting an answer
+- Questions lacked detailed explanations
+- Students couldn't view answers without guessing first
+
+**Solution Implemented:**
+
+**1. Fixed "Xem đáp án" Button Availability:**
+- ✅ **Before:** Button only enabled after answer selection
+- ✅ **After:** Button always available for all questions
+- ✅ **Benefit:** Students can view answers and explanations without guessing
+
+**2. Added Comprehensive Explanations:**
+- ✅ **30 detailed explanations** added to all questions
+- ✅ **Educational value** enhanced with step-by-step reasoning
+- ✅ **Clear explanations** for correct answers
+
+**3. Enhanced Answer Display:**
+- ✅ **When "Xem đáp án" clicked:**
+  - Shows correct answer (highlighted in green)
+  - Shows student's answer (highlighted in red if wrong)
+  - **Displays detailed explanation** below options
+  - Button text changes to "Ẩn đáp án" (Hide Answer)
+
+**4. HTML Structure Updates:**
+- ✅ **Added explanation container** to HTML structure
+- ✅ **Professional styling** for explanation display
+- ✅ **Smooth transitions** between showing/hiding answers
+
+**Files Modified:**
+- `Quiz/Lec06_quiz/index.html` - Added explanation container
+- `Quiz/Lec06_quiz/app.js` - Added explanations and fixed button logic
+- `docs/quiz/Lec06_quiz/*` - Rebuilt with changes
+
+**Example Enhanced Question:**
+**Question 1:** MultiIndex Creation
+- **Code:** `df.set_index(['A', 'B'])`
+- **Explanation:** "set_index(['A', 'B']) tạo MultiIndex từ 2 cột A và B. Kết quả là MultiIndex với các tuple (1,4), (2,5), (3,6) tương ứng với giá trị của cột A và B."
+
+**Question 6:** Data Merging
+- **Code:** `pd.merge(df1, df2, on='key')`
+- **Explanation:** "Inner join (mặc định) chỉ giữ các hàng có giá trị key chung trong cả 2 DataFrame. df1 có key=[1,2,3], df2 có key=[2,3,4]. Các key chung là 2 và 3, nên kết quả có 2 hàng."
+
+**User Experience Flow:**
+1. **Student sees question** → "Xem đáp án" button immediately available
+2. **Clicks "Xem đáp án"** → Shows correct answer + explanation
+3. **Button changes to "Ẩn đáp án"** → Can hide answer if needed
+4. **Clicks "Ẩn đáp án"** → Hides answer and explanation
+5. **Can repeat** this process for any question
+
+**Impact:**
+- ✅ **Better Learning:** Students understand reasoning behind answers
+- ✅ **No Guessing Required:** Can view answers without selection
+- ✅ **Educational Value:** Detailed explanations enhance understanding
+- ✅ **Professional Quality:** Quiz now matches high educational standards
+- ✅ **User-Friendly:** Intuitive interface with clear feedback
+
+**Build Status:** ✅ Built successfully  
+**Deployment Status:** ✅ Committed (b018801) and pushed to GitHub  
+**Live Status:** Enhanced Lec06_quiz now live on website
+
+**Website URL:** https://nghianguyen7171.github.io/DS_for_Bussiness/quiz/Lec06_quiz/index.html
+
+**Status:** ✅ Complete - Lec06_quiz enhanced with explanations and fixed answer button!
+
+---
+
+### October 15, 2025 - Lec05_quiz and Lec06_quiz Comprehensive Enhancement
+
+**Change:** Enhanced Lec05_quiz and created Lec06_quiz with comprehensive content covering data cleaning and transformation topics.
+
+**User Request:** 
+1. "Enhance Lec05_quiz: 30 choice question, including Given a python command, choose the answer that represents the meaning of that command, and vice versa. Knowledge is taken from Lec5_Làm sạch và chuẩn bị dữ liệu.ipynb"
+2. "Create Lec06_quiz with the same format as another quizzes of previous lectures. Choice question with 30 questions, including Given a python command, choose the answer that represents the meaning of that command, and vice versa. Knowledge is taken from Lec6_Sắp xếp và biến đổi dữ liệu.ipynb"
+3. "Publish as corresponding quizzes in webpage"
+
+**Solution Implemented:**
+
+**1. Enhanced Lec05_quiz (30 Questions):**
+- ✅ **Missing Data Handling:** `isna()`, `dropna()`, `fillna()`, ML imputation with `KNNImputer`
+- ✅ **Duplicate Data:** `duplicated()`, `drop_duplicates()` with various parameters
+- ✅ **Data Normalization:** `MinMaxScaler`, `StandardScaler`, `RobustScaler`
+- ✅ **String Processing:** `str.strip()`, `str.upper()`, `str.split()`, `str.contains()`, regex operations
+- ✅ **Categorical Encoding:** `LabelEncoder`, `One-Hot Encoding` with `get_dummies()`
+
+**2. Created Lec06_quiz (30 Questions):**
+- ✅ **Hierarchical Indexing:** MultiIndex creation, access patterns, sorting
+- ✅ **Data Merging:** `pandas.merge()` with inner, left, right, outer joins
+- ✅ **Data Concatenation:** `pandas.concat()` with axis=0/1, keys, ignore_index
+- ✅ **Data Reshaping:** `melt()`, `pivot()`, `stack()`, `unstack()`
+- ✅ **Advanced Techniques:** Multi-level operations, performance considerations
+
+**3. Published on Webpage:**
+- ✅ **Updated `quizzes.yml`** to include both quizzes
+- ✅ **Lec05_quiz** available at: `quiz/Lec05_quiz/index.html`
+- ✅ **Lec06_quiz** available at: `quiz/Lec06_quiz/index.html`
+- ✅ **Both quizzes** live on course website
+
+**4. Question Types:**
+- ✅ **Code Interpretation:** "Given Python command, choose the answer that represents the meaning"
+- ✅ **Concept Understanding:** Reverse questions testing theoretical knowledge
+- ✅ **Interactive Features:** Hints, explanations, progress tracking
+- ✅ **Consistent Format:** Matches style of previous quizzes
+
+**Files Created/Modified:**
+- `Quiz/Lec05_quiz/app.js` - Enhanced with 30 comprehensive questions
+- `Quiz/Lec06_quiz/index.html` - New quiz interface
+- `Quiz/Lec06_quiz/app.js` - New quiz with 30 questions
+- `Quiz/Lec06_quiz/style.css` - Copied from Lec04_quiz
+- `src/data/quizzes.yml` - Added Lec06_quiz configuration
+- `docs/quiz/Lec05_quiz/*` - Rebuilt with enhancements
+- `docs/quiz/Lec06_quiz/*` - New quiz deployed
+
+**Content Alignment:**
+- ✅ **Lec05_quiz** perfectly aligns with `Lec5_Làm sạch và chuẩn bị dữ liệu.ipynb`
+- ✅ **Lec06_quiz** perfectly aligns with `Lec6_Sắp xếp và biến đổi dữ liệu.ipynb`
+- ✅ **Questions cover** all major concepts and techniques from notebooks
+- ✅ **Difficulty progression** from basic to advanced topics
+
+**Student Experience:**
+- **Access quizzes** from main course page
+- **Take quizzes** before working on notebook exercises
+- **Get immediate feedback** and explanations
+- **Track progress** through questions
+- **Learn effectively** with comprehensive coverage
+
+**Build Status:** ✅ Built successfully  
+**Deployment Status:** ✅ Committed (8bbe6fa) and pushed to GitHub  
+**Live Status:** Both quizzes live and accessible
+
+**Website URLs:**
+- Lec05_quiz: https://nghianguyen7171.github.io/DS_for_Bussiness/quiz/Lec05_quiz/index.html
+- Lec06_quiz: https://nghianguyen7171.github.io/DS_for_Bussiness/quiz/Lec06_quiz/index.html
+- Course quizzes: https://nghianguyen7171.github.io/DS_for_Bussiness/#quizzes
+
+**Impact:**
+- ✅ **Complete quiz coverage** for data cleaning and transformation
+- ✅ **Professional quiz quality** with comprehensive explanations
+- ✅ **Better learning experience** for students
+- ✅ **Consistent format** across all course quizzes
+- ✅ **Educational value** significantly enhanced
+
+**Status:** ✅ Complete - Lec05_quiz enhanced and Lec06_quiz created with comprehensive content!
+
+---
