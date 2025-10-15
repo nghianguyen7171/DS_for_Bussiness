@@ -13,7 +13,8 @@ const quizData = {
         "Error"
       ],
       "correct": 0,
-      "hint": "set_index(['A', 'B']) tạo MultiIndex từ 2 cột A và B"
+      "hint": "set_index(['A', 'B']) tạo MultiIndex từ 2 cột A và B",
+      "explanation": "set_index(['A', 'B']) tạo MultiIndex từ 2 cột A và B. Kết quả là MultiIndex với các tuple (1,4), (2,5), (3,6) tương ứng với giá trị của cột A và B."
     },
     {
       "id": 2,
@@ -27,7 +28,8 @@ const quizData = {
         "Error"
       ],
       "correct": 0,
-      "hint": "loc[1] lấy tất cả hàng có A=1, có 2 hàng thỏa mãn"
+      "hint": "loc[1] lấy tất cả hàng có A=1, có 2 hàng thỏa mãn",
+      "explanation": "loc[1] lấy tất cả hàng có giá trị cấp đầu tiên (A) = 1. Trong DataFrame có 2 hàng với A=1: (1,4) và (1,5), nên kết quả là DataFrame với 2 hàng."
     },
     {
       "id": 3,
@@ -41,7 +43,8 @@ const quizData = {
         "KeyError"
       ],
       "correct": 0,
-      "hint": "loc[(1, 4)] lấy hàng có A=1 và B=4, trả về Series"
+      "hint": "loc[(1, 4)] lấy hàng có A=1 và B=4, trả về Series",
+      "explanation": "loc[(1, 4)] lấy hàng có giá trị cấp đầu tiên (A) = 1 và cấp thứ hai (B) = 4. Hàng này có C=7, nên kết quả là Series với giá trị C=7."
     },
     {
       "id": 4,
@@ -55,7 +58,8 @@ const quizData = {
         "Error"
       ],
       "correct": 0,
-      "hint": "loc[1, 'C'] lấy cột C của tất cả hàng có A=1"
+      "hint": "loc[1, 'C'] lấy cột C của tất cả hàng có A=1",
+      "explanation": "loc[1, 'C'] lấy cột C của tất cả hàng có A=1. Có 2 hàng với A=1, nên kết quả là Series với 2 giá trị từ cột C."
     },
     {
       "id": 5,
@@ -69,7 +73,8 @@ const quizData = {
         "Không sắp xếp"
       ],
       "correct": 0,
-      "hint": "level=0 sắp xếp theo cấp đầu tiên của MultiIndex"
+      "hint": "level=0 sắp xếp theo cấp đầu tiên của MultiIndex",
+      "explanation": "level=0 chỉ định sắp xếp theo cấp đầu tiên của MultiIndex (cột A). Các hàng sẽ được sắp xếp theo giá trị của cột A trước, sau đó giữ nguyên thứ tự của cấp thứ hai."
     },
     {
       "id": 6,
@@ -83,7 +88,8 @@ const quizData = {
         "4"
       ],
       "correct": 1,
-      "hint": "Inner join chỉ giữ các hàng có key chung: key=2 và key=3"
+      "hint": "Inner join chỉ giữ các hàng có key chung: key=2 và key=3",
+      "explanation": "Inner join (mặc định) chỉ giữ các hàng có giá trị key chung trong cả 2 DataFrame. df1 có key=[1,2,3], df2 có key=[2,3,4]. Các key chung là 2 và 3, nên kết quả có 2 hàng."
     },
     {
       "id": 7,
@@ -97,7 +103,8 @@ const quizData = {
         "5"
       ],
       "correct": 1,
-      "hint": "Left join giữ tất cả hàng từ df1 (3 hàng), điền NaN cho hàng không match"
+      "hint": "Left join giữ tất cả hàng từ df1 (3 hàng), điền NaN cho hàng không match",
+      "explanation": "Left join giữ tất cả hàng từ DataFrame bên trái (df1). df1 có 3 hàng với key=[1,2,3]. Hàng key=1 không có trong df2 nên sẽ có NaN cho cột B, nhưng vẫn được giữ lại. Kết quả có 3 hàng."
     },
     {
       "id": 8,
@@ -111,7 +118,8 @@ const quizData = {
         "6"
       ],
       "correct": 1,
-      "hint": "Outer join giữ tất cả hàng từ cả 2 DataFrame: 1,2,3,4 → 4 hàng"
+      "hint": "Outer join giữ tất cả hàng từ cả 2 DataFrame: 1,2,3,4 → 4 hàng",
+      "explanation": "Outer join giữ tất cả hàng từ cả 2 DataFrame. df1 có key=[1,2,3], df2 có key=[2,3,4]. Tất cả các key duy nhất là [1,2,3,4], nên kết quả có 4 hàng. Hàng key=1 sẽ có NaN cho cột B, hàng key=4 sẽ có NaN cho cột A."
     },
     {
       "id": 9,
@@ -125,7 +133,8 @@ const quizData = {
         "3"
       ],
       "correct": 1,
-      "hint": "Chỉ có hàng (key1=1, key2=3) có trong cả 2 DataFrame"
+      "hint": "Chỉ có hàng (key1=1, key2=3) có trong cả 2 DataFrame",
+      "explanation": "Merge với 2 keys yêu cầu cả key1 và key2 phải khớp. df1 có (1,3), (2,4). df2 có (1,3), (2,5). Chỉ có hàng (key1=1, key2=3) có trong cả 2 DataFrame, nên kết quả có 1 hàng."
     },
     {
       "id": 10,
@@ -139,7 +148,8 @@ const quizData = {
         "5"
       ],
       "correct": 2,
-      "hint": "Many-to-many: df1 có 2 hàng key=2, df2 có 2 hàng key=2 → 2×2=4 hàng"
+      "hint": "Many-to-many: df1 có 2 hàng key=2, df2 có 2 hàng key=2 → 2×2=4 hàng",
+      "explanation": "Many-to-many merge: df1 có 2 hàng với key=2, df2 có 2 hàng với key=2. Khi merge, mỗi hàng từ df1 sẽ được kết hợp với mỗi hàng từ df2 có cùng key. Kết quả: 2×2=4 hàng."
     },
     {
       "id": 11,
@@ -153,7 +163,8 @@ const quizData = {
         "5"
       ],
       "correct": 2,
-      "hint": "concat([df1, df2]) nối theo hàng: 2+2=4 hàng"
+      "hint": "concat([df1, df2]) nối theo hàng: 2+2=4 hàng",
+      "explanation": "concat([df1, df2]) với axis=0 (mặc định) nối các DataFrame theo hàng. df1 có 2 hàng, df2 có 2 hàng. Kết quả có 2+2=4 hàng."
     },
     {
       "id": 12,
@@ -167,7 +178,8 @@ const quizData = {
         "(4, 4)"
       ],
       "correct": 1,
-      "hint": "axis=1 nối theo cột: 2 cột + 2 cột = 4 cột, giữ nguyên 2 hàng"
+      "hint": "axis=1 nối theo cột: 2 cột + 2 cột = 4 cột, giữ nguyên 2 hàng",
+      "explanation": "concat với axis=1 nối các DataFrame theo cột. df1 có 2 cột (A,B), df2 có 2 cột (C,D). Kết quả có 2+2=4 cột và giữ nguyên số hàng (2 hàng)."
     },
     {
       "id": 13,
@@ -181,7 +193,8 @@ const quizData = {
         "[0, 1, 2, 3, 4]"
       ],
       "correct": 0,
-      "hint": "ignore_index=True tạo index mới từ 0 đến 3"
+      "hint": "ignore_index=True tạo index mới từ 0 đến 3",
+      "explanation": "ignore_index=True bỏ qua index gốc và tạo index mới liên tục từ 0. Kết quả có 4 hàng nên index sẽ là [0, 1, 2, 3]."
     },
     {
       "id": 14,
@@ -195,7 +208,8 @@ const quizData = {
         "['level_0', 'level_1']"
       ],
       "correct": 0,
-      "hint": "keys tạo MultiIndex với tên mặc định là None"
+      "hint": "keys tạo MultiIndex với tên mặc định là None",
+      "explanation": "keys=['first', 'second'] tạo MultiIndex với cấp đầu tiên là 'first' và 'second', nhưng tên của các cấp index mặc định là None. Chỉ có giá trị của index được đặt tên."
     },
     {
       "id": 15,
@@ -209,7 +223,8 @@ const quizData = {
         "5"
       ],
       "correct": 2,
-      "hint": "melt chuyển từ wide sang long: 2 hàng × 2 cột = 4 hàng"
+      "hint": "melt chuyển từ wide sang long: 2 hàng × 2 cột = 4 hàng",
+      "explanation": "melt chuyển từ wide format sang long format. id_vars=['id'] giữ nguyên cột id. Các cột var1 và var2 được chuyển thành hàng. 2 hàng gốc × 2 cột = 4 hàng trong kết quả."
     },
     {
       "id": 16,
@@ -223,7 +238,8 @@ const quizData = {
         "4"
       ],
       "correct": 1,
-      "hint": "value_vars=['var1'] chỉ melt cột var1: 2 hàng × 1 cột = 2 hàng"
+      "hint": "value_vars=['var1'] chỉ melt cột var1: 2 hàng × 1 cột = 2 hàng",
+      "explanation": "value_vars=['var1'] chỉ định chỉ melt cột var1. id_vars=['id'] giữ nguyên cột id. Kết quả: 2 hàng gốc × 1 cột được melt = 2 hàng."
     },
     {
       "id": 17,
@@ -237,7 +253,8 @@ const quizData = {
         "(2, 2)"
       ],
       "correct": 1,
-      "hint": "pivot tạo DataFrame với id làm index (2 giá trị) và variable làm columns (1 giá trị)"
+      "hint": "pivot tạo DataFrame với id làm index (2 giá trị) và variable làm columns (1 giá trị)",
+      "explanation": "pivot sử dụng 'id' làm index (có 2 giá trị: 1, 2) và 'variable' làm columns (có 1 giá trị: 'A'). Kết quả có shape (2, 1): 2 hàng, 1 cột."
     },
     {
       "id": 18,
@@ -251,7 +268,8 @@ const quizData = {
         "['value']"
       ],
       "correct": 0,
-      "hint": "pivot sử dụng giá trị của cột 'variable' làm tên cột mới"
+      "hint": "pivot sử dụng giá trị của cột 'variable' làm tên cột mới",
+      "explanation": "pivot sử dụng giá trị của cột 'variable' làm tên cột mới. Cột 'variable' có giá trị ['A', 'B'], nên kết quả có 2 cột với tên 'A' và 'B'."
     },
     {
       "id": 19,
@@ -265,7 +283,8 @@ const quizData = {
         "5"
       ],
       "correct": 2,
-      "hint": "stack chuyển columns thành index: 2 hàng × 2 cột = 4 phần tử"
+      "hint": "stack chuyển columns thành index: 2 hàng × 2 cột = 4 phần tử",
+      "explanation": "stack chuyển các cột thành cấp mới của MultiIndex. DataFrame có 2 hàng và 2 cột, nên stack sẽ tạo 2×2=4 phần tử trong Series kết quả."
     },
     {
       "id": 20,
@@ -279,7 +298,8 @@ const quizData = {
         "['level_0', 'level_1']"
       ],
       "correct": 0,
-      "hint": "stack tạo MultiIndex với tên mặc định là None"
+      "hint": "stack tạo MultiIndex với tên mặc định là None",
+      "explanation": "stack tạo MultiIndex với cấp đầu tiên là index gốc (X, Y) và cấp thứ hai là tên cột (A, B). Tuy nhiên, tên của các cấp index mặc định là None."
     },
     {
       "id": 21,
@@ -293,7 +313,8 @@ const quizData = {
         "(2, 1)"
       ],
       "correct": 0,
-      "hint": "unstack chuyển từ MultiIndex Series sang DataFrame: 2 cấp đầu × 2 cấp sau = 2×2"
+      "hint": "unstack chuyển từ MultiIndex Series sang DataFrame: 2 cấp đầu × 2 cấp sau = 2×2",
+      "explanation": "unstack chuyển MultiIndex Series thành DataFrame. Cấp đầu tiên (A, B) trở thành index với 2 giá trị. Cấp thứ hai (X, Y) trở thành columns với 2 giá trị. Kết quả có shape (2, 2)."
     },
     {
       "id": 22,
@@ -307,7 +328,8 @@ const quizData = {
         "Không nhóm"
       ],
       "correct": 0,
-      "hint": "level=0 nhóm theo cấp đầu tiên của MultiIndex"
+      "hint": "level=0 nhóm theo cấp đầu tiên của MultiIndex",
+      "explanation": "groupby(level=0) nhóm theo cấp đầu tiên của MultiIndex (cột A). Các hàng có cùng giá trị ở cấp đầu tiên sẽ được nhóm lại và tính tổng các cột số."
     },
     {
       "id": 23,
@@ -321,7 +343,8 @@ const quizData = {
         "['key', 'A', 'B_left', 'B_right']"
       ],
       "correct": 0,
-      "hint": "suffixes chỉ áp dụng khi có cột trùng tên (không có ở đây)"
+      "hint": "suffixes chỉ áp dụng khi có cột trùng tên (không có ở đây)",
+      "explanation": "suffixes chỉ được áp dụng khi có cột trùng tên giữa 2 DataFrame. Trong trường hợp này, df1 có cột A, df2 có cột B - không có cột trùng tên nên suffixes không được áp dụng. Kết quả có cột ['key', 'A', 'B']."
     },
     {
       "id": 24,
@@ -335,7 +358,8 @@ const quizData = {
         "['key', 'A', 'A_left', 'A_right']"
       ],
       "correct": 1,
-      "hint": "Khi có cột trùng tên, suffixes được áp dụng: A_left và A_right"
+      "hint": "Khi có cột trùng tên, suffixes được áp dụng: A_left và A_right",
+      "explanation": "Khi có cột trùng tên (cột A), suffixes được áp dụng để phân biệt. Cột A từ df1 trở thành A_left, cột A từ df2 trở thành A_right. Kết quả có cột ['key', 'A_left', 'A_right']."
     },
     {
       "id": 25,
@@ -349,7 +373,8 @@ const quizData = {
         "IndexError"
       ],
       "correct": 0,
-      "hint": "verify_integrity=True kiểm tra index trùng lặp, ở đây không có nên thành công"
+      "hint": "verify_integrity=True kiểm tra index trùng lặp, ở đây không có nên thành công",
+      "explanation": "verify_integrity=True kiểm tra xem có index trùng lặp không. Trong trường hợp này, df1 và df2 có index mặc định [0, 1] và [0, 1], nhưng pandas tự động xử lý bằng cách tạo MultiIndex, nên không có lỗi và in ra 'Success'."
     },
     {
       "id": 26,
@@ -363,7 +388,8 @@ const quizData = {
         "['id', 'variable', 'value', 'var1', 'var2']"
       ],
       "correct": 0,
-      "hint": "var_name và value_name đặt tên cho cột variable và value"
+      "hint": "var_name và value_name đặt tên cho cột variable và value",
+      "explanation": "var_name='variable' đặt tên cho cột chứa tên các biến (var1, var2). value_name='value' đặt tên cho cột chứa giá trị. Kết quả có 3 cột: ['id', 'variable', 'value']."
     },
     {
       "id": 27,
@@ -377,7 +403,8 @@ const quizData = {
         "['0', '1']"
       ],
       "correct": 1,
-      "hint": "unstack(level=0) chuyển cấp đầu tiên thành columns, cấp thứ hai thành index"
+      "hint": "unstack(level=0) chuyển cấp đầu tiên thành columns, cấp thứ hai thành index",
+      "explanation": "unstack(level=0) chuyển cấp đầu tiên (A, B) thành columns và cấp thứ hai (X, Y) thành index. Kết quả có index là ['X', 'Y'] và columns là ['A', 'B']."
     },
     {
       "id": 28,
@@ -391,7 +418,8 @@ const quizData = {
         "['0', '1', 'C']"
       ],
       "correct": 0,
-      "hint": "reset_index() chuyển MultiIndex thành cột thường"
+      "hint": "reset_index() chuyển MultiIndex thành cột thường",
+      "explanation": "reset_index() chuyển MultiIndex thành các cột thường trong DataFrame. Cấp đầu tiên (A) và cấp thứ hai (B) trở thành cột A và B. Kết quả có cột ['A', 'B', 'C']."
     },
     {
       "id": 29,
@@ -405,7 +433,8 @@ const quizData = {
         "['key', 'A', 'B', 'merge_info']"
       ],
       "correct": 1,
-      "hint": "indicator=True thêm cột '_merge' để chỉ ra nguồn gốc của mỗi hàng"
+      "hint": "indicator=True thêm cột '_merge' để chỉ ra nguồn gốc của mỗi hàng",
+      "explanation": "indicator=True thêm cột '_merge' vào kết quả để chỉ ra nguồn gốc của mỗi hàng: 'both' (có trong cả 2 DataFrame), 'left_only' (chỉ có trong df1), 'right_only' (chỉ có trong df2). Kết quả có cột ['key', 'A', 'B', '_merge']."
     },
     {
       "id": 30,
@@ -419,7 +448,8 @@ const quizData = {
         "(2, 4)"
       ],
       "correct": 0,
-      "hint": "join='inner' chỉ giữ các cột chung, ở đây cả 2 DataFrame có cùng cột nên không thay đổi"
+      "hint": "join='inner' chỉ giữ các cột chung, ở đây cả 2 DataFrame có cùng cột nên không thay đổi",
+      "explanation": "join='inner' chỉ giữ các cột có trong tất cả DataFrame. Cả df1 và df2 đều có cột A và B, nên không có cột nào bị loại bỏ. Kết quả có 4 hàng (2+2) và 2 cột, shape (4, 2)."
     }
   ]
 };
@@ -554,12 +584,17 @@ class QuizApp {
             selectedOption.classList.add('selected');
         }
         
-        // Reset buttons
-        document.getElementById('showAnswerBtn').disabled = this.userAnswers[this.currentQuestion] === null;
+        // Reset buttons - Always enable show answer button
+        document.getElementById('showAnswerBtn').disabled = false;
         document.getElementById('nextBtn').classList.add('hidden');
         
-        // Hide hint tooltip
+        // Hide hint tooltip and explanation
         document.getElementById('hintTooltip').classList.add('hidden');
+        document.getElementById('explanationContainer').classList.add('hidden');
+        
+        // Reset show answer state
+        this.showAnswer = false;
+        document.getElementById('showAnswerBtn').textContent = '👁️ Xem đáp án';
     }
     
     showHint() {
@@ -579,9 +614,14 @@ class QuizApp {
     updateAnswerDisplay() {
         const question = this.questions[this.currentQuestion];
         const showAnswerBtn = document.getElementById('showAnswerBtn');
+        const explanationContainer = document.getElementById('explanationContainer');
         
         if (this.showAnswer) {
-            showAnswerBtn.textContent = 'Ẩn đáp án';
+            showAnswerBtn.textContent = '👁️ Ẩn đáp án';
+            
+            // Show explanation
+            document.getElementById('explanationText').textContent = question.explanation;
+            explanationContainer.classList.remove('hidden');
             
             // Highlight correct answer
             document.querySelectorAll('.option').forEach((opt, index) => {
@@ -594,6 +634,9 @@ class QuizApp {
             });
         } else {
             showAnswerBtn.textContent = '👁️ Xem đáp án';
+            
+            // Hide explanation
+            explanationContainer.classList.add('hidden');
             
             // Remove highlighting
             document.querySelectorAll('.option').forEach(opt => {
