@@ -156,6 +156,7 @@ lectures:
       - "Normalize quantitative variables"
       - "Create new features from raw attributes"
     materials: "Chapter 8"
+    notebook: "notebook/Lec6_Sắp xếp và biến đổi dữ liệu.ipynb"
     activities:
       - "Deliver content"
       - "Q&A and examples"
