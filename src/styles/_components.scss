@@ -242,11 +242,18 @@
 }
 
 .btn-success {
-  background-color: $color-success;
-  color: white;
+  background-color: #ffffff;
+  color: $color-primary;
+  border: 2px solid #ffffff;
+  font-weight: $font-weight-bold;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 
   &:hover {
-    background-color: darken($color-success, 10%);
+    background-color: $color-accent;
+    color: white;
+    border-color: $color-accent;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
   }
 }
 
