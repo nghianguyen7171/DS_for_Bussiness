@@ -690,6 +690,109 @@ git log --oneline -5
 
 ---
 
+## 📝 Change Log
+
+### October 15, 2025 - Website Enhancements: Practice Button, Course Overview Optimization, and Week 8 Restructuring
+
+**Change:** Implemented three major website improvements based on user feedback.
+
+**User Request:**
+1. "Create a button 'Practice with score up', link direct into this link: https://fit.neu.edu.vn/scoreup/practice - This is for student practice with the test provide by 'Trường Công Nghệ'"
+2. "Reduce text in Course Overview section"
+3. "In Course Schedule: In week 8: Midterm 1 & Data Preprocessing Lecture: split midterm exam and Data Preprocessing Lecture into 2 subsection"
+
+**Solution Implemented:**
+
+**1. Added "Practice with Score Up" Button:**
+- ✅ **Location:** Hero section (main page buttons)
+- ✅ **Link:** https://fit.neu.edu.vn/scoreup/practice
+- ✅ **Styling:** Green success button with hover effects
+- ✅ **Security:** Opens in new tab with `target="_blank"` and `rel="noopener noreferrer"`
+- ✅ **Purpose:** Student practice with tests provided by 'Trường Công Nghệ'
+
+**Button Implementation:**
+```handlebars
+<a href="https://fit.neu.edu.vn/scoreup/practice" target="_blank" rel="noopener noreferrer" class="btn btn-success">Practice with Score Up</a>
+```
+
+**CSS Styling Added:**
+```scss
+.btn-success {
+  background-color: $color-success;
+  color: white;
+
+  &:hover {
+    background-color: darken($color-success, 10%);
+  }
+}
+```
+
+**2. Reduced Course Overview Text:**
+- ✅ **Course Objectives:** Shortened from verbose descriptions to concise statements
+- ✅ **Before:** Long, detailed objective descriptions (50+ words each)
+- ✅ **After:** Concise, clear objectives (10-15 words each)
+
+**Objective Changes:**
+- G1: "Understand data science roles and project lifecycle in business contexts."
+- G2: "Use Python programming with NumPy and Pandas for data processing."
+- G3: "Collect, clean, and wrangle data using transformations and aggregations."
+- G4: "Create data visualizations and present results in reports."
+- G5: "Apply machine learning models and evaluate performance metrics."
+
+**3. Split Week 8 into Two Subsections:**
+- ✅ **Week 8a:** "Midterm 1" (Midterm Exam)
+- ✅ **Week 8b:** "Data Preprocessing Lecture" (Lecture content)
+
+**Week 8 Restructuring:**
+
+**Midterm 1 (Week 8a):**
+- Type: Midterm
+- Title: "Midterm 1"
+- Topics: "Midterm Exam 1"
+- Assessment: "Midterm 1"
+
+**Data Preprocessing Lecture (Week 8b):**
+- Type: Lecture
+- Title: "Data Preprocessing Lecture"
+- Topics: 
+  - "Format data aligned to research goals"
+  - "Handle outliers and missing values"
+  - "Data cleaning techniques"
+  - "Feature engineering"
+- Materials: "Chapter 9"
+- Notebook: "notebook/Lec5_Làm sạch và chuẩn bị dữ liệu.ipynb"
+- Assessment: "In-class discussion"
+
+**Files Modified:**
+- `src/partials/hero.hbs` - Added Practice with Score Up button
+- `src/styles/_components.scss` - Added btn-success styling
+- `src/data/course.yml` - Shortened course objectives
+- `src/data/lectures.yml` - Split Week 8 into two entries
+
+**Build Status:** ✅ Built successfully  
+**Deployment Status:** ✅ Committed and pushed to GitHub  
+**Live Status:** All changes live on GitHub Pages
+
+**Website URL:** https://nghianguyen7171.github.io/DS_for_Bussiness/
+
+**User Experience Improvements:**
+- ✅ **New Practice Resource:** Students can access additional practice tests
+- ✅ **Cleaner Overview:** More readable course objectives
+- ✅ **Clearer Schedule:** Week 8 now shows distinct midterm and lecture components
+- ✅ **Better Organization:** Improved visual hierarchy and content structure
+
+**Impact:**
+- ✅ Enhanced student access to practice materials
+- ✅ Improved readability of course information
+- ✅ Better schedule clarity for Week 8 activities
+- ✅ Professional website appearance maintained
+
+**Status:** ✅ Complete - All three requested improvements implemented successfully!
+
+---
+
+---
+
 ## 🤖 Automatic Session Management Setup
 
 ### For Future AI Sessions:

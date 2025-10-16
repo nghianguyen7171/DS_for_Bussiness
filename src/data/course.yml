@@ -19,15 +19,15 @@ description: |
 
 objectives:
   - id: "G1"
-    description: "Understand the roles and applications of data science in economics, finance, and marketing, and describe the basic steps in the lifecycle of a data science project."
+    description: "Understand data science roles and project lifecycle in business contexts."
   - id: "G2"
-    description: "Use Python programming to process tabular data, including writing statements with basic control structures and using NumPy and Pandas."
+    description: "Use Python programming with NumPy and Pandas for data processing."
   - id: "G3"
-    description: "Understand processes for collecting, cleaning, and wrangling data from common sources, using transformations, combinations, and aggregations for analysis."
+    description: "Collect, clean, and wrangle data using transformations and aggregations."
   - id: "G4"
-    description: "Apply visualization tools and reporting to build appropriate data visualizations aligned with analytical goals, and present and interpret results in reports using Markdown, PDF, or presentation formats."
+    description: "Create data visualizations and present results in reports."
   - id: "G5"
-    description: "Apply basic machine learning models such as linear regression, decision trees, random forests, gradient boosting, etc., to solve simple predictive tasks in business, and evaluate models with quantitative metrics such as MAE, RMSE, and R²."
+    description: "Apply machine learning models and evaluate performance metrics."
 
 learning_outcomes:
   - id: "CLO1.1"

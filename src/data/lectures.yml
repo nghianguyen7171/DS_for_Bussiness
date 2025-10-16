@@ -120,17 +120,29 @@ lectures:
   - id: 8
     week: 8
     type: "Midterm"
-    title: "Midterm 1 & Data Preprocessing Lecture"
+    title: "Midterm 1"
     topics:
       - "Midterm Exam 1"
-      - "Format data aligned to research goals"
-      - "Handle outliers and missing values"
     materials: ""
-    notebook: "notebook/Lec5_Làm sạch và chuẩn bị dữ liệu.ipynb"
     activities:
       - "Administer Midterm 1"
-      - "Lecture on preprocessing"
     assessment: "Midterm 1"
+
+  - id: 8b
+    week: 8
+    type: "Lecture"
+    title: "Data Preprocessing Lecture"
+    topics:
+      - "Format data aligned to research goals"
+      - "Handle outliers and missing values"
+      - "Data cleaning techniques"
+      - "Feature engineering"
+    materials: "Chapter 9"
+    notebook: "notebook/Lec5_Làm sạch và chuẩn bị dữ liệu.ipynb"
+    activities:
+      - "Lecture on data preprocessing"
+      - "Demonstrate cleaning techniques"
+    assessment: "In-class discussion"
 
   - id: 9
     week: 9

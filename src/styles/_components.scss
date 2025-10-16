@@ -241,6 +241,15 @@
   }
 }
 
+.btn-success {
+  background-color: $color-success;
+  color: white;
+
+  &:hover {
+    background-color: darken($color-success, 10%);
+  }
+}
+
 .btn-resource,
 .btn-quiz {
   background-color: $color-primary;
