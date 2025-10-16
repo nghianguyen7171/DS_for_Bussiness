@@ -5,7 +5,7 @@
         <div class="instructors-grid">
             {{#each instructors.instructors}}
             <div class="instructor-card">
-                <div class="instructor-image">
+                <div class="instructor-image{{#if (eq name "Dr. Nguyen Trong Nghia")}} instructor-image-top{{/if}}">
                     <img src="{{image}}" alt="{{name}}" loading="lazy">
                 </div>
                 <div class="instructor-info">
