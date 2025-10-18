@@ -380,10 +380,10 @@
             </div>
         </div>
 
-        <li>Tổng số câu hỏi: 320 câu</li>
-<li>Câu hỏi duy nhất: 219 câu (loại bỏ trùng lặp)</li>
-<li>Câu hỏi khớp với thư viện: 185 câu (84%)</li>
-<li>Câu hỏi không khớp: 34 câu (16%)</li>
+        <p>- <strong>Tổng số câu hỏi:</strong> 320 câu</p>
+<p>- <strong>Câu hỏi duy nhất:</strong> 219 câu (loại bỏ trùng lặp)</p>
+<p>- <strong>Câu hỏi khớp với thư viện:</strong> 185 câu (84%)</p>
+<p>- <strong>Câu hỏi không khớp:</strong> 34 câu (16%)</p>
 <div class="content-section">
 <h2 class="section-title">🔑 Đáp án và giải thích cho tất cả câu hỏi</h2>
 </div>
@@ -407,6 +407,7 @@
 <strong>Giải thích:</strong> Indexing bắt đầu từ 0, `my_list[0]` trả về phần tử đầu tiên.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về String Operations</h4>
 <div class="question-item">
 <div class="question-code">my_list = [1,2,3]; my_list[1:3]</div>
 <div class="answer-highlight">Đáp án: B - `[2,3]`</div>
@@ -414,7 +415,6 @@
 <strong>Giải thích:</strong> Slicing `[1:3]` lấy từ index 1 đến 2 (không bao gồm 3).
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về String Operations</h4>
 <div class="question-item">
 <div class="question-code">'a b c'.split()</div>
 <div class="answer-highlight">Đáp án: B - `['a','b','c']`</div>
@@ -436,6 +436,7 @@
 <strong>Giải thích:</strong> `.strip()` loại bỏ khoảng trắng đầu và cuối chuỗi.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về Tuple và Dictionary</h4>
 <div class="question-item">
 <div class="question-code">'-'.join(['a','b'])</div>
 <div class="answer-highlight">Đáp án: A - 'a-b'</div>
@@ -443,7 +444,6 @@
 <strong>Giải thích:</strong> `.join()` nối các phần tử của list bằng dấu '-'.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Tuple và Dictionary</h4>
 <div class="question-item">
 <div class="question-code">x = (1,2,3); x[0]</div>
 <div class="answer-highlight">Đáp án: A - 1</div>
@@ -458,6 +458,7 @@
 <strong>Giải thích:</strong> Dictionary có thể thay đổi giá trị, `house['price']=15` gán giá trị mới.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về Functions và Lambda</h4>
 <div class="question-item">
 <div class="question-code">{1,2,3} == {3,2,1}</div>
 <div class="answer-highlight">Đáp án: B - TRUE</div>
@@ -465,7 +466,6 @@
 <strong>Giải thích:</strong> Set không quan tâm thứ tự, `{1,2,3}` và `{3,2,1}` là bằng nhau.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Functions và Lambda</h4>
 <div class="question-item">
 <div class="question-code">add_one = lambda x:x+1; add_one(5)</div>
 <div class="answer-highlight">Đáp án: B - 6</div>
@@ -473,6 +473,7 @@
 <strong>Giải thích:</strong> Lambda function `lambda x:x+1` với `x=5` trả về `5+1=6`.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về Operators</h4>
 <div class="question-item">
 <div class="question-text">Cú pháp nào dùng để khai báo một hàm trong Python?</div>
 <div class="answer-highlight">Đáp án: B - `def myFunc():`</div>
@@ -480,7 +481,6 @@
 <strong>Giải thích:</strong> Cú pháp chuẩn để khai báo hàm trong Python là `def`.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Operators</h4>
 <div class="question-item">
 <div class="question-text">Phép toán 7 // 2 trong Python cho kết quả là:</div>
 <div class="answer-highlight">Đáp án: B - 3</div>
@@ -509,6 +509,7 @@
 <strong>Giải thích:</strong> `//` là phép chia lấy phần nguyên, `5 // 2 = 2`.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về List Comprehension</h4>
 <div class="question-item">
 <div class="question-code">print(2 ** 3)</div>
 <div class="answer-highlight">Đáp án: B - 8</div>
@@ -516,7 +517,7 @@
 <strong>Giải thích:</strong> `**` là toán tử lũy thừa, `2 ** 3 = 8`.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về List Comprehension</h4>
+<h4 class="subtopic-title">Câu hỏi về Indentation</h4>
 <div class="question-item">
 <div class="question-code">[i for i in range(5) if i%2==0]</div>
 <div class="answer-highlight">Đáp án: A - `[0,2,4]`</div>
@@ -524,7 +525,7 @@
 <strong>Giải thích:</strong> List comprehension tạo list các số chẵn từ 0 đến 4.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Indentation</h4>
+<h4 class="subtopic-title">Câu hỏi về Python Creator</h4>
 <div class="question-item">
 <div class="question-text">Dấu thụt lề (indentation) trong Python có vai trò gì?</div>
 <div class="answer-highlight">Đáp án: C - Xác định cấu trúc khối lệnh</div>
@@ -532,20 +533,12 @@
 <strong>Giải thích:</strong> Python sử dụng indentation để định nghĩa khối lệnh thay vì dùng `{}`.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Python Creator</h4>
+<h4 class="subtopic-title">Câu hỏi về Python Type</h4>
 <div class="question-item">
 <div class="question-text">Ai là người phát triển ngôn ngữ Python?</div>
 <div class="answer-highlight">Đáp án: B - Guido van Rossum</div>
 <div class="explanation">
 <strong>Giải thích:</strong> Guido van Rossum là người tạo ra Python vào năm 1991.
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về Python Type</h4>
-<div class="question-item">
-<div class="question-text">Python là ngôn ngữ lập trình thuộc loại nào?</div>
-<div class="answer-highlight">Đáp án: B - Thông dịch, kiểu động</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Python là ngôn ngữ thông dịch (interpreted) và có kiểu động (dynamic typing).
 </div>
 </div>
 </div>
@@ -555,6 +548,13 @@
 <h3 class="topic-title">2. NumPy Operations</h3>
 </div>
 <h4 class="subtopic-title">Câu hỏi về Array Creation</h4>
+<div class="question-item">
+<div class="question-text">Python là ngôn ngữ lập trình thuộc loại nào?</div>
+<div class="answer-highlight">Đáp án: B - Thông dịch, kiểu động</div>
+<div class="explanation">
+<strong>Giải thích:</strong> Python là ngôn ngữ thông dịch (interpreted) và có kiểu động (dynamic typing).
+</div>
+</div>
 <div class="question-item">
 <div class="question-text">Hàm nào trong NumPy dùng để tạo mảng chứa toàn số 0?</div>
 <div class="answer-highlight">Đáp án: D - `np.zeros()`</div>
@@ -576,6 +576,7 @@
 <strong>Giải thích:</strong> NumPy = **Num**erical **Py**thon.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về Array Operations</h4>
 <div class="question-item">
 <div class="question-text">Đối tượng chính của NumPy để lưu trữ dữ liệu là:</div>
 <div class="answer-highlight">Đáp án: A - ndarray</div>
@@ -583,7 +584,6 @@
 <strong>Giải thích:</strong> ndarray (N-dimensional array) là đối tượng chính của NumPy.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Array Operations</h4>
 <div class="question-item">
 <div class="question-code">np.arange(5) * 2</div>
 <div class="answer-highlight">Đáp án: A - `[0 2 4 6 8]`</div>
@@ -605,6 +605,7 @@
 <strong>Giải thích:</strong> `np.arange(6)` tạo `[0,1,2,3,4,5]`, `.reshape(2,3)` chuyển thành ma trận 2x3.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về Array Properties</h4>
 <div class="question-item">
 <div class="question-code">np.arange(8).reshape(2,4).T.shape</div>
 <div class="answer-highlight">Đáp án: B - `(4,2)`</div>
@@ -612,7 +613,6 @@
 <strong>Giải thích:</strong> Ma trận 2x4 sau khi transpose (`.T`) thành ma trận 4x2.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Array Properties</h4>
 <div class="question-item">
 <div class="question-text">`arr = np.array([1, 2, 3]); arr.dtype` sẽ trả về:</div>
 <div class="answer-highlight">Đáp án: B - int32 hoặc int64</div>
@@ -627,6 +627,7 @@
 <strong>Giải thích:</strong> Mảng có số thập phân sẽ có kiểu float64.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về Mathematical Operations</h4>
 <div class="question-item">
 <div class="question-code">np.array([3.7, -1.2]).astype(int)</div>
 <div class="answer-highlight">Đáp án: A - `[3, -1]`</div>
@@ -634,7 +635,6 @@
 <strong>Giải thích:</strong> `.astype(int)` chuyển đổi sang integer, làm tròn xuống.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Mathematical Operations</h4>
 <div class="question-item">
 <div class="question-code">np.sqrt(np.array([1,4,9]))</div>
 <div class="answer-highlight">Đáp án: C - `[1.0,2.0,3.0]`</div>
@@ -663,6 +663,7 @@
 <strong>Giải thích:</strong> Tính trung bình: `(3+(-1)+2)/3 = 4/3 ≈ 1.333`.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về Array Functions</h4>
 <div class="question-item">
 <div class="question-code">np.array([1,2,3]).cumsum()</div>
 <div class="answer-highlight">Đáp án: B - `[1,3,6]`</div>
@@ -670,7 +671,6 @@
 <strong>Giải thích:</strong> `.cumsum()` tính tổng tích lũy: `[1, 1+2, 1+2+3] = [1,3,6]`.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Array Functions</h4>
 <div class="question-item">
 <div class="question-code">np.unique([3,3,2,1,2])</div>
 <div class="answer-highlight">Đáp án: B - `[1,2,3]`</div>
@@ -685,6 +685,7 @@
 <strong>Giải thích:</strong> `np.isin()` kiểm tra từng phần tử của mảng đầu có trong mảng thứ hai không.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về NumPy Import</h4>
 <div class="question-item">
 <div class="question-code">np.dot(np.array([1,2]), np.array([3,4]))</div>
 <div class="answer-highlight">Đáp án: B - 11</div>
@@ -692,19 +693,11 @@
 <strong>Giải thích:</strong> Tích vô hướng: `1*3 + 2*4 = 3 + 8 = 11`.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về NumPy Import</h4>
 <div class="question-item">
 <div class="question-text">Quy ước import NumPy là:</div>
 <div class="answer-highlight">Đáp án: C - `import numpy as np`</div>
 <div class="explanation">
 <strong>Giải thích:</strong> Quy ước chuẩn để import NumPy với alias `np`.
-</div>
-</div>
-<div class="question-item">
-<div class="question-text">Tính năng chính của NumPy so với list Python thông thường là:</div>
-<div class="answer-highlight">Đáp án: D - Tốc độ tính toán nhanh và chiếm ít bộ nhớ hơn</div>
-<div class="explanation">
-<strong>Giải thích:</strong> NumPy được tối ưu hóa cho tính toán số học nhanh và hiệu quả bộ nhớ.
 </div>
 </div>
 </div>
@@ -714,6 +707,13 @@
 <h3 class="topic-title">3. Pandas Operations</h3>
 </div>
 <h4 class="subtopic-title">Câu hỏi về DataFrame Basics</h4>
+<div class="question-item">
+<div class="question-text">Tính năng chính của NumPy so với list Python thông thường là:</div>
+<div class="answer-highlight">Đáp án: D - Tốc độ tính toán nhanh và chiếm ít bộ nhớ hơn</div>
+<div class="explanation">
+<strong>Giải thích:</strong> NumPy được tối ưu hóa cho tính toán số học nhanh và hiệu quả bộ nhớ.
+</div>
+</div>
 <div class="question-item">
 <div class="question-text">Hai cấu trúc dữ liệu cốt lõi của pandas là:</div>
 <div class="answer-highlight">Đáp án: C - Series và DataFrame</div>
@@ -728,6 +728,7 @@
 <strong>Giải thích:</strong> Series là cấu trúc dữ liệu 1 chiều với index (nhãn) cho mỗi phần tử.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về DataFrame Operations</h4>
 <div class="question-item">
 <div class="question-text">Pandas được xây dựng dựa trên thư viện nào?</div>
 <div class="answer-highlight">Đáp án: A - NumPy</div>
@@ -735,7 +736,6 @@
 <strong>Giải thích:</strong> Pandas được xây dựng trên NumPy, sử dụng NumPy arrays làm backend.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Operations</h4>
 <div class="question-item">
 <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].mean()</div>
 <div class="answer-highlight">Đáp án: A - 2</div>
@@ -792,6 +792,7 @@
 <strong>Giải thích:</strong> `.query('A>1')` lọc các dòng có A > 1, có 2 dòng.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về DataFrame Properties</h4>
 <div class="question-item">
 <div class="question-code">df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()</div>
 <div class="answer-highlight">Đáp án: A - `[6,12]`</div>
@@ -799,7 +800,6 @@
 <strong>Giải thích:</strong> Tổng từng cột: A = 1+2+3=6, B = 3+4+5=12.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Properties</h4>
 <div class="question-item">
 <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.shape</div>
 <div class="answer-highlight">Đáp án: A - `(3,1)`</div>
@@ -814,6 +814,7 @@
 <strong>Giải thích:</strong> `df.info()` không trả về giá trị (return None).
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về DataFrame Manipulation</h4>
 <div class="question-item">
 <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns</div>
 <div class="answer-highlight">Đáp án: A - TRUE</div>
@@ -821,7 +822,6 @@
 <strong>Giải thích:</strong> Kiểm tra cột 'A' có trong DataFrame không.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Manipulation</h4>
 <div class="question-item">
 <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns={'A':'X'}).columns[0]</div>
 <div class="answer-highlight">Đáp án: C - 'X'</div>
@@ -843,6 +843,7 @@
 <strong>Giải thích:</strong> `df.reset_index()` tạo index mới bắt đầu từ 0.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về DataFrame Selection</h4>
 <div class="question-item">
 <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name</div>
 <div class="answer-highlight">Đáp án: C - 'A'</div>
@@ -850,7 +851,6 @@
 <strong>Giải thích:</strong> Sau khi set_index('A'), tên của index là 'A'.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Selection</h4>
 <div class="question-item">
 <div class="question-text">Để chọn cột 'Name' từ DataFrame df, ta dùng:</div>
 <div class="answer-highlight">Đáp án: A - `df.Name` hoặc `df['Name']`</div>
@@ -865,6 +865,7 @@
 <strong>Giải thích:</strong> `df.loc[0]` chọn dòng có index 0.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về DataFrame Statistics</h4>
 <div class="question-item">
 <div class="question-text">`df.head()` mặc định hiển thị bao nhiêu dòng đầu tiên?</div>
 <div class="answer-highlight">Đáp án: B - 5 dòng</div>
@@ -872,7 +873,6 @@
 <strong>Giải thích:</strong> `df.head()` mặc định hiển thị 5 dòng đầu.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Statistics</h4>
 <div class="question-item">
 <div class="question-text">`s = pd.Series([1, 2, 3, 4]); s.mean()` trả về:</div>
 <div class="answer-highlight">Đáp án: B - 2.5</div>
@@ -880,6 +880,7 @@
 <strong>Giải thích:</strong> Trung bình: `(1+2+3+4)/4 = 2.5`.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về DataFrame Export</h4>
 <div class="question-item">
 <div class="question-text">`df.info()` hiển thị thông tin gì về DataFrame?</div>
 <div class="answer-highlight">Đáp án: C - Kiểu dữ liệu và thông tin bộ nhớ</div>
@@ -887,19 +888,11 @@
 <strong>Giải thích:</strong> `df.info()` hiển thị kiểu dữ liệu, số dòng/cột, và thông tin bộ nhớ.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Export</h4>
 <div class="question-item">
 <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); type(df.to_dict())</div>
 <div class="answer-highlight">Đáp án: A - dict</div>
 <div class="explanation">
 <strong>Giải thích:</strong> `df.to_dict()` chuyển DataFrame thành dictionary.
-</div>
-</div>
-<div class="question-item">
-<div class="question-text">`df = pd.DataFrame({'A':[1,2], 'B':[3,4]}); df.to_csv('out.csv', index=False)` sẽ tạo file CSV với?</div>
-<div class="answer-highlight">Đáp án: A - Không có cột index</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `index=False` nghĩa là không xuất index.
 </div>
 </div>
 </div>
@@ -909,6 +902,13 @@
 <h3 class="topic-title">4. File I/O Operations</h3>
 </div>
 <h4 class="subtopic-title">Câu hỏi về CSV Operations</h4>
+<div class="question-item">
+<div class="question-text">`df = pd.DataFrame({'A':[1,2], 'B':[3,4]}); df.to_csv('out.csv', index=False)` sẽ tạo file CSV với?</div>
+<div class="answer-highlight">Đáp án: A - Không có cột index</div>
+<div class="explanation">
+<strong>Giải thích:</strong> `index=False` nghĩa là không xuất index.
+</div>
+</div>
 <div class="question-item">
 <div class="question-text">`pd.read_csv('sample_data.csv').shape` trả về gì?</div>
 <div class="answer-highlight">Đáp án: C - `(số dòng, số cột)`</div>
@@ -965,6 +965,7 @@
 <strong>Giải thích:</strong> Khi `header=None`, pandas tự động đặt tên cột là 'Unnamed: 0', 'Unnamed: 1', ...
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về Excel Operations</h4>
 <div class="question-item">
 <div class="question-text">Đọc file với `index_col=0`, `df.index.name` là?</div>
 <div class="answer-highlight">Đáp án: A - Tên cột đầu tiên</div>
@@ -972,7 +973,7 @@
 <strong>Giải thích:</strong> Khi `index_col=0`, cột đầu tiên trở thành index và tên của nó là `df.index.name`.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Excel Operations</h4>
+<h4 class="subtopic-title">Câu hỏi về JSON Operations</h4>
 <div class="question-item">
 <div class="question-text">Hàm `pd.read_excel()` dùng để làm gì?</div>
 <div class="answer-highlight">Đáp án: A - Đọc dữ liệu từ file Excel</div>
@@ -980,7 +981,6 @@
 <strong>Giải thích:</strong> `pd.read_excel()` dùng để đọc dữ liệu từ file Excel.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về JSON Operations</h4>
 <div class="question-item">
 <div class="question-text">JSON là viết tắt của:</div>
 <div class="answer-highlight">Đáp án: B - JavaScript Object Notation</div>
@@ -988,6 +988,7 @@
 <strong>Giải thích:</strong> JSON = JavaScript Object Notation.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về HTML Operations</h4>
 <div class="question-item">
 <div class="question-text">Hàm `pd.read_json()` dùng để:</div>
 <div class="answer-highlight">Đáp án: B - Đọc dữ liệu từ file JSON</div>
@@ -995,20 +996,12 @@
 <strong>Giải thích:</strong> `pd.read_json()` dùng để đọc dữ liệu từ file JSON.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về HTML Operations</h4>
+<h4 class="subtopic-title">Câu hỏi về Database Operations</h4>
 <div class="question-item">
 <div class="question-text">Hàm `pd.read_html()` có tác dụng gì?</div>
 <div class="answer-highlight">Đáp án: B - Đọc bảng từ trang web HTML</div>
 <div class="explanation">
 <strong>Giải thích:</strong> `pd.read_html()` dùng để đọc các bảng từ trang web HTML.
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về Database Operations</h4>
-<div class="question-item">
-<div class="question-text">Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:</div>
-<div class="answer-highlight">Đáp án: B - sqlite3</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Thư viện `sqlite3` được tích hợp sẵn trong Python để làm việc với SQLite.
 </div>
 </div>
 </div>
@@ -1018,6 +1011,13 @@
 <h3 class="topic-title">5. Data Processing</h3>
 </div>
 <h4 class="subtopic-title">Câu hỏi về Missing Data</h4>
+<div class="question-item">
+<div class="question-text">Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:</div>
+<div class="answer-highlight">Đáp án: B - sqlite3</div>
+<div class="explanation">
+<strong>Giải thích:</strong> Thư viện `sqlite3` được tích hợp sẵn trong Python để làm việc với SQLite.
+</div>
+</div>
 <div class="question-item">
 <div class="question-text">Để xử lý dữ liệu thiếu trong pandas, ta có thể dùng:</div>
 <div class="answer-highlight">Đáp án: D - `dropna()` và `fillna()`</div>
@@ -1032,6 +1032,7 @@
 <strong>Giải thích:</strong> `.isnull()` tìm giá trị thiếu, `.sum()` đếm số lượng.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về String Processing</h4>
 <div class="question-item">
 <div class="question-text">`pd.DataFrame({'A':[1,np.nan,3]})` dùng `df.dropna().shape[0]` sẽ trả về?</div>
 <div class="answer-highlight">Đáp án: C - 1</div>
@@ -1039,20 +1040,12 @@
 <strong>Giải thích:</strong> `dropna()` xóa dòng có NaN, chỉ còn lại 1 dòng.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về String Processing</h4>
+<h4 class="subtopic-title">Câu hỏi về Value Counts</h4>
 <div class="question-item">
 <div class="question-code">pd.DataFrame({'col':['abc','AbC','xyz']}).col.str.contains('abc',case=False).sum()</div>
 <div class="answer-highlight">Đáp án: A - 2</div>
 <div class="explanation">
 <strong>Giải thích:</strong> `str.contains('abc',case=False)` tìm chuỗi chứa 'abc' (không phân biệt hoa thường), có 2 kết quả.
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về Value Counts</h4>
-<div class="question-item">
-<div class="question-code">pd.Series([1,2,3,3,2]).value_counts().sort_index().index[0]</div>
-<div class="answer-highlight">Đáp án: A - 1</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `.value_counts()` đếm tần suất, `.sort_index()` sắp xếp theo index, `.index[0]` lấy giá trị đầu tiên.
 </div>
 </div>
 </div>
@@ -1062,6 +1055,13 @@
 <h3 class="topic-title">6. Data Science Concepts</h3>
 </div>
 <h4 class="subtopic-title">Câu hỏi về Data Science Foundation</h4>
+<div class="question-item">
+<div class="question-code">pd.Series([1,2,3,3,2]).value_counts().sort_index().index[0]</div>
+<div class="answer-highlight">Đáp án: A - 1</div>
+<div class="explanation">
+<strong>Giải thích:</strong> `.value_counts()` đếm tần suất, `.sort_index()` sắp xếp theo index, `.index[0]` lấy giá trị đầu tiên.
+</div>
+</div>
 <div class="question-item">
 <div class="question-text">Khoa học dữ liệu là sự kết hợp của ba trụ cột chính nào?</div>
 <div class="answer-highlight">Đáp án: B - Toán học & Thống kê, Khoa học máy tính, Kiến thức chuyên ngành</div>
@@ -1076,6 +1076,7 @@
 <strong>Giải thích:</strong> Quy trình khoa học dữ liệu bắt đầu với việc xác định bài toán cần giải quyết.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về Data Science Roles</h4>
 <div class="question-item">
 <div class="question-text">Trong quy trình khoa học dữ liệu, việc 'làm sạch dữ liệu' thuộc bước nào?</div>
 <div class="answer-highlight">Đáp án: B - Xử lý dữ liệu</div>
@@ -1083,7 +1084,7 @@
 <strong>Giải thích:</strong> Làm sạch dữ liệu thuộc bước xử lý dữ liệu trong quy trình khoa học dữ liệu.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Data Science Roles</h4>
+<h4 class="subtopic-title">Câu hỏi về Visualization</h4>
 <div class="question-item">
 <div class="question-text">Data Engineer chủ yếu đảm nhận công việc nào?</div>
 <div class="answer-highlight">Đáp án: B - Thiết kế hạ tầng và thu thập dữ liệu</div>
@@ -1091,7 +1092,6 @@
 <strong>Giải thích:</strong> Data Engineer chuyên về thiết kế hệ thống, pipeline dữ liệu và thu thập dữ liệu.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về Visualization</h4>
 <div class="question-item">
 <div class="question-text">Matplotlib được sử dụng chủ yếu để:</div>
 <div class="answer-highlight">Đáp án: C - Trực quan hóa dữ liệu</div>
@@ -1099,6 +1099,7 @@
 <strong>Giải thích:</strong> Matplotlib là thư viện chính để tạo biểu đồ và trực quan hóa dữ liệu.
 </div>
 </div>
+<h4 class="subtopic-title">Câu hỏi về API</h4>
 <div class="question-item">
 <div class="question-text">Thư viện nào được xây dựng dựa trên Matplotlib và cung cấp giao diện đẹp hơn?</div>
 <div class="answer-highlight">Đáp án: B - Seaborn</div>
@@ -1106,20 +1107,12 @@
 <strong>Giải thích:</strong> Seaborn được xây dựng trên Matplotlib và cung cấp giao diện đẹp hơn.
 </div>
 </div>
-<h4 class="subtopic-title">Câu hỏi về API</h4>
+<h4 class="subtopic-title">Câu hỏi về Encoding</h4>
 <div class="question-item">
 <div class="question-text">API là viết tắt của:</div>
 <div class="answer-highlight">Đáp án: D - Application Programming Interface</div>
 <div class="explanation">
 <strong>Giải thích:</strong> API = Application Programming Interface, giao diện lập trình ứng dụng.
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về Encoding</h4>
-<div class="question-item">
-<div class="question-text">Encoding UTF-8 thường được sử dụng để:</div>
-<div class="answer-highlight">Đáp án: D - Mã hóa ký tự Unicode</div>
-<div class="explanation">
-<strong>Giải thích:</strong> UTF-8 là bộ mã hóa Unicode, hỗ trợ tất cả ký tự Unicode.
 </div>
 </div>
 </div>
@@ -1128,30 +1121,30 @@
 <div class="topic-icon">📝</div>
 <h3 class="topic-title">Phân bố theo chủ đề:</h3>
 </div>
-<li>Python Basics: 25 câu (13.5%)</li>
-<li>NumPy: 35 câu (18.9%)</li>
-<li>Pandas: 75 câu (40.5%)</li>
-<li>File I/O: 20 câu (10.8%)</li>
-<li>Data Processing: 15 câu (8.1%)</li>
-<li>Data Science Concepts: 15 câu (8.1%)</li>
+<p>- <strong>Python Basics:</strong> 25 câu (13.5%)</p>
+<p>- <strong>NumPy:</strong> 35 câu (18.9%)</p>
+<p>- <strong>Pandas:</strong> 75 câu (40.5%)</p>
+<p>- <strong>File I/O:</strong> 20 câu (10.8%)</p>
+<p>- <strong>Data Processing:</strong> 15 câu (8.1%)</p>
+<p>- <strong>Data Science Concepts:</strong> 15 câu (8.1%)</p>
 </div>
 <div class="topic-section" id="ph-n-b--theo----kh--">
 <div class="topic-header">
 <div class="topic-icon">📝</div>
 <h3 class="topic-title">Phân bố theo độ khó:</h3>
 </div>
-<li>Dễ: 70 câu (37.8%) - Kiến thức cơ bản</li>
-<li>Trung bình: 90 câu (48.6%) - Ứng dụng thực tế</li>
-<li>Khó: 25 câu (13.5%) - Tư duy logic và kết hợp</li>
+<p>- <strong>Dễ:</strong> 70 câu (37.8%) - Kiến thức cơ bản</p>
+<p>- <strong>Trung bình:</strong> 90 câu (48.6%) - Ứng dụng thực tế</p>
+<p>- <strong>Khó:</strong> 25 câu (13.5%) - Tư duy logic và kết hợp</p>
 </div>
 <div class="topic-section" id="ph-n-b--theo-lo-i-c-u-h-i-">
 <div class="topic-header">
 <div class="topic-icon">📝</div>
 <h3 class="topic-title">Phân bố theo loại câu hỏi:</h3>
 </div>
-<li>Code Execution: 120 câu (64.9%)</li>
-<li>Conceptual: 45 câu (24.3%)</li>
-<li>Definition: 20 câu (10.8%)</li>
+<p>- <strong>Code Execution:</strong> 120 câu (64.9%)</p>
+<p>- <strong>Conceptual:</strong> 45 câu (24.3%)</p>
+<p>- <strong>Definition:</strong> 20 câu (10.8%)</p>
 </div>
 <div class="conclusion-section" id="conclusion">
 <h2 class="conclusion-title">🎯 Kết luận và đánh giá</h2>
@@ -1180,6 +1173,13 @@
 <div class="topic-header">
 <div class="topic-icon">📝</div>
 <h3 class="topic-title">Đánh giá tổng thể:</h3>
+</div>
+<div class="question-item">
+<div class="question-text">Encoding UTF-8 thường được sử dụng để:</div>
+<div class="answer-highlight">Đáp án: D - Mã hóa ký tự Unicode</div>
+<div class="explanation">
+<strong>Giải thích:</strong> UTF-8 là bộ mã hóa Unicode, hỗ trợ tất cả ký tự Unicode.
+</div>
 </div>
 </div>
 
