@@ -176,6 +176,30 @@ function copyNotebooks() {
   }
 }
 
+function copyExamFiles() {
+  console.log('📚 Copying exam files...');
+  
+  const examSrc = path.join(__dirname, 'Exam');
+  const examDest = path.join(DOCS_DIR, 'Exam');
+  
+  if (fs.existsSync(examSrc)) {
+    fs.ensureDirSync(examDest);
+    
+    // Copy all files from Exam directory
+    const examFiles = fs.readdirSync(examSrc);
+    
+    examFiles.forEach(file => {
+      const srcPath = path.join(examSrc, file);
+      const destPath = path.join(examDest, file);
+      
+      if (fs.statSync(srcPath).isFile()) {
+        fs.copySync(srcPath, destPath);
+        console.log(`  ✓ Copied ${file}`);
+      }
+    });
+  }
+}
+
 // Render index.html from Handlebars template
 function renderIndex(data) {
   console.log('📄 Rendering index.html...');
@@ -330,6 +354,10 @@ async function build() {
     
     // Copy notebooks
     copyNotebooks();
+    console.log('');
+    
+    // Copy exam files
+    copyExamFiles();
     console.log('');
     
     // Render index

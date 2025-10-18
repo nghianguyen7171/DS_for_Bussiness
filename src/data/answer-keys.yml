@@ -1,0 +1,113 @@
+title: "Đáp án tổng hợp cho 8 đề thi DS_CLC (1-8)"
+description: "Tài liệu tổng hợp đáp án chi tiết cho tất cả câu hỏi trong 8 đề thi giữa kỳ với giải thích từng bước và phân tích theo chủ đề"
+link: "Exam/Combined_Answer_Key_DS_CLC_1-8.md"
+
+stats:
+  total_exams: 8
+  total_questions: 320
+  unique_questions: 219
+  match_rate: "84%"
+
+topics:
+  - "Python Basics"
+  - "NumPy Operations"
+  - "Pandas Operations"
+  - "File I/O Operations"
+  - "Data Processing"
+  - "Data Science Concepts"
+
+detailed_content:
+  python_basics:
+    title: "1. Python Basics"
+    questions_count: 25
+    percentage: "13.5%"
+    topics:
+      - "List Operations"
+      - "String Operations"
+      - "Tuple và Dictionary"
+      - "Functions và Lambda"
+      - "Operators"
+      - "List Comprehension"
+      - "Indentation"
+      - "Python Creator"
+      - "Python Type"
+    
+  numpy_operations:
+    title: "2. NumPy Operations"
+    questions_count: 35
+    percentage: "18.9%"
+    topics:
+      - "Array Creation"
+      - "Array Operations"
+      - "Array Properties"
+      - "Mathematical Operations"
+      - "Array Functions"
+      - "NumPy Import"
+    
+  pandas_operations:
+    title: "3. Pandas Operations"
+    questions_count: 75
+    percentage: "40.5%"
+    topics:
+      - "DataFrame Basics"
+      - "DataFrame Operations"
+      - "DataFrame Properties"
+      - "DataFrame Manipulation"
+      - "DataFrame Selection"
+      - "DataFrame Statistics"
+      - "DataFrame Export"
+    
+  file_io:
+    title: "4. File I/O Operations"
+    questions_count: 20
+    percentage: "10.8%"
+    topics:
+      - "CSV Operations"
+      - "Excel Operations"
+      - "JSON Operations"
+      - "HTML Operations"
+      - "Database Operations"
+    
+  data_processing:
+    title: "5. Data Processing"
+    questions_count: 15
+    percentage: "8.1%"
+    topics:
+      - "Missing Data"
+      - "String Processing"
+      - "Value Counts"
+    
+  data_science_concepts:
+    title: "6. Data Science Concepts"
+    questions_count: 15
+    percentage: "8.1%"
+    topics:
+      - "Data Science Foundation"
+      - "Data Science Roles"
+      - "Visualization"
+      - "API"
+      - "Encoding"
+
+difficulty_distribution:
+  easy: 70
+  medium: 90
+  hard: 25
+
+question_types:
+  code_execution: 120
+  conceptual: 45
+  definition: 20
+
+key_features:
+  - "Phủ sóng toàn diện các chủ đề quan trọng trong khoa học dữ liệu"
+  - "Cân bằng giữa lý thuyết và thực hành"
+  - "Phù hợp với trình độ sinh viên kinh tế và kinh doanh"
+  - "Đa dạng về loại câu hỏi và độ khó"
+
+recommendations:
+  - "Tăng cường câu hỏi về machine learning cơ bản"
+  - "Bổ sung câu hỏi về data visualization với Seaborn/Plotly"
+  - "Thêm câu hỏi tình huống thực tế trong kinh doanh"
+  - "Cân nhắc tăng số câu hỏi khó để phân loại học sinh tốt hơn"
+
+overall_assessment: "Bộ đề thi DS_CLC (1-8) là một bộ đề thi chất lượng tốt, phù hợp với mục tiêu đánh giá kiến thức cơ bản về khoa học dữ liệu cho sinh viên kinh tế và kinh doanh. Tỷ lệ khớp cao với thư viện câu hỏi (84%) đảm bảo tính nhất quán và độ tin cậy của việc đánh giá."

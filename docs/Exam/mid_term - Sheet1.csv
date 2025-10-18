@@ -1,0 +1,104 @@
+Câu hỏi,Text đáp án,Lựa chọn A,Lựa chọn B,Lựa chọn C,Lựa chọn D,Đáp án đúng,Điểm
+Khoa học dữ liệu là sự kết hợp của ba trụ cột chính nào?,"Toán học & Thống kê, Khoa học máy tính, Kiến thức chuyên ngành","Toán học & Thống kê, Khoa học máy tính, Kiến thức chuyên ngành","Python, R, SQL","Thu thập dữ liệu, Phân tích dữ liệu, Trực quan hóa","Machine Learning, Deep Learning, AI",A,1
+Bước đầu tiên trong chu trình khai thác dữ liệu là gì?,Xác định bài toán,Thu thập dữ liệu,Xác định bài toán,Xử lý dữ liệu,Xây dựng mô hình,B,1
+Data Engineer chủ yếu đảm nhận công việc nào?,Thiết kế hạ tầng và thu thập dữ liệu,Xây dựng mô hình machine learning,Thiết kế hạ tầng và thu thập dữ liệu,Trực quan hóa dữ liệu,Phân tích thống kê,B,1
+Python là ngôn ngữ lập trình thuộc loại nào?,"Thông dịch, kiểu động","Biên dịch, kiểu tĩnh","Thông dịch, kiểu động",Chỉ dùng cho phát triển web,Chỉ dùng cho trí tuệ nhân tạo,B,1
+Ai là người phát triển ngôn ngữ Python?,Guido van Rossum,Dennis Ritchie,Guido van Rossum,James Gosling,Bjarne Stroustrup,B,1
+Phép toán 7 // 2 trong Python cho kết quả là: 7 // 2,3,3.5,3,4,1,B,1
+Phép toán 7 % 2 trong Python cho kết quả là: 7 % 2,1,3,2,1,0,C,1
+Cú pháp nào dùng để khai báo một hàm trong Python?,def myFunc():,function myFunc():,def myFunc():,func myFunc():,declare myFunc():,B,1
+"Kết quả của my_list = [1, 2, 3]; my_list[0] là: my_list = [1, 2, 3] my_list[0]",1,0,1,2,Lỗi,B,1
+Dấu thụt lề (indentation) trong Python có vai trò gì?,Xác định cấu trúc khối lệnh,Chỉ để làm đẹp mã,"Không quan trọng, có thể bỏ qua",Xác định cấu trúc khối lệnh,Chỉ áp dụng trong hàm,C,1
+NumPy là viết tắt của:,Numerical Python,Number in Python,Numerical Python,Numerical Processing,New Python,B,1
+Đối tượng chính của NumPy để lưu trữ dữ liệu là:,ndarray,array,ndarray,matrix,vector,B,1
+Hàm nào trong NumPy dùng để tạo mảng chứa toàn số 0?,np.zeros(),np.empty(),np.ones(),np.zeros(),np.full(),C,1
+Pandas được xây dựng dựa trên thư viện nào?,NumPy,Matplotlib,NumPy,SciPy,Sklearn,B,1
+Hai cấu trúc dữ liệu cốt lõi của pandas là:,Series và DataFrame,Array và Matrix,List và Dictionary,Series và DataFrame,Vector và Table,C,1
+Series trong pandas là:,Mảng một chiều có nhãn,Mảng hai chiều có nhãn,Mảng một chiều có nhãn,Bảng dữ liệu,Từ điển,B,1
+Matplotlib được sử dụng chủ yếu để:,Trực quan hóa dữ liệu,Xử lý dữ liệu,Tính toán số học,Trực quan hóa dữ liệu,Xây dựng mô hình,C,1
+Thư viện nào được xây dựng dựa trên Matplotlib và cung cấp giao diện đẹp hơn?,Seaborn,Plotly,Seaborn,Bokeh,Altair,B,1
+Quy ước import NumPy là:,import numpy as np,import numpy,import numpy as num,import numpy as np,from numpy import *,C,1
+Hàm pd.read_csv() trong pandas dùng để:,Đọc dữ liệu từ file CSV,Ghi dữ liệu ra file CSV,Đọc dữ liệu từ file CSV,Tạo file CSV mới,Xóa file CSV,B,1
+Tham số header=None trong pd.read_csv() có ý nghĩa gì?,Dòng đầu không phải là tên cột,Bỏ qua tất cả header,Dòng đầu không phải là tên cột,Chỉ đọc header,Tạo header tự động,B,1
+Hàm pd.read_excel() dùng để làm gì?,Đọc dữ liệu từ file Excel,Đọc dữ liệu từ file Excel,Ghi dữ liệu ra file Excel,Tạo file Excel,Chuyển đổi CSV sang Excel,A,1
+JSON là viết tắt của:,JavaScript Object Notation,Java Script Object Network,JavaScript Object Notation,Java Standard Object Notation,JavaScript Online Network,B,1
+Hàm pd.read_json() dùng để:,Đọc dữ liệu từ file JSON,Tạo file JSON,Đọc dữ liệu từ file JSON,Ghi dữ liệu ra JSON,Chuyển đổi JSON sang CSV,B,1
+Tham số index_col trong pd.read_csv() dùng để:,Chỉ định cột nào làm index,Bỏ qua một cột,Chỉ định cột nào làm index,Đếm số cột,Tạo cột mới,B,1
+Tham số skiprows trong pd.read_csv() có tác dụng gì?,Bỏ qua các dòng được chỉ định,Đếm số dòng,Bỏ qua các dòng được chỉ định,Chọn số dòng cần đọc,Sắp xếp các dòng,B,1
+"Để đọc dữ liệu từ một URL sử dụng pandas, ta làm thế nào?",Dùng pd.read_csv(url) trực tiếp,Chỉ có thể đọc từ file local,Dùng pd.read_csv(url) trực tiếp,Phải download file trước,Cần thư viện khác,B,1
+Hàm pd.read_html() có tác dụng gì?,Đọc bảng từ trang web HTML,Tạo file HTML,Đọc bảng từ trang web HTML,Chuyển DataFrame sang HTML,Tạo giao diện web,B,1
+"Để xử lý dữ liệu thiếu trong pandas, ta có thể dùng:",dropna() và fillna(),delete(),remove() và add(),dropna() và fillna(),clear() và fill(),C,1
+"arr = np.array([1, 2, 3]); arr.dtype sẽ trả về: ",int32 hoặc int64,float64,int32 hoặc int64,string,object,B,1
+"np.zeros((2, 3)) tạo ra mảng có kích thước: ","2 dòng, 3 cột","2 dòng, 3 cột","3 dòng, 2 cột",5 phần tử,6 phần tử một chiều,A,1
+arr = np.arange(10); arr[2:5] sẽ trả về: arr = np.arange(10) arr[2:5],"[2, 3, 4]","[2, 3, 4]","[2, 3, 4, 5]","[3, 4, 5]","[1, 2, 3, 4]",A,1
+df.head() mặc định hiển thị bao nhiêu dòng đầu tiên?,5 dòng,3 dòng,5 dòng,10 dòng,Tất cả dòng,B,1
+"Để chọn cột 'Name' từ DataFrame df, ta dùng:",df.Name hoặc df['Name'],df.Name hoặc df['Name'],df.get('Name'),df.select('Name'),df.column('Name'),A,1
+df.loc[0] dùng để:,Chọn dòng có index 0,Chọn cột đầu tiên,Chọn dòng có index 0,Chọn phần tử đầu tiên,Xóa dòng đầu tiên,B,1
+"s = pd.Series([1, 2, 3, 4]); s.mean() trả về: s = pd.Series([1, 2, 3, 4]) s.mean()",2.5,2.0,2.5,3.0,10,B,1
+df.info() hiển thị thông tin gì về DataFrame?,Kiểu dữ liệu và thông tin bộ nhớ,Chỉ số dòng và cột,Thống kê mô tả,Kiểu dữ liệu và thông tin bộ nhớ,Giá trị thiếu,C,1
+Encoding UTF-8 thường được sử dụng để:,Mã hóa ký tự Unicode,Nén dữ liệu,Mã hóa ký tự Unicode,Bảo mật dữ liệu,Tăng tốc độ đọc,B,1
+API là viết tắt của:,Application Programming Interface,Application Programming Interface,Advanced Programming Integration,Automated Process Integration,Application Process Interface,A,1
+"Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:",sqlite3,sqlite,sqlite3,database,sql,B,1
+Tính năng chính của NumPy so với list Python thông thường là:,Tốc độ tính toán nhanh và chiếm ít bộ nhớ hơn,Dễ sử dụng hơn,Tốc độ tính toán nhanh hơn,Chiếm ít bộ nhớ hơn,Tốc độ tính toán nhanh và chiếm ít bộ nhớ hơn,D,1
+"Trong quy trình khoa học dữ liệu, việc 'làm sạch dữ liệu' thuộc bước nào?",Xử lý dữ liệu,Thu thập dữ liệu,Xử lý dữ liệu,Xây dựng mô hình,Đánh giá mô hình,B,1
+"Kết quả của đoạn code: np.array([1.5, -0.1, 3]).dtype",float64,float64,int32,object,str,A,1
+"Kết quả của đoạn code: np.arange(6).reshape(2,3).shape","(2,3)","(6,)","(3,2)","(2,3)","(1,6)",C,1
+Kết quả của đoạn code: np.arange(5) * 2,[0 2 4 6 8],[0 2 4 6 8],[0 1 2 3 4],[2 4 6 8 10],Lỗi,A,1
+"np.array([3.7, -1.2]).astype(int)","[3, -1]","[3, -1]","[4, -1]","[3, -2]",Lỗi,A,1
+"np.arange(8).reshape(2,4).T.shape","(4,2)","(2,4)","(4,2)","(8,)",Lỗi,B,1
+"np.sqrt(np.array([1,4,9]))","[1.0,2.0,3.0]","[1,2,3]","[1,4,9]","[1.0,2.0,3.0]",Lỗi,C,1
+"np.where([True,False,True],[1,2,3],[9,9,9])","[1,9,3]","[1,9,3]","[1,2,3]","[9,2,9]",Lỗi,A,1
+"arr=np.array([[1,2],[3,4]]); arr.sum()",10,10,"[4,6]","[3,7]",Lỗi,A,1
+"np.array([1,2,3]).cumsum()","[1,3,6]","[1,2,3]","[1,3,6]",6,Lỗi,B,1
+"np.array([3,-1,2]).mean()",1.333...,4,1.333...,1.5,Lỗi,B,1
+"arr=np.array([3,-1,2]); (arr>0).sum()",2,1,2,3,Lỗi,B,1
+"arr=np.array([3,-1,2]); arr.sort(); arr",[-1 2 3],[-1 2 3],[3 -1 2],[2 3 -1],Lỗi,A,1
+"np.unique([3,3,2,1,2])","[1,2,3]","[3,3,2,1,2]","[1,2,3]","[3,2,1]",Lỗi,B,1
+"np.isin([1,2,3],[2,4])","[False,True,False]","[False,True,False]","[True,False,True]","[False,True,True]",Lỗi,A,1
+"np.dot(np.array([1,2]), np.array([3,4]))",11,"[3,8]",11,7,Lỗi,B,1
+Đọc file 'sample_data.csv' với header=None. Tên của cột đầu tiên là gì? (df.columns[0]),Unnamed: 0',0,Unnamed: 0',IndexError,None,B,1
+"Đọc file 'sample_data.csv' với names=['A','B','C']. df.columns.tolist() trả về?","['A','B','C']","['A','B','C']","['0','1','2']","['Name','Age','Score']",Lỗi,A,1
+"Đọc file với index_col=0, df.index.name là?",Tên cột đầu tiên,Tên cột đầu tiên,None,0,Lỗi,A,1
+pd.read_csv('sample_data.csv').shape trả về gì?,"(số dòng, số cột)","(số dòng, số cột)","(số cột, số dòng)",tuple rỗng,Lỗi,A,1
+pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì?,3,3,5,10,Lỗi,A,1
+"pd.DataFrame({'A':[1,np.nan,3]}) dùng df.dropna().shape[0] sẽ trả về?",1,2,3,1,Lỗi,C,1
+"pd.DataFrame({'A':[1,np.nan,3]}).fillna(method='ffill').isna().sum().sum() trả về?",Lỗi,0,1,NaN,Lỗi,D,1
+"pd.DataFrame({'col':['abc','AbC','xyz']}).col.str.contains('abc',case=False).sum()",2,2,1,0,Lỗi,A,1
+"pd.Series([1,2,3,3,2]).value_counts().sort_index().index[0]",1,1,3,2,Lỗi,A,1
+"df = pd.DataFrame({'A':[1,2],'B':[3,4]}); df.to_csv('out.csv', index=False) sẽ tạo file CSV với?",Không có cột index,Không có cột index,Có thêm cột index,Chỉ cột A,Lỗi,A,1
+"df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()",1,1,0,2,Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name",index',A',None,index',Lỗi,C,1
+"df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]",0,0,1,A',Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); type(df.to_dict())",dict,dict,DataFrame,Series,list,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df['A'].mean()",2,2,3,1.5,Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()",6,6,3,5,Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()","[1,3,6]","[1,3,6]","[1,2,3]","[6,5,3]",Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x**2).tolist()","[1,4,9]","[1,4,9]","[1,2,3]","[2,3,4]",Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df.sort_values('A',ascending=False)['A'].tolist()","[1,2,3]","[3,2,1]","[1,2,3]","[2,1,3]",Lỗi,B,1
+"df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()","[1,1,2]","[1,2]","[2,1]","[1,1,2]",Lỗi,C,1
+"df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()",2,2,3,1,Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]",2,2,1,3,Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()","[6,12]","[6,12]","[12,6]","[3,4,5]",Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns={'A':'X'}).columns[0]",X',X',A',0,Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns",TRUE,TRUE,FALSE,None,Lỗi,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df.info().__class__.__name__",NoneType,NoneType,DataFrame,str,dict,A,1
+"df=pd.DataFrame({'A':[1,2,3]}); df.shape","(3,1)","(3,1)","(1,3)","(3,3)",Lỗi,A,1
+x = 4; print(type(x)),int,int,float,str,bool,A,1
+print(5 / 2),2.5,2.5,2,3,Lỗi,A,1
+print(5 // 2),3,2.5,2,3,Lỗi,C,1
+print(5 % 2),1,2.5,1,0,Lỗi,B,1
+print(2 ** 3),8,6,8,9,Lỗi,B,1
+my_str = 'Hello'; my_str.lower(),HELLO',hello',HELLO',Hello',Lỗi,B,1
+ hello '.strip(), hello', hello ',hello', hello',Lỗi,C,1
+"abc'.replace('a','b')",Lỗi,bbc',abc',bac',Lỗi,D,1
+a b c'.split(),"['a','b','c']",['a b c'],"['a','b','c']","('a','b','c')",Lỗi,B,1
+"my_list = [1,2,3]; my_list[0]",1,1,2,3,Lỗi,A,1
+"my_list = [1,2,3]; my_list[-1]",3,3,2,1,Lỗi,A,1
+"my_list = [1,2,3]; my_list[1:3]","[2,3]","[1,2]","[2,3]","[1,2,3]",Lỗi,B,1
+"{1,2,3} == {3,2,1}",TRUE,FALSE,TRUE,Lỗi,None,B,1
+"names = ['A','B','C']; names[0] = 'Z'; names","['Z','B','C']","['A','B','C']","['Z','B','C']","['A','B','Z']",Lỗi,B,1
+"x = (1,2,3); x[0]",1,1,2,3,Lỗi,A,1
+house = {'price':10}; house['price']=15; house['price'],15,10,15,None,Lỗi,B,1
+[i for i in range(5) if i%2==0],"[0,2,4]","[0,2,4]","[1,3]","[0,1,2,3,4]",Lỗi,A,1
+def square(x): return x**2; square(3),9,6,9,3,Lỗi,B,1
+add_one = lambda x:x+1; add_one(5),6,6,5,4,Lỗi,A,1

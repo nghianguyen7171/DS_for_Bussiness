@@ -1,0 +1,219 @@
+1. '-'.join(['a','b'])
+2. 'HELLO' API là viết tắt của:
+3. 'a b c'.split()
+4. 'abc'.replace('a','b')
+5. (4,2) Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+6. (s ố dòng, s ố  c ộ t) {1,2,3} == {3,2,1}
+7. 0 np.arange(8).reshape(2,4).T .shape
+8. 0 np.arr ay([3.7, -1.2]).astype(int)
+9. 1 Quy ước import NumPy là:
+10. 1 my_list = [1,2,3]; my_list[0]
+11. 2
+12. 2 df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns= {'A':'X'}).columns[0]
+13. 2 dòng, 3 c ộ t Giả sử có ﬁle ' sample_data.csv ' (3 cột: Name, Age, Scor e). K ết quả của pd.r ead_csv(' sample_data.csv ').__class__.__name__ là gì?
+14. 2 dòng, 3 c ộ t df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()
+15. 2 np.array([3.7, -1.2]).astype(int)
+16. 2021 df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()
+17. 3 'a b c'.split()
+18. 3 abc'.replace('a','b')
+19. 3 df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A'). index.name
+20. 3 my_list = [1,2,3]; my_list[1:3]
+21. 3 np.isin([1,2,3],[2,4])
+22. 3 np.where([T rue,False,T rue],[1,2,3],[9,9,9])
+23. 4 arr=np.arr ay([3,-1,2]); (arr>0).sum()
+24. 5 % 2
+25. 5 ph ầ n t ử df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()
+26. 6 df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+27. 6 np.sqrt(np.array([1,4,9]))
+28. API là viết tắt của:
+29. Ai là người phát triển ngôn ngữ Python?
+30. Automated Process Integration np.array([3,-1,2]).mean()
+31. Bjarne Stroustrup df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()
+32. Bước đầu tiên tr ong chu trình khai thác dữ liệu là gì?
+33. Bước đầu tiên trong chu trình khai thác dữ liệu là gì?
+34. Ch ỉ c ộ t A df=pd.DataF rame({' A':[1,2,3]}); df.r ename(columns= {'A':'X'}).columns[0]
+35. Ch ỉ có th ể  đ ọ c t ừ  file local arr=np.array([3,-1,2]); (arr>0).sum()
+36. Ch ỉ đ ể  làm đ ẹ p mã Bước đầu tiên trong chu trình khai thác dữ liệu là gì?
+37. Ch ọn s ố  dòng c ầ n đ ọ c df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+38. Chuy ể n đ ổ i CSV sang Excel Giả sử có ﬁle 'sample_data.csv' (3 cột: Name, Age, Score). Kết quả của pd.read_csv('sample_data.csv').__class__.__name__ là gì?
+39. Cú pháp nào dùng để khai báo một hàm trong Python?
+40. Data Engineer chủ y ếu đảm nhận công việc nào? 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 2/13 1 point L ỗi ['a','b','c'] ('a','b','c') ['a b c'] 1 point [0 2 4 6 8] [2 4 6 8 10] L ỗi [0 1 2 3 4] 1 point B ảo m ậ t d ữ  li ệ u T ăng t ố c đ ộ  đ ọ c Nén d ữ  li ệ u Mã hóa ký t ự  Unicode 1 point delete() và insert() remove() và add() clear() và fill()
+41. Data Engineer chủ yếu đảm nhận công việc nào?
+42. DataFrame Để chọn cột 'Name' từ DataFrame df, ta dùng:
+43. Dùng pd.read_csv(url) tr ự c ti ế p pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì?
+44. Dùng pd.read_csv(url) tr ự c ti ế p Đối tượng chính của NumPy để lưu trữ dữ liệu là:
+45. Dấu thụt lề (indentation) tr ong P ython có v ai trò gì?
+46. Dấu thụt lề (indentation) trong Python có vai trò gì?
+47. Encoding UTF-8 thường được sử dụng để:
+48. Giả sử ﬁle sample_data.csv có 3 dòng 5 cột . pd.r ead_csv(' sample_data.csv ').head(3).shape[0] tr ả về gì?
+49. Hai cấu trúc dữ liệu cốt lõi của pandas là:
+50. Hello df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns= {'A':'X'}).columns[0]
+51. Hello' df=pd.DataFrame({'A':[1,2,3]}); df.info ().__class__.__name__
+52. Hàm nào tr ong NumP y dùng để tạo mảng chứa t oàn số 0?
+53. Hàm nào trong NumPy dùng để tạo mảng chứa toàn số 0?
+54. Hàm pd.read_csv() trong pandas dùng để:
+55. Hàm pd.read_excel() dùng để làm gì?
+56. Hàm pd.read_html() có tác dụng gì?
+57. Hàm pd.read_json() dùng để:
+58. JSON là viết tắt của:
+59. K ết quả của đoạn code: np.ar ange(5)
+60. K ết quả của đoạn code: np.ar ange(6).r eshape(2,3).shape
+61. Khoa học dữ liệu là sự kết hợp của ba trụ cột chính nào?
+62. Kết quả của my_list = [1, 2, 3]; my_list[0] là: my_list = [1, 2, 3] my_list[0]
+63. Kết quả của đoạn code: np.arange(5)
+64. Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+65. Kết quả của đoạn code: np.array([1.5, -0.1, 3]).dtype
+66. L ỗi Data Engineer chủ yếu đảm nhận công việc nào?
+67. L ỗi Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+68. L ỗi P andas được xâ y dựng dựa tr ên thư viện nào?
+69. L ỗi Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+70. L ỗi add_one = lambda x:x+1; add_one(5)
+71. L ỗi df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()
+72. L ỗi df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+73. L ỗi my_list = [1,2,3]; my_list[0]
+74. L ỗi pd.DataFrame({'col': ['abc','AbC','xyz']}).col.str .contains('abc',case=False).sum()
+75. L ỗi x = 4; print(type(x))
+76. L ỗi Đọc ﬁle 'sample_data.csv' với names=['A','B','C']. df.columns.tolist() trả về?
+77. L ỗi Đối tượng chính của NumPy để lưu trữ dữ liệu là:
+78. M ột đ ị nh d ạ ng file print(5 // 2)
+79. Matplotlib được sử dụng chủ yếu để:
+80. None Pandas được xây dựng dựa trên thư viện nào?
+81. None df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()
+82. None pd.Series([1,2,3,3,2]).value_counts().sort_index().values[-1]
+83. NumP y là viết tắt của:
+84. NumPy là viết tắt của:
+85. Numeric Python df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()
+86. Phân tích th ố ng kê names = [' A','B','C']; names[0] = 'Z'; print(names)
+87. Phép t oán 7 % 2 tr ong P ython cho k ết quả là: 7 % 2
+88. Phép toán 7 % 2 trong Python cho kết quả là: 7 % 2
+89. Phép toán 7 // 2 trong Python cho kết quả là: 7 // 2
+90. Python là ngôn ngữ lập trình thuộc loại nào?
+91. Python, R, SQL  hello '.strip()
+92. Question 1 1: Encoding UTF-8 thường được sử dụng để:
+93. Question 1 1: Hàm pd.read_csv() trong pandas dùng để:
+94. Question 1 1: arr=np.array([3,-1,2]); (arr>0).sum()
+95. Question 1 1: df=pd.DataFrame({'A':[1,2,3]}); df.shape
+96. Question 1 1: np.array([1,2,3]).cumsum()
+97. Question 1 1: np.array([3,-1,2]).mean()
+98. Question 1 1: print(5 / 2)
+99. Quy ước impor t NumP y là: 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 11/13 1 point hello' hello ' L ỗi Hello 1 point Advanced Programming Integration Automated Process Integration Application Process Interface Application Programming Interface 1 point L ỗi (2,4) (4,2) (8,) Never submit passwords through Google Forms.
+100. Quy ước import NumPy là:
+101. SQLite là gì?
+102. Series trong pandas là:
+103. T ạo file HTML np.arange(8).reshape(2,4).T .shape
+104. T ạo header t ự  đ ộ ng pd.read_csv('sample_data.csv').shape trả về gì?
+105. Tham số header=None trong pd.read_csv() có ý nghĩa gì?
+106. Tham số index_col trong pd.read_csv() dùng để:
+107. Tham số skipr ows tr ong pd.r ead_csv() có tác dụng gì?
+108. Tham số skiprows trong pd.read_csv() có tác dụng gì?
+109. Thi ế t k ế  h ạ  t ầ ng và thu th ậ p d ữ  li ệ u df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()
+110. This content is neither cr eated nor endorsed b y Google. - Contact form owner  - Terms of Ser vice - Privacy P olicy  hello '.strip()
+111. This content is neither cr eated nor endorsed b y Google. Pandas được xây dựng dựa trên thư viện nào?
+112. This content is neither cr eated nor endorsed b y Google. Series trong pandas là:
+113. This content is neither cr eated nor endorsed b y Google. df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns
+114. This content is neither cr eated nor endorsed b y Google. my_list = [1,2,3]; my_list[1:3]
+115. This content is neither cr eated nor endorsed b y Google. Để đọc dữ liệu từ một URL  sử dụng pandas, ta làm thế nào?
+116. Thu th ậ p d ữ  li ệ u Tham số index_col trong pd.read_csv() dùng để:
+117. Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+118. Trong quy trình khoa học dữ liệu, việc 'làm sạch dữ liệu' thuộc bước nào?
+119. Tính năng chính của NumPy so với list Python thông thường là:
+120. Xây d ự ng mô hình Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+121. Xóa file CSV x = 4; print(type(x))
+122. [1,2,3] df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]
+123. [1,2,3] df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()
+124. [1,2,3] x = (1,2,3); x[0]
+125. [2 4 6 8 10] Data Engineer chủ yếu đảm nhận công việc nào?
+126. [3,3,2,1,2] Python là ngôn ngữ lập trình thuộc loại nào?
+127. [False,True,False] np.where([T rue,False,T rue],[1,2,3],[9,9,9])
+128. [True,False,True] Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+129. [i for i in range(5) if i%2==0]
+130. a b c'.split()
+131. abc' np.unique([3,3,2,1,2])
+132. abc'.replace('a','b')
+133. add_one = lambda x:x+1; add_one(5) 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 4/13 1 point NumPy Sklearn SciPy Matplotlib 1 point L ỗi 5 3 10 1 point 15 None 10
+134. arr = np.ar ange(10); arr[2:5] sẽ tr ả về:
+135. arr = np.array([1, 2, 3]); arr .dtype sẽ trả về: arr = np.array([1, 2, 3]) arr.dtype
+136. arr=np.array([[1,2],[3,4]]); arr .sum()
+137. def square(x): return x
+138. df = pd.DataF rame({' A':[1,2], 'B':[3,4]}); df.t o_csv(' out.csv ', index=F alse) sẽ tạo ﬁle CSV v ới? 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 8/13 1 point [3, -1] [4, -1] L ỗi [3, -2] 1 point [1, 2, 3, 4] [3, 4, 5] [2, 3, 4, 5] [2, 3, 4] 1 point Thu th ậ p d ữ  li ệ u X ử lý d ữ  li ệ u Xác đ ị nh bài toán Xây d ự ng mô hình 1 point 1 L ỗi A'
+139. df = pd.DataFrame({'A':[1,2],'B':[3,4]}); df.to_csv('out.csv', index=False) sẽ tạo ﬁle CSV với?
+140. df.info () hiển thị thông tin gì về DataFrame?
+141. df.loc[0] dùng để:
+142. df=pd.DataF rame({' A':[1,2,3]}); df.info ().__class__.__name__ 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 6/13 1 point T ừ đ i ể n B ảng d ữ  li ệ u M ảng m ộ t chi ề u có nhãn M ảng hai chi ề u có nhãn 1 point index' L ỗi 'A' None 1 point Đ ếm s ố  dòng B ỏ qua các dòng đ ư ợ c ch ỉ  đ ị nh S ắp x ế p các dòng Ch ọn s ố  dòng c ầ n đ ọ c 1 point ndarray array matrix
+143. df=pd.DataF rame({' A':[1,2,3]}); df.r eset_index().index[0] 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 9/13 1 point ndarray Series dict DataFrame 1 point [1,2,3] [1,3,6] L ỗi 6 1 point 3 dòng, 2 c ộ t 6 ph ầ n t ử  m ộ t chi ề u 5 ph ầ n t ử
+144. df=pd.DataF rame({' A':[1,2,3]}); df.set_index(' A'). index.name
+145. df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()
+146. df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()
+147. df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()
+148. df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns
+149. df=pd.DataFrame({'A':[1,2,3]}); df.info ().__class__.__name__
+150. df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]
+151. df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns= {'A':'X'}).columns[0]
+152. df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]
+153. df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A'). index.name
+154. df=pd.DataFrame({'A':[1,2,3]}); df.shape
+155. df=pd.DataFrame({'A':[1,2,3]}); df.sort_values('A',ascending=False)['A'].tolist()
+156. df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+157. df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()
+158. df=pd.DataFrame({'A':[1,2,3]}); df['A'].mean()
+159. df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()
+160. df=pd.DataFrame({'A':[1,2,3]}); type(df.to_dict())
+161. df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()
+162. dropna() và fillna() ' a b c '.split()
+163. float 'a b c'.split()
+164. function myFunc(): Thư viện nào được xây dựng dựa trên Matplotlib và cung cấp giao diện đẹp hơn?
+165. hello '.strip()
+166. hello' df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]
+167. house = {' price ':10}; house[' price ']=15; house[' price '] 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 5/13 1 point [0,2,4] [0,1,2,3,4] L ỗi [1,3] 1 point Vector và Table Array và Matrix Series và DataFrame List và Dictionary 1 point (3,2) (6,) (1,6) (2,3) 1 point DataFrame dict NoneType
+168. house = {'price':10}; house['price']=15; house['price']
+169. import numpy as num Khoa học dữ liệu là sự k ết hợp của ba trụ cột chính nào?
+170. my_list = [1,2,3]; my_list[-1]
+171. my_list = [1,2,3]; my_list[0]
+172. my_list = [1,2,3]; my_list[1:3]
+173. my_str = 'Hello'; my_str .lower()
+174. names = ['A','B','C']; names[0] = 'Z'; names
+175. ndarray Trong quy trình khoa học dữ liệu, việc 'làm sạch dữ liệu' thuộc bước nào?
+176. np.ar ange(8).r eshape(2,4).T .shape Submit Clear form Forms 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 12/13 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 13/13
+177. np.arange(8).reshape(2,4).T .shape
+178. np.arr ay([1,2,3]).cumsum()
+179. np.array([1,2,3]).cumsum()
+180. np.array([3,-1,2]).mean()
+181. np.array([3.7, -1.2]).astype(int)
+182. np.dot(np.array([1,2]), np.array([3,4]))
+183. np.empty() a b c'.split()
+184. np.eye(3)
+185. np.isin([1,2,3],[2,4])
+186. np.sqrt(np.array([1,4,9]))
+187. np.unique([3,3,2,1,2])
+188. np.z eros((2, 3)) tạo r a mảng có kích thước: 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 10/13 1 point Machine Learning, Deep Learning, AI Toán h ọ c & Th ố ng kê, Khoa h ọ c máy tính, Ki ế n th ứ c chuyên ngành Thu th ậ p d ữ  li ệ u, Phân tích d ữ  li ệ u, Tr ự c quan hóa Python, R, SQL 1 point Ch ỉ đ ể  làm đ ẹ p mã Không quan tr ọ ng, có th ể  b ỏ  qua Xác đ ị nh c ấ u trúc kh ố i l ệ nh Ch ỉ áp d ụ ng trong hàm 1 point 0 1 3 2 1 point from numpy import
+189. np.zeros((2, 3)) tạo ra mảng có kích thước:
+190. np.zeros() df.loc[0] dùng để:
+191. pd.DataFrame({'A': [1,np.nan,3]}).ﬁllna(method='fﬁll').isna().sum().sum() trả về?
+192. pd.DataFrame({'A':[1,np.nan,3]}) dùng df.dropna().shape[0] sẽ trả về?
+193. pd.DataFrame({'col': ['abc','AbC','xyz']}).col.str .contains('abc',case=False).sum()
+194. pd.Series([1,2,3,3,2]).value_counts().sort_index().index[0]
+195. pd.r ead_csv(' sample_data.csv ').shape tr ả về gì?
+196. pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì?
+197. pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì? (Giả sử ﬁle sample_data.csv có ít nhất 3 dòng )
+198. pd.read_csv('sample_data.csv').shape trả về gì?
+199. pd.to_datetime(pd.Series(['2020-01-01'])).dt.year .iloc[0] trả về?
+200. print(2
+201. print(5 % 2)
+202. print(5 / 2)
+203. print(5 // 2)
+204. s = pd.Series([1, 2, 3, 4]); s.mean() trả về:
+205. str [i for i in r ange(5) if i%2==0]
+206. vector Series tr ong pandas là:
+207. x = (1,2,3); x[0]
+208. x = 4; print(type(x))
+209. {1,2,3} == {3,2,1}
+210. Để chọn cột 'Name' từ DataFrame df, ta dùng:
+211. Để xử lý dữ liệu thiếu tr ong pandas, ta có thể dùng: 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 3/13 1 point 1 2 3 L ỗi 1 point New Python Number Python Numeric Python Numerical Processing 1 point L ỗi 3 1 2 1 point 5 6 L ỗi
+212. Để xử lý dữ liệu thiếu trong pandas, ta có thể dùng:
+213. Để đọc dữ liệu từ một URL  sử dụng pandas, ta làm thế nào?
+214. Đọc ﬁle ' sample_data.csv ' với header=None. Tên của cột đầu tiên là gì? (df.columns[0])
+215. Đọc ﬁle 'sample_data.csv' với header=None. Tên của cột đầu tiên là gì? (df.columns[0])
+216. Đọc ﬁle 'sample_data.csv' với names=['A','B','C']. df.columns.tolist() trả về?
+217. Đọc ﬁle với index_col=0, df.index.name  là?
+218. Đối tượng chính của NumP y để lưu trữ dữ liệu là: 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 7/13 1 point L ỗi 'A' 0 'X' 1 point 0 None Unnamed: 0' IndexError 1 point Không có c ộ t index L ỗi Có thêm c ộ t index
+219. Đối tượng chính của NumPy để lưu trữ dữ liệu là:

@@ -127,6 +127,7 @@ lectures:
     activities:
       - "Administer Midterm 1"
     assessment: "Midterm 1"
+    answer_keys_link: "#answer-keys"
 
   - id: 8b
     week: 8

@@ -1,0 +1,37 @@
+UNMATCHED QUESTIONS
+==================================================
+
+1. '-'.join(['a','b'])
+2. (s ố dòng, s ố  c ộ t) {1,2,3} == {3,2,1}
+3. 2
+4. 2 dòng, 3 c ộ t Giả sử có ﬁle ' sample_data.csv ' (3 cột: Name, Age, Scor e). K ết quả của pd.r ead_csv(' sample_data.csv ').__class__.__name__ là gì?
+5. 5 % 2
+6. Automated Process Integration np.array([3,-1,2]).mean()
+7. Ch ỉ có th ể  đ ọ c t ừ  file local arr=np.array([3,-1,2]); (arr>0).sum()
+8. Chuy ể n đ ổ i CSV sang Excel Giả sử có ﬁle 'sample_data.csv' (3 cột: Name, Age, Score). Kết quả của pd.read_csv('sample_data.csv').__class__.__name__ là gì?
+9. Data Engineer chủ y ếu đảm nhận công việc nào? 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 2/13 1 point L ỗi ['a','b','c'] ('a','b','c') ['a b c'] 1 point [0 2 4 6 8] [2 4 6 8 10] L ỗi [0 1 2 3 4] 1 point B ảo m ậ t d ữ  li ệ u T ăng t ố c đ ộ  đ ọ c Nén d ữ  li ệ u Mã hóa ký t ự  Unicode 1 point delete() và insert() remove() và add() clear() và fill()
+10. Giả sử ﬁle sample_data.csv có 3 dòng 5 cột . pd.r ead_csv(' sample_data.csv ').head(3).shape[0] tr ả về gì?
+11. M ột đ ị nh d ạ ng file print(5 // 2)
+12. Python, R, SQL  hello '.strip()
+13. Question 1 1: print(5 / 2)
+14. Quy ước impor t NumP y là: 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 11/13 1 point hello' hello ' L ỗi Hello 1 point Advanced Programming Integration Automated Process Integration Application Process Interface Application Programming Interface 1 point L ỗi (2,4) (4,2) (8,) Never submit passwords through Google Forms.
+15. SQLite là gì?
+16. Thi ế t k ế  h ạ  t ầ ng và thu th ậ p d ữ  li ệ u df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()
+17. This content is neither cr eated nor endorsed b y Google. - Contact form owner  - Terms of Ser vice - Privacy P olicy  hello '.strip()
+18. This content is neither cr eated nor endorsed b y Google. Pandas được xây dựng dựa trên thư viện nào?
+19. This content is neither cr eated nor endorsed b y Google. Series trong pandas là:
+20. This content is neither cr eated nor endorsed b y Google. df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns
+21. This content is neither cr eated nor endorsed b y Google. my_list = [1,2,3]; my_list[1:3]
+22. This content is neither cr eated nor endorsed b y Google. Để đọc dữ liệu từ một URL  sử dụng pandas, ta làm thế nào?
+23. add_one = lambda x:x+1; add_one(5) 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 4/13 1 point NumPy Sklearn SciPy Matplotlib 1 point L ỗi 5 3 10 1 point 15 None 10
+24. df = pd.DataF rame({' A':[1,2], 'B':[3,4]}); df.t o_csv(' out.csv ', index=F alse) sẽ tạo ﬁle CSV v ới? 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 8/13 1 point [3, -1] [4, -1] L ỗi [3, -2] 1 point [1, 2, 3, 4] [3, 4, 5] [2, 3, 4, 5] [2, 3, 4] 1 point Thu th ậ p d ữ  li ệ u X ử lý d ữ  li ệ u Xác đ ị nh bài toán Xây d ự ng mô hình 1 point 1 L ỗi A'
+25. df=pd.DataF rame({' A':[1,2,3]}); df.info ().__class__.__name__ 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 6/13 1 point T ừ đ i ể n B ảng d ữ  li ệ u M ảng m ộ t chi ề u có nhãn M ảng hai chi ề u có nhãn 1 point index' L ỗi 'A' None 1 point Đ ếm s ố  dòng B ỏ qua các dòng đ ư ợ c ch ỉ  đ ị nh S ắp x ế p các dòng Ch ọn s ố  dòng c ầ n đ ọ c 1 point ndarray array matrix
+26. df=pd.DataF rame({' A':[1,2,3]}); df.r eset_index().index[0] 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 9/13 1 point ndarray Series dict DataFrame 1 point [1,2,3] [1,3,6] L ỗi 6 1 point 3 dòng, 2 c ộ t 6 ph ầ n t ử  m ộ t chi ề u 5 ph ầ n t ử
+27. dropna() và fillna() ' a b c '.split()
+28. house = {' price ':10}; house[' price ']=15; house[' price '] 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 5/13 1 point [0,2,4] [0,1,2,3,4] L ỗi [1,3] 1 point Vector và Table Array và Matrix Series và DataFrame List và Dictionary 1 point (3,2) (6,) (1,6) (2,3) 1 point DataFrame dict NoneType
+29. np.ar ange(8).r eshape(2,4).T .shape Submit Clear form Forms 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 12/13 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 13/13
+30. np.eye(3)
+31. np.z eros((2, 3)) tạo r a mảng có kích thước: 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 10/13 1 point Machine Learning, Deep Learning, AI Toán h ọ c & Th ố ng kê, Khoa h ọ c máy tính, Ki ế n th ứ c chuyên ngành Thu th ậ p d ữ  li ệ u, Phân tích d ữ  li ệ u, Tr ự c quan hóa Python, R, SQL 1 point Ch ỉ đ ể  làm đ ẹ p mã Không quan tr ọ ng, có th ể  b ỏ  qua Xác đ ị nh c ấ u trúc kh ố i l ệ nh Ch ỉ áp d ụ ng trong hàm 1 point 0 1 3 2 1 point from numpy import
+32. pd.to_datetime(pd.Series(['2020-01-01'])).dt.year .iloc[0] trả về?
+33. Để xử lý dữ liệu thiếu tr ong pandas, ta có thể dùng: 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 3/13 1 point 1 2 3 L ỗi 1 point New Python Number Python Numeric Python Numerical Processing 1 point L ỗi 3 1 2 1 point 5 6 L ỗi
+34. Đối tượng chính của NumP y để lưu trữ dữ liệu là: 16:17 18/10/25 DS_CLC-1 https://docs.google.com/forms/d/e/1FAIpQLSdeEzvS8ls5u__ePKX6hVZZ1LjeVQn0ku-BvFvupBQ9IuDprg/viewform 7/13 1 point L ỗi 'A' 0 'X' 1 point 0 None Unnamed: 0' IndexError 1 point Không có c ộ t index L ỗi Có thêm c ộ t index

@@ -33,6 +33,9 @@
                             {{#if notebook}}
                             <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
                             {{/if}}
+                            {{#if answer_keys_link}}
+                            <br><a href="{{answer_keys_link}}" class="answer-keys-link">🔑 Đáp án thi</a>
+                            {{/if}}
                         </td>
                         <td data-label="Assessment">{{assessment}}</td>
                     </tr>
