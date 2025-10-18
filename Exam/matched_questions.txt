@@ -1,0 +1,1113 @@
+MATCHED QUESTIONS
+==================================================
+
+1. EXAM QUESTION: 'HELLO' API là viết tắt của:
+   LIBRARY QUESTION: API là viết tắt của:
+   SIMILARITY: 0.83
+   CORRECT ANSWER: A
+   EXPLANATION: Application Programming Interface
+
+2. EXAM QUESTION: 'a b c'.split()
+   LIBRARY QUESTION: a b c'.split()
+   SIMILARITY: 0.97
+   CORRECT ANSWER: B
+   EXPLANATION: ['a','b','c']
+
+3. EXAM QUESTION: 'abc'.replace('a','b')
+   LIBRARY QUESTION: abc'.replace('a','b')
+   SIMILARITY: 0.98
+   CORRECT ANSWER: D
+   EXPLANATION: Lỗi
+
+4. EXAM QUESTION: (4,2) Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+   LIBRARY QUESTION: Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+   SIMILARITY: 0.96
+   CORRECT ANSWER: B
+   EXPLANATION: sqlite3
+
+5. EXAM QUESTION: 0 np.arange(8).reshape(2,4).T .shape
+   LIBRARY QUESTION: np.arange(8).reshape(2,4).T.shape
+   SIMILARITY: 0.96
+   CORRECT ANSWER: B
+   EXPLANATION: (4,2)
+
+6. EXAM QUESTION: 0 np.arr ay([3.7, -1.2]).astype(int)
+   LIBRARY QUESTION: np.array([3.7, -1.2]).astype(int)
+   SIMILARITY: 0.96
+   CORRECT ANSWER: A
+   EXPLANATION: [3, -1]
+
+7. EXAM QUESTION: 1 Quy ước import NumPy là:
+   LIBRARY QUESTION: Quy ước import NumPy là:
+   SIMILARITY: 0.96
+   CORRECT ANSWER: C
+   EXPLANATION: import numpy as np
+
+8. EXAM QUESTION: 1 my_list = [1,2,3]; my_list[0]
+   LIBRARY QUESTION: my_list = [1,2,3]; my_list[0]
+   SIMILARITY: 0.97
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+9. EXAM QUESTION: 2 df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns= {'A':'X'}).columns[0]
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns={'A':'X'}).columns[0]
+   SIMILARITY: 0.98
+   CORRECT ANSWER: A
+   EXPLANATION: X'
+
+10. EXAM QUESTION: 2 dòng, 3 c ộ t df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()
+   SIMILARITY: 0.88
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+11. EXAM QUESTION: 2 np.array([3.7, -1.2]).astype(int)
+   LIBRARY QUESTION: np.array([3.7, -1.2]).astype(int)
+   SIMILARITY: 0.97
+   CORRECT ANSWER: A
+   EXPLANATION: [3, -1]
+
+12. EXAM QUESTION: 2021 df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()
+   SIMILARITY: 0.96
+   CORRECT ANSWER: A
+   EXPLANATION: [1,3,6]
+
+13. EXAM QUESTION: 3 'a b c'.split()
+   LIBRARY QUESTION: a b c'.split()
+   SIMILARITY: 0.90
+   CORRECT ANSWER: B
+   EXPLANATION: ['a','b','c']
+
+14. EXAM QUESTION: 3 abc'.replace('a','b')
+   LIBRARY QUESTION: abc'.replace('a','b')
+   SIMILARITY: 0.95
+   CORRECT ANSWER: D
+   EXPLANATION: Lỗi
+
+15. EXAM QUESTION: 3 df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A'). index.name
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name
+   SIMILARITY: 0.98
+   CORRECT ANSWER: C
+   EXPLANATION: index'
+
+16. EXAM QUESTION: 3 my_list = [1,2,3]; my_list[1:3]
+   LIBRARY QUESTION: my_list = [1,2,3]; my_list[-1]
+   SIMILARITY: 0.92
+   CORRECT ANSWER: A
+   EXPLANATION: 3
+
+17. EXAM QUESTION: 3 np.isin([1,2,3],[2,4])
+   LIBRARY QUESTION: np.isin([1,2,3],[2,4])
+   SIMILARITY: 0.96
+   CORRECT ANSWER: A
+   EXPLANATION: [False,True,False]
+
+18. EXAM QUESTION: 3 np.where([T rue,False,T rue],[1,2,3],[9,9,9])
+   LIBRARY QUESTION: np.where([True,False,True],[1,2,3],[9,9,9])
+   SIMILARITY: 0.96
+   CORRECT ANSWER: A
+   EXPLANATION: [1,9,3]
+
+19. EXAM QUESTION: 4 arr=np.arr ay([3,-1,2]); (arr>0).sum()
+   LIBRARY QUESTION: arr=np.array([3,-1,2]); (arr>0).sum()
+   SIMILARITY: 0.96
+   CORRECT ANSWER: B
+   EXPLANATION: 2
+
+20. EXAM QUESTION: 5 ph ầ n t ử df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()
+   SIMILARITY: 0.87
+   CORRECT ANSWER: A
+   EXPLANATION: 6
+
+21. EXAM QUESTION: 6 df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+   SIMILARITY: 0.98
+   CORRECT ANSWER: A
+   EXPLANATION: [1,4,9]
+
+22. EXAM QUESTION: 6 np.sqrt(np.array([1,4,9]))
+   LIBRARY QUESTION: np.sqrt(np.array([1,4,9]))
+   SIMILARITY: 0.96
+   CORRECT ANSWER: C
+   EXPLANATION: [1.0,2.0,3.0]
+
+23. EXAM QUESTION: API là viết tắt của:
+   LIBRARY QUESTION: API là viết tắt của:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: Application Programming Interface
+
+24. EXAM QUESTION: Ai là người phát triển ngôn ngữ Python?
+   LIBRARY QUESTION: Ai là người phát triển ngôn ngữ Python?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Guido van Rossum
+
+25. EXAM QUESTION: Bjarne Stroustrup df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()
+   SIMILARITY: 0.89
+   CORRECT ANSWER: A
+   EXPLANATION: [6,12]
+
+26. EXAM QUESTION: Bước đầu tiên tr ong chu trình khai thác dữ liệu là gì?
+   LIBRARY QUESTION: Bước đầu tiên trong chu trình khai thác dữ liệu là gì?
+   SIMILARITY: 0.99
+   CORRECT ANSWER: B
+   EXPLANATION: Xác định bài toán
+
+27. EXAM QUESTION: Bước đầu tiên trong chu trình khai thác dữ liệu là gì?
+   LIBRARY QUESTION: Bước đầu tiên trong chu trình khai thác dữ liệu là gì?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Xác định bài toán
+
+28. EXAM QUESTION: Ch ỉ c ộ t A df=pd.DataF rame({' A':[1,2,3]}); df.r ename(columns= {'A':'X'}).columns[0]
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns={'A':'X'}).columns[0]
+   SIMILARITY: 0.89
+   CORRECT ANSWER: A
+   EXPLANATION: X'
+
+29. EXAM QUESTION: Ch ỉ đ ể  làm đ ẹ p mã Bước đầu tiên trong chu trình khai thác dữ liệu là gì?
+   LIBRARY QUESTION: Bước đầu tiên trong chu trình khai thác dữ liệu là gì?
+   SIMILARITY: 0.82
+   CORRECT ANSWER: B
+   EXPLANATION: Xác định bài toán
+
+30. EXAM QUESTION: Ch ọn s ố  dòng c ầ n đ ọ c df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+   SIMILARITY: 0.80
+   CORRECT ANSWER: A
+   EXPLANATION: [1,4,9]
+
+31. EXAM QUESTION: Cú pháp nào dùng để khai báo một hàm trong Python?
+   LIBRARY QUESTION: Cú pháp nào dùng để khai báo một hàm trong Python?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: def myFunc():
+
+32. EXAM QUESTION: Data Engineer chủ yếu đảm nhận công việc nào?
+   LIBRARY QUESTION: Data Engineer chủ yếu đảm nhận công việc nào?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Thiết kế hạ tầng và thu thập dữ liệu
+
+33. EXAM QUESTION: DataFrame Để chọn cột 'Name' từ DataFrame df, ta dùng:
+   LIBRARY QUESTION: Để chọn cột 'Name' từ DataFrame df, ta dùng:
+   SIMILARITY: 0.90
+   CORRECT ANSWER: A
+   EXPLANATION: df.Name hoặc df['Name']
+
+34. EXAM QUESTION: Dùng pd.read_csv(url) tr ự c ti ế p pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì?
+   LIBRARY QUESTION: pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì?
+   SIMILARITY: 0.76
+   CORRECT ANSWER: A
+   EXPLANATION: 3
+
+35. EXAM QUESTION: Dùng pd.read_csv(url) tr ự c ti ế p Đối tượng chính của NumPy để lưu trữ dữ liệu là:
+   LIBRARY QUESTION: Đối tượng chính của NumPy để lưu trữ dữ liệu là:
+   SIMILARITY: 0.73
+   CORRECT ANSWER: B
+   EXPLANATION: ndarray
+
+36. EXAM QUESTION: Dấu thụt lề (indentation) tr ong P ython có v ai trò gì?
+   LIBRARY QUESTION: Dấu thụt lề (indentation) trong Python có vai trò gì?
+   SIMILARITY: 0.97
+   CORRECT ANSWER: C
+   EXPLANATION: Xác định cấu trúc khối lệnh
+
+37. EXAM QUESTION: Dấu thụt lề (indentation) trong Python có vai trò gì?
+   LIBRARY QUESTION: Dấu thụt lề (indentation) trong Python có vai trò gì?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: Xác định cấu trúc khối lệnh
+
+38. EXAM QUESTION: Encoding UTF-8 thường được sử dụng để:
+   LIBRARY QUESTION: Encoding UTF-8 thường được sử dụng để:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Mã hóa ký tự Unicode
+
+39. EXAM QUESTION: Hai cấu trúc dữ liệu cốt lõi của pandas là:
+   LIBRARY QUESTION: Hai cấu trúc dữ liệu cốt lõi của pandas là:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: Series và DataFrame
+
+40. EXAM QUESTION: Hello df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns= {'A':'X'}).columns[0]
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns={'A':'X'}).columns[0]
+   SIMILARITY: 0.95
+   CORRECT ANSWER: A
+   EXPLANATION: X'
+
+41. EXAM QUESTION: Hello' df=pd.DataFrame({'A':[1,2,3]}); df.info ().__class__.__name__
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.info().__class__.__name__
+   SIMILARITY: 0.94
+   CORRECT ANSWER: A
+   EXPLANATION: NoneType
+
+42. EXAM QUESTION: Hàm nào tr ong NumP y dùng để tạo mảng chứa t oàn số 0?
+   LIBRARY QUESTION: Hàm nào trong NumPy dùng để tạo mảng chứa toàn số 0?
+   SIMILARITY: 0.97
+   CORRECT ANSWER: C
+   EXPLANATION: np.zeros()
+
+43. EXAM QUESTION: Hàm nào trong NumPy dùng để tạo mảng chứa toàn số 0?
+   LIBRARY QUESTION: Hàm nào trong NumPy dùng để tạo mảng chứa toàn số 0?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: np.zeros()
+
+44. EXAM QUESTION: Hàm pd.read_csv() trong pandas dùng để:
+   LIBRARY QUESTION: Hàm pd.read_csv() trong pandas dùng để:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Đọc dữ liệu từ file CSV
+
+45. EXAM QUESTION: Hàm pd.read_excel() dùng để làm gì?
+   LIBRARY QUESTION: Hàm pd.read_excel() dùng để làm gì?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: Đọc dữ liệu từ file Excel
+
+46. EXAM QUESTION: Hàm pd.read_html() có tác dụng gì?
+   LIBRARY QUESTION: Hàm pd.read_html() có tác dụng gì?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Đọc bảng từ trang web HTML
+
+47. EXAM QUESTION: Hàm pd.read_json() dùng để:
+   LIBRARY QUESTION: Hàm pd.read_json() dùng để:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Đọc dữ liệu từ file JSON
+
+48. EXAM QUESTION: JSON là viết tắt của:
+   LIBRARY QUESTION: JSON là viết tắt của:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: JavaScript Object Notation
+
+49. EXAM QUESTION: K ết quả của đoạn code: np.ar ange(5)
+   LIBRARY QUESTION: Kết quả của đoạn code: np.arange(5)
+   SIMILARITY: 0.97
+   CORRECT ANSWER: A
+   EXPLANATION: [0 2 4 6 8]
+
+50. EXAM QUESTION: K ết quả của đoạn code: np.ar ange(6).r eshape(2,3).shape
+   LIBRARY QUESTION: Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+   SIMILARITY: 0.97
+   CORRECT ANSWER: C
+   EXPLANATION: (2,3)
+
+51. EXAM QUESTION: Khoa học dữ liệu là sự kết hợp của ba trụ cột chính nào?
+   LIBRARY QUESTION: Khoa học dữ liệu là sự kết hợp của ba trụ cột chính nào?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: Toán học & Thống kê, Khoa học máy tính, Kiến thức chuyên ngành
+
+52. EXAM QUESTION: Kết quả của my_list = [1, 2, 3]; my_list[0] là: my_list = [1, 2, 3] my_list[0]
+   LIBRARY QUESTION: Kết quả của my_list = [1, 2, 3]; my_list[0] là: my_list = [1, 2, 3] my_list[0]
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: 1
+
+53. EXAM QUESTION: Kết quả của đoạn code: np.arange(5)
+   LIBRARY QUESTION: Kết quả của đoạn code: np.arange(5)
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: [0 2 4 6 8]
+
+54. EXAM QUESTION: Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+   LIBRARY QUESTION: Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: (2,3)
+
+55. EXAM QUESTION: Kết quả của đoạn code: np.array([1.5, -0.1, 3]).dtype
+   LIBRARY QUESTION: Kết quả của đoạn code: np.array([1.5, -0.1, 3]).dtype
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: float64
+
+56. EXAM QUESTION: L ỗi Data Engineer chủ yếu đảm nhận công việc nào?
+   LIBRARY QUESTION: Data Engineer chủ yếu đảm nhận công việc nào?
+   SIMILARITY: 0.95
+   CORRECT ANSWER: B
+   EXPLANATION: Thiết kế hạ tầng và thu thập dữ liệu
+
+57. EXAM QUESTION: L ỗi Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+   LIBRARY QUESTION: Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+   SIMILARITY: 0.96
+   CORRECT ANSWER: C
+   EXPLANATION: (2,3)
+
+58. EXAM QUESTION: L ỗi P andas được xâ y dựng dựa tr ên thư viện nào?
+   LIBRARY QUESTION: Pandas được xây dựng dựa trên thư viện nào?
+   SIMILARITY: 0.91
+   CORRECT ANSWER: B
+   EXPLANATION: NumPy
+
+59. EXAM QUESTION: L ỗi Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+   LIBRARY QUESTION: Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+   SIMILARITY: 0.96
+   CORRECT ANSWER: B
+   EXPLANATION: sqlite3
+
+60. EXAM QUESTION: L ỗi add_one = lambda x:x+1; add_one(5)
+   LIBRARY QUESTION: add_one = lambda x:x+1; add_one(5)
+   SIMILARITY: 0.93
+   CORRECT ANSWER: A
+   EXPLANATION: 6
+
+61. EXAM QUESTION: L ỗi df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()
+   SIMILARITY: 0.96
+   CORRECT ANSWER: C
+   EXPLANATION: [1,1,2]
+
+62. EXAM QUESTION: L ỗi df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+   SIMILARITY: 0.96
+   CORRECT ANSWER: A
+   EXPLANATION: [1,4,9]
+
+63. EXAM QUESTION: L ỗi my_list = [1,2,3]; my_list[0]
+   LIBRARY QUESTION: my_list = [1,2,3]; my_list[0]
+   SIMILARITY: 0.92
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+64. EXAM QUESTION: L ỗi pd.DataFrame({'col': ['abc','AbC','xyz']}).col.str .contains('abc',case=False).sum()
+   LIBRARY QUESTION: pd.DataFrame({'col':['abc','AbC','xyz']}).col.str.contains('abc',case=False).sum()
+   SIMILARITY: 0.96
+   CORRECT ANSWER: A
+   EXPLANATION: 2
+
+65. EXAM QUESTION: L ỗi x = 4; print(type(x))
+   LIBRARY QUESTION: x = 4; print(type(x))
+   SIMILARITY: 0.89
+   CORRECT ANSWER: A
+   EXPLANATION: int
+
+66. EXAM QUESTION: L ỗi Đọc ﬁle 'sample_data.csv' với names=['A','B','C']. df.columns.tolist() trả về?
+   LIBRARY QUESTION: Đọc file 'sample_data.csv' với names=['A','B','C']. df.columns.tolist() trả về?
+   SIMILARITY: 0.95
+   CORRECT ANSWER: A
+   EXPLANATION: ['A','B','C']
+
+67. EXAM QUESTION: L ỗi Đối tượng chính của NumPy để lưu trữ dữ liệu là:
+   LIBRARY QUESTION: Đối tượng chính của NumPy để lưu trữ dữ liệu là:
+   SIMILARITY: 0.95
+   CORRECT ANSWER: B
+   EXPLANATION: ndarray
+
+68. EXAM QUESTION: Matplotlib được sử dụng chủ yếu để:
+   LIBRARY QUESTION: Matplotlib được sử dụng chủ yếu để:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: Trực quan hóa dữ liệu
+
+69. EXAM QUESTION: None Pandas được xây dựng dựa trên thư viện nào?
+   LIBRARY QUESTION: Pandas được xây dựng dựa trên thư viện nào?
+   SIMILARITY: 0.95
+   CORRECT ANSWER: B
+   EXPLANATION: NumPy
+
+70. EXAM QUESTION: None df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()
+   SIMILARITY: 0.95
+   CORRECT ANSWER: A
+   EXPLANATION: 2
+
+71. EXAM QUESTION: None pd.Series([1,2,3,3,2]).value_counts().sort_index().values[-1]
+   LIBRARY QUESTION: pd.Series([1,2,3,3,2]).value_counts().sort_index().index[0]
+   SIMILARITY: 0.86
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+72. EXAM QUESTION: NumP y là viết tắt của:
+   LIBRARY QUESTION: NumPy là viết tắt của:
+   SIMILARITY: 0.98
+   CORRECT ANSWER: B
+   EXPLANATION: Numerical Python
+
+73. EXAM QUESTION: NumPy là viết tắt của:
+   LIBRARY QUESTION: NumPy là viết tắt của:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Numerical Python
+
+74. EXAM QUESTION: Numeric Python df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()
+   SIMILARITY: 0.88
+   CORRECT ANSWER: C
+   EXPLANATION: [1,1,2]
+
+75. EXAM QUESTION: Phân tích th ố ng kê names = [' A','B','C']; names[0] = 'Z'; print(names)
+   LIBRARY QUESTION: names = ['A','B','C']; names[0] = 'Z'; names
+   SIMILARITY: 0.75
+   CORRECT ANSWER: B
+   EXPLANATION: ['Z','B','C']
+
+76. EXAM QUESTION: Phép t oán 7 % 2 tr ong P ython cho k ết quả là: 7 % 2
+   LIBRARY QUESTION: Phép toán 7 % 2 trong Python cho kết quả là: 7 % 2
+   SIMILARITY: 0.96
+   CORRECT ANSWER: C
+   EXPLANATION: 1
+
+77. EXAM QUESTION: Phép toán 7 % 2 trong Python cho kết quả là: 7 % 2
+   LIBRARY QUESTION: Phép toán 7 % 2 trong Python cho kết quả là: 7 % 2
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: 1
+
+78. EXAM QUESTION: Phép toán 7 // 2 trong Python cho kết quả là: 7 // 2
+   LIBRARY QUESTION: Phép toán 7 // 2 trong Python cho kết quả là: 7 // 2
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: 3
+
+79. EXAM QUESTION: Python là ngôn ngữ lập trình thuộc loại nào?
+   LIBRARY QUESTION: Python là ngôn ngữ lập trình thuộc loại nào?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Thông dịch, kiểu động
+
+80. EXAM QUESTION: Question 1 1: Encoding UTF-8 thường được sử dụng để:
+   LIBRARY QUESTION: Encoding UTF-8 thường được sử dụng để:
+   SIMILARITY: 0.84
+   CORRECT ANSWER: B
+   EXPLANATION: Mã hóa ký tự Unicode
+
+81. EXAM QUESTION: Question 1 1: Hàm pd.read_csv() trong pandas dùng để:
+   LIBRARY QUESTION: Hàm pd.read_csv() trong pandas dùng để:
+   SIMILARITY: 0.85
+   CORRECT ANSWER: B
+   EXPLANATION: Đọc dữ liệu từ file CSV
+
+82. EXAM QUESTION: Question 1 1: arr=np.array([3,-1,2]); (arr>0).sum()
+   LIBRARY QUESTION: arr=np.array([3,-1,2]); (arr>0).sum()
+   SIMILARITY: 0.84
+   CORRECT ANSWER: B
+   EXPLANATION: 2
+
+83. EXAM QUESTION: Question 1 1: df=pd.DataFrame({'A':[1,2,3]}); df.shape
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.shape
+   SIMILARITY: 0.85
+   CORRECT ANSWER: A
+   EXPLANATION: (3,1)
+
+84. EXAM QUESTION: Question 1 1: np.array([1,2,3]).cumsum()
+   LIBRARY QUESTION: np.array([1,2,3]).cumsum()
+   SIMILARITY: 0.79
+   CORRECT ANSWER: B
+   EXPLANATION: [1,3,6]
+
+85. EXAM QUESTION: Question 1 1: np.array([3,-1,2]).mean()
+   LIBRARY QUESTION: np.array([3,-1,2]).mean()
+   SIMILARITY: 0.78
+   CORRECT ANSWER: B
+   EXPLANATION: 1.333...
+
+86. EXAM QUESTION: Quy ước import NumPy là:
+   LIBRARY QUESTION: Quy ước import NumPy là:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: import numpy as np
+
+87. EXAM QUESTION: Series trong pandas là:
+   LIBRARY QUESTION: Series trong pandas là:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Mảng một chiều có nhãn
+
+88. EXAM QUESTION: T ạo file HTML np.arange(8).reshape(2,4).T .shape
+   LIBRARY QUESTION: np.arange(8).reshape(2,4).T.shape
+   SIMILARITY: 0.80
+   CORRECT ANSWER: B
+   EXPLANATION: (4,2)
+
+89. EXAM QUESTION: T ạo header t ự  đ ộ ng pd.read_csv('sample_data.csv').shape trả về gì?
+   LIBRARY QUESTION: pd.read_csv('sample_data.csv').shape trả về gì?
+   SIMILARITY: 0.80
+   CORRECT ANSWER: A
+   EXPLANATION: (số dòng, số cột)
+
+90. EXAM QUESTION: Tham số header=None trong pd.read_csv() có ý nghĩa gì?
+   LIBRARY QUESTION: Tham số header=None trong pd.read_csv() có ý nghĩa gì?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Dòng đầu không phải là tên cột
+
+91. EXAM QUESTION: Tham số index_col trong pd.read_csv() dùng để:
+   LIBRARY QUESTION: Tham số index_col trong pd.read_csv() dùng để:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Chỉ định cột nào làm index
+
+92. EXAM QUESTION: Tham số skipr ows tr ong pd.r ead_csv() có tác dụng gì?
+   LIBRARY QUESTION: Tham số skiprows trong pd.read_csv() có tác dụng gì?
+   SIMILARITY: 0.97
+   CORRECT ANSWER: B
+   EXPLANATION: Bỏ qua các dòng được chỉ định
+
+93. EXAM QUESTION: Tham số skiprows trong pd.read_csv() có tác dụng gì?
+   LIBRARY QUESTION: Tham số skiprows trong pd.read_csv() có tác dụng gì?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Bỏ qua các dòng được chỉ định
+
+94. EXAM QUESTION: Thu th ậ p d ữ  li ệ u Tham số index_col trong pd.read_csv() dùng để:
+   LIBRARY QUESTION: Tham số index_col trong pd.read_csv() dùng để:
+   SIMILARITY: 0.80
+   CORRECT ANSWER: B
+   EXPLANATION: Chỉ định cột nào làm index
+
+95. EXAM QUESTION: Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+   LIBRARY QUESTION: Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: sqlite3
+
+96. EXAM QUESTION: Trong quy trình khoa học dữ liệu, việc 'làm sạch dữ liệu' thuộc bước nào?
+   LIBRARY QUESTION: Trong quy trình khoa học dữ liệu, việc 'làm sạch dữ liệu' thuộc bước nào?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Xử lý dữ liệu
+
+97. EXAM QUESTION: Tính năng chính của NumPy so với list Python thông thường là:
+   LIBRARY QUESTION: Tính năng chính của NumPy so với list Python thông thường là:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: D
+   EXPLANATION: Tốc độ tính toán nhanh và chiếm ít bộ nhớ hơn
+
+98. EXAM QUESTION: Xây d ự ng mô hình Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+   LIBRARY QUESTION: Kết quả của đoạn code: np.arange(6).reshape(2,3).shape
+   SIMILARITY: 0.85
+   CORRECT ANSWER: C
+   EXPLANATION: (2,3)
+
+99. EXAM QUESTION: Xóa file CSV x = 4; print(type(x))
+   LIBRARY QUESTION: x = 4; print(type(x))
+   SIMILARITY: 0.76
+   CORRECT ANSWER: A
+   EXPLANATION: int
+
+100. EXAM QUESTION: [1,2,3] df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]
+   SIMILARITY: 0.93
+   CORRECT ANSWER: A
+   EXPLANATION: 0
+
+101. EXAM QUESTION: [1,2,3] df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()
+   SIMILARITY: 0.94
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+102. EXAM QUESTION: [1,2,3] x = (1,2,3); x[0]
+   LIBRARY QUESTION: x = (1,2,3); x[0]
+   SIMILARITY: 0.81
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+103. EXAM QUESTION: [2 4 6 8 10] Data Engineer chủ yếu đảm nhận công việc nào?
+   LIBRARY QUESTION: Data Engineer chủ yếu đảm nhận công việc nào?
+   SIMILARITY: 0.87
+   CORRECT ANSWER: B
+   EXPLANATION: Thiết kế hạ tầng và thu thập dữ liệu
+
+104. EXAM QUESTION: [3,3,2,1,2] Python là ngôn ngữ lập trình thuộc loại nào?
+   LIBRARY QUESTION: Python là ngôn ngữ lập trình thuộc loại nào?
+   SIMILARITY: 0.88
+   CORRECT ANSWER: B
+   EXPLANATION: Thông dịch, kiểu động
+
+105. EXAM QUESTION: [False,True,False] np.where([T rue,False,T rue],[1,2,3],[9,9,9])
+   LIBRARY QUESTION: np.where([True,False,True],[1,2,3],[9,9,9])
+   SIMILARITY: 0.80
+   CORRECT ANSWER: A
+   EXPLANATION: [1,9,3]
+
+106. EXAM QUESTION: [True,False,True] Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+   LIBRARY QUESTION: Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:
+   SIMILARITY: 0.88
+   CORRECT ANSWER: B
+   EXPLANATION: sqlite3
+
+107. EXAM QUESTION: [i for i in range(5) if i%2==0]
+   LIBRARY QUESTION: [i for i in range(5) if i%2==0]
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: [0,2,4]
+
+108. EXAM QUESTION: a b c'.split()
+   LIBRARY QUESTION: a b c'.split()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: ['a','b','c']
+
+109. EXAM QUESTION: abc' np.unique([3,3,2,1,2])
+   LIBRARY QUESTION: np.unique([3,3,2,1,2])
+   SIMILARITY: 0.90
+   CORRECT ANSWER: B
+   EXPLANATION: [1,2,3]
+
+110. EXAM QUESTION: abc'.replace('a','b')
+   LIBRARY QUESTION: abc'.replace('a','b')
+   SIMILARITY: 1.00
+   CORRECT ANSWER: D
+   EXPLANATION: Lỗi
+
+111. EXAM QUESTION: arr = np.ar ange(10); arr[2:5] sẽ tr ả về:
+   LIBRARY QUESTION: arr = np.arange(10); arr[
+   SIMILARITY: 0.75
+   CORRECT ANSWER: A
+   EXPLANATION: [2, 3, 4]
+
+112. EXAM QUESTION: arr = np.array([1, 2, 3]); arr .dtype sẽ trả về: arr = np.array([1, 2, 3]) arr.dtype
+   LIBRARY QUESTION: arr = np.array([1, 2, 3]); arr.dtype sẽ trả về:
+   SIMILARITY: 0.72
+   CORRECT ANSWER: B
+   EXPLANATION: int32 hoặc int64
+
+113. EXAM QUESTION: arr=np.array([[1,2],[3,4]]); arr .sum()
+   LIBRARY QUESTION: arr=np.array([[1,2],[3,4]]); arr.sum()
+   SIMILARITY: 0.99
+   CORRECT ANSWER: A
+   EXPLANATION: 10
+
+114. EXAM QUESTION: def square(x): return x
+   LIBRARY QUESTION: def square(x): return x
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: 9
+
+115. EXAM QUESTION: df = pd.DataFrame({'A':[1,2],'B':[3,4]}); df.to_csv('out.csv', index=False) sẽ tạo ﬁle CSV với?
+   LIBRARY QUESTION: df = pd.DataFrame({'A':[1,2],'B':[3,4]}); df.to_csv('out.csv', index=False) sẽ tạo file CSV với?
+   SIMILARITY: 0.98
+   CORRECT ANSWER: A
+   EXPLANATION: Không có cột index
+
+116. EXAM QUESTION: df.info () hiển thị thông tin gì về DataFrame?
+   LIBRARY QUESTION: df.info() hiển thị thông tin gì về DataFrame?
+   SIMILARITY: 0.99
+   CORRECT ANSWER: C
+   EXPLANATION: Kiểu dữ liệu và thông tin bộ nhớ
+
+117. EXAM QUESTION: df.loc[0] dùng để:
+   LIBRARY QUESTION: df.loc[0] dùng để:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: Chọn dòng có index 0
+
+118. EXAM QUESTION: df=pd.DataF rame({' A':[1,2,3]}); df.set_index(' A'). index.name
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name
+   SIMILARITY: 0.97
+   CORRECT ANSWER: C
+   EXPLANATION: index'
+
+119. EXAM QUESTION: df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 2
+
+120. EXAM QUESTION: df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: [1,1,2]
+
+121. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: [6,12]
+
+122. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: TRUE
+
+123. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.info ().__class__.__name__
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.info().__class__.__name__
+   SIMILARITY: 0.99
+   CORRECT ANSWER: A
+   EXPLANATION: NoneType
+
+124. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 2
+
+125. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns= {'A':'X'}).columns[0]
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns={'A':'X'}).columns[0]
+   SIMILARITY: 0.99
+   CORRECT ANSWER: A
+   EXPLANATION: X'
+
+126. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 0
+
+127. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A'). index.name
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name
+   SIMILARITY: 0.99
+   CORRECT ANSWER: C
+   EXPLANATION: index'
+
+128. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.shape
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.shape
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: (3,1)
+
+129. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.sort_values('A',ascending=False)['A'].tolist()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.sort_values('A',ascending=False)['A'].tolist()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: [1,2,3]
+
+130. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: [1,4,9]
+
+131. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: [1,3,6]
+
+132. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].mean()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].mean()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 2
+
+133. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 6
+
+134. EXAM QUESTION: df=pd.DataFrame({'A':[1,2,3]}); type(df.to_dict())
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); type(df.to_dict())
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: dict
+
+135. EXAM QUESTION: df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+136. EXAM QUESTION: float 'a b c'.split()
+   LIBRARY QUESTION: a b c'.split()
+   SIMILARITY: 0.80
+   CORRECT ANSWER: B
+   EXPLANATION: ['a','b','c']
+
+137. EXAM QUESTION: function myFunc(): Thư viện nào được xây dựng dựa trên Matplotlib và cung cấp giao diện đẹp hơn?
+   LIBRARY QUESTION: Thư viện nào được xây dựng dựa trên Matplotlib và cung cấp giao diện đẹp hơn?
+   SIMILARITY: 0.89
+   CORRECT ANSWER: B
+   EXPLANATION: Seaborn
+
+138. EXAM QUESTION: hello '.strip()
+   LIBRARY QUESTION: hello '.strip()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION:  hello'
+
+139. EXAM QUESTION: hello' df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]
+   LIBRARY QUESTION: df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]
+   SIMILARITY: 0.94
+   CORRECT ANSWER: A
+   EXPLANATION: 2
+
+140. EXAM QUESTION: house = {'price':10}; house['price']=15; house['price']
+   LIBRARY QUESTION: house = {'price':10}; house['price']=15; house['price']
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: 15
+
+141. EXAM QUESTION: import numpy as num Khoa học dữ liệu là sự k ết hợp của ba trụ cột chính nào?
+   LIBRARY QUESTION: Khoa học dữ liệu là sự kết hợp của ba trụ cột chính nào?
+   SIMILARITY: 0.84
+   CORRECT ANSWER: A
+   EXPLANATION: Toán học & Thống kê, Khoa học máy tính, Kiến thức chuyên ngành
+
+142. EXAM QUESTION: my_list = [1,2,3]; my_list[-1]
+   LIBRARY QUESTION: my_list = [1,2,3]; my_list[-1]
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 3
+
+143. EXAM QUESTION: my_list = [1,2,3]; my_list[0]
+   LIBRARY QUESTION: my_list = [1,2,3]; my_list[0]
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+144. EXAM QUESTION: my_list = [1,2,3]; my_list[1:3]
+   LIBRARY QUESTION: my_list = [1,2,3]; my_list[-1]
+   SIMILARITY: 0.95
+   CORRECT ANSWER: A
+   EXPLANATION: 3
+
+145. EXAM QUESTION: my_str = 'Hello'; my_str .lower()
+   LIBRARY QUESTION: my_str = 'Hello'; my_str.lower()
+   SIMILARITY: 0.98
+   CORRECT ANSWER: B
+   EXPLANATION: HELLO'
+
+146. EXAM QUESTION: names = ['A','B','C']; names[0] = 'Z'; names
+   LIBRARY QUESTION: names = ['A','B','C']; names[0] = 'Z'; names
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: ['Z','B','C']
+
+147. EXAM QUESTION: ndarray Trong quy trình khoa học dữ liệu, việc 'làm sạch dữ liệu' thuộc bước nào?
+   LIBRARY QUESTION: Trong quy trình khoa học dữ liệu, việc 'làm sạch dữ liệu' thuộc bước nào?
+   SIMILARITY: 0.95
+   CORRECT ANSWER: B
+   EXPLANATION: Xử lý dữ liệu
+
+148. EXAM QUESTION: np.arange(8).reshape(2,4).T .shape
+   LIBRARY QUESTION: np.arange(8).reshape(2,4).T.shape
+   SIMILARITY: 0.99
+   CORRECT ANSWER: B
+   EXPLANATION: (4,2)
+
+149. EXAM QUESTION: np.arr ay([1,2,3]).cumsum()
+   LIBRARY QUESTION: np.array([1,2,3]).cumsum()
+   SIMILARITY: 0.98
+   CORRECT ANSWER: B
+   EXPLANATION: [1,3,6]
+
+150. EXAM QUESTION: np.array([1,2,3]).cumsum()
+   LIBRARY QUESTION: np.array([1,2,3]).cumsum()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: [1,3,6]
+
+151. EXAM QUESTION: np.array([3,-1,2]).mean()
+   LIBRARY QUESTION: np.array([3,-1,2]).mean()
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: 1.333...
+
+152. EXAM QUESTION: np.array([3.7, -1.2]).astype(int)
+   LIBRARY QUESTION: np.array([3.7, -1.2]).astype(int)
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: [3, -1]
+
+153. EXAM QUESTION: np.dot(np.array([1,2]), np.array([3,4]))
+   LIBRARY QUESTION: np.dot(np.array([1,2]), np.array([3,4]))
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: 11
+
+154. EXAM QUESTION: np.empty() a b c'.split()
+   LIBRARY QUESTION: a b c'.split()
+   SIMILARITY: 0.72
+   CORRECT ANSWER: B
+   EXPLANATION: ['a','b','c']
+
+155. EXAM QUESTION: np.isin([1,2,3],[2,4])
+   LIBRARY QUESTION: np.isin([1,2,3],[2,4])
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: [False,True,False]
+
+156. EXAM QUESTION: np.sqrt(np.array([1,4,9]))
+   LIBRARY QUESTION: np.sqrt(np.array([1,4,9]))
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: [1.0,2.0,3.0]
+
+157. EXAM QUESTION: np.unique([3,3,2,1,2])
+   LIBRARY QUESTION: np.unique([3,3,2,1,2])
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: [1,2,3]
+
+158. EXAM QUESTION: np.zeros((2, 3)) tạo ra mảng có kích thước:
+   LIBRARY QUESTION: np.zeros((2, 3)) tạo ra mảng có kích thước:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 2 dòng, 3 cột
+
+159. EXAM QUESTION: np.zeros() df.loc[0] dùng để:
+   LIBRARY QUESTION: df.loc[0] dùng để:
+   SIMILARITY: 0.77
+   CORRECT ANSWER: B
+   EXPLANATION: Chọn dòng có index 0
+
+160. EXAM QUESTION: pd.DataFrame({'A': [1,np.nan,3]}).ﬁllna(method='fﬁll').isna().sum().sum() trả về?
+   LIBRARY QUESTION: pd.DataFrame({'A':[1,np.nan,3]}).fillna(method='ffill').isna().sum().sum() trả về?
+   SIMILARITY: 0.96
+   CORRECT ANSWER: D
+   EXPLANATION: Lỗi
+
+161. EXAM QUESTION: pd.DataFrame({'A':[1,np.nan,3]}) dùng df.dropna().shape[0] sẽ trả về?
+   LIBRARY QUESTION: pd.DataFrame({'A':[1,np.nan,3]}) dùng df.dropna().shape[0] sẽ trả về?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: 1
+
+162. EXAM QUESTION: pd.DataFrame({'col': ['abc','AbC','xyz']}).col.str .contains('abc',case=False).sum()
+   LIBRARY QUESTION: pd.DataFrame({'col':['abc','AbC','xyz']}).col.str.contains('abc',case=False).sum()
+   SIMILARITY: 0.99
+   CORRECT ANSWER: A
+   EXPLANATION: 2
+
+163. EXAM QUESTION: pd.Series([1,2,3,3,2]).value_counts().sort_index().index[0]
+   LIBRARY QUESTION: pd.Series([1,2,3,3,2]).value_counts().sort_index().index[0]
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+164. EXAM QUESTION: pd.r ead_csv(' sample_data.csv ').shape tr ả về gì?
+   LIBRARY QUESTION: pd.read_csv('sample_data.csv').shape trả về gì?
+   SIMILARITY: 0.96
+   CORRECT ANSWER: A
+   EXPLANATION: (số dòng, số cột)
+
+165. EXAM QUESTION: pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì?
+   LIBRARY QUESTION: pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 3
+
+166. EXAM QUESTION: pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì? (Giả sử ﬁle sample_data.csv có ít nhất 3 dòng )
+   LIBRARY QUESTION: pd.read_csv('sample_data.csv').head(3).shape[0] trả về gì?
+   SIMILARITY: 0.71
+   CORRECT ANSWER: A
+   EXPLANATION: 3
+
+167. EXAM QUESTION: pd.read_csv('sample_data.csv').shape trả về gì?
+   LIBRARY QUESTION: pd.read_csv('sample_data.csv').shape trả về gì?
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: (số dòng, số cột)
+
+168. EXAM QUESTION: print(2
+   LIBRARY QUESTION: print(2
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: 8
+
+169. EXAM QUESTION: print(5 % 2)
+   LIBRARY QUESTION: print(5 % 2)
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: 1
+
+170. EXAM QUESTION: print(5 / 2)
+   LIBRARY QUESTION: print(5 / 2)
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 2.5
+
+171. EXAM QUESTION: print(5 // 2)
+   LIBRARY QUESTION: print(5 // 2)
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: 3
+
+172. EXAM QUESTION: s = pd.Series([1, 2, 3, 4]); s.mean() trả về:
+   LIBRARY QUESTION: s = pd.Series([1, 2, 3, 4]); s.mean() trả về: s = pd.Series([1, 2, 3, 4]) s.mean()
+   SIMILARITY: 0.71
+   CORRECT ANSWER: B
+   EXPLANATION: 2.5
+
+173. EXAM QUESTION: str [i for i in r ange(5) if i%2==0]
+   LIBRARY QUESTION: [i for i in range(5) if i%2==0]
+   SIMILARITY: 0.93
+   CORRECT ANSWER: A
+   EXPLANATION: [0,2,4]
+
+174. EXAM QUESTION: vector Series tr ong pandas là:
+   LIBRARY QUESTION: Series trong pandas là:
+   SIMILARITY: 0.85
+   CORRECT ANSWER: B
+   EXPLANATION: Mảng một chiều có nhãn
+
+175. EXAM QUESTION: x = (1,2,3); x[0]
+   LIBRARY QUESTION: x = (1,2,3); x[0]
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: 1
+
+176. EXAM QUESTION: x = 4; print(type(x))
+   LIBRARY QUESTION: x = 4; print(type(x))
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: int
+
+177. EXAM QUESTION: {1,2,3} == {3,2,1}
+   LIBRARY QUESTION: {1,2,3} == {3,2,1}
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: TRUE
+
+178. EXAM QUESTION: Để chọn cột 'Name' từ DataFrame df, ta dùng:
+   LIBRARY QUESTION: Để chọn cột 'Name' từ DataFrame df, ta dùng:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: A
+   EXPLANATION: df.Name hoặc df['Name']
+
+179. EXAM QUESTION: Để xử lý dữ liệu thiếu trong pandas, ta có thể dùng:
+   LIBRARY QUESTION: Để xử lý dữ liệu thiếu trong pandas, ta có thể dùng:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: C
+   EXPLANATION: dropna() và fillna()
+
+180. EXAM QUESTION: Để đọc dữ liệu từ một URL  sử dụng pandas, ta làm thế nào?
+   LIBRARY QUESTION: Để đọc dữ liệu từ một URL sử dụng pandas, ta làm thế nào?
+   SIMILARITY: 0.99
+   CORRECT ANSWER: B
+   EXPLANATION: Dùng pd.read_csv(url) trực tiếp
+
+181. EXAM QUESTION: Đọc ﬁle ' sample_data.csv ' với header=None. Tên của cột đầu tiên là gì? (df.columns[0])
+   LIBRARY QUESTION: Đọc file 'sample_data.csv' với header=None. Tên của cột đầu tiên là gì? (df.columns[0])
+   SIMILARITY: 0.97
+   CORRECT ANSWER: B
+   EXPLANATION: Unnamed: 0'
+
+182. EXAM QUESTION: Đọc ﬁle 'sample_data.csv' với header=None. Tên của cột đầu tiên là gì? (df.columns[0])
+   LIBRARY QUESTION: Đọc file 'sample_data.csv' với header=None. Tên của cột đầu tiên là gì? (df.columns[0])
+   SIMILARITY: 0.98
+   CORRECT ANSWER: B
+   EXPLANATION: Unnamed: 0'
+
+183. EXAM QUESTION: Đọc ﬁle 'sample_data.csv' với names=['A','B','C']. df.columns.tolist() trả về?
+   LIBRARY QUESTION: Đọc file 'sample_data.csv' với names=['A','B','C']. df.columns.tolist() trả về?
+   SIMILARITY: 0.98
+   CORRECT ANSWER: A
+   EXPLANATION: ['A','B','C']
+
+184. EXAM QUESTION: Đọc ﬁle với index_col=0, df.index.name  là?
+   LIBRARY QUESTION: Đọc file với index_col=0, df.index.name là?
+   SIMILARITY: 0.95
+   CORRECT ANSWER: A
+   EXPLANATION: Tên cột đầu tiên
+
+185. EXAM QUESTION: Đối tượng chính của NumPy để lưu trữ dữ liệu là:
+   LIBRARY QUESTION: Đối tượng chính của NumPy để lưu trữ dữ liệu là:
+   SIMILARITY: 1.00
+   CORRECT ANSWER: B
+   EXPLANATION: ndarray
+
