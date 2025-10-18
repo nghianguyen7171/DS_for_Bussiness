@@ -701,204 +701,227 @@
 </div>
 </div>
 </div>
-<div class="topic-section" id="pandas-operations">
-<div class="topic-header">
-<div class="topic-icon">🐼</div>
-<h3 class="topic-title">3. Pandas Operations</h3>
-</div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Basics</h4>
-<div class="question-item">
-<div class="question-text">Tính năng chính của NumPy so với list Python thông thường là:</div>
-<div class="answer-highlight">Đáp án: D - Tốc độ tính toán nhanh và chiếm ít bộ nhớ hơn</div>
-<div class="explanation">
-<strong>Giải thích:</strong> NumPy được tối ưu hóa cho tính toán số học nhanh và hiệu quả bộ nhớ.
-</div>
-</div>
-<div class="question-item">
-<div class="question-text">Hai cấu trúc dữ liệu cốt lõi của pandas là:</div>
-<div class="answer-highlight">Đáp án: C - Series và DataFrame</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Series (1D) và DataFrame (2D) là hai cấu trúc cơ bản nhất của pandas.
-</div>
-</div>
-<div class="question-item">
-<div class="question-text">Series trong pandas là:</div>
-<div class="answer-highlight">Đáp án: C - Mảng một chiều có nhãn</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Series là cấu trúc dữ liệu 1 chiều với index (nhãn) cho mỗi phần tử.
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Operations</h4>
-<div class="question-item">
-<div class="question-text">Pandas được xây dựng dựa trên thư viện nào?</div>
-<div class="answer-highlight">Đáp án: A - NumPy</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Pandas được xây dựng trên NumPy, sử dụng NumPy arrays làm backend.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].mean()</div>
-<div class="answer-highlight">Đáp án: A - 2</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Tính trung bình của cột A: `(1+2+3)/3 = 2`.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()</div>
-<div class="answer-highlight">Đáp án: A - 6</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Tổng của cột A: `1+2+3 = 6`.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()</div>
-<div class="answer-highlight">Đáp án: A - `[1,3,6]`</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Tổng tích lũy: `[1, 1+2, 1+2+3] = [1,3,6]`.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x**2).tolist()</div>
-<div class="answer-highlight">Đáp án: A - `[1,4,9]`</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Áp dụng hàm lambda `x**2` cho từng phần tử: `[1², 2², 3²] = [1,4,9]`.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.sort_values('A',ascending=False)['A'].tolist()</div>
-<div class="answer-highlight">Đáp án: B - `[3,2,1]`</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Sắp xếp giảm dần: `[3,2,1]`.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()</div>
-<div class="answer-highlight">Đáp án: C - `[1,2]`</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `.unique()` trả về các giá trị duy nhất: `[1,2]`.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()</div>
-<div class="answer-highlight">Đáp án: A - 2</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `.nunique()` đếm số giá trị duy nhất: 2.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]</div>
-<div class="answer-highlight">Đáp án: A - 2</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `.query('A>1')` lọc các dòng có A > 1, có 2 dòng.
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Properties</h4>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()</div>
-<div class="answer-highlight">Đáp án: A - `[6,12]`</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Tổng từng cột: A = 1+2+3=6, B = 3+4+5=12.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.shape</div>
-<div class="answer-highlight">Đáp án: A - `(3,1)`</div>
-<div class="explanation">
-<strong>Giải thích:</strong> DataFrame có 3 dòng, 1 cột.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.info().__class__.__name__</div>
-<div class="answer-highlight">Đáp án: C - NoneType</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `df.info()` không trả về giá trị (return None).
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Manipulation</h4>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns</div>
-<div class="answer-highlight">Đáp án: A - TRUE</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Kiểm tra cột 'A' có trong DataFrame không.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns={'A':'X'}).columns[0]</div>
-<div class="answer-highlight">Đáp án: C - 'X'</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `.rename(columns={'A':'X'})` đổi tên cột 'A' thành 'X'.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name</div>
-<div class="answer-highlight">Đáp án: C - 'A'</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `df.set_index('A')` đặt cột 'A' làm index, `.index.name` trả về 'A'.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]</div>
-<div class="answer-highlight">Đáp án: A - 0</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `df.reset_index()` tạo index mới bắt đầu từ 0.
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Selection</h4>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name</div>
-<div class="answer-highlight">Đáp án: C - 'A'</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Sau khi set_index('A'), tên của index là 'A'.
-</div>
-</div>
-<div class="question-item">
-<div class="question-text">Để chọn cột 'Name' từ DataFrame df, ta dùng:</div>
-<div class="answer-highlight">Đáp án: A - `df.Name` hoặc `df['Name']`</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Có thể dùng cả hai cách để chọn cột.
-</div>
-</div>
-<div class="question-item">
-<div class="question-text">`df.loc[0]` dùng để:</div>
-<div class="answer-highlight">Đáp án: B - Chọn dòng có index 0</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `df.loc[0]` chọn dòng có index 0.
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Statistics</h4>
-<div class="question-item">
-<div class="question-text">`df.head()` mặc định hiển thị bao nhiêu dòng đầu tiên?</div>
-<div class="answer-highlight">Đáp án: B - 5 dòng</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `df.head()` mặc định hiển thị 5 dòng đầu.
-</div>
-</div>
-<div class="question-item">
-<div class="question-text">`s = pd.Series([1, 2, 3, 4]); s.mean()` trả về:</div>
-<div class="answer-highlight">Đáp án: B - 2.5</div>
-<div class="explanation">
-<strong>Giải thích:</strong> Trung bình: `(1+2+3+4)/4 = 2.5`.
-</div>
-</div>
-<h4 class="subtopic-title">Câu hỏi về DataFrame Export</h4>
-<div class="question-item">
-<div class="question-text">`df.info()` hiển thị thông tin gì về DataFrame?</div>
-<div class="answer-highlight">Đáp án: C - Kiểu dữ liệu và thông tin bộ nhớ</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `df.info()` hiển thị kiểu dữ liệu, số dòng/cột, và thông tin bộ nhớ.
-</div>
-</div>
-<div class="question-item">
-<div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); type(df.to_dict())</div>
-<div class="answer-highlight">Đáp án: A - dict</div>
-<div class="explanation">
-<strong>Giải thích:</strong> `df.to_dict()` chuyển DataFrame thành dictionary.
-</div>
-</div>
-</div>
-<div class="topic-section" id="file-io">
-<div class="topic-header">
-<div class="topic-icon">📁</div>
+            <div class="topic-section" id="pandas-operations">
+                <div class="topic-header">
+                    <div class="topic-icon">🐼</div>
+                    <h3 class="topic-title">3. Pandas Operations</h3>
+                </div>
+
+                <h4 class="subtopic-title">Câu hỏi về DataFrame Basics</h4>
+                <div class="question-item">
+                    <div class="question-text">Hai cấu trúc dữ liệu cốt lõi của pandas là:</div>
+                    <div class="answer-highlight">Đáp án: C - Series và DataFrame</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Series (1D) và DataFrame (2D) là hai cấu trúc cơ bản nhất của pandas.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Series trong pandas là:</div>
+                    <div class="answer-highlight">Đáp án: C - Mảng một chiều có nhãn</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Series là cấu trúc dữ liệu 1 chiều với index (nhãn) cho mỗi phần tử.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Pandas được xây dựng dựa trên thư viện nào?</div>
+                    <div class="answer-highlight">Đáp án: A - NumPy</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Pandas được xây dựng trên NumPy, sử dụng NumPy arrays làm backend.
+                    </div>
+                </div>
+
+                <h4 class="subtopic-title">Câu hỏi về DataFrame Operations</h4>
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].mean()</div>
+                    <div class="answer-highlight">Đáp án: A - 2</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Tính trung bình của cột A: (1+2+3)/3 = 2.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()</div>
+                    <div class="answer-highlight">Đáp án: A - 6</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Tổng của cột A: 1+2+3 = 6.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()</div>
+                    <div class="answer-highlight">Đáp án: A - [1,3,6]</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Tổng tích lũy: [1, 1+2, 1+2+3] = [1,3,6].
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x**2).tolist()</div>
+                    <div class="answer-highlight">Đáp án: A - [1,4,9]</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Áp dụng hàm lambda x**2 cho từng phần tử: [1², 2², 3²] = [1,4,9].
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.sort_values('A',ascending=False)['A'].tolist()</div>
+                    <div class="answer-highlight">Đáp án: B - [3,2,1]</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Sắp xếp giảm dần: [3,2,1].
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()</div>
+                    <div class="answer-highlight">Đáp án: C - [1,2]</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> .unique() trả về các giá trị duy nhất: [1,2].
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()</div>
+                    <div class="answer-highlight">Đáp án: A - 2</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> .nunique() đếm số giá trị duy nhất: 2.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]</div>
+                    <div class="answer-highlight">Đáp án: A - 2</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> .query('A>1') lọc các dòng có A > 1, có 2 dòng.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()</div>
+                    <div class="answer-highlight">Đáp án: A - [6,12]</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Tổng từng cột: A = 1+2+3=6, B = 3+4+5=12.
+                    </div>
+                </div>
+
+                <h4 class="subtopic-title">Câu hỏi về DataFrame Properties</h4>
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.shape</div>
+                    <div class="answer-highlight">Đáp án: A - (3,1)</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> DataFrame có 3 dòng, 1 cột.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.info().__class__.__name__</div>
+                    <div class="answer-highlight">Đáp án: C - NoneType</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> df.info() không trả về giá trị (return None).
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns</div>
+                    <div class="answer-highlight">Đáp án: A - TRUE</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Kiểm tra cột 'A' có trong DataFrame không.
+                    </div>
+                </div>
+
+                <h4 class="subtopic-title">Câu hỏi về DataFrame Manipulation</h4>
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns={'A':'X'}).columns[0]</div>
+                    <div class="answer-highlight">Đáp án: C - 'X'</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> .rename(columns={'A':'X'}) đổi tên cột 'A' thành 'X'.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name</div>
+                    <div class="answer-highlight">Đáp án: C - 'A'</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> df.set_index('A') đặt cột 'A' làm index, .index.name trả về 'A'.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]</div>
+                    <div class="answer-highlight">Đáp án: A - 0</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> df.reset_index() tạo index mới bắt đầu từ 0.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name</div>
+                    <div class="answer-highlight">Đáp án: C - 'A'</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Sau khi set_index('A'), tên của index là 'A'.
+                    </div>
+                </div>
+
+                <h4 class="subtopic-title">Câu hỏi về DataFrame Selection</h4>
+                <div class="question-item">
+                    <div class="question-text">Để chọn cột 'Name' từ DataFrame df, ta dùng:</div>
+                    <div class="answer-highlight">Đáp án: A - df.Name hoặc df['Name']</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Có thể dùng cả hai cách để chọn cột.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-code">df.loc[0] dùng để:</div>
+                    <div class="answer-highlight">Đáp án: B - Chọn dòng có index 0</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> df.loc[0] chọn dòng có index 0.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">df.head() mặc định hiển thị bao nhiêu dòng đầu tiên?</div>
+                    <div class="answer-highlight">Đáp án: B - 5 dòng</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> df.head() mặc định hiển thị 5 dòng đầu.
+                    </div>
+                </div>
+
+                <h4 class="subtopic-title">Câu hỏi về DataFrame Statistics</h4>
+                <div class="question-item">
+                    <div class="question-code">s = pd.Series([1, 2, 3, 4]); s.mean()</div>
+                    <div class="answer-highlight">Đáp án: B - 2.5</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Trung bình: (1+2+3+4)/4 = 2.5.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">df.info() hiển thị thông tin gì về DataFrame?</div>
+                    <div class="answer-highlight">Đáp án: C - Kiểu dữ liệu và thông tin bộ nhớ</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> df.info() hiển thị kiểu dữ liệu, số dòng/cột, và thông tin bộ nhớ.
+                    </div>
+                </div>
+
+                <h4 class="subtopic-title">Câu hỏi về DataFrame Export</h4>
+                <div class="question-item">
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); type(df.to_dict())</div>
+                    <div class="answer-highlight">Đáp án: A - dict</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> df.to_dict() chuyển DataFrame thành dictionary.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">df = pd.DataFrame({'A':[1,2], 'B':[3,4]}); df.to_csv('out.csv', index=False) sẽ tạo file CSV với?</div>
+                    <div class="answer-highlight">Đáp án: A - Không có cột index</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> index=False nghĩa là không xuất index.
+                    </div>
+                </div>
+            </div>
 <h3 class="topic-title">4. File I/O Operations</h3>
 </div>
 <h4 class="subtopic-title">Câu hỏi về CSV Operations</h4>
