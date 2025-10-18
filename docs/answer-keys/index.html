@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đáp Án Đề Thi Giữa Kỳ - DS Business</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+</head>
+<body>
+    <div class="answer-key-container">
+        <!-- Header -->
+        <header class="answer-key-header">
+            <div class="header-content">
+                <h1>📚 Đáp Án Đề Thi Giữa Kỳ</h1>
+                <p>Khoa học dữ liệu trong Kinh tế và Kinh doanh</p>
+                <div class="back-button">
+                    <a href="../index.html" class="btn-back">← Quay lại trang chủ</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Statistics -->
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Đề thi</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">320</div>
+                    <div class="stat-label">Tổng câu hỏi</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">219</div>
+                    <div class="stat-label">Câu hỏi duy nhất</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">84%</div>
+                    <div class="stat-label">Tỷ lệ khớp</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Info -->
+        <div class="exam-info">
+            <h3>📊 Thông tin tổng quan</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Môn học:</strong> Khoa học dữ liệu trong Kinh tế và Kinh doanh
+                </div>
+                <div class="info-item">
+                    <strong>Tổng số đề thi:</strong> 8 đề (DS_CLC-1 đến DS_CLC-8)
+                </div>
+                <div class="info-item">
+                    <strong>Tổng số câu hỏi:</strong> 320 câu (40 câu/đề)
+                </div>
+                <div class="info-item">
+                    <strong>Số câu hỏi duy nhất:</strong> 219 câu
+                </div>
+                <div class="info-item">
+                    <strong>Tỷ lệ khớp với thư viện:</strong> 84% (185/219 câu)
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-topic="all">Tất cả</button>
+            <button class="tab-btn" data-topic="python">🐍 Python</button>
+            <button class="tab-btn" data-topic="numpy">🔢 NumPy</button>
+            <button class="tab-btn" data-topic="pandas">🐼 Pandas</button>
+            <button class="tab-btn" data-topic="fileio">📁 File I/O</button>
+            <button class="tab-btn" data-topic="dataprocessing">🔧 Data Processing</button>
+            <button class="tab-btn" data-topic="datascience">📊 Data Science</button>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-section">
+            <input type="text" id="searchBox" placeholder="🔍 Tìm kiếm câu hỏi hoặc chủ đề..." class="search-input">
+        </div>
+
+        <!-- Answer Keys Content -->
+        <div class="answer-keys-content" id="answerContent">
+            <!-- Questions will be loaded here by JavaScript -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prevBtn" class="pagination-btn" disabled>← Trước</button>
+            <span id="pageInfo" class="page-info">Trang 1 / 1</span>
+            <button id="nextBtn" class="pagination-btn" disabled>Tiếp →</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
