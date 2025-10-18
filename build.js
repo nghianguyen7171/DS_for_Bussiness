@@ -204,6 +204,14 @@ function copyExamFiles() {
         console.log(`  ✓ Copied ${file}`);
       }
     });
+    
+    // Also copy the HTML answer keys page
+    const htmlAnswerKeysSrc = path.join(examSrc, 'answer-keys.html');
+    const htmlAnswerKeysDest = path.join(examDest, 'answer-keys.html');
+    if (fs.existsSync(htmlAnswerKeysSrc)) {
+      fs.copySync(htmlAnswerKeysSrc, htmlAnswerKeysDest);
+      console.log(`  ✓ Copied answer-keys.html`);
+    }
   }
 }
 

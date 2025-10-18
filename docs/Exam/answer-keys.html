@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đáp án tổng hợp cho 8 đề thi DS_CLC (1-8) | Khoa học dữ liệu</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .answer-key-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .topic-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .topic-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        .topic-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .topic-stat {
+            background: #f8f9fa;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .topic-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .topic-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .topic-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .question-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .question-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .question-code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .answer-highlight {
+            background: #d4edda;
+            color: #155724;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+
+        .explanation {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid #2196f3;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 1rem;
+        }
+
+        .difficulty-easy { background: #d4edda; color: #155724; }
+        .difficulty-medium { background: #fff3cd; color: #856404; }
+        .difficulty-hard { background: #f8d7da; color: #721c24; }
+
+        .conclusion-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+
+        .conclusion-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .conclusion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .conclusion-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .conclusion-card h4 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .conclusion-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .conclusion-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .conclusion-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: #667eea;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .answer-key-page {
+                padding: 1rem;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .stats-overview {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .back-button {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 2rem;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html#answer-keys" class="back-button">← Quay lại</a>
+    
+    <div class="answer-key-page">
+        <div class="page-header">
+            <h1 class="page-title">📚 Đáp án tổng hợp cho 8 đề thi DS_CLC (1-8)</h1>
+            <p class="page-subtitle">Môn học: Khoa học dữ liệu trong Kinh tế và Kinh doanh</p>
+            
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Đề thi</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">320</span>
+                    <span class="stat-label">Tổng câu hỏi</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">219</span>
+                    <span class="stat-label">Câu hỏi duy nhất</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">84%</span>
+                    <span class="stat-label">Tỷ lệ khớp</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">📊 Thống kê phân bố kiến thức</h2>
+            
+            <div class="topic-grid">
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">🐍</div>
+                        <h3 class="topic-title">Python Basics</h3>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="topic-stat">25 câu (13.5%)</span>
+                    </div>
+                    <ul class="topic-list">
+                        <li>List Operations</li>
+                        <li>String Operations</li>
+                        <li>Tuple và Dictionary</li>
+                        <li>Functions và Lambda</li>
+                        <li>Operators</li>
+                        <li>List Comprehension</li>
+                        <li>Indentation</li>
+                        <li>Python Creator</li>
+                        <li>Python Type</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">🔢</div>
+                        <h3 class="topic-title">NumPy Operations</h3>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="topic-stat">35 câu (18.9%)</span>
+                    </div>
+                    <ul class="topic-list">
+                        <li>Array Creation</li>
+                        <li>Array Operations</li>
+                        <li>Array Properties</li>
+                        <li>Mathematical Operations</li>
+                        <li>Array Functions</li>
+                        <li>NumPy Import</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">🐼</div>
+                        <h3 class="topic-title">Pandas Operations</h3>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="topic-stat">75 câu (40.5%)</span>
+                    </div>
+                    <ul class="topic-list">
+                        <li>DataFrame Basics</li>
+                        <li>DataFrame Operations</li>
+                        <li>DataFrame Properties</li>
+                        <li>DataFrame Manipulation</li>
+                        <li>DataFrame Selection</li>
+                        <li>DataFrame Statistics</li>
+                        <li>DataFrame Export</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">📁</div>
+                        <h3 class="topic-title">File I/O Operations</h3>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="topic-stat">20 câu (10.8%)</span>
+                    </div>
+                    <ul class="topic-list">
+                        <li>CSV Operations</li>
+                        <li>Excel Operations</li>
+                        <li>JSON Operations</li>
+                        <li>HTML Operations</li>
+                        <li>Database Operations</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">🔧</div>
+                        <h3 class="topic-title">Data Processing</h3>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="topic-stat">15 câu (8.1%)</span>
+                    </div>
+                    <ul class="topic-list">
+                        <li>Missing Data</li>
+                        <li>String Processing</li>
+                        <li>Value Counts</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <div class="topic-icon">📈</div>
+                        <h3 class="topic-title">Data Science Concepts</h3>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="topic-stat">15 câu (8.1%)</span>
+                    </div>
+                    <ul class="topic-list">
+                        <li>Data Science Foundation</li>
+                        <li>Data Science Roles</li>
+                        <li>Visualization</li>
+                        <li>API</li>
+                        <li>Encoding</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">🔑 Đáp án và giải thích mẫu</h2>
+            
+            <div class="question-section">
+                <h3>Python Basics - List Operations</h3>
+                
+                <div class="question-item">
+                    <h4>Câu hỏi về List Operations</h4>
+                    <div class="question-code">names = ['A','B','C']; names[0] = 'Z'; print(names)</div>
+                    <div class="answer-highlight">Đáp án: D - ['Z','B','C']</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> List là mutable, names[0] = 'Z' thay đổi phần tử đầu tiên từ 'A' thành 'Z'.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <h4>Câu hỏi về String Operations</h4>
+                    <div class="question-code">'a b c'.split()</div>
+                    <div class="answer-highlight">Đáp án: B - ['a','b','c']</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> .split() chia chuỗi theo khoảng trắng và trả về list.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <h4>Câu hỏi về Operators</h4>
+                    <div class="question-code">print(7 // 2)</div>
+                    <div class="answer-highlight">Đáp án: B - 3</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> // là toán tử chia lấy phần nguyên, 7 // 2 = 3.
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <h3>NumPy Operations - Array Creation</h3>
+                
+                <div class="question-item">
+                    <h4>Câu hỏi về Array Creation</h4>
+                    <div class="question-code">np.zeros((2, 3))</div>
+                    <div class="answer-highlight">Đáp án: A - 2 dòng, 3 cột</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> np.zeros((2, 3)) tạo ma trận 2x3 với tất cả phần tử là 0.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <h4>Câu hỏi về Array Operations</h4>
+                    <div class="question-code">np.arange(5) * 2</div>
+                    <div class="answer-highlight">Đáp án: A - [0 2 4 6 8]</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> np.arange(5) tạo [0,1,2,3,4], nhân với 2 được [0,2,4,6,8].
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <h3>Pandas Operations - DataFrame Basics</h3>
+                
+                <div class="question-item">
+                    <h4>Câu hỏi về DataFrame Operations</h4>
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df['A'].mean()</div>
+                    <div class="answer-highlight">Đáp án: A - 2</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> Tính trung bình của cột A: (1+2+3)/3 = 2.
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <h4>Câu hỏi về DataFrame Properties</h4>
+                    <div class="question-code">df=pd.DataFrame({'A':[1,2,3]}); df.shape</div>
+                    <div class="answer-highlight">Đáp án: A - (3,1)</div>
+                    <div class="explanation">
+                        <strong>Giải thích:</strong> DataFrame có 3 dòng, 1 cột.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion-section">
+            <h2 class="conclusion-title">🎯 Kết luận và đánh giá</h2>
+            
+            <div class="conclusion-grid">
+                <div class="conclusion-card">
+                    <h4>Điểm mạnh của bộ đề thi</h4>
+                    <ul class="conclusion-list">
+                        <li>Phủ sóng toàn diện các chủ đề quan trọng trong khoa học dữ liệu</li>
+                        <li>Cân bằng giữa lý thuyết và thực hành</li>
+                        <li>Phù hợp với trình độ sinh viên kinh tế và kinh doanh</li>
+                        <li>Đa dạng về loại câu hỏi và độ khó</li>
+                    </ul>
+                </div>
+
+                <div class="conclusion-card">
+                    <h4>Khuyến nghị cải thiện</h4>
+                    <ul class="conclusion-list">
+                        <li>Tăng cường câu hỏi về machine learning cơ bản</li>
+                        <li>Bổ sung câu hỏi về data visualization với Seaborn/Plotly</li>
+                        <li>Thêm câu hỏi tình huống thực tế trong kinh doanh</li>
+                        <li>Cân nhắc tăng số câu hỏi khó để phân loại học sinh tốt hơn</li>
+                    </ul>
+                </div>
+
+                <div class="conclusion-card">
+                    <h4>Đánh giá tổng thể</h4>
+                    <p><strong>Bộ đề thi DS_CLC (1-8) là một bộ đề thi chất lượng tốt, phù hợp với mục tiêu đánh giá kiến thức cơ bản về khoa học dữ liệu cho sinh viên kinh tế và kinh doanh. Tỷ lệ khớp cao với thư viện câu hỏi (84%) đảm bảo tính nhất quán và độ tin cậy của việc đánh giá.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 15px;">
+            <h3 style="color: #667eea; margin-bottom: 1rem;">📖 Xem đáp án chi tiết đầy đủ</h3>
+            <p style="margin-bottom: 2rem;">Để xem tất cả 219 câu hỏi với đáp án và giải thích chi tiết, vui lòng tải về file PDF hoặc xem file markdown gốc.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="DS_CLC-1.pdf" class="btn btn-primary" style="padding: 1rem 2rem; text-decoration: none; border-radius: 25px; background: #667eea; color: white; font-weight: bold;">📄 Tải PDF đề thi</a>
+                <a href="Combined_Answer_Key_DS_CLC_1-8.md" class="btn btn-secondary" style="padding: 1rem 2rem; text-decoration: none; border-radius: 25px; background: #6c757d; color: white; font-weight: bold;">📝 Xem Markdown</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; padding: 1rem; color: #666;">
+            <p><strong>Chúc các bạn làm bài tốt! 🚀</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.topic-card, .question-item, .conclusion-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
