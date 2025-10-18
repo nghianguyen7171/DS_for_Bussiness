@@ -1,916 +1,523 @@
-// Answer Keys Data - All questions from 8 exams
-const answerKeysData = {
-    python: {
-        title: "🐍 Python Basics",
-        icon: "🐍",
-        questions: [
-            {
-                id: 1,
-                question: "`names = ['A','B','C']; names[0] = 'Z'; print(names)`",
-                answer: "D - ['Z','B','C']",
-                explanation: "List là mutable (có thể thay đổi). `names[0] = 'Z'` thay đổi phần tử đầu tiên từ 'A' thành 'Z'. Kết quả: `['Z','B','C']`",
-                difficulty: "easy"
-            },
-            {
-                id: 2,
-                question: "`my_list = [1,2,3]; my_list[0]`",
-                answer: "B - 1",
-                explanation: "Indexing bắt đầu từ 0, `my_list[0]` trả về phần tử đầu tiên.",
-                difficulty: "easy"
-            },
-            {
-                id: 3,
-                question: "`my_list = [1,2,3]; my_list[1:3]`",
-                answer: "B - [2,3]",
-                explanation: "Slicing `[1:3]` lấy từ index 1 đến 2 (không bao gồm 3).",
-                difficulty: "easy"
-            },
-            {
-                id: 4,
-                question: "`'a b c'.split()`",
-                answer: "B - ['a','b','c']",
-                explanation: "Phương thức `.split()` chia chuỗi theo khoảng trắng và trả về list các từ.",
-                difficulty: "easy"
-            },
-            {
-                id: 5,
-                question: "`'abc'.replace('a','b')`",
-                answer: "D - 'bbc'",
-                explanation: "`.replace('a','b')` thay thế tất cả 'a' bằng 'b'.",
-                difficulty: "easy"
-            },
-            {
-                id: 6,
-                question: "`' hello '.strip()`",
-                answer: "A - 'hello'",
-                explanation: "`.strip()` loại bỏ khoảng trắng đầu và cuối chuỗi.",
-                difficulty: "easy"
-            },
-            {
-                id: 7,
-                question: "`'-'.join(['a','b'])`",
-                answer: "A - 'a-b'",
-                explanation: "`.join()` nối các phần tử của list bằng dấu '-'.",
-                difficulty: "easy"
-            },
-            {
-                id: 8,
-                question: "`x = (1,2,3); x[0]`",
-                answer: "A - 1",
-                explanation: "Tuple là immutable sequence, indexing bắt đầu từ 0.",
-                difficulty: "easy"
-            },
-            {
-                id: 9,
-                question: "`house = {'price':10}; house['price']=15; house['price']`",
-                answer: "C - 15",
-                explanation: "Dictionary có thể thay đổi giá trị, `house['price']=15` gán giá trị mới.",
-                difficulty: "easy"
-            },
-            {
-                id: 10,
-                question: "`{1,2,3} == {3,2,1}`",
-                answer: "B - TRUE",
-                explanation: "Set không quan tâm thứ tự, `{1,2,3}` và `{3,2,1}` là bằng nhau.",
-                difficulty: "easy"
-            },
-            {
-                id: 11,
-                question: "`add_one = lambda x:x+1; add_one(5)`",
-                answer: "B - 6",
-                explanation: "Lambda function `lambda x:x+1` với `x=5` trả về `5+1=6`.",
-                difficulty: "medium"
-            },
-            {
-                id: 12,
-                question: "Cú pháp nào dùng để khai báo một hàm trong Python?",
-                answer: "B - def myFunc():",
-                explanation: "Cú pháp chuẩn để khai báo hàm trong Python là `def`.",
-                difficulty: "easy"
-            },
-            {
-                id: 13,
-                question: "Phép toán 7 // 2 trong Python cho kết quả là:",
-                answer: "B - 3",
-                explanation: "`//` là toán tử chia lấy phần nguyên. `7 // 2 = 3` (7 chia 2 được 3 dư 1).",
-                difficulty: "easy"
-            },
-            {
-                id: 14,
-                question: "Phép toán 7 % 2 trong Python cho kết quả là:",
-                answer: "C - 1",
-                explanation: "`%` là toán tử modulo (chia lấy dư), `7 % 2 = 1`.",
-                difficulty: "easy"
-            },
-            {
-                id: 15,
-                question: "`print(5 / 2)`",
-                answer: "A - 2.5",
-                explanation: "`/` là phép chia thực, `5 / 2 = 2.5`.",
-                difficulty: "easy"
-            },
-            {
-                id: 16,
-                question: "`print(5 // 2)`",
-                answer: "C - 2",
-                explanation: "`//` là phép chia lấy phần nguyên, `5 // 2 = 2`.",
-                difficulty: "easy"
-            },
-            {
-                id: 17,
-                question: "`print(2 ** 3)`",
-                answer: "B - 8",
-                explanation: "`**` là toán tử lũy thừa, `2 ** 3 = 8`.",
-                difficulty: "easy"
-            },
-            {
-                id: 18,
-                question: "`[i for i in range(5) if i%2==0]`",
-                answer: "A - [0,2,4]",
-                explanation: "List comprehension tạo list các số chẵn từ 0 đến 4: `[0,2,4]`.",
-                difficulty: "medium"
-            },
-            {
-                id: 19,
-                question: "Dấu thụt lề (indentation) trong Python có vai trò gì?",
-                answer: "C - Xác định cấu trúc khối lệnh",
-                explanation: "Python sử dụng indentation để định nghĩa khối lệnh thay vì dùng `{}`.",
-                difficulty: "easy"
-            },
-            {
-                id: 20,
-                question: "Ai là người phát triển ngôn ngữ Python?",
-                answer: "B - Guido van Rossum",
-                explanation: "Guido van Rossum là người tạo ra Python vào năm 1991.",
-                difficulty: "easy"
-            },
-            {
-                id: 21,
-                question: "Python là ngôn ngữ lập trình thuộc loại nào?",
-                answer: "B - Thông dịch, kiểu động",
-                explanation: "Python là ngôn ngữ thông dịch (interpreted) và có kiểu động (dynamic typing).",
-                difficulty: "easy"
-            }
-        ]
+// Answer Keys Page JavaScript
+
+// Sample questions data (in a real implementation, this would come from a JSON file or API)
+const questionsData = [
+    {
+        id: 1,
+        exam: "DS_CLC-1",
+        question: "What is the output of the following Python code?\n\nx = [1, 2, 3, 4, 5]\nprint(x[1:4])",
+        code: "x = [1, 2, 3, 4, 5]\nprint(x[1:4])",
+        options: [
+            "[1, 2, 3]",
+            "[2, 3, 4]",
+            "[1, 2, 3, 4]",
+            "[2, 3, 4, 5]"
+        ],
+        correct: 1,
+        explanation: "Python slicing uses [start:end] where start is inclusive and end is exclusive. x[1:4] returns elements from index 1 to 3 (inclusive), which are [2, 3, 4]."
     },
-    numpy: {
-        title: "🔢 NumPy Operations",
-        icon: "🔢",
-        questions: [
-            {
-                id: 22,
-                question: "Hàm nào trong NumPy dùng để tạo mảng chứa toàn số 0?",
-                answer: "D - np.zeros()",
-                explanation: "`np.zeros()` tạo mảng với tất cả phần tử là 0. `np.ones()` tạo mảng với phần tử là 1.",
-                difficulty: "easy"
-            },
-            {
-                id: 23,
-                question: "`np.zeros((2, 3))` tạo ra mảng có kích thước:",
-                answer: "A - 2 dòng, 3 cột",
-                explanation: "`np.zeros((2, 3))` tạo ma trận 2x3.",
-                difficulty: "easy"
-            },
-            {
-                id: 24,
-                question: "NumPy là viết tắt của:",
-                answer: "C - Numerical Python",
-                explanation: "NumPy = **Num**erical **Py**thon. Thư viện tính toán số học cho Python.",
-                difficulty: "easy"
-            },
-            {
-                id: 25,
-                question: "Đối tượng chính của NumPy để lưu trữ dữ liệu là:",
-                answer: "A - ndarray",
-                explanation: "ndarray (N-dimensional array) là đối tượng chính của NumPy.",
-                difficulty: "easy"
-            },
-            {
-                id: 26,
-                question: "`np.arange(5) * 2`",
-                answer: "A - [0 2 4 6 8]",
-                explanation: "`np.arange(5)` tạo `[0,1,2,3,4]`, nhân với 2 được `[0,2,4,6,8]`.",
-                difficulty: "medium"
-            },
-            {
-                id: 27,
-                question: "`arr = np.arange(10); arr[2:5]` sẽ trả về:",
-                answer: "D - [2, 3, 4]",
-                explanation: "`np.arange(10)` tạo `[0,1,2,3,4,5,6,7,8,9]`, `arr[2:5]` lấy từ index 2 đến 4.",
-                difficulty: "medium"
-            },
-            {
-                id: 28,
-                question: "`np.arange(6).reshape(2,3).shape`",
-                answer: "D - (2,3)",
-                explanation: "`np.arange(6)` tạo `[0,1,2,3,4,5]`, `.reshape(2,3)` chuyển thành ma trận 2x3.",
-                difficulty: "medium"
-            },
-            {
-                id: 29,
-                question: "`np.arange(8).reshape(2,4).T.shape`",
-                answer: "B - (4,2)",
-                explanation: "Ma trận 2x4 sau khi transpose (`.T`) thành ma trận 4x2.",
-                difficulty: "medium"
-            },
-            {
-                id: 30,
-                question: "`arr = np.array([1, 2, 3]); arr.dtype` sẽ trả về:",
-                answer: "B - int32 hoặc int64",
-                explanation: "`.dtype` trả về kiểu dữ liệu của mảng, thường là int32 hoặc int64.",
-                difficulty: "medium"
-            },
-            {
-                id: 31,
-                question: "`np.array([1.5, -0.1, 3]).dtype`",
-                answer: "A - float64",
-                explanation: "Mảng có số thập phân sẽ có kiểu float64.",
-                difficulty: "easy"
-            },
-            {
-                id: 32,
-                question: "`np.array([3.7, -1.2]).astype(int)`",
-                answer: "A - [3, -1]",
-                explanation: "`.astype(int)` chuyển đổi sang integer, làm tròn xuống. `3.7 → 3`, `-1.2 → -1`.",
-                difficulty: "medium"
-            },
-            {
-                id: 33,
-                question: "`np.sqrt(np.array([1,4,9]))`",
-                answer: "C - [1.0,2.0,3.0]",
-                explanation: "`np.sqrt()` tính căn bậc hai của từng phần tử.",
-                difficulty: "easy"
-            },
-            {
-                id: 34,
-                question: "`np.where([True,False,True],[1,2,3],[9,9,9])`",
-                answer: "A - [1,9,3]",
-                explanation: "`np.where()` chọn từ mảng đầu tiên nếu True, từ mảng thứ hai nếu False.",
-                difficulty: "medium"
-            },
-            {
-                id: 35,
-                question: "`arr=np.array([3,-1,2]); (arr>0).sum()`",
-                answer: "B - 2",
-                explanation: "`arr>0` tạo `[True,False,True]`, `.sum()` đếm số True (2).",
-                difficulty: "medium"
-            },
-            {
-                id: 36,
-                question: "`np.array([3,-1,2]).mean()`",
-                answer: "B - 1.333...",
-                explanation: "Tính trung bình: `(3+(-1)+2)/3 = 4/3 ≈ 1.333`.",
-                difficulty: "easy"
-            },
-            {
-                id: 37,
-                question: "`np.array([1,2,3]).cumsum()`",
-                answer: "B - [1,3,6]",
-                explanation: "`.cumsum()` tính tổng tích lũy: `[1, 1+2, 1+2+3] = [1,3,6]`.",
-                difficulty: "medium"
-            },
-            {
-                id: 38,
-                question: "`np.unique([3,3,2,1,2])`",
-                answer: "B - [1,2,3]",
-                explanation: "`np.unique()` trả về các giá trị duy nhất đã sắp xếp.",
-                difficulty: "easy"
-            },
-            {
-                id: 39,
-                question: "`np.isin([1,2,3],[2,4])`",
-                answer: "A - [False,True,False]",
-                explanation: "`np.isin()` kiểm tra từng phần tử của mảng đầu có trong mảng thứ hai không.",
-                difficulty: "medium"
-            },
-            {
-                id: 40,
-                question: "`np.dot(np.array([1,2]), np.array([3,4]))`",
-                answer: "B - 11",
-                explanation: "Tích vô hướng: `1*3 + 2*4 = 3 + 8 = 11`.",
-                difficulty: "medium"
-            },
-            {
-                id: 41,
-                question: "Quy ước import NumPy là:",
-                answer: "C - import numpy as np",
-                explanation: "Quy ước chuẩn để import NumPy với alias `np`.",
-                difficulty: "easy"
-            },
-            {
-                id: 42,
-                question: "Tính năng chính của NumPy so với list Python thông thường là:",
-                answer: "D - Tốc độ tính toán nhanh và chiếm ít bộ nhớ hơn",
-                explanation: "NumPy được tối ưu hóa cho tính toán số học nhanh và hiệu quả bộ nhớ.",
-                difficulty: "easy"
-            }
-        ]
+    {
+        id: 2,
+        exam: "DS_CLC-1",
+        question: "Which NumPy function creates an array of zeros?",
+        code: "",
+        options: [
+            "np.zeros()",
+            "np.empty()",
+            "np.ones()",
+            "np.array()"
+        ],
+        correct: 0,
+        explanation: "np.zeros() creates an array filled with zeros. np.empty() creates an array with uninitialized values, np.ones() creates an array filled with ones, and np.array() creates an array from existing data."
     },
-    pandas: {
-        title: "🐼 Pandas Operations",
-        icon: "🐼",
-        questions: [
-            {
-                id: 43,
-                question: "Hai cấu trúc dữ liệu cốt lõi của pandas là:",
-                answer: "C - Series và DataFrame",
-                explanation: "Series (1D) và DataFrame (2D) là hai cấu trúc cơ bản nhất của pandas.",
-                difficulty: "easy"
-            },
-            {
-                id: 44,
-                question: "Series trong pandas là:",
-                answer: "C - Mảng một chiều có nhãn",
-                explanation: "Series là cấu trúc dữ liệu 1 chiều với index (nhãn) cho mỗi phần tử.",
-                difficulty: "easy"
-            },
-            {
-                id: 45,
-                question: "Pandas được xây dựng dựa trên thư viện nào?",
-                answer: "A - NumPy",
-                explanation: "Pandas được xây dựng trên NumPy, sử dụng NumPy arrays làm backend.",
-                difficulty: "easy"
-            },
-            {
-                id: 46,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df['A'].mean()`",
-                answer: "A - 2",
-                explanation: "Tính trung bình của cột A: `(1+2+3)/3 = 2`.",
-                difficulty: "easy"
-            },
-            {
-                id: 47,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df['A'].sum()`",
-                answer: "A - 6",
-                explanation: "Tổng của cột A: `1+2+3 = 6`.",
-                difficulty: "easy"
-            },
-            {
-                id: 48,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df['A'].cumsum().tolist()`",
-                answer: "A - [1,3,6]",
-                explanation: "Tổng tích lũy: `[1, 1+2, 1+2+3] = [1,3,6]`.",
-                difficulty: "medium"
-            },
-            {
-                id: 49,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df['A'].apply(lambda x:x**2).tolist()`",
-                answer: "A - [1,4,9]",
-                explanation: "Áp dụng hàm lambda `x**2` cho từng phần tử: `[1², 2², 3²] = [1,4,9]`.",
-                difficulty: "medium"
-            },
-            {
-                id: 50,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df.sort_values('A',ascending=False)['A'].tolist()`",
-                answer: "B - [3,2,1]",
-                explanation: "Sắp xếp giảm dần: `[3,2,1]`.",
-                difficulty: "medium"
-            },
-            {
-                id: 51,
-                question: "`df=pd.DataFrame({'A':[1,1,2]}); df['A'].unique().tolist()`",
-                answer: "C - [1,2]",
-                explanation: "`.unique()` trả về các giá trị duy nhất: `[1,2]`.",
-                difficulty: "easy"
-            },
-            {
-                id: 52,
-                question: "`df=pd.DataFrame({'A':[1,1,2]}); df['A'].nunique()`",
-                answer: "A - 2",
-                explanation: "`.nunique()` đếm số giá trị duy nhất: 2.",
-                difficulty: "easy"
-            },
-            {
-                id: 53,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df.query('A>1').shape[0]`",
-                answer: "A - 2",
-                explanation: "`.query('A>1')` lọc các dòng có A > 1, có 2 dòng.",
-                difficulty: "medium"
-            },
-            {
-                id: 54,
-                question: "`df=pd.DataFrame({'A':[1,2,3],'B':[3,4,5]}); df[['A','B']].sum().tolist()`",
-                answer: "A - [6,12]",
-                explanation: "Tổng từng cột: A = 1+2+3=6, B = 3+4+5=12.",
-                difficulty: "easy"
-            },
-            {
-                id: 55,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df.shape`",
-                answer: "A - (3,1)",
-                explanation: "DataFrame có 3 dòng, 1 cột.",
-                difficulty: "easy"
-            },
-            {
-                id: 56,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df.info().__class__.__name__`",
-                answer: "C - NoneType",
-                explanation: "`df.info()` không trả về giá trị (return None).",
-                difficulty: "medium"
-            },
-            {
-                id: 57,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); 'A' in df.columns`",
-                answer: "A - TRUE",
-                explanation: "Kiểm tra cột 'A' có trong DataFrame không.",
-                difficulty: "easy"
-            },
-            {
-                id: 58,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df.rename(columns={'A':'X'}).columns[0]`",
-                answer: "C - 'X'",
-                explanation: "`.rename(columns={'A':'X'})` đổi tên cột 'A' thành 'X'.",
-                difficulty: "medium"
-            },
-            {
-                id: 59,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df.set_index('A').index.name`",
-                answer: "C - 'A'",
-                explanation: "`df.set_index('A')` đặt cột 'A' làm index, `.index.name` trả về 'A'.",
-                difficulty: "medium"
-            },
-            {
-                id: 60,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); df.reset_index().index[0]`",
-                answer: "A - 0",
-                explanation: "`df.reset_index()` tạo index mới bắt đầu từ 0.",
-                difficulty: "easy"
-            },
-            {
-                id: 61,
-                question: "Để chọn cột 'Name' từ DataFrame df, ta dùng:",
-                answer: "A - df.Name hoặc df['Name']",
-                explanation: "Có thể dùng cả hai cách để chọn cột.",
-                difficulty: "easy"
-            },
-            {
-                id: 62,
-                question: "`df.loc[0]` dùng để:",
-                answer: "B - Chọn dòng có index 0",
-                explanation: "`df.loc[0]` chọn dòng có index 0.",
-                difficulty: "easy"
-            },
-            {
-                id: 63,
-                question: "`df.head()` mặc định hiển thị bao nhiêu dòng đầu tiên?",
-                answer: "B - 5 dòng",
-                explanation: "`df.head()` mặc định hiển thị 5 dòng đầu.",
-                difficulty: "easy"
-            },
-            {
-                id: 64,
-                question: "`s = pd.Series([1, 2, 3, 4]); s.mean()` trả về:",
-                answer: "B - 2.5",
-                explanation: "Trung bình: `(1+2+3+4)/4 = 2.5`.",
-                difficulty: "easy"
-            },
-            {
-                id: 65,
-                question: "`df.info()` hiển thị thông tin gì về DataFrame?",
-                answer: "C - Kiểu dữ liệu và thông tin bộ nhớ",
-                explanation: "`df.info()` hiển thị kiểu dữ liệu, số dòng/cột, và thông tin bộ nhớ.",
-                difficulty: "easy"
-            },
-            {
-                id: 66,
-                question: "`df=pd.DataFrame({'A':[1,2,3]}); type(df.to_dict())`",
-                answer: "A - dict",
-                explanation: "`df.to_dict()` chuyển DataFrame thành dictionary.",
-                difficulty: "easy"
-            },
-            {
-                id: 67,
-                question: "`df = pd.DataFrame({'A':[1,2], 'B':[3,4]}); df.to_csv('out.csv', index=False)` sẽ tạo file CSV với?",
-                answer: "A - Không có cột index",
-                explanation: "`index=False` nghĩa là không xuất index.",
-                difficulty: "easy"
-            }
-        ]
+    {
+        id: 3,
+        exam: "DS_CLC-2",
+        question: "What does the following Pandas code do?\n\ndf.dropna()",
+        code: "df.dropna()",
+        options: [
+            "Removes columns with missing values",
+            "Removes rows with missing values",
+            "Fills missing values with zeros",
+            "Counts missing values"
+        ],
+        correct: 1,
+        explanation: "df.dropna() removes rows that contain any missing values (NaN). It's a common data cleaning operation in Pandas."
     },
-    fileio: {
-        title: "📁 File I/O Operations",
-        icon: "📁",
-        questions: [
-            {
-                id: 68,
-                question: "`pd.read_csv('sample_data.csv').shape` trả về gì?",
-                answer: "C - (số dòng, số cột)",
-                explanation: "Thuộc tính `.shape` trả về tuple `(rows, columns)`.",
-                difficulty: "easy"
-            },
-            {
-                id: 69,
-                question: "`pd.read_csv('sample_data.csv').head(3).shape[0]` trả về gì?",
-                answer: "B - 3",
-                explanation: "`.head(3)` lấy 3 dòng đầu, `.shape[0]` trả về số dòng.",
-                difficulty: "easy"
-            },
-            {
-                id: 70,
-                question: "Hàm `pd.read_csv()` trong pandas dùng để:",
-                answer: "B - Đọc dữ liệu từ file CSV",
-                explanation: "`pd.read_csv()` dùng để đọc dữ liệu từ file CSV vào DataFrame.",
-                difficulty: "easy"
-            },
-            {
-                id: 71,
-                question: "Tham số `header=None` trong `pd.read_csv()` có ý nghĩa gì?",
-                answer: "B - Dòng đầu không phải là tên cột",
-                explanation: "`header=None` nghĩa là không có header, dòng đầu là dữ liệu.",
-                difficulty: "medium"
-            },
-            {
-                id: 72,
-                question: "Tham số `index_col` trong `pd.read_csv()` dùng để:",
-                answer: "B - Chỉ định cột nào làm index",
-                explanation: "`index_col` chỉ định cột nào sẽ được dùng làm index.",
-                difficulty: "easy"
-            },
-            {
-                id: 73,
-                question: "Tham số `skiprows` trong `pd.read_csv()` có tác dụng gì?",
-                answer: "B - Bỏ qua các dòng được chỉ định",
-                explanation: "`skiprows` bỏ qua các dòng cụ thể khi đọc file.",
-                difficulty: "easy"
-            },
-            {
-                id: 74,
-                question: "Để đọc dữ liệu từ một URL sử dụng pandas, ta làm thế nào?",
-                answer: "B - Dùng pd.read_csv(url) trực tiếp",
-                explanation: "Pandas có thể đọc trực tiếp từ URL.",
-                difficulty: "easy"
-            },
-            {
-                id: 75,
-                question: "Đọc file 'sample_data.csv' với `header=None`. Tên của cột đầu tiên là gì? (`df.columns[0]`)",
-                answer: "D - 'Unnamed: 0'",
-                explanation: "Khi `header=None`, pandas tự động đặt tên cột là 'Unnamed: 0', 'Unnamed: 1', ...",
-                difficulty: "medium"
-            },
-            {
-                id: 76,
-                question: "Đọc file với `index_col=0`, `df.index.name` là?",
-                answer: "A - Tên cột đầu tiên",
-                explanation: "Khi `index_col=0`, cột đầu tiên trở thành index và tên của nó là `df.index.name`.",
-                difficulty: "easy"
-            },
-            {
-                id: 77,
-                question: "Hàm `pd.read_excel()` dùng để làm gì?",
-                answer: "A - Đọc dữ liệu từ file Excel",
-                explanation: "`pd.read_excel()` dùng để đọc dữ liệu từ file Excel (.xlsx, .xls).",
-                difficulty: "easy"
-            },
-            {
-                id: 78,
-                question: "JSON là viết tắt của:",
-                answer: "B - JavaScript Object Notation",
-                explanation: "JSON = JavaScript Object Notation, định dạng trao đổi dữ liệu phổ biến.",
-                difficulty: "easy"
-            },
-            {
-                id: 79,
-                question: "Hàm `pd.read_json()` dùng để:",
-                answer: "B - Đọc dữ liệu từ file JSON",
-                explanation: "`pd.read_json()` dùng để đọc dữ liệu từ file JSON.",
-                difficulty: "easy"
-            },
-            {
-                id: 80,
-                question: "Hàm `pd.read_html()` có tác dụng gì?",
-                answer: "B - Đọc bảng từ trang web HTML",
-                explanation: "`pd.read_html()` dùng để đọc các bảng từ trang web HTML.",
-                difficulty: "easy"
-            },
-            {
-                id: 81,
-                question: "Trong Python, để kết nối với cơ sở dữ liệu SQLite, ta dùng thư viện:",
-                answer: "B - sqlite3",
-                explanation: "Thư viện `sqlite3` được tích hợp sẵn trong Python để làm việc với SQLite.",
-                difficulty: "medium"
-            }
-        ]
+    {
+        id: 4,
+        exam: "DS_CLC-2",
+        question: "Which method is used to read a CSV file in Pandas?",
+        code: "",
+        options: [
+            "pd.read_csv()",
+            "pd.load_csv()",
+            "pd.import_csv()",
+            "pd.open_csv()"
+        ],
+        correct: 0,
+        explanation: "pd.read_csv() is the correct method to read CSV files in Pandas. It returns a DataFrame containing the data from the CSV file."
     },
-    dataprocessing: {
-        title: "🔧 Data Processing",
-        icon: "🔧",
-        questions: [
-            {
-                id: 82,
-                question: "Để xử lý dữ liệu thiếu trong pandas, ta có thể dùng:",
-                answer: "D - dropna() và fillna()",
-                explanation: "`dropna()` xóa dữ liệu thiếu, `fillna()` thay thế dữ liệu thiếu.",
-                difficulty: "easy"
-            },
-            {
-                id: 83,
-                question: "`df=pd.DataFrame({'A':[1,np.nan,3]}); df['A'].isnull().sum()`",
-                answer: "A - 1",
-                explanation: "`.isnull()` tìm giá trị thiếu, `.sum()` đếm số lượng.",
-                difficulty: "easy"
-            },
-            {
-                id: 84,
-                question: "`pd.DataFrame({'A':[1,np.nan,3]})` dùng `df.dropna().shape[0]` sẽ trả về?",
-                answer: "C - 1",
-                explanation: "`dropna()` xóa dòng có NaN, chỉ còn lại 1 dòng.",
-                difficulty: "easy"
-            },
-            {
-                id: 85,
-                question: "`pd.DataFrame({'col':['abc','AbC','xyz']}).col.str.contains('abc',case=False).sum()`",
-                answer: "A - 2",
-                explanation: "`str.contains('abc',case=False)` tìm chuỗi chứa 'abc' (không phân biệt hoa thường), có 2 kết quả.",
-                difficulty: "medium"
-            },
-            {
-                id: 86,
-                question: "`pd.Series([1,2,3,3,2]).value_counts().sort_index().index[0]`",
-                answer: "A - 1",
-                explanation: "`.value_counts()` đếm tần suất, `.sort_index()` sắp xếp theo index, `.index[0]` lấy giá trị đầu tiên.",
-                difficulty: "medium"
-            }
-        ]
+    {
+        id: 5,
+        exam: "DS_CLC-3",
+        question: "What is the output of this code?\n\nimport numpy as np\narr = np.array([1, 2, 3, 4, 5])\nprint(arr * 2)",
+        code: "import numpy as np\narr = np.array([1, 2, 3, 4, 5])\nprint(arr * 2)",
+        options: [
+            "[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]",
+            "[2, 4, 6, 8, 10]",
+            "Error",
+            "[1, 2, 3, 4, 5]"
+        ],
+        correct: 1,
+        explanation: "NumPy arrays support element-wise operations. When you multiply an array by a scalar (2), each element is multiplied by 2, resulting in [2, 4, 6, 8, 10]."
     },
-    datascience: {
-        title: "📊 Data Science Concepts",
-        icon: "📊",
-        questions: [
-            {
-                id: 87,
-                question: "Khoa học dữ liệu là sự kết hợp của ba trụ cột chính nào?",
-                answer: "B - Toán học & Thống kê, Khoa học máy tính, Kiến thức chuyên ngành",
-                explanation: "Ba trụ cột của Data Science: Toán học & Thống kê, Khoa học máy tính, và Kiến thức chuyên ngành.",
-                difficulty: "medium"
-            },
-            {
-                id: 88,
-                question: "Bước đầu tiên trong chu trình khai thác dữ liệu là gì?",
-                answer: "C - Xác định bài toán",
-                explanation: "Quy trình khoa học dữ liệu bắt đầu với việc xác định bài toán cần giải quyết.",
-                difficulty: "medium"
-            },
-            {
-                id: 89,
-                question: "Trong quy trình khoa học dữ liệu, việc 'làm sạch dữ liệu' thuộc bước nào?",
-                answer: "B - Xử lý dữ liệu",
-                explanation: "Làm sạch dữ liệu thuộc bước xử lý dữ liệu trong quy trình khoa học dữ liệu.",
-                difficulty: "medium"
-            },
-            {
-                id: 90,
-                question: "Data Engineer chủ yếu đảm nhận công việc nào?",
-                answer: "B - Thiết kế hạ tầng và thu thập dữ liệu",
-                explanation: "Data Engineer chuyên về thiết kế hệ thống, pipeline dữ liệu và thu thập dữ liệu.",
-                difficulty: "medium"
-            },
-            {
-                id: 91,
-                question: "Matplotlib được sử dụng chủ yếu để:",
-                answer: "C - Trực quan hóa dữ liệu",
-                explanation: "Matplotlib là thư viện chính để tạo biểu đồ và trực quan hóa dữ liệu.",
-                difficulty: "easy"
-            },
-            {
-                id: 92,
-                question: "Thư viện nào được xây dựng dựa trên Matplotlib và cung cấp giao diện đẹp hơn?",
-                answer: "B - Seaborn",
-                explanation: "Seaborn được xây dựng trên Matplotlib và cung cấp giao diện đẹp hơn.",
-                difficulty: "easy"
-            },
-            {
-                id: 93,
-                question: "API là viết tắt của:",
-                answer: "D - Application Programming Interface",
-                explanation: "API = Application Programming Interface, giao diện lập trình ứng dụng.",
-                difficulty: "easy"
-            },
-            {
-                id: 94,
-                question: "Encoding UTF-8 thường được sử dụng để:",
-                answer: "D - Mã hóa ký tự Unicode",
-                explanation: "UTF-8 là bộ mã hóa Unicode, hỗ trợ tất cả ký tự Unicode.",
-                difficulty: "easy"
-            }
-        ]
+    {
+        id: 6,
+        exam: "DS_CLC-3",
+        question: "What does df.head() do in Pandas?",
+        code: "",
+        options: [
+            "Shows the last 5 rows",
+            "Shows the first 5 rows",
+            "Shows column names",
+            "Shows data types"
+        ],
+        correct: 1,
+        explanation: "df.head() displays the first 5 rows of a DataFrame by default. You can specify a different number of rows by passing an argument like df.head(10)."
+    },
+    {
+        id: 7,
+        exam: "DS_CLC-4",
+        question: "Which library is commonly used for web scraping in Python?",
+        code: "",
+        options: [
+            "requests",
+            "BeautifulSoup",
+            "scrapy",
+            "All of the above"
+        ],
+        correct: 3,
+        explanation: "All three libraries are commonly used for web scraping: requests for HTTP requests, BeautifulSoup for parsing HTML/XML, and scrapy for large-scale web scraping projects."
+    },
+    {
+        id: 8,
+        exam: "DS_CLC-4",
+        question: "What is the correct way to read a JSON file in Pandas?",
+        code: "",
+        options: [
+            "pd.read_json()",
+            "pd.load_json()",
+            "pd.import_json()",
+            "pd.open_json()"
+        ],
+        correct: 0,
+        explanation: "pd.read_json() is the correct method to read JSON files in Pandas. It can read JSON files, URLs, or JSON strings and convert them to DataFrames."
+    },
+    {
+        id: 9,
+        exam: "DS_CLC-5",
+        question: "What does df.fillna(0) do?",
+        code: "",
+        options: [
+            "Removes rows with missing values",
+            "Fills missing values with 0",
+            "Counts missing values",
+            "Creates a new column"
+        ],
+        correct: 1,
+        explanation: "df.fillna(0) replaces all missing values (NaN) in the DataFrame with 0. This is a common data preprocessing technique."
+    },
+    {
+        id: 10,
+        exam: "DS_CLC-5",
+        question: "Which method is used to remove duplicate rows in Pandas?",
+        code: "",
+        options: [
+            "df.drop_duplicates()",
+            "df.remove_duplicates()",
+            "df.unique()",
+            "df.distinct()"
+        ],
+        correct: 0,
+        explanation: "df.drop_duplicates() removes duplicate rows from a DataFrame. It keeps the first occurrence of each duplicate by default."
+    },
+    {
+        id: 11,
+        exam: "DS_CLC-6",
+        question: "What is the output of this code?\n\nimport pandas as pd\ndf = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})\nprint(df.shape)",
+        code: "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})\nprint(df.shape)",
+        options: [
+            "(2, 2)",
+            "(4, 2)",
+            "(2, 4)",
+            "Error"
+        ],
+        correct: 0,
+        explanation: "df.shape returns a tuple (rows, columns). The DataFrame has 2 rows and 2 columns, so the output is (2, 2)."
+    },
+    {
+        id: 12,
+        exam: "DS_CLC-6",
+        question: "What does df.describe() do?",
+        code: "",
+        options: [
+            "Shows data types",
+            "Shows statistical summary",
+            "Shows column names",
+            "Shows missing values"
+        ],
+        correct: 1,
+        explanation: "df.describe() provides a statistical summary of the DataFrame including count, mean, std, min, max, and quartiles for numerical columns."
+    },
+    {
+        id: 13,
+        exam: "DS_CLC-7",
+        question: "Which method is used to merge two DataFrames in Pandas?",
+        code: "",
+        options: [
+            "pd.merge()",
+            "df.join()",
+            "df.concat()",
+            "All of the above"
+        ],
+        correct: 3,
+        explanation: "All three methods can be used to combine DataFrames: pd.merge() for database-style joins, df.join() for index-based joins, and df.concat() for concatenation."
+    },
+    {
+        id: 14,
+        exam: "DS_CLC-7",
+        question: "What is the purpose of df.groupby()?",
+        code: "",
+        options: [
+            "Sorts the DataFrame",
+            "Groups rows by values",
+            "Removes duplicates",
+            "Fills missing values"
+        ],
+        correct: 1,
+        explanation: "df.groupby() groups rows of a DataFrame by the values in one or more columns, allowing you to perform operations on each group separately."
+    },
+    {
+        id: 15,
+        exam: "DS_CLC-8",
+        question: "What does df.pivot_table() do?",
+        code: "",
+        options: [
+            "Creates a pivot table",
+            "Rotates the DataFrame",
+            "Sorts the DataFrame",
+            "Removes columns"
+        ],
+        correct: 0,
+        explanation: "df.pivot_table() creates a pivot table from a DataFrame, allowing you to summarize and aggregate data across different dimensions."
+    },
+    {
+        id: 16,
+        exam: "DS_CLC-8",
+        question: "Which library is commonly used for data visualization in Python?",
+        code: "",
+        options: [
+            "matplotlib",
+            "seaborn",
+            "plotly",
+            "All of the above"
+        ],
+        correct: 3,
+        explanation: "All three libraries are commonly used for data visualization: matplotlib for basic plotting, seaborn for statistical visualizations, and plotly for interactive plots."
+    },
+    {
+        id: 17,
+        exam: "DS_CLC-1",
+        question: "What is the output of this code?\n\nx = 'Hello World'\nprint(x.lower())",
+        code: "x = 'Hello World'\nprint(x.lower())",
+        options: [
+            "HELLO WORLD",
+            "hello world",
+            "Hello World",
+            "Error"
+        ],
+        correct: 1,
+        explanation: "The .lower() method converts all characters in a string to lowercase, so 'Hello World' becomes 'hello world'."
+    },
+    {
+        id: 18,
+        exam: "DS_CLC-2",
+        question: "What does df.info() do?",
+        code: "",
+        options: [
+            "Shows data types and memory usage",
+            "Shows first 5 rows",
+            "Shows statistical summary",
+            "Shows column names only"
+        ],
+        correct: 0,
+        explanation: "df.info() provides a concise summary of the DataFrame including data types, non-null counts, and memory usage."
+    },
+    {
+        id: 19,
+        exam: "DS_CLC-3",
+        question: "What is the output of this code?\n\nimport numpy as np\narr = np.array([[1, 2], [3, 4]])\nprint(arr.shape)",
+        code: "import numpy as np\narr = np.array([[1, 2], [3, 4]])\nprint(arr.shape)",
+        options: [
+            "(2, 2)",
+            "(4,)",
+            "(2,)",
+            "Error"
+        ],
+        correct: 0,
+        explanation: "The array has 2 rows and 2 columns, so arr.shape returns (2, 2)."
+    },
+    {
+        id: 20,
+        exam: "DS_CLC-4",
+        question: "What does df.to_csv() do?",
+        code: "",
+        options: [
+            "Reads a CSV file",
+            "Writes DataFrame to CSV",
+            "Shows CSV format",
+            "Validates CSV data"
+        ],
+        correct: 1,
+        explanation: "df.to_csv() writes the DataFrame to a CSV file. You can specify the filename and various parameters like index, header, etc."
+    },
+    {
+        id: 21,
+        exam: "DS_CLC-5",
+        question: "What is the output of this code?\n\nimport pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\nprint(df['A'].sum())",
+        code: "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\nprint(df['A'].sum())",
+        options: [
+            "6",
+            "15",
+            "21",
+            "Error"
+        ],
+        correct: 0,
+        explanation: "df['A'].sum() calculates the sum of column A, which is 1 + 2 + 3 = 6."
+    },
+    {
+        id: 22,
+        exam: "DS_CLC-6",
+        question: "What does df.sort_values() do?",
+        code: "",
+        options: [
+            "Sorts rows by column values",
+            "Sorts columns alphabetically",
+            "Removes sorted data",
+            "Creates sorted copy"
+        ],
+        correct: 0,
+        explanation: "df.sort_values() sorts the DataFrame rows based on the values in one or more columns. You can specify ascending/descending order."
+    },
+    {
+        id: 23,
+        exam: "DS_CLC-7",
+        question: "What is the output of this code?\n\nimport pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\nprint(df.mean())",
+        code: "import pandas as pd\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\nprint(df.mean())",
+        options: [
+            "A    2.0\nB    5.0",
+            "3.5",
+            "6",
+            "Error"
+        ],
+        correct: 0,
+        explanation: "df.mean() calculates the mean of each column: A = (1+2+3)/3 = 2.0, B = (4+5+6)/3 = 5.0."
+    },
+    {
+        id: 24,
+        exam: "DS_CLC-8",
+        question: "What does df.corr() do?",
+        code: "",
+        options: [
+            "Shows correlation matrix",
+            "Counts correlations",
+            "Removes correlations",
+            "Creates correlations"
+        ],
+        correct: 0,
+        explanation: "df.corr() computes the correlation matrix of the DataFrame, showing the correlation coefficients between numerical columns."
+    },
+    {
+        id: 25,
+        exam: "DS_CLC-1",
+        question: "What is the output of this code?\n\nx = [1, 2, 3]\ny = [4, 5, 6]\nprint(x + y)",
+        code: "x = [1, 2, 3]\ny = [4, 5, 6]\nprint(x + y)",
+        options: [
+            "[5, 7, 9]",
+            "[1, 2, 3, 4, 5, 6]",
+            "Error",
+            "[1, 2, 3]"
+        ],
+        correct: 1,
+        explanation: "For Python lists, the + operator concatenates the lists, so [1, 2, 3] + [4, 5, 6] = [1, 2, 3, 4, 5, 6]."
     }
-};
+];
 
 // Global variables
-let currentTopic = 'all';
+let currentQuestions = [...questionsData];
 let currentPage = 1;
 const questionsPerPage = 10;
-let filteredQuestions = [];
 
-// Initialize the application
+// Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
+    loadQuestions();
+    setupEventListeners();
 });
 
-function initializeApp() {
-    setupEventListeners();
-    loadQuestions();
-    updatePagination();
-}
-
+// Setup event listeners
 function setupEventListeners() {
-    // Tab navigation
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const topic = this.getAttribute('data-topic');
-            switchTopic(topic);
-        });
-    });
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const examFilter = document.getElementById('examFilter');
 
-    // Search functionality
-    document.getElementById('searchBox').addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        filterQuestions(searchTerm);
-    });
-
-    // Pagination
-    document.getElementById('prevBtn').addEventListener('click', function() {
-        if (currentPage > 1) {
-            currentPage--;
-            displayQuestions();
-            updatePagination();
-        }
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', function() {
-        const totalPages = Math.ceil(filteredQuestions.length / questionsPerPage);
-        if (currentPage < totalPages) {
-            currentPage++;
-            displayQuestions();
-            updatePagination();
-        }
-    });
+    searchInput.addEventListener('input', handleSearch);
+    searchBtn.addEventListener('click', handleSearch);
+    examFilter.addEventListener('change', handleFilter);
 }
 
-function switchTopic(topic) {
-    currentTopic = topic;
-    currentPage = 1;
+// Handle search functionality
+function handleSearch() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const examFilter = document.getElementById('examFilter').value;
     
-    // Update active tab
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
+    currentQuestions = questionsData.filter(question => {
+        const matchesSearch = !searchTerm || 
+            question.question.toLowerCase().includes(searchTerm) ||
+            question.explanation.toLowerCase().includes(searchTerm) ||
+            question.options.some(option => option.toLowerCase().includes(searchTerm));
+        
+        const matchesExam = examFilter === 'all' || question.exam === examFilter;
+        
+        return matchesSearch && matchesExam;
     });
-    document.querySelector(`[data-topic="${topic}"]`).classList.add('active');
     
+    currentPage = 1;
     loadQuestions();
-    updatePagination();
 }
 
+// Handle filter functionality
+function handleFilter() {
+    handleSearch();
+}
+
+// Load questions for current page
 function loadQuestions() {
-    if (currentTopic === 'all') {
-        // Load all questions from all topics
-        filteredQuestions = [];
-        Object.keys(answerKeysData).forEach(topic => {
-            filteredQuestions = filteredQuestions.concat(answerKeysData[topic].questions);
-        });
-    } else {
-        // Load questions from specific topic
-        filteredQuestions = answerKeysData[currentTopic].questions || [];
-    }
-    
-    displayQuestions();
-}
-
-function filterQuestions(searchTerm) {
-    if (currentTopic === 'all') {
-        filteredQuestions = [];
-        Object.keys(answerKeysData).forEach(topic => {
-            const topicQuestions = answerKeysData[topic].questions.filter(q => 
-                q.question.toLowerCase().includes(searchTerm) ||
-                q.answer.toLowerCase().includes(searchTerm) ||
-                q.explanation.toLowerCase().includes(searchTerm)
-            );
-            filteredQuestions = filteredQuestions.concat(topicQuestions);
-        });
-    } else {
-        filteredQuestions = answerKeysData[currentTopic].questions.filter(q => 
-            q.question.toLowerCase().includes(searchTerm) ||
-            q.answer.toLowerCase().includes(searchTerm) ||
-            q.explanation.toLowerCase().includes(searchTerm)
-        );
-    }
-    
-    currentPage = 1;
-    displayQuestions();
-    updatePagination();
-}
-
-function displayQuestions() {
-    const container = document.getElementById('answerContent');
     const startIndex = (currentPage - 1) * questionsPerPage;
     const endIndex = startIndex + questionsPerPage;
-    const questionsToShow = filteredQuestions.slice(startIndex, endIndex);
+    const pageQuestions = currentQuestions.slice(startIndex, endIndex);
     
-    if (questionsToShow.length === 0) {
-        container.innerHTML = '<div class="no-results">Không tìm thấy câu hỏi nào phù hợp.</div>';
-        return;
-    }
+    const container = document.getElementById('questionsContainer');
     
-    let html = '';
-    
-    if (currentTopic === 'all') {
-        // Group questions by topic
-        const groupedQuestions = {};
-        questionsToShow.forEach(q => {
-            const topic = findTopicForQuestion(q.id);
-            if (!groupedQuestions[topic]) {
-                groupedQuestions[topic] = [];
-            }
-            groupedQuestions[topic].push(q);
-        });
-        
-        Object.keys(groupedQuestions).forEach(topic => {
-            const topicData = answerKeysData[topic];
-            html += `
-                <div class="topic-section">
-                    <div class="topic-header">
-                        <div class="topic-icon">${topicData.icon}</div>
-                        <div>
-                            <h2 class="topic-title">${topicData.title}</h2>
-                            <div class="topic-stats">${groupedQuestions[topic].length} câu hỏi</div>
-                        </div>
-                    </div>
-            `;
-            
-            groupedQuestions[topic].forEach(q => {
-                html += generateQuestionHTML(q);
-            });
-            
-            html += '</div>';
-        });
-    } else {
-        // Show questions for specific topic
-        const topicData = answerKeysData[currentTopic];
-        html += `
-            <div class="topic-section">
-                <div class="topic-header">
-                    <div class="topic-icon">${topicData.icon}</div>
-                    <div>
-                        <h2 class="topic-title">${topicData.title}</h2>
-                        <div class="topic-stats">${questionsToShow.length} câu hỏi</div>
-                    </div>
-                </div>
+    if (pageQuestions.length === 0) {
+        container.innerHTML = `
+            <div class="no-results">
+                <h3>No questions found</h3>
+                <p>Try adjusting your search criteria or filter options.</p>
+            </div>
         `;
-        
-        questionsToShow.forEach(q => {
-            html += generateQuestionHTML(q);
-        });
-        
-        html += '</div>';
+    } else {
+        container.innerHTML = pageQuestions.map(question => createQuestionCard(question)).join('');
     }
     
-    container.innerHTML = html;
-    
-    // Highlight code blocks
-    if (typeof hljs !== 'undefined') {
-        hljs.highlightAll();
-    }
+    updatePagination();
 }
 
-function generateQuestionHTML(question) {
-    const difficultyClass = `difficulty-${question.difficulty}`;
-    const difficultyText = question.difficulty === 'easy' ? 'Dễ' : 
-                          question.difficulty === 'medium' ? 'Trung bình' : 'Khó';
+// Create question card HTML
+function createQuestionCard(question) {
+    const optionsHtml = question.options.map((option, index) => {
+        const isCorrect = index === question.correct;
+        const optionClass = isCorrect ? 'correct' : '';
+        return `<div class="option ${optionClass}">${String.fromCharCode(65 + index)}. ${option}</div>`;
+    }).join('');
+    
+    const codeHtml = question.code ? `<div class="question-code">${question.code}</div>` : '';
     
     return `
-        <div class="question-card fade-in">
-            <div class="question-number">Câu ${question.id}</div>
-            <div class="question-text">
-                ${question.question}
-                <span class="difficulty-badge ${difficultyClass}">${difficultyText}</span>
+        <div class="question-card">
+            <div class="question-header">
+                <span class="question-number">Question ${question.id}</span>
+                <span class="question-exam">${question.exam}</span>
             </div>
-            <div class="answer-section">
-                <div class="correct-answer">Đáp án: ${question.answer}</div>
-                <div class="explanation">
-                    <strong>Giải thích:</strong> ${question.explanation}
+            <div class="question-content">
+                <div class="question-text">${question.question}</div>
+                ${codeHtml}
+                <div class="question-options">
+                    <h4>Options:</h4>
+                    ${optionsHtml}
+                </div>
+                <div class="answer-explanation">
+                    <h4>✅ Explanation:</h4>
+                    <p>${question.explanation}</p>
                 </div>
             </div>
         </div>
     `;
 }
 
-function findTopicForQuestion(questionId) {
-    for (const topic in answerKeysData) {
-        if (answerKeysData[topic].questions.some(q => q.id === questionId)) {
-            return topic;
-        }
+// Update pagination
+function updatePagination() {
+    const totalPages = Math.ceil(currentQuestions.length / questionsPerPage);
+    const pagination = document.getElementById('pagination');
+    
+    if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        return;
     }
-    return 'python'; // fallback
+    
+    let paginationHtml = '';
+    
+    // Previous button
+    paginationHtml += `
+        <button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
+            ← Previous
+        </button>
+    `;
+    
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+        const isActive = i === currentPage ? 'active' : '';
+        paginationHtml += `
+            <button class="${isActive}" onclick="changePage(${i})">
+                ${i}
+            </button>
+        `;
+    }
+    
+    // Next button
+    paginationHtml += `
+        <button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
+            Next →
+        </button>
+    `;
+    
+    pagination.innerHTML = paginationHtml;
 }
 
-function updatePagination() {
-    const totalPages = Math.ceil(filteredQuestions.length / questionsPerPage);
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const pageInfo = document.getElementById('pageInfo');
-    
-    prevBtn.disabled = currentPage === 1;
-    nextBtn.disabled = currentPage === totalPages || totalPages === 0;
-    
-    pageInfo.textContent = `Trang ${currentPage} / ${totalPages || 1}`;
+// Change page
+function changePage(page) {
+    const totalPages = Math.ceil(currentQuestions.length / questionsPerPage);
+    if (page >= 1 && page <= totalPages) {
+        currentPage = page;
+        loadQuestions();
+        
+        // Scroll to top of questions
+        document.getElementById('questionsContainer').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    }
 }
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});

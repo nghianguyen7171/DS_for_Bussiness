@@ -1,99 +1,131 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đáp Án Đề Thi Giữa Kỳ - DS Business</title>
+    <meta name="description" content="Midterm Exam Answer Keys - Data Science for Business Course">
+    <title>Midterm Exam Answer Keys | DS for Business</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
 </head>
 <body>
-    <div class="answer-key-container">
-        <!-- Header -->
-        <header class="answer-key-header">
-            <div class="header-content">
-                <h1>📚 Đáp Án Đề Thi Giữa Kỳ</h1>
-                <p>Khoa học dữ liệu trong Kinh tế và Kinh doanh</p>
-                <div class="back-button">
-                    <a href="../index.html" class="btn-back">← Quay lại trang chủ</a>
-                </div>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="../index.html" class="navbar-logo">
+                    <span class="logo-text">DS Business</span>
+                </a>
             </div>
-        </header>
-
-        <!-- Statistics -->
-        <div class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">Đề thi</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">320</div>
-                    <div class="stat-label">Tổng câu hỏi</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">219</div>
-                    <div class="stat-label">Câu hỏi duy nhất</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">84%</div>
-                    <div class="stat-label">Tỷ lệ khớp</div>
-                </div>
+            <div class="navbar-menu">
+                <ul class="navbar-nav">
+                    <li><a href="../index.html" class="nav-link">← Back to Home</a></li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <!-- Exam Info -->
-        <div class="exam-info">
-            <h3>📊 Thông tin tổng quan</h3>
-            <div class="info-grid">
-                <div class="info-item">
-                    <strong>Môn học:</strong> Khoa học dữ liệu trong Kinh tế và Kinh doanh
-                </div>
-                <div class="info-item">
-                    <strong>Tổng số đề thi:</strong> 8 đề (DS_CLC-1 đến DS_CLC-8)
-                </div>
-                <div class="info-item">
-                    <strong>Tổng số câu hỏi:</strong> 320 câu (40 câu/đề)
-                </div>
-                <div class="info-item">
-                    <strong>Số câu hỏi duy nhất:</strong> 219 câu
-                </div>
-                <div class="info-item">
-                    <strong>Tỷ lệ khớp với thư viện:</strong> 84% (185/219 câu)
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Midterm Exam Answer Keys</h1>
+                    <p class="hero-subtitle">Comprehensive Answer Keys for All 8 Midterm Exams</p>
+                    <p class="hero-description">
+                        Access detailed answer keys and explanations for all midterm exams (DS_CLC-1 to DS_CLC-8). 
+                        Each question includes step-by-step reasoning and code examples to help you understand the concepts better.
+                    </p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Navigation Tabs -->
-        <div class="nav-tabs">
-            <button class="tab-btn active" data-topic="all">Tất cả</button>
-            <button class="tab-btn" data-topic="python">🐍 Python</button>
-            <button class="tab-btn" data-topic="numpy">🔢 NumPy</button>
-            <button class="tab-btn" data-topic="pandas">🐼 Pandas</button>
-            <button class="tab-btn" data-topic="fileio">📁 File I/O</button>
-            <button class="tab-btn" data-topic="dataprocessing">🔧 Data Processing</button>
-            <button class="tab-btn" data-topic="datascience">📊 Data Science</button>
-        </div>
+        <section class="section">
+            <div class="container">
+                <div class="answer-keys-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Exams Covered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">320</div>
+                        <div class="stat-label">Total Questions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">219</div>
+                        <div class="stat-label">Unique Questions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">84%</div>
+                        <div class="stat-label">Match Rate</div>
+                    </div>
+                </div>
 
-        <!-- Search Box -->
-        <div class="search-section">
-            <input type="text" id="searchBox" placeholder="🔍 Tìm kiếm câu hỏi hoặc chủ đề..." class="search-input">
-        </div>
+                <div class="search-section">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search questions, topics, or explanations...">
+                        <button id="searchBtn">🔍</button>
+                    </div>
+                    <div class="filter-section">
+                        <label for="examFilter">Filter by Exam:</label>
+                        <select id="examFilter">
+                            <option value="all">All Exams</option>
+                            <option value="DS_CLC-1">DS_CLC-1</option>
+                            <option value="DS_CLC-2">DS_CLC-2</option>
+                            <option value="DS_CLC-3">DS_CLC-3</option>
+                            <option value="DS_CLC-4">DS_CLC-4</option>
+                            <option value="DS_CLC-5">DS_CLC-5</option>
+                            <option value="DS_CLC-6">DS_CLC-6</option>
+                            <option value="DS_CLC-7">DS_CLC-7</option>
+                            <option value="DS_CLC-8">DS_CLC-8</option>
+                        </select>
+                    </div>
+                </div>
 
-        <!-- Answer Keys Content -->
-        <div class="answer-keys-content" id="answerContent">
-            <!-- Questions will be loaded here by JavaScript -->
-        </div>
+                <div class="topics-section">
+                    <h2>Topics Covered</h2>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Python Basics</span>
+                        <span class="topic-tag">NumPy</span>
+                        <span class="topic-tag">Pandas</span>
+                        <span class="topic-tag">File I/O</span>
+                        <span class="topic-tag">Data Science</span>
+                        <span class="topic-tag">Web Scraping</span>
+                        <span class="topic-tag">Data Visualization</span>
+                        <span class="topic-tag">Machine Learning</span>
+                    </div>
+                </div>
 
-        <!-- Pagination -->
-        <div class="pagination">
-            <button id="prevBtn" class="pagination-btn" disabled>← Trước</button>
-            <span id="pageInfo" class="page-info">Trang 1 / 1</span>
-            <button id="nextBtn" class="pagination-btn" disabled>Tiếp →</button>
+                <div class="questions-container" id="questionsContainer">
+                    <!-- Questions will be loaded dynamically -->
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <!-- Pagination will be generated dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Midterm Exam Answer Keys</h3>
+                    <p>Comprehensive study resource for Data Science for Business course</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Course Homepage</a></li>
+                        <li><a href="../index.html#schedule">Course Schedule</a></li>
+                        <li><a href="../index.html#quizzes">Practice Quizzes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 National Economics University. All rights reserved.</p>
+            </div>
         </div>
-    </div>
+    </footer>
 
     <script src="app.js"></script>
 </body>
