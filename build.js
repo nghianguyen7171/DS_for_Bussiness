@@ -27,6 +27,11 @@ Handlebars.registerHelper('lt', function(a, b) {
   return a < b;
 });
 
+// Convert hyphenated string to camelCase
+function toCamelCase(str) {
+  return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+}
+
 // Load all YAML data files
 function loadData() {
   console.log('📦 Loading data files...');
@@ -45,7 +50,9 @@ function loadData() {
     if (fileName === 'this-week') {
       data.thisWeek = parsedData;
     } else {
-      data[fileName] = parsedData;
+      // Convert hyphenated names to camelCase
+      const camelCaseName = toCamelCase(fileName);
+      data[camelCaseName] = parsedData;
     }
     
     console.log(`  ✓ Loaded ${file}`);
