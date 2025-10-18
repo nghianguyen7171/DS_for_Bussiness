@@ -170,3 +170,19 @@ software:
   - "Jupyter Notebook or Google Colab"
   - "NumPy, Pandas, Matplotlib, Seaborn, scikit-learn"
 
+answer_keys:
+  title: "Đáp Án Đề Thi Giữa Kỳ"
+  description: "Đáp án chi tiết cho 8 đề thi DS_CLC với giải thích từng câu hỏi"
+  link: "answer-keys.html"
+  stats:
+    total_exams: 8
+    total_questions: 320
+    unique_questions: 219
+    match_rate: "84%"
+  topics:
+    - "Python Basics"
+    - "NumPy Operations"
+    - "Pandas Operations"
+    - "File I/O Operations"
+    - "Data Science Concepts"
+
