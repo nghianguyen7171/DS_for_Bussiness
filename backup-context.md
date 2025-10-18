@@ -688,13 +688,70 @@ git log --oneline -5
 
 ---
 
-**Last Updated:** October 18, 2025 (Answer Keys Page Integration)  
+**Last Updated:** October 18, 2025 (Score Look-up Resource Integration)  
 **Next Session:** Read this file first, then proceed with any requested updates  
 **AI Readiness:** 100% - All context preserved
 
 ---
 
 ## 📝 Change Log
+
+### October 18, 2025 - Score Look-up Resource Integration
+
+**Change:** Added Score Look-up resource card to Course Resources section for direct access to exam score lookup system.
+
+**User Request:** "In Course Resources section, same level as Slide Deck, Software & tools, etc. Add 'Score look-up': this button will link direct to this page: @https://neu-class-manager.vercel.app/"
+
+**Solution Implemented:**
+
+**1. New Resource Card Added:**
+- ✅ **Icon**: 🔍 (magnifying glass for search/lookup)
+- ✅ **Title**: "Score Look-up"
+- ✅ **Description**: "Tra cứu điểm thi giữa kỳ theo lớp học và thông tin sinh viên" (Vietnamese)
+- ✅ **Button**: "Check Scores" linking to external score lookup system
+- ✅ **Position**: Same level as Slide Deck, Software & Tools, GitHub Repository, etc.
+
+**2. Course Resources Section Updated:**
+- ✅ **Resource Cards**: Now 5 total (was 4)
+- ✅ **Professional Integration**: Matches existing resource card styling
+- ✅ **Proper Linking**: External link with `target="_blank"` and `rel="noopener"`
+- ✅ **Vietnamese Description**: Clear explanation of functionality
+- ✅ **Intuitive Icon**: Search/lookup icon (🔍) for easy recognition
+
+**3. User Experience Enhancement:**
+- ✅ **Direct Access**: One-click access to score lookup system
+- ✅ **Clear Purpose**: Vietnamese description explains the functionality
+- ✅ **External Integration**: Seamlessly connects to the NEU Class Manager system
+- ✅ **Professional Appearance**: Maintains consistent design language
+
+**Files Modified:**
+- `src/partials/sections/resources.hbs` - Added Score Look-up resource card
+- `README.md` - Updated features list and added Course Resources section
+- `backup-context.md` - Added change log entry
+
+**Resource Cards (Now 5 total):**
+1. **📚 Course Textbook** - Data Science textbook access
+2. **📊 Slide Deck** - Weekly lecture slides and presentations
+3. **💻 GitHub Repository** - Code examples and datasets
+4. **🔧 Software & Tools** - Setup guide and software list
+5. **🔍 Score Look-up** ← **NEW** - Midterm exam score lookup system
+
+**Build Status:** ✅ Built successfully  
+**Deployment Status:** ✅ Committed (9feedcc) and pushed to GitHub  
+**Live Status:** Score Look-up resource now live on GitHub Pages
+
+**Website URL:** https://nghianguyen7171.github.io/DS_for_Bussiness/
+
+**Impact:**
+- ✅ **Enhanced Student Access**: Direct access to exam score lookup system
+- ✅ **Professional Integration**: Seamlessly integrated into existing resources
+- ✅ **Clear Functionality**: Vietnamese description for local students
+- ✅ **Consistent Design**: Maintains website's professional appearance
+- ✅ **External System Integration**: Connects to NEU Class Manager platform
+
+**Status:** ✅ Complete - Score Look-up resource successfully integrated into Course Resources section!
+
+---
 
 ### October 18, 2025 - Answer Keys Page Integration and Website Enhancement
 

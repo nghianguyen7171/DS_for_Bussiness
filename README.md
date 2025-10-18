@@ -7,6 +7,7 @@ A modern, responsive static website for the **Basic Data Science in Economics an
 - **Modern Design**: Clean, academic layout with responsive design
 - **Dark/Light Theme**: Automatic theme switching with manual override
 - **Interactive Quizzes**: Practice quizzes for each lecture
+- **Score Look-up**: Direct access to exam score lookup system
 - **Accessible**: WCAG compliant with semantic HTML and ARIA labels
 - **Fast Loading**: Optimized static site with minimal dependencies
 - **Mobile-Friendly**: Fully responsive with mobile navigation
@@ -209,6 +210,25 @@ npm run dev
 - [ ] Images display properly
 - [ ] Smooth scrolling works
 - [ ] External links open in new tab
+- [ ] Score look-up system accessible
+
+## 🔍 Course Resources
+
+The website provides access to various course resources:
+
+- **Course Textbook**: Data Science in Economics and Business (Python Applications)
+- **Slide Deck**: Weekly lecture slides and presentation materials
+- **GitHub Repository**: Code examples, datasets, and supplementary materials
+- **Software & Tools**: Setup guide and required software list
+- **Score Look-up**: Direct access to exam score lookup system at [https://neu-class-manager.vercel.app/](https://neu-class-manager.vercel.app/)
+
+### Score Look-up System
+
+Students can access their exam scores through the integrated score lookup system:
+- **Purpose**: Tra cứu điểm thi giữa kỳ theo lớp học và thông tin sinh viên
+- **Access**: Available in Course Resources section on main page
+- **Features**: Look up scores by class and student information
+- **External Integration**: Seamlessly connects to NEU Class Manager system
 
 ## 📄 License
 
