@@ -30,6 +30,9 @@
                         </td>
                         <td data-label="Materials">
                             {{#if materials}}{{materials}}{{/if}}
+                            {{#if slides}}
+                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
+                            {{/if}}
                             {{#if notebook}}
                             <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
                             {{/if}}

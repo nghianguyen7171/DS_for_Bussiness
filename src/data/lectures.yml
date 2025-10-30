@@ -199,6 +199,8 @@ lectures:
       - "Use of color, shape, and size to enhance interpretability"
       - "Interpret data via visualization"
     materials: "Chapter 10"
+    notebook: "notebook/Lec7_Visualization.ipynb"
+    slides: "https://fit.neu.edu.vn/room/QLGK35?chap=12#1"
     activities:
       - "Present theory and examples"
       - "Guide data storytelling"
