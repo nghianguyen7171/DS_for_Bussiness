@@ -30,6 +30,7 @@ assignments:
     title: "Data Collection and Cleaning"
     due: "Week 9"
     description: "Collect data from web sources, clean and preprocess it for analysis."
+    submission: "https://drive.google.com/drive/folders/1CowqXTi9te4otZ-HjRt8jthvpbKCpyJK?usp=drive_link"
     deliverables:
       - "Python script or notebook"
       - "Cleaned dataset (CSV)"
