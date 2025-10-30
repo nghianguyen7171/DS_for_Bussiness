@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Lecture 7 - Data Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="homepage" class="screen active">
+        <div class="container">
+            <div class="hero-content">
+                <h1>📊 Quiz Lecture 7</h1>
+                <h2>Data Visualization</h2>
+                <p class="subtitle">30 câu hỏi trắc nghiệm tự động chấm điểm</p>
+                <p class="description">Matplotlib, Pandas plot, Seaborn (barplot, histplot, lineplot, pairplot, catplot), lưu hình, subplots, annotate</p>
+                <div class="quiz-info">
+                    <div class="info-item">📝 30 câu hỏi</div>
+                    <div class="info-item">⏱️ Không giới hạn thời gian</div>
+                    <div class="info-item">💡 Có gợi ý</div>
+                </div>
+                <button class="btn btn--primary btn--lg" id="startBtn">
+                    <span>🚀</span> Bắt đầu làm bài
+                </button>
+                <p class="note">💡 Làm quiz này TRƯỚC KHI làm bài tập code trong notebook!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="quizpage" class="screen">
+        <div class="container">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">Câu 1/30</div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="quiz-header">
+                    <span class="category-badge" id="categoryBadge">Matplotlib</span>
+                    <h2 class="question-title" id="questionTitle">Câu 1/30</h2>
+                </div>
+
+                <div class="code-container">
+                    <pre><code id="codeBlock">import matplotlib.pyplot as plt
+plt.plot([1,2,3], [1,4,9])
+plt.show()</code></pre>
+                </div>
+
+                <div class="question-text" id="questionText">
+                    Câu hỏi
+                </div>
+
+                <div class="options-container" id="optionsContainer">
+                    <div class="option" data-option="0">
+                        <span class="option-label">A</span>
+                        <span class="option-text"></span>
+                    </div>
+                    <div class="option" data-option="1">
+                        <span class="option-label">B</span>
+                        <span class="option-text"></span>
+                    </div>
+                    <div class="option" data-option="2">
+                        <span class="option-label">C</span>
+                        <span class="option-text"></span>
+                    </div>
+                    <div class="option" data-option="3">
+                        <span class="option-label">D</span>
+                        <span class="option-text"></span>
+                    </div>
+                </div>
+
+                <div class="quiz-actions">
+                    <button class="btn btn--secondary" id="hintBtn">💡 Gợi ý</button>
+                    <button class="btn btn--outline" id="showAnswerBtn">👁️ Xem đáp án</button>
+                    <button class="btn btn--primary hidden" id="nextBtn">➡️ Câu tiếp theo</button>
+                </div>
+
+                <div class="hint-tooltip hidden" id="hintTooltip">
+                    <div class="hint-content"></div>
+                </div>
+
+                <div class="explanation-container hidden" id="explanationContainer">
+                    <div class="explanation-header">
+                        <span class="explanation-label">📖 Giải thích:</span>
+                    </div>
+                    <div class="explanation-text" id="explanationText"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="endpage" class="screen">
+        <div class="container">
+            <div class="end-content">
+                <div class="end-icon">🎉</div>
+                <h1>Hoàn thành Quiz!</h1>
+                <p class="end-message">Bạn đã hoàn thành tất cả 30 câu hỏi về Data Visualization</p>
+                <div class="end-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Câu hỏi</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">✅</span>
+                        <span class="stat-label">Hoàn thành</span>
+                    </div>
+                </div>
+                <div class="next-steps">
+                    <h3>🎯 Bước tiếp theo:</h3>
+                    <p>✅ Xem lại các câu sai (nếu có)</p>
+                    <p>✅ Làm bài tập code trong Notebook</p>
+                    <p>✅ Ôn tập phần tóm tắt trong Notebook</p>
+                </div>
+                <button class="btn btn--primary btn--lg" id="restartBtn">🔄 Làm lại từ đầu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
