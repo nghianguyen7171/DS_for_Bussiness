@@ -55,3 +55,14 @@ quizzes:
       - "Data Reshaping (melt, pivot, stack, unstack)"
       - "Advanced data transformation techniques"
 
+  - id: "quiz7"
+    title: "Lecture 7 Quiz: Data Visualization"
+    week: 12
+    description: "30 câu hỏi trắc nghiệm về Matplotlib, Pandas plot và Seaborn (barplot, histplot, lineplot, pairplot, catplot), subplots, annotate, lưu hình."
+    link: "quiz/Lec07_quiz/index.html"
+    topics:
+      - "Matplotlib: figure, axes, subplots, annotate, savefig"
+      - "Pandas plot: line, bar, hist, density"
+      - "Seaborn: barplot, histplot/KDE, lineplot, pairplot, catplot"
+      - "Styling: sns.set_style, alpha, sharex/sharey"
+
