@@ -183,19 +183,6 @@ function copyNotebooks() {
   }
 }
 
-// Copy notebook_test files (preferred location)
-function copyNotebookTest() {
-  const src = path.join(__dirname, 'notebook_test');
-  const dest = path.join(DOCS_DIR, 'notebook_test');
-  if (!fs.existsSync(src)) return;
-  console.log('📓 Copying notebook_test files...');
-  fs.ensureDirSync(dest);
-  const files = fs.readdirSync(src).filter(f => f.endsWith('.ipynb'));
-  files.forEach(file => {
-    fs.copySync(path.join(src, file), path.join(dest, file));
-    console.log(`  ✓ Copied ${file}`);
-  });
-}
 
 function copyExamFiles() {
   console.log('📚 Copying exam files...');
@@ -383,9 +370,6 @@ async function build() {
     
     // Copy notebooks
     copyNotebooks();
-    console.log('');
-    // Copy notebook_test (new location)
-    copyNotebookTest();
     console.log('');
     
     // Copy exam files
