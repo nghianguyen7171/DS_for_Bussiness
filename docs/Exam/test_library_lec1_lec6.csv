@@ -80,19 +80,6 @@ Text đáp án,Lựa chọn A,Lựa chọn B,Lựa chọn C,Lựa chọn D,Đáp
 "Bạn muốn chuyển DataFrame từ dạng wide sang long format. Code nào sau đây phù hợp nhất?","df.melt(id_vars=['id'])","df.pivot()","df.stack()","df.reshape('long')","A",1
 "Bạn muốn chuyển DataFrame từ dạng long sang wide format. Code nào sau đây phù hợp nhất?","df.pivot(index='id', columns='variable', values='value')","df.melt()","df.unstack()","df.reshape('wide')","A",1
 "Bạn muốn stack columns thành index trong DataFrame df. Code nào sau đây phù hợp nhất?","df.stack()","df.melt()","df.pivot()","df.reshape()","A",1
-"Bạn muốn vẽ biểu đồ đường (line plot) với matplotlib. Code nào sau đây phù hợp nhất?","import matplotlib.pyplot as plt; plt.plot(x, y)","matplotlib.plot(x, y)","plt.line(x, y)","plot.line(x, y)","A",1
-"Bạn muốn vẽ biểu đồ cột (bar chart) với matplotlib. Code nào sau đây phù hợp nhất?","import matplotlib.pyplot as plt; plt.bar(x, y)","plt.column(x, y)","plt.histogram(x, y)","matplotlib.bar(x, y)","A",1
-"Bạn muốn vẽ histogram với matplotlib để xem phân bố của dữ liệu. Code nào sau đây phù hợp nhất?","import matplotlib.pyplot as plt; plt.hist(data)","plt.distribution(data)","plt.bar(data)","matplotlib.hist(data)","A",1
-"Bạn muốn lưu biểu đồ matplotlib với tên 'output.png'. Code nào sau đây phù hợp nhất?","plt.savefig('output.png')","plt.save('output.png')","plt.export('output.png')","matplotlib.savefig('output.png')","A",1
-"Bạn muốn đặt tiêu đề cho biểu đồ matplotlib. Code nào sau đây phù hợp nhất?","plt.title('My Title')","plt.set_title('My Title')","plt.label('My Title')","plt.header('My Title')","A",1
-"Bạn muốn vẽ biểu đồ scatter plot với matplotlib. Code nào sau đây phù hợp nhất?","import matplotlib.pyplot as plt; plt.scatter(x, y)","plt.dot(x, y)","plt.point(x, y)","matplotlib.scatter(x, y)","A",1
-"Bạn muốn vẽ nhiều subplot trong matplotlib. Code nào sau đây phù hợp nhất?","fig, axes = plt.subplots(2, 2)","plt.multiplot(2, 2)","plt.subplot(2, 2)","matplotlib.subplots(2, 2)","A",1
-"Bạn muốn vẽ biểu đồ line với pandas DataFrame. Code nào sau đây phù hợp nhất?","df.plot(kind='line')","df.plot.line()","df.line()","pd.plot(df)","A",1
-"Bạn muốn vẽ biểu đồ bar với pandas DataFrame. Code nào sau đây phù hợp nhất?","df.plot(kind='bar')","df.plot.bar()","df.bar()","pd.bar(df)","B",1
-"Bạn muốn vẽ scatter plot với seaborn. Code nào sau đây phù hợp nhất?","import seaborn as sns; sns.scatterplot(x='A', y='B', data=df)","sns.scatter(x='A', y='B', data=df)","seaborn.scatterplot(df, x='A', y='B')","pd.plot.scatter(df)","A",1
-"Bạn muốn vẽ boxplot với seaborn. Code nào sau đây phù hợp nhất?","import seaborn as sns; sns.boxplot(data=df)","sns.box(data=df)","seaborn.boxplot(df)","pd.boxplot(df)","A",1
-"Bạn muốn vẽ biểu đồ histogram với KDE overlay bằng seaborn. Code nào sau đây phù hợp nhất?","import seaborn as sns; sns.histplot(data=df, kde=True)","sns.histogram(data=df, kde=True)","seaborn.hist(df, kde=True)","pd.hist(df)","A",1
-"Bạn muốn tạo correlation heatmap bằng seaborn. Code nào sau đây phù hợp nhất?","import seaborn as sns; sns.heatmap(df.corr())","sns.correlation(df)","seaborn.heatmap(df)","pd.corr_heatmap(df)","A",1
 "Bạn muốn apply một function cho mỗi hàng trong DataFrame df. Code nào sau đây phù hợp nhất?","df.apply(function, axis=1)","df.map(function)","df.transform(function)","df.foreach(function)","A",1
 "Bạn muốn group by theo cột 'category' và tính tổng cho cột 'value'. Code nào sau đây phù hợp nhất?","df.groupby('category')['value'].sum()","df.group('category').sum()","df.aggregate('category', 'sum')","pd.groupby_sum(df, 'category', 'value')","A",1
 "Bạn muốn lọc các hàng có giá trị cột 'A' &gt; 10 trong DataFrame df. Code nào sau đây phù hợp nhất?","df[df['A'] &gt; 10]","df.filter(df['A'] &gt; 10)","df.where(df['A'] &gt; 10)","pd.filter(df, 'A', '&gt;', 10)","A",1
