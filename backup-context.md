@@ -688,7 +688,7 @@ git log --oneline -5
 
 ---
 
-**Last Updated:** October 18, 2025 (Test Library Creation - 60 Questions for Lec1-Lec6)  
+**Last Updated:** October 18, 2025 (Test Library: Removed Lec6 content, now 67 questions for Lec1-Lec5)  
 **Next Session:** Read this file first, then proceed with any requested updates  
 **AI Readiness:** 100% - All context preserved
 
@@ -696,42 +696,48 @@ git log --oneline -5
 
 ## 📝 Change Log
 
-### October 18, 2025 - Test Library Creation: 85 Questions for Lec1-Lec6
+### October 18, 2025 - Test Library Creation: 67 Questions for Lec1-Lec5
 
-**Change:** Created comprehensive test library with 85 multiple-choice questions covering Lectures 1-6 content, including 60 initial questions and 27 additional code-selection questions (13 visualization questions removed).
+**Change:** Created comprehensive test library with 67 multiple-choice questions covering Lectures 1-5 content only. All Lec6 topics (MultiIndex, merge, concat, reshape operations) have been removed.
 
 **User Request:**
 1. "Review all quiz in folder @Quiz, all notebook in @notebook. I want to create 1 test library of about 60 questions in Vietnamese. All questions are multiple choice - 4 options. Content from Lec1 to Lec6, including theory and code."
 2. "Add 40 more questions. The questions need to be structured: ask a question, choose the code that best fits the question from among 4 possible answers."
 3. "Eliminate questions related to Lec7 visualization"
+4. "Remove all content of lec6, only keep content from lec1 to 5 but remain the file name"
 
 **Solution Implemented:**
 
 **1. Comprehensive Content Review:**
-- ✅ Reviewed all quiz files (Lec02, Lec03, Lec04, Lec05, Lec06_quiz)
-- ✅ Analyzed notebooks (Lec1-Lec6) to extract key concepts
+- ✅ Reviewed all quiz files (Lec02, Lec03, Lec04, Lec05)
+- ✅ Analyzed notebooks (Lec1-Lec5) to extract key concepts
 - ✅ Identified unique topics not covered in existing quizzes
 - ✅ Created diverse question pool covering theory and practical code
 
-**2. Question Distribution (85 total):**
-- ✅ **Questions 1-60:** Mixed theory and code execution questions
+**2. Question Distribution (67 total):**
+- ✅ **Questions 1-48:** Mixed theory and code execution questions
   - Lec1: Khoa học dữ liệu concepts, data lifecycle, roles (3 questions)
   - Lec2: Python basics, data types, operators, slicing (15 questions)
   - Lec3: NumPy arrays, operations, functions (8 questions)
   - Lec4: Pandas DataFrames, file I/O, data reading (10 questions)
   - Lec5: Data cleaning, missing values, normalization, encoding (12 questions)
-  - Lec6: MultiIndex, merge, concat, reshape operations (12 questions)
 
-- ✅ **Questions 61-85:** Code-selection questions ("best code" format)
+- ✅ **Questions 49-67:** Code-selection questions ("best code" format)
   - NumPy operations: arange, sum, max, reshape (4 questions)
   - DataFrame operations: creation, selection, reading CSV (3 questions)
   - Data cleaning: dropna, fillna, drop_duplicates (3 questions)
   - Normalization: MinMaxScaler, StandardScaler (2 questions)
   - String processing: str methods (2 questions)
   - Encoding: LabelEncoder, One-Hot Encoding (2 questions)
-  - MultiIndex and merging: set_index, merge, concat (3 questions)
-  - Data reshaping: melt, pivot, stack (3 questions)
-  - Data manipulation: apply, groupby, filter, sort, reset_index (5 questions)
+  - General operations: apply, groupby, filter (3 questions)
+
+**3. Removed Lec6 Topics:**
+- ❌ MultiIndex operations (questions 49-51, 77)
+- ❌ Merge operations (questions 52-53, 78)
+- ❌ Concat operations (questions 54-55, 79)
+- ❌ Melt/pivot operations (questions 56-57, 80-81)
+- ❌ Stack/unstack operations (questions 58-59, 82)
+- ❌ Sorting and reset_index (questions 86-87)
 
 **3. Question Types:**
 - ✅ **Theory Questions:** Concepts, definitions, best practices
@@ -746,7 +752,7 @@ git log --oneline -5
 - ✅ **Column 6:** Đáp án đúng (Correct answer: A/B/C/D)
 - ✅ **Column 7:** Điểm (Score: 1 point per question)
 
-**5. Quality Assurance:**
+**4. Quality Assurance:**
 - ✅ All questions in Vietnamese
 - ✅ No duplication with existing quiz questions
 - ✅ Proper encoding for special characters (&amp; for &, &lt; for <)
@@ -754,30 +760,31 @@ git log --oneline -5
 - ✅ Covers both theoretical and practical knowledge
 - ✅ Code-selection questions test practical programming skills
 - ✅ Lec7 visualization topics excluded
+- ✅ Lec6 topics completely removed
 
 **Files Created:**
-- `Exam/test_library_lec1_lec6.csv` - Comprehensive 85-question test library
+- `Exam/test_library_lec1_lec6.csv` - Comprehensive 67-question test library (filename retained for consistency)
 
 **Question Examples:**
 1. "Khoa học dữ liệu (Data Science) là một lĩnh vực liên ngành kết hợp ba trụ cột chính. Trụ cột nào sau đây KHÔNG phải là một trong ba trụ cột đó?"
 2. "Kết quả của phép toán sau là gì: 7 // 2?"
 3. "Bạn muốn tạo một mảng NumPy chứa các số từ 0 đến 9. Code nào sau đây phù hợp nhất?"
-4. "Bạn muốn group by theo cột 'category' và tính tổng cho cột 'value'. Code nào sau đây phù hợp nhất?"
-5. "Bạn muốn sắp xếp DataFrame df theo cột 'A' giảm dần. Code nào sau đây phù hợp nhất?"
+4. "Bạn muốn chuẩn hóa dữ liệu về khoảng [0, 1] cho cột 'A' trong DataFrame df. Code nào sau đây phù hợp nhất?"
+5. "Bạn muốn mã hóa các giá trị phân loại ['red', 'blue', 'green'] thành số [0, 1, 2]. Code nào sau đây phù hợp nhất?"
 
 **Build Status:** ✅ Built successfully  
-**Deployment Status:** ✅ Committed (6ede118) and pushed to GitHub  
+**Deployment Status:** ✅ Committed (395352c) and pushed to GitHub  
 **Location:** ✅ `Exam/test_library_lec1_lec6.csv`
 
 **Impact:**
-- ✅ **Focused Coverage:** All major topics from Lec1-Lec6 only (visualization excluded)
+- ✅ **Focused Coverage:** All major topics from Lec1-Lec5 only (Lec6 and Lec7 excluded)
 - ✅ **Balanced Assessment:** Mix of theory, code execution, and practical code selection
 - ✅ **Ready to Use:** Formatted for import into testing systems
 - ✅ **Educational Value:** Tests both conceptual understanding and practical programming
 - ✅ **Professional Quality:** Proper CSV structure with encoding
 - ✅ **Action-Oriented:** Code-selection questions mirror real programming tasks
 
-**Status:** ✅ Complete - Test library created with 85 questions covering Lec1-Lec6!
+**Status:** ✅ Complete - Test library created with 67 questions covering Lec1-Lec5 only!
 
 ---
 
