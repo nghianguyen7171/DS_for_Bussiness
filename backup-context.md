@@ -696,12 +696,13 @@ git log --oneline -5
 
 ## 📝 Change Log
 
-### October 18, 2025 - Test Library Creation: 60 Questions for Lec1-Lec6
+### October 18, 2025 - Test Library Creation: 100 Questions for Lec1-Lec6
 
-**Change:** Created comprehensive test library with 60 multiple-choice questions covering Lectures 1-6 content.
+**Change:** Created comprehensive test library with 100 multiple-choice questions covering Lectures 1-6 content, including 60 initial questions and 40 additional code-selection questions.
 
 **User Request:**
-"Review all quiz in folder @Quiz, all notebook in @notebook. I want to create 1 test library of about 60 questions in Vietnamese. All questions are multiple choice - 4 options. Content from Lec1 to Lec6, including theory and code. Questions can be similar but not duplicated with the quiz section."
+1. "Review all quiz in folder @Quiz, all notebook in @notebook. I want to create 1 test library of about 60 questions in Vietnamese. All questions are multiple choice - 4 options. Content from Lec1 to Lec6, including theory and code."
+2. "Add 40 more questions. The questions need to be structured: ask a question, choose the code that best fits the question from among 4 possible answers."
 
 **Solution Implemented:**
 
@@ -711,19 +712,35 @@ git log --oneline -5
 - ✅ Identified unique topics not covered in existing quizzes
 - ✅ Created diverse question pool covering theory and practical code
 
-**2. Question Distribution:**
-- ✅ **Lec1:** Khoa học dữ liệu concepts, data lifecycle, roles (3 questions)
-- ✅ **Lec2:** Python basics, data types, operators, slicing (15 questions)
-- ✅ **Lec3:** NumPy arrays, operations, functions (8 questions)
-- ✅ **Lec4:** Pandas DataFrames, file I/O, data reading (10 questions)
-- ✅ **Lec5:** Data cleaning, missing values, normalization, encoding (12 questions)
-- ✅ **Lec6:** MultiIndex, merge, concat, reshape operations (12 questions)
+**2. Question Distribution (100 total):**
+- ✅ **Questions 1-60:** Mixed theory and code execution questions
+  - Lec1: Khoa học dữ liệu concepts, data lifecycle, roles (3 questions)
+  - Lec2: Python basics, data types, operators, slicing (15 questions)
+  - Lec3: NumPy arrays, operations, functions (8 questions)
+  - Lec4: Pandas DataFrames, file I/O, data reading (10 questions)
+  - Lec5: Data cleaning, missing values, normalization, encoding (12 questions)
+  - Lec6: MultiIndex, merge, concat, reshape operations (12 questions)
+
+- ✅ **Questions 61-100:** Code-selection questions ("best code" format)
+  - NumPy operations: arange, sum, max, reshape (4 questions)
+  - DataFrame operations: creation, selection, reading CSV (4 questions)
+  - Data cleaning: dropna, fillna, drop_duplicates (3 questions)
+  - Normalization: MinMaxScaler, StandardScaler (2 questions)
+  - String processing: str methods (2 questions)
+  - Encoding: LabelEncoder, One-Hot Encoding (2 questions)
+  - MultiIndex and merging: set_index, merge, concat (4 questions)
+  - Data reshaping: melt, pivot, stack (3 questions)
+  - Matplotlib: basic plotting functions (7 questions)
+  - Pandas plotting: DataFrame.plot methods (2 questions)
+  - Seaborn: advanced visualization (5 questions)
+  - Data manipulation: apply, groupby, filter, sort (4 questions)
 
 **3. Question Types:**
 - ✅ **Theory Questions:** Concepts, definitions, best practices
 - ✅ **Code Execution:** Given code snippet, predict output
 - ✅ **Concept Understanding:** Reverse logic, identify properties
 - ✅ **Practical Applications:** Real-world scenarios and usage
+- ✅ **Code Selection:** Choose best code snippet for given task
 
 **4. CSV Structure:**
 - ✅ **Column 1:** Text đáp án (Question text)
@@ -737,28 +754,31 @@ git log --oneline -5
 - ✅ Proper encoding for special characters (&amp; for &, &lt; for <)
 - ✅ Balanced difficulty levels
 - ✅ Covers both theoretical and practical knowledge
+- ✅ Code-selection questions test practical programming skills
 
 **Files Created:**
-- `Exam/test_library_lec1_lec6.csv` - Comprehensive 60-question test library
+- `Exam/test_library_lec1_lec6.csv` - Comprehensive 100-question test library
 
 **Question Examples:**
 1. "Khoa học dữ liệu (Data Science) là một lĩnh vực liên ngành kết hợp ba trụ cột chính. Trụ cột nào sau đây KHÔNG phải là một trong ba trụ cột đó?"
 2. "Kết quả của phép toán sau là gì: 7 // 2?"
-3. "NumPy là viết tắt của từ gì?"
-4. "Hàm nào trong Pandas được sử dụng để đọc file CSV?"
+3. "Bạn muốn tạo một mảng NumPy chứa các số từ 0 đến 9. Code nào sau đây phù hợp nhất?"
+4. "Bạn muốn vẽ scatter plot với seaborn. Code nào sau đây phù hợp nhất?"
+5. "Bạn muốn group by theo cột 'category' và tính tổng cho cột 'value'. Code nào sau đây phù hợp nhất?"
 
 **Build Status:** ✅ Built successfully  
-**Deployment Status:** ✅ Committed (815a09c) and pushed to GitHub  
+**Deployment Status:** ✅ Committed (4e233f7) and pushed to GitHub  
 **Location:** ✅ `Exam/test_library_lec1_lec6.csv`
 
 **Impact:**
-- ✅ **Comprehensive Coverage:** All major topics from Lec1-Lec6
-- ✅ **Balanced Assessment:** Mix of theory and practical code
+- ✅ **Comprehensive Coverage:** All major topics from Lec1-Lec6 + Lec7 visualization
+- ✅ **Balanced Assessment:** Mix of theory, code execution, and practical code selection
 - ✅ **Ready to Use:** Formatted for import into testing systems
-- ✅ **Educational Value:** Complements existing quizzes with new perspectives
+- ✅ **Educational Value:** Tests both conceptual understanding and practical programming
 - ✅ **Professional Quality:** Proper CSV structure with encoding
+- ✅ **Action-Oriented:** Code-selection questions mirror real programming tasks
 
-**Status:** ✅ Complete - Test library created with 60 questions covering Lec1-Lec6!
+**Status:** ✅ Complete - Test library created with 100 questions covering Lec1-Lec6!
 
 ---
 
