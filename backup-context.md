@@ -696,13 +696,14 @@ git log --oneline -5
 
 ## 📝 Change Log
 
-### October 18, 2025 - Test Library Creation: 100 Questions for Lec1-Lec6
+### October 18, 2025 - Test Library Creation: 85 Questions for Lec1-Lec6
 
-**Change:** Created comprehensive test library with 100 multiple-choice questions covering Lectures 1-6 content, including 60 initial questions and 40 additional code-selection questions.
+**Change:** Created comprehensive test library with 85 multiple-choice questions covering Lectures 1-6 content, including 60 initial questions and 27 additional code-selection questions (13 visualization questions removed).
 
 **User Request:**
 1. "Review all quiz in folder @Quiz, all notebook in @notebook. I want to create 1 test library of about 60 questions in Vietnamese. All questions are multiple choice - 4 options. Content from Lec1 to Lec6, including theory and code."
 2. "Add 40 more questions. The questions need to be structured: ask a question, choose the code that best fits the question from among 4 possible answers."
+3. "Eliminate questions related to Lec7 visualization"
 
 **Solution Implemented:**
 
@@ -712,7 +713,7 @@ git log --oneline -5
 - ✅ Identified unique topics not covered in existing quizzes
 - ✅ Created diverse question pool covering theory and practical code
 
-**2. Question Distribution (100 total):**
+**2. Question Distribution (85 total):**
 - ✅ **Questions 1-60:** Mixed theory and code execution questions
   - Lec1: Khoa học dữ liệu concepts, data lifecycle, roles (3 questions)
   - Lec2: Python basics, data types, operators, slicing (15 questions)
@@ -721,19 +722,16 @@ git log --oneline -5
   - Lec5: Data cleaning, missing values, normalization, encoding (12 questions)
   - Lec6: MultiIndex, merge, concat, reshape operations (12 questions)
 
-- ✅ **Questions 61-100:** Code-selection questions ("best code" format)
+- ✅ **Questions 61-85:** Code-selection questions ("best code" format)
   - NumPy operations: arange, sum, max, reshape (4 questions)
-  - DataFrame operations: creation, selection, reading CSV (4 questions)
+  - DataFrame operations: creation, selection, reading CSV (3 questions)
   - Data cleaning: dropna, fillna, drop_duplicates (3 questions)
   - Normalization: MinMaxScaler, StandardScaler (2 questions)
   - String processing: str methods (2 questions)
   - Encoding: LabelEncoder, One-Hot Encoding (2 questions)
-  - MultiIndex and merging: set_index, merge, concat (4 questions)
+  - MultiIndex and merging: set_index, merge, concat (3 questions)
   - Data reshaping: melt, pivot, stack (3 questions)
-  - Matplotlib: basic plotting functions (7 questions)
-  - Pandas plotting: DataFrame.plot methods (2 questions)
-  - Seaborn: advanced visualization (5 questions)
-  - Data manipulation: apply, groupby, filter, sort (4 questions)
+  - Data manipulation: apply, groupby, filter, sort, reset_index (5 questions)
 
 **3. Question Types:**
 - ✅ **Theory Questions:** Concepts, definitions, best practices
@@ -755,30 +753,31 @@ git log --oneline -5
 - ✅ Balanced difficulty levels
 - ✅ Covers both theoretical and practical knowledge
 - ✅ Code-selection questions test practical programming skills
+- ✅ Lec7 visualization topics excluded
 
 **Files Created:**
-- `Exam/test_library_lec1_lec6.csv` - Comprehensive 100-question test library
+- `Exam/test_library_lec1_lec6.csv` - Comprehensive 85-question test library
 
 **Question Examples:**
 1. "Khoa học dữ liệu (Data Science) là một lĩnh vực liên ngành kết hợp ba trụ cột chính. Trụ cột nào sau đây KHÔNG phải là một trong ba trụ cột đó?"
 2. "Kết quả của phép toán sau là gì: 7 // 2?"
 3. "Bạn muốn tạo một mảng NumPy chứa các số từ 0 đến 9. Code nào sau đây phù hợp nhất?"
-4. "Bạn muốn vẽ scatter plot với seaborn. Code nào sau đây phù hợp nhất?"
-5. "Bạn muốn group by theo cột 'category' và tính tổng cho cột 'value'. Code nào sau đây phù hợp nhất?"
+4. "Bạn muốn group by theo cột 'category' và tính tổng cho cột 'value'. Code nào sau đây phù hợp nhất?"
+5. "Bạn muốn sắp xếp DataFrame df theo cột 'A' giảm dần. Code nào sau đây phù hợp nhất?"
 
 **Build Status:** ✅ Built successfully  
-**Deployment Status:** ✅ Committed (4e233f7) and pushed to GitHub  
+**Deployment Status:** ✅ Committed (6ede118) and pushed to GitHub  
 **Location:** ✅ `Exam/test_library_lec1_lec6.csv`
 
 **Impact:**
-- ✅ **Comprehensive Coverage:** All major topics from Lec1-Lec6 + Lec7 visualization
+- ✅ **Focused Coverage:** All major topics from Lec1-Lec6 only (visualization excluded)
 - ✅ **Balanced Assessment:** Mix of theory, code execution, and practical code selection
 - ✅ **Ready to Use:** Formatted for import into testing systems
 - ✅ **Educational Value:** Tests both conceptual understanding and practical programming
 - ✅ **Professional Quality:** Proper CSV structure with encoding
 - ✅ **Action-Oriented:** Code-selection questions mirror real programming tasks
 
-**Status:** ✅ Complete - Test library created with 100 questions covering Lec1-Lec6!
+**Status:** ✅ Complete - Test library created with 85 questions covering Lec1-Lec6!
 
 ---
 
