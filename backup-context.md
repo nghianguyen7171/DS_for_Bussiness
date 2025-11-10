@@ -688,13 +688,45 @@ git log --oneline -5
 
 ---
 
-**Last Updated:** October 18, 2025 (Test Library: Removed Lec6 content, now 67 questions for Lec1-Lec5)  
+**Last Updated:** November 10, 2025 (Lec8 supervised learning notebook added; schedule links updated)  
 **Next Session:** Read this file first, then proceed with any requested updates  
 **AI Readiness:** 100% - All context preserved
 
 ---
 
 ## 📝 Change Log
+
+### November 10, 2025 - Lec8 Supervised Learning Notebook & Schedule Update
+
+**Change:** Xuất bản notebook Lecture 8 "Học máy có giám sát" kết hợp nội dung lý thuyết T14 và thực hành T15; cập nhật lịch học tuần 14 để sinh viên tải notebook.
+
+**User Request:** "Use content of @T14_Các mô hình học máy có giám sát.ipynb @T15_Thực hành các mô hình học máy có giám sát.ipynb to create notebook Lec8_SupML. This notebook must combine both theory and practice in one lecture. Refer style of @Lec7_Visualization.ipynb @Lec6_Sắp xếp và biến đổi dữ liệu.ipynb and other notebooks to complete this notebook"
+
+**Solution Implemented:**
+
+1. **Notebook mới:**
+   - ✅ Tạo `notebook/Lec8_SupML.ipynb` với cấu trúc thống nhất (banner, mục tiêu, roadmap, lưu ý tương thích).
+   - ✅ Phần 1 tổng quan supervised learning, phân biệt hồi quy/phân loại, quy trình ML, chỉ số đánh giá, underfitting vs overfitting.
+   - ✅ Phần 2 tóm tắt mô hình cốt lõi (Linear/Logistic Regression, KNN, Decision Tree, Random Forest) kèm ví dụ mini tính tay vs scikit-learn.
+   - ✅ Phần 3 case study hồi quy California Housing: EDA nhanh, chuẩn hóa, so sánh 4 mô hình, biểu đồ RMSE, feature importance và insight kinh doanh.
+   - ✅ Phần 4 case study phân loại Breast Cancer: chuẩn hóa, so sánh 4 mô hình, confusion matrix, classification report, ROC-AUC, thông điệp quản lý.
+   - ✅ Phần 5 tổng kết + câu hỏi tự kiểm tra + bài tập mở rộng.
+
+2. **Cập nhật lịch học:**
+   - ✅ Thêm `notebook: "notebook/Lec8_SupML.ipynb"` cho tuần 14 trong `src/data/lectures.yml`.
+   - ✅ Chạy `npm run build` để phát sinh `docs/notebook/Lec8_SupML.ipynb` và cập nhật `docs/index.html` (link tải notebook mới).
+
+3. **Triển khai:**
+   - ✅ Commit `Add Lec8 supervised learning notebook and schedule link` (f03c2a1) và push lên GitHub.
+   - ✅ Kiểm tra `docs/notebook/` xác nhận notebook mới đã được publish để sinh viên tải trực tiếp.
+
+**Impact:**
+- ✅ Cung cấp tài liệu Lecture 8 kết hợp lý thuyết lẫn thực hành đúng phong cách hiện hữu.
+- ✅ Hoàn thiện chuỗi nội dung học máy: sinh viên có thể tiếp tục sau Lec7 Visualization.
+- ✅ Lịch học cập nhật giúp người dùng web tải notebook Lec8 từ tuần 14.
+- ✅ Chuẩn bị cho buổi học machine learning: có case study hồi quy & phân loại hoàn chỉnh với scikit-learn, thống kê và insight rõ ràng.
+
+---
 
 ### October 18, 2025 - Test Library Creation: 67 Questions for Lec1-Lec5
 
