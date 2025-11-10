@@ -230,6 +230,7 @@ lectures:
       - "Tree ensembles"
       - "Model evaluation metrics"
     materials: "Chapter 11"
+    notebook: "notebook/Lec8_SupML.ipynb"
     activities:
       - "Supervised learning lecture"
       - "Example: house price prediction or customer classification"
