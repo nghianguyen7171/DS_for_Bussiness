@@ -215,6 +215,7 @@ lectures:
       - "Apply visualization in analysis"
       - "Create simple dashboards in Python"
     materials: "Visualization practice"
+    notebook: "notebook/Tur7_Visualization.ipynb"
     activities:
       - "Implement illustrative charts"
     assessment: "In-class discussion; homework"
