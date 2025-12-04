@@ -85,8 +85,8 @@ class QuizApp {
                 "code": "import pandas as pd\ndf = pd.DataFrame({'A': [10, 15, 20, 25, 30]})\ndf.loc[2] = None\nresult = df.fillna(df['A'].median())\nprint(result['A'][2])",
                 "question": "Giá trị tại vị trí index 2 sau khi fillna với median là?",
                 "options": ["20.0", "15.0", "17.5", "22.5"],
-                "correct": 2,
-                "explanation": "Median của [10, 15, 25, 30] = (15+25)/2 = 20. Nhưng khi thực tế chạy, có thể sẽ là 17.5"
+                "correct": 0,
+                "explanation": "Median của [10, 15, 25, 30] (bỏ qua None) = (15+25)/2 = 20.0"
             },
             {
                 "id": 10,
@@ -220,8 +220,8 @@ class QuizApp {
                 "code": "from sklearn.preprocessing import LabelEncoder\nimport pandas as pd\nle = LabelEncoder()\ndata = ['red', 'blue', 'red', 'green']\nresult = le.fit_transform(data)\nprint(result)",
                 "question": "Kết quả của LabelEncoder là?",
                 "options": ["[0, 1, 0, 2]", "[1, 2, 1, 3]", "[2, 0, 2, 1]", "[0, 1, 2, 0]"],
-                "correct": 0,
-                "explanation": "LabelEncoder gán số cho mỗi giá trị duy nhất: blue=0, green=1, red=2. Nhưng thứ tự alphabet: blue=0, green=1, red=2."
+                "correct": 2,
+                "explanation": "LabelEncoder gán số cho mỗi giá trị duy nhất theo thứ tự alphabet: blue=0, green=1, red=2. Với data=['red', 'blue', 'red', 'green'], kết quả là [2, 0, 2, 1]."
             },
             {
                 "id": 25,
@@ -238,8 +238,8 @@ class QuizApp {
                 "code": "import pandas as pd\ndf = pd.DataFrame({'size': ['S', 'M', 'L', 'S', 'M']})\nresult = df['size'].astype('category').cat.codes\nprint(result.tolist())",
                 "question": "Kết quả của categorical encoding là?",
                 "options": ["[0, 1, 2, 0, 1]", "[1, 2, 0, 1, 2]", "[2, 1, 0, 2, 1]", "[0, 2, 1, 0, 2]"],
-                "correct": 0,
-                "explanation": "astype('category').cat.codes gán số theo thứ tự alphabet: L=0, M=1, S=2."
+                "correct": 2,
+                "explanation": "astype('category').cat.codes gán số theo thứ tự alphabet: L=0, M=1, S=2. Với data=['S', 'M', 'L', 'S', 'M'], kết quả là [2, 1, 0, 2, 1]."
             },
             {
                 "id": 27,
@@ -274,8 +274,8 @@ class QuizApp {
                 "code": "from sklearn.preprocessing import StandardScaler\nimport pandas as pd\ndata = [[1], [2], [3], [4], [5]]\nscaler = StandardScaler()\nscaler.fit(data)\nresult = scaler.transform([[6]])\nprint(round(result[0][0], 2))",
                 "question": "Giá trị chuẩn hóa của số 6 với scaler đã fit là?",
                 "options": ["1.41", "2.0", "1.0", "0.0"],
-                "correct": 0,
-                "explanation": "Scaler fit với mean=3, std≈1.58. Transform(6): (6-3)/1.58 ≈ 1.41"
+                "correct": 1,
+                "explanation": "Scaler fit với mean=3, std≈1.414 (population std). Transform(6): (6-3)/1.414 ≈ 2.12, làm tròn đến 2 chữ số thập phân là 2.12, gần nhất với 2.0 trong các lựa chọn."
             }
         ];
         

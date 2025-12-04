@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập thực hành: Trực quan hóa dữ liệu | Tur7</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .submission-banner {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #059669 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .submission-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .submission-banner a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 3rem 2rem;
+        }
+
+        .overview {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .overview h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .overview-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-item strong {
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .sections {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .task-card {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .task-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .task-card:hover {
+            border-color: var(--primary-color);
+            transform: translateX(4px);
+        }
+
+        .task-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .task-number {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .task-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .task-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .task-requirements {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .task-requirements h4 {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .task-requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .task-requirements li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .task-requirements li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .time-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .tasks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .submission-banner {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Bài tập thực hành: Trực quan hóa dữ liệu</h1>
+            <p>Tur7 - Data Visualization Practice</p>
+        </div>
+
+        <div class="submission-banner">
+            <span>📤 Nộp bài tập tại đây:</span>
+            <a href="https://drive.google.com/drive/folders/17qHbWCxaHdlX6_NOv6dfOefSvxpn542t?usp=sharing" target="_blank" rel="noopener">
+                🔗 Google Drive Submission Folder
+            </a>
+        </div>
+
+        <div class="content">
+            <div class="overview">
+                <h2>📋 Tổng quan bài tập</h2>
+                <p style="margin-bottom: 1rem;">Sau khi hoàn thành các bài tập này, bạn sẽ có thể tạo các biểu đồ cơ bản với matplotlib, sử dụng seaborn để tạo các biểu đồ thống kê nâng cao, và áp dụng pandas plotting để trực quan hóa dữ liệu nhanh chóng.</p>
+                
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <strong>⏱️ Thời gian</strong>
+                        <span>~100 phút</span>
+                    </div>
+                    <div class="overview-item">
+                        <strong>📚 Số phần</strong>
+                        <span>6 phần</span>
+                    </div>
+                    <div class="overview-item">
+                        <strong>✅ Số bài tập</strong>
+                        <span>14 bài tập</span>
+                    </div>
+                    <div class="overview-item">
+                        <strong>🎯 Mục tiêu</strong>
+                        <span>Thành thạo visualization</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sections">
+                <!-- Phần 1: Matplotlib cơ bản -->
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">📈</span>
+                        <h2>Phần 1: Matplotlib cơ bản (~15 phút)</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="tasks-grid">
+                            <div class="task-card">
+                                <span class="task-number">Bài 1.1</span>
+                                <h3 class="task-title">Biểu đồ đường (Line Plot)</h3>
+                                <p class="task-description">Tạo biểu đồ đường để hiển thị xu hướng doanh thu theo tháng trong năm 2024.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Sử dụng matplotlib.pyplot để vẽ biểu đồ</li>
+                                        <li>Tạo dữ liệu doanh thu cho 12 tháng</li>
+                                        <li>Thêm tiêu đề và nhãn cho trục</li>
+                                        <li>Sử dụng màu xanh dương và marker 'o'</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~5 phút</span>
+                            </div>
+
+                            <div class="task-card">
+                                <span class="task-number">Bài 1.2</span>
+                                <h3 class="task-title">Biểu đồ cột (Bar Chart)</h3>
+                                <p class="task-description">So sánh doanh số bán hàng của 5 danh mục sản phẩm khác nhau trong quý 1.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Sử dụng plt.bar() để vẽ biểu đồ cột</li>
+                                        <li>Màu sắc khác nhau cho mỗi cột</li>
+                                        <li>Thêm nhãn giá trị trên đầu mỗi cột</li>
+                                        <li>Tùy chỉnh tiêu đề và nhãn</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~10 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phần 2: Trực quan hóa thống kê -->
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">📊</span>
+                        <h2>Phần 2: Trực quan hóa thống kê (~15 phút)</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="tasks-grid">
+                            <div class="task-card">
+                                <span class="task-number">Bài 2.1</span>
+                                <h3 class="task-title">Histogram và Density Plot</h3>
+                                <p class="task-description">Phân tích phân bố lương nhân viên để hiểu cấu trúc lương trong công ty.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Sử dụng plt.hist() với 20 bins</li>
+                                        <li>Thêm density plot (KDE) overlay</li>
+                                        <li>Tạo 2 subplot để so sánh</li>
+                                        <li>In thống kê mô tả</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~10 phút</span>
+                            </div>
+
+                            <div class="task-card">
+                                <span class="task-number">Bài 2.2</span>
+                                <h3 class="task-title">Boxplot So sánh</h3>
+                                <p class="task-description">So sánh doanh số bán hàng giữa 4 khu vực khác nhau (Bắc, Trung, Nam, Tây Nguyên).</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Sử dụng plt.boxplot() để vẽ</li>
+                                        <li>Thêm nhãn cho các khu vực</li>
+                                        <li>Tùy chỉnh màu sắc và style</li>
+                                        <li>In thống kê cho mỗi khu vực</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~5 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phần 3: Seaborn nâng cao -->
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">🎨</span>
+                        <h2>Phần 3: Seaborn nâng cao (~15 phút)</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="tasks-grid">
+                            <div class="task-card">
+                                <span class="task-number">Bài 3.1</span>
+                                <h3 class="task-title">Seaborn Histogram với KDE</h3>
+                                <p class="task-description">Phân tích phân bố điểm số của học sinh trong một kỳ thi với seaborn.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Sử dụng sns.histplot() với kde=True</li>
+                                        <li>Tùy chỉnh màu sắc và style</li>
+                                        <li>Thêm tiêu đề và nhãn</li>
+                                        <li>Thêm grid</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~10 phút</span>
+                            </div>
+
+                            <div class="task-card">
+                                <span class="task-number">Bài 3.2</span>
+                                <h3 class="task-title">Scatter Plot với Đường Hồi quy</h3>
+                                <p class="task-description">Phân tích mối quan hệ giữa số giờ học và điểm số của học sinh.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Sử dụng sns.regplot() để vẽ</li>
+                                        <li>Thêm tiêu đề và nhãn</li>
+                                        <li>Tính hệ số tương quan Pearson</li>
+                                        <li>Nhận xét về mối tương quan</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~5 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phần 4: Pandas Plotting -->
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">🐼</span>
+                        <h2>Phần 4: Pandas Plotting (~10 phút)</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="tasks-grid">
+                            <div class="task-card">
+                                <span class="task-number">Bài 4.1</span>
+                                <h3 class="task-title">Trực quan hóa nhanh với Pandas</h3>
+                                <p class="task-description">Sử dụng phương thức .plot() của pandas để trực quan hóa dữ liệu doanh thu nhanh chóng.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Vẽ line plot với kind='line'</li>
+                                        <li>Vẽ bar chart với kind='bar'</li>
+                                        <li>Vẽ area chart với kind='area'</li>
+                                        <li>Tùy chỉnh tiêu đề và legend</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~10 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phần 5: Seaborn nâng cao (tiếp theo) -->
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">🔥</span>
+                        <h2>Phần 5: Seaborn nâng cao (tiếp theo) (~20 phút)</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="tasks-grid">
+                            <div class="task-card">
+                                <span class="task-number">Bài 5.1</span>
+                                <h3 class="task-title">Heatmap (Bản đồ nhiệt)</h3>
+                                <p class="task-description">Phân tích ma trận tương quan giữa các biến trong dữ liệu khách hàng.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Tính ma trận tương quan</li>
+                                        <li>Sử dụng sns.heatmap() để vẽ</li>
+                                        <li>Thêm annotations (giá trị)</li>
+                                        <li>Tùy chỉnh colormap</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~7 phút</span>
+                            </div>
+
+                            <div class="task-card">
+                                <span class="task-number">Bài 5.2</span>
+                                <h3 class="task-title">Violin Plot</h3>
+                                <p class="task-description">So sánh phân bố chi tiêu của khách hàng theo giới tính.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Sử dụng sns.violinplot() để vẽ</li>
+                                        <li>So sánh với boxplot</li>
+                                        <li>Tùy chỉnh màu sắc và style</li>
+                                        <li>In thống kê so sánh</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~7 phút</span>
+                            </div>
+
+                            <div class="task-card">
+                                <span class="task-number">Bài 5.3</span>
+                                <h3 class="task-title">Pair Plot (Biểu đồ cặp)</h3>
+                                <p class="task-description">Khám phá mối quan hệ giữa tất cả các biến số trong dữ liệu khách hàng.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Sử dụng sns.pairplot()</li>
+                                        <li>Thêm hue='GioiTinh' để phân loại</li>
+                                        <li>Tùy chỉnh diag_kind và plot_kws</li>
+                                        <li>Thêm tiêu đề tổng thể</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~6 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phần 6: Trực quan hóa nâng cao -->
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-icon">🚀</span>
+                        <h2>Phần 6: Trực quan hóa nâng cao (~25 phút)</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="tasks-grid">
+                            <div class="task-card">
+                                <span class="task-number">Bài 6.1</span>
+                                <h3 class="task-title">Subplots với nhiều biểu đồ</h3>
+                                <p class="task-description">Tạo dashboard với nhiều biểu đồ khác nhau để trình bày tổng quan về hiệu suất bán hàng.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Tạo subplot 2x2 với 4 biểu đồ</li>
+                                        <li>Line plot, bar chart, area chart, boxplot</li>
+                                        <li>Thêm tiêu đề cho mỗi subplot</li>
+                                        <li>Sử dụng plt.tight_layout()</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~7 phút</span>
+                            </div>
+
+                            <div class="task-card">
+                                <span class="task-number">Bài 6.2</span>
+                                <h3 class="task-title">Biểu đồ theo nhóm</h3>
+                                <p class="task-description">Vẽ biểu đồ thu nhập và chi tiêu trung bình theo thành phố và giới tính.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Sử dụng sns.barplot() với hue</li>
+                                        <li>Tạo 2 subplot để so sánh</li>
+                                        <li>In thống kê theo nhóm (groupby)</li>
+                                        <li>Tùy chỉnh màu sắc</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~6 phút</span>
+                            </div>
+
+                            <div class="task-card">
+                                <span class="task-number">Bài 6.3</span>
+                                <h3 class="task-title">Time Series Visualization</h3>
+                                <p class="task-description">Phân tích xu hướng doanh thu theo thời gian và so sánh giữa các sản phẩm.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Vẽ line plot với pandas</li>
+                                        <li>Vẽ area chart tổng doanh thu</li>
+                                        <li>Thêm moving average (trung bình động)</li>
+                                        <li>Tính và in thống kê xu hướng</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~6 phút</span>
+                            </div>
+
+                            <div class="task-card">
+                                <span class="task-number">Bài 6.4</span>
+                                <h3 class="task-title">Customization và Styling nâng cao</h3>
+                                <p class="task-description">Tạo một biểu đồ chuyên nghiệp để trình bày trong báo cáo với tùy chỉnh toàn bộ style.</p>
+                                <div class="task-requirements">
+                                    <h4>Yêu cầu:</h4>
+                                    <ul>
+                                        <li>Vẽ biểu đồ kết hợp line và bar</li>
+                                        <li>Tùy chỉnh màu sắc, font, layout</li>
+                                        <li>Thêm annotations cho điểm quan trọng</li>
+                                        <li>Tạo biểu đồ đẹp và chuyên nghiệp</li>
+                                    </ul>
+                                </div>
+                                <span class="time-badge">~6 phút</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-link">← Quay lại trang chủ</a>
+        </div>
+    </div>
+</body>
+</html>
+

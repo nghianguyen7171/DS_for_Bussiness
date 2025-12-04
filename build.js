@@ -231,7 +231,7 @@ function renderIndex(data) {
   console.log(`  ✓ Created ${outputPath}`);
 }
 
-// Convert Markdown pages to HTML
+// Convert Markdown pages to HTML and copy HTML files
 function renderMarkdownPages(data) {
   console.log('📝 Converting Markdown pages...');
   
@@ -239,6 +239,15 @@ function renderMarkdownPages(data) {
     console.log('  ⚠️  No pages directory found');
     return;
   }
+  
+  // Copy HTML files directly
+  const htmlFiles = fs.readdirSync(PAGES_DIR).filter(f => f.endsWith('.html'));
+  htmlFiles.forEach(file => {
+    const srcPath = path.join(PAGES_DIR, file);
+    const destPath = path.join(DOCS_DIR, file);
+    fs.copySync(srcPath, destPath);
+    console.log(`  ✓ Copied ${file}`);
+  });
   
   const mdFiles = fs.readdirSync(PAGES_DIR).filter(f => f.endsWith('.md'));
   

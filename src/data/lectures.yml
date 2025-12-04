@@ -216,6 +216,7 @@ lectures:
       - "Create simple dashboards in Python"
     materials: "Visualization practice"
     notebook: "notebook/Tur7_Visualization.ipynb"
+    submission_link: "https://drive.google.com/drive/folders/17qHbWCxaHdlX6_NOv6dfOefSvxpn542t?usp=sharing"
     activities:
       - "Implement illustrative charts"
     assessment: "In-class discussion; homework"

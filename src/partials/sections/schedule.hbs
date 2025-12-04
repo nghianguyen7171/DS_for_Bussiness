@@ -36,6 +36,12 @@
                             {{#if notebook}}
                             <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
                             {{/if}}
+                            {{#if (eq title "Data Visualization Practice")}}
+                            <br><a href="tur7-visualization.html" class="notebook-link" target="_blank" rel="noopener">📊 Xem tất cả bài tập</a>
+                            {{/if}}
+                            {{#if submission_link}}
+                            <br><a href="{{submission_link}}" class="notebook-link" target="_blank" rel="noopener">📤 Nộp bài tập</a>
+                            {{/if}}
                             {{#if answer_keys_link}}
                             <br><a href="{{answer_keys_link}}" class="answer-keys-link">🔑 Đáp án thi</a>
                             {{/if}}
