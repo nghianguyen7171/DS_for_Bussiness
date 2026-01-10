@@ -1,24 +1,24 @@
-week_current: 6
+week_current: 1
 highlights:
-  - "📊 Learn to read and write data in CSV, JSON, and Excel formats"
-  - "🌐 Practice web scraping and data collection from websites"
-  - "📖 Read Chapter 7 from the course textbook"
-  - "📓 Download Lecture 4 notebook from course schedule"
-  - "💻 Complete data input/output exercises"
-  - "📤 Submit Homework 2 by Oct 16, 22:00"
+  - "📚 Welcome to Basic Data Science in Economics and Business course"
+  - "🎯 Introduction to Data Science concepts and workflow"
+  - "📖 Review course syllabus and learning objectives"
+  - "💻 Set up your development environment (Jupyter Notebook or Google Colab)"
+  - "📓 Download Lecture 1 notebook from course schedule"
+  - "🔍 Explore course materials and resources"
 
 announcements:
-  - title: "Homework 2 Due Soon!"
-    date: "2025-10-10"
-    content: "Homework 2 (Data Input and Storage) is due on Oct 16 at 22:00. Submit your .ipynb file via Google Drive. Practice with CSV, JSON, Excel, web scraping, and APIs."
+  - title: "Welcome to the Course!"
+    date: "2025-01-10"
+    content: "Welcome to Basic Data Science in Economics and Business! Please review the course syllabus, familiarize yourself with the schedule, and set up your development environment. Download the Lecture 1 notebook to get started."
   
-  - title: "Lecture 4 Quiz Available"
-    date: "2025-10-10"
-    content: "Quiz on Data Input and Storage is now available! Test your understanding of CSV, JSON, Web scraping, RSS feeds, APIs, and SQL databases. 30 questions with hints."
+  - title: "Course Resources Available"
+    date: "2025-01-10"
+    content: "All course materials including notebooks, lecture slides, and resources are now available on the course website. Make sure to check the Schedule section for weekly materials."
 
 upcoming:
-  - event: "Week 7: Data Input and Storage Practice"
+  - event: "Week 2: Introduction to Python"
     date: "Next week"
-  - event: "Week 8: Midterm 1 & Data Preprocessing"
+  - event: "Week 3: Python Practice Session"
     date: "In 2 weeks"
 
