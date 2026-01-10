@@ -30,6 +30,7 @@
                         </td>
                         <td data-label="Materials">
                             {{#if materials}}{{materials}}{{/if}}
+                            {{#if (eq week 1)}}
                             {{#if slides}}
                             <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
                             {{/if}}
@@ -45,6 +46,10 @@
                             {{/if}}
                             {{#if answer_keys_link}}
                             <br><a href="{{answer_keys_link}}" class="answer-keys-link">🔑 Đáp án thi</a>
+                            {{/if}}
+                            {{#if visualization_page_link}}
+                            <br><a href="{{visualization_page_link}}" class="visualization-link">✨ Xem tất cả bài tập</a>
+                            {{/if}}
                             {{/if}}
                         </td>
                         <td data-label="Assessment">{{assessment}}</td>
