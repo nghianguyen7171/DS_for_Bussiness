@@ -1,4 +1,19 @@
 quizzes:
+  - id: "quiz1"
+    title: "Lecture 1 Quiz: Giới thiệu về Khoa học dữ liệu"
+    week: 1
+    description: "30 câu hỏi trắc nghiệm về khái niệm Khoa học dữ liệu, quy trình phân tích, các lĩnh vực chuyên sâu, loại dữ liệu, và ứng dụng trong kinh tế & kinh doanh."
+    link: "quiz/Lec01_quiz/index.html"
+    topics:
+      - "Khái niệm Khoa học dữ liệu và 3 trụ cột"
+      - "Khoa học dữ liệu trong Kinh tế & Kinh doanh"
+      - "Các lĩnh vực chuyên sâu (Data Engineering, Analytics, ML)"
+      - "Quy trình Khoa học dữ liệu (7 bước)"
+      - "Các loại dữ liệu (Structured, Semi-structured, Unstructured)"
+      - "Vai trò trong Khoa học dữ liệu (Data Engineer, Analyst, Scientist)"
+      - "Học máy (Supervised, Unsupervised, Reinforcement)"
+      - "Công cụ và ngôn ngữ lập trình"
+    
   - id: "quiz2"
     title: "Lecture 2 Quiz: Python Basics"
     week: 2

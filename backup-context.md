@@ -688,7 +688,7 @@ git log --oneline -5
 
 ---
 
-**Last Updated:** January 2025 (Course preparation for next semester - sections hidden, notebooks reviewed)  
+**Last Updated:** January 10, 2025 (Created Lecture 1 Quiz - Introduction to Data Science, enabled quizzes section)  
 **Next Session:** Read this file first, then proceed with any requested updates  
 **AI Readiness:** 100% - All context preserved
 
@@ -2630,5 +2630,91 @@ Students landing on homepage will see:
 - ✅ **Ready for next semester** - All materials reviewed and standardized
 
 **Status:** ✅ Complete - Course prepared for next semester with sections hidden and notebooks fixed!
+
+---
+
+### Entry 24: Created Lecture 1 Quiz - Introduction to Data Science (2025-01-10)
+
+**User Request:**
+"Review week 1's materials @Lec1_Giới thiệu về Khoa học dữ liệu.ipynb. This section is primarily theoretical knowledge. Please create a corresponding quiz for this section and enable it on the webpage. Be sure to ensure the information is accurate and relevant to the content of Week 1."
+
+**Solution Implemented:**
+
+**1. Created Lec01 Quiz:**
+- ✅ **Quiz Structure** - Created `Quiz/Lec01_quiz/` directory with:
+  - `index.html` - HTML structure adapted for theoretical questions (no code blocks)
+  - `app.js` - JavaScript with 30 comprehensive theoretical questions
+  - `style.css` - Styled for theoretical quiz format (copied from Lec05_quiz and adapted)
+- ✅ **30 Questions** covering all Week 1 topics:
+  - Section 1 (Q1-3): Khái niệm Khoa học dữ liệu và 3 trụ cột
+  - Section 2 (Q4-6): Khoa học dữ liệu trong Kinh tế & Kinh doanh
+  - Section 3 (Q7-10): Các lĩnh vực chuyên sâu (Data Engineering, Analytics, ML)
+  - Section 4 (Q11-12): Quy trình Khoa học dữ liệu (7 bước)
+  - Section 5 (Q13-15): Các loại dữ liệu (Structured, Semi-structured, Unstructured)
+  - Section 6 (Q16-17): Định dạng dữ liệu (CSV, JSON, XML, images, video)
+  - Section 7 (Q18-20): Các vai trò trong Khoa học dữ liệu
+  - Section 8 (Q21): Quy trình Kỹ thuật dữ liệu (5 bước)
+  - Section 9 (Q22): Quy trình Phân tích dữ liệu (4 bước)
+  - Section 10 (Q23-25): Học máy (Supervised, Unsupervised, Reinforcement)
+  - Section 11 (Q26-27): Công cụ và ngôn ngữ lập trình (Python, SQL, R)
+  - Section 12 (Q28): Trực quan hóa dữ liệu
+  - Section 13 (Q29-30): Ứng dụng trong Kinh tế & Kinh doanh
+- ✅ **Question Format** - Adapted for theoretical content:
+  - No code snippets (theoretical questions)
+  - Multiple choice with 4 options each
+  - Detailed explanations for each answer
+  - Section grouping for better organization
+
+**2. Enabled Quiz on Webpage:**
+- ✅ **Added to quizzes.yml** - Added quiz1 entry as the first quiz (Week 1)
+  - Title: "Lecture 1 Quiz: Giới thiệu về Khoa học dữ liệu"
+  - Week: 1
+  - Description: "30 câu hỏi trắc nghiệm về khái niệm Khoa học dữ liệu, quy trình phân tích, các lĩnh vực chuyên sâu, loại dữ liệu, và ứng dụng trong kinh tế & kinh doanh."
+  - Link: "quiz/Lec01_quiz/index.html"
+  - 8 topics listed covering all sections
+- ✅ **Uncommented quizzes section** - Enabled quizzes section in `src/index.hbs`
+  - Previously hidden for next semester preparation
+  - Now visible since this is Week 1 material for new semester
+- ✅ **Enabled navbar link** - Uncommented quizzes navigation link in `src/partials/navbar.hbs`
+  - Allows easy navigation to quizzes section
+  - Makes quiz discoverable
+
+**3. CSS Styling:**
+- ✅ **Adapted CSS** - Copied from Lec05_quiz style.css and adapted for theoretical format
+  - Removed code block specific styles (not needed)
+  - Added `.section-title` styling for section headers
+  - Maintained all quiz functionality (options, explanations, navigation)
+  - Responsive design preserved
+
+**Files Created:**
+- `Quiz/Lec01_quiz/index.html` - Quiz HTML structure
+- `Quiz/Lec01_quiz/app.js` - Quiz JavaScript with 30 questions
+- `Quiz/Lec01_quiz/style.css` - Quiz styling
+
+**Files Modified:**
+- `src/data/quizzes.yml` - Added quiz1 entry at the beginning
+- `src/index.hbs` - Uncommented quizzes section
+- `src/partials/navbar.hbs` - Uncommented quizzes navigation link
+
+**Build Status:** ✅ Build completed successfully  
+**Quiz Files:** ✅ Copied to `docs/quiz/Lec01_quiz/`  
+**Quiz Rendering:** ✅ Visible on webpage at `docs/index.html`  
+**Quiz Link:** ✅ Correctly links to `quiz/Lec01_quiz/index.html`
+
+**Content Accuracy:**
+- ✅ All questions based directly on Lec1 notebook content
+- ✅ Questions match the review questions at the end of the notebook
+- ✅ Explanations accurate and educational
+- ✅ Covers all major theoretical concepts from Week 1
+- ✅ Questions are relevant and test understanding of key concepts
+
+**Impact:**
+- ✅ **Week 1 quiz available** - Students can now test their understanding of Week 1 material
+- ✅ **Quizzes section enabled** - Quizzes are visible and accessible on the webpage
+- ✅ **Consistent format** - Quiz follows the same structure as other quizzes (Lec02-Lec07)
+- ✅ **Educational value** - 30 questions with detailed explanations help reinforce learning
+- ✅ **Ready for new semester** - Week 1 material complete with quiz
+
+**Status:** ✅ Complete - Lecture 1 Quiz created and enabled on webpage!
 
 ---
