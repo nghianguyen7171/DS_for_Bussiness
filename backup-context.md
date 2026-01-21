@@ -688,7 +688,7 @@ git log --oneline -5
 
 ---
 
-**Last Updated:** January 21, 2026 (Enabled Week 2 notebook link on schedule; quizzes limited to Lecture 1)  
+**Last Updated:** January 21, 2026 (Enabled Week 2 notebook link; re-enabled Lecture 2 quiz)  
 **Next Session:** Read this file first, then proceed with any requested updates  
 **AI Readiness:** 100% - All context preserved
 
@@ -2740,5 +2740,29 @@ Students landing on homepage will see:
 - Other weeks’ materials remain hidden per current semester prep.
 
 **Status:** ✅ Complete - Week 2 notebook link enabled on the webpage.
+
+---
+
+### Entry 26: Re-enable Lecture 2 Quiz (Week 2) (2026-01-21)
+
+**User Request:** "enable week 2 quiz."
+
+**Solution Implemented:**
+- ✅ **Quizzes data:** Added `quiz2` back into `src/data/quizzes.yml` so the quizzes section now shows Lecture 2 Quiz (Python Basics) alongside Lecture 1.
+- ✅ **Build:** Ran `npm run build` (using local cache) to regenerate `docs/index.html` with the Week 2 quiz card/link visible.
+
+**Files Modified:**
+- `src/data/quizzes.yml` — restored Lecture 2 Quiz entry (week 2).
+- `docs/index.html` — rebuilt output reflecting the visible quiz card/link.
+
+**Build & Deploy:**
+- ✅ Build succeeded (only Sass deprecation warnings).
+- ✅ Commit pending? (See git log/status for latest commit after quiz enable; deployment will follow push.)
+
+**Impact:**
+- Lecture 2 Quiz (`quiz/Lec02_quiz/index.html`) is now visible in the Quizzes section.
+- Quizzes section currently shows Lecture 1 and Lecture 2; other quizzes remain hidden.
+
+**Status:** ✅ Complete - Lecture 2 Quiz re-enabled on the webpage.
 
 ---

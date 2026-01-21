@@ -14,3 +14,12 @@ quizzes:
       - "Học máy (Supervised, Unsupervised, Reinforcement)"
       - "Công cụ và ngôn ngữ lập trình"
 
+  - id: "quiz2"
+    title: "Lecture 2 Quiz: Python Basics"
+    week: 2
+    description: "Test your understanding of Python fundamentals including variables, data types, and control structures."
+    link: "quiz/Lec02_quiz/index.html"
+    topics:
+      - "Variables and data types"
+      - "Conditional statements"
+      - "Loops and iteration"
