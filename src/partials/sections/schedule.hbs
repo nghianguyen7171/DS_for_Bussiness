@@ -51,6 +51,14 @@
                             <br><a href="{{visualization_page_link}}" class="visualization-link">✨ Xem tất cả bài tập</a>
                             {{/if}}
                             {{/if}}
+                            {{#if (eq week 2)}}
+                            {{#if slides}}
+                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
+                            {{/if}}
+                            {{#if notebook}}
+                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
+                            {{/if}}
+                            {{/if}}
                         </td>
                         <td data-label="Assessment">{{assessment}}</td>
                     </tr>
