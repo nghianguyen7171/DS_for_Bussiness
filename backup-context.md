@@ -688,7 +688,7 @@ git log --oneline -5
 
 ---
 
-**Last Updated:** January 10, 2025 (Created Lecture 1 Quiz - Introduction to Data Science, enabled quizzes section)  
+**Last Updated:** January 21, 2026 (Enabled Week 2 notebook link on schedule; quizzes limited to Lecture 1)  
 **Next Session:** Read this file first, then proceed with any requested updates  
 **AI Readiness:** 100% - All context preserved
 
@@ -2716,5 +2716,29 @@ Students landing on homepage will see:
 - ✅ **Ready for new semester** - Week 1 material complete with quiz
 
 **Status:** ✅ Complete - Lecture 1 Quiz created and enabled on webpage!
+
+---
+
+### Entry 25: Enable Week 2 Notebook Link on Schedule (2026-01-21)
+
+**User Request:** "Enable week 2 notebook in the webpage."
+
+**Solution Implemented:**
+- ✅ **Schedule materials visibility:** Updated `src/partials/sections/schedule.hbs` so the Materials column now shows notebook (and slides, if present) for Week 2, while keeping all other weeks hidden; Week 1 remains visible.
+- ✅ **Build:** Ran `npm run build` (with local NPM cache in workspace) to regenerate `docs/index.html` reflecting the Week 2 notebook link.
+
+**Files Modified:**
+- `src/partials/sections/schedule.hbs` — added a Week 2 block to render notebook/slides links.
+- `docs/index.html` — rebuilt output including Week 2 notebook download link.
+
+**Build & Deploy:**
+- ✅ Build succeeded (deprecation warnings only from Sass).
+- ✅ Committed as `feat: show Week 2 notebook in schedule` (`dd4cc17`) and pushed to `main`.
+
+**Impact:**
+- Week 2 notebook (`notebook/Lec2_Giới thiệu ngôn ngữ Python.ipynb`) is now visible/downloadable on the Course Schedule table.
+- Other weeks’ materials remain hidden per current semester prep.
+
+**Status:** ✅ Complete - Week 2 notebook link enabled on the webpage.
 
 ---
