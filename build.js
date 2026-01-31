@@ -183,6 +183,25 @@ function copyNotebooks() {
   }
 }
 
+// Copy slides/materials (PDFs, etc.) to docs for course supply materials
+function copySlides() {
+  console.log('📑 Copying slides & supply materials...');
+  
+  const slidesSrc = path.join(__dirname, 'slides');
+  const slidesDest = path.join(DOCS_DIR, 'slides');
+  
+  if (fs.existsSync(slidesSrc)) {
+    fs.ensureDirSync(slidesDest);
+    const files = fs.readdirSync(slidesSrc);
+    files.forEach(file => {
+      const srcPath = path.join(slidesSrc, file);
+      if (fs.statSync(srcPath).isFile()) {
+        fs.copySync(srcPath, path.join(slidesDest, file));
+        console.log(`  ✓ Copied ${file}`);
+      }
+    });
+  }
+}
 
 function copyExamFiles() {
   console.log('📚 Copying exam files...');
@@ -375,6 +394,10 @@ async function build() {
     
     // Copy quizzes
     copyQuizzes();
+    console.log('');
+    
+    // Copy slides & supply materials
+    copySlides();
     console.log('');
     
     // Copy notebooks

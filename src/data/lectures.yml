@@ -61,6 +61,7 @@ lectures:
       - "Pandas DataFrame"
     materials: "Chapters 5, 6"
     notebook: "notebook/Lec3_Các thư viện quan trọng trong KHDL của Python.ipynb"
+    supply_pdf: "slides/Python_NumPy_Pandas_Essentials.pdf"
     activities:
       - "Guide installing Python add-on libraries"
       - "Deliver lecture content"
