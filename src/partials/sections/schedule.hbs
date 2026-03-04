@@ -78,6 +78,14 @@
                             <br><a href="{{supply_pdf}}" class="notebook-link" download>📄 Supply: Python NumPy & Pandas Essentials (PDF)</a>
                             {{/if}}
                             {{/if}}
+                            {{#if (eq week 5)}}
+                            {{#if slides}}
+                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
+                            {{/if}}
+                            {{#if notebook}}
+                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
+                            {{/if}}
+                            {{/if}}
                         </td>
                         <td data-label="Assessment">{{assessment}}</td>
                     </tr>
