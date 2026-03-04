@@ -23,3 +23,14 @@ quizzes:
       - "Variables and data types"
       - "Conditional statements"
       - "Loops and iteration"
+
+  - id: "quiz3"
+    title: "Lecture 3 Quiz: NumPy & Pandas"
+    week: 4
+    description: "30 câu hỏi trắc nghiệm về NumPy và Pandas – mảng, DataFrame, và thao tác dữ liệu."
+    link: "quiz/Lec03_quiz/index.html"
+    topics:
+      - "NumPy arrays và dtype"
+      - "Slicing, indexing, boolean indexing"
+      - "Pandas DataFrame và Series"
+      - "Đọc dữ liệu và thao tác cơ bản"
