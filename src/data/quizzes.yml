@@ -34,3 +34,14 @@ quizzes:
       - "Slicing, indexing, boolean indexing"
       - "Pandas DataFrame và Series"
       - "Đọc dữ liệu và thao tác cơ bản"
+
+  - id: "quiz4"
+    title: "Lecture 4 Quiz: Nhập và Lưu Trữ Dữ Liệu"
+    week: 6
+    description: "30 câu hỏi trắc nghiệm về CSV, JSON, Web HTML, RSS/XML, Excel, API và SQL Database."
+    link: "quiz/Lec04_quiz/index.html"
+    topics:
+      - "Đọc/ghi CSV, JSON"
+      - "Thu thập dữ liệu web (HTML, RSS/XML)"
+      - "Đọc Excel"
+      - "Web APIs và cơ sở dữ liệu"
