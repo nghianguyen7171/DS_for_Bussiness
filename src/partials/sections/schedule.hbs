@@ -97,6 +97,17 @@
                             <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
                             {{/if}}
                             {{/if}}
+                            {{#if (eq week 7)}}
+                            {{#if slides}}
+                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
+                            {{/if}}
+                            {{#if notebook}}
+                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
+                            {{/if}}
+                            {{#if (eq title "Data Input and Storage Practice")}}
+                            <br><a href="notebook/Tur4_nhập_và_lưu_trữ_dữ_liệu_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
+                            {{/if}}
+                            {{/if}}
                         </td>
                         <td data-label="Assessment">{{assessment}}</td>
                     </tr>
