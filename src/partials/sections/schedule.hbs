@@ -30,16 +30,14 @@
                         </td>
                         <td data-label="Materials">
                             {{#if materials}}{{materials}}{{/if}}
-                            {{#if (eq week 1)}}
                             {{#if slides}}
                             <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
                             {{/if}}
                             {{#if notebook}}
                             <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
                             {{/if}}
-                            {{#if (eq title "Data Visualization Practice")}}
-                            <br><a href="tur7-visualization.html" class="notebook-link" target="_blank" rel="noopener">📊 Xem tất cả bài tập</a>
-                            <br><a href="notebook/Tur7_Visualization_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
+                            {{#if supply_pdf}}
+                            <br><a href="{{supply_pdf}}" class="notebook-link" download>📄 Supply: Python NumPy & Pandas Essentials (PDF)</a>
                             {{/if}}
                             {{#if submission_link}}
                             <br><a href="{{submission_link}}" class="notebook-link" target="_blank" rel="noopener">📤 Nộp bài tập</a>
@@ -50,63 +48,15 @@
                             {{#if visualization_page_link}}
                             <br><a href="{{visualization_page_link}}" class="visualization-link">✨ Xem tất cả bài tập</a>
                             {{/if}}
-                            {{/if}}
-                            {{#if (eq week 2)}}
-                            {{#if slides}}
-                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
-                            {{/if}}
-                            {{#if notebook}}
-                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
-                            {{/if}}
-                            {{/if}}
-                            {{#if (eq week 3)}}
-                            {{#if slides}}
-                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
-                            {{/if}}
-                            {{#if notebook}}
-                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
-                            {{/if}}
-                            {{/if}}
-                            {{#if (eq week 4)}}
-                            {{#if slides}}
-                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
-                            {{/if}}
-                            {{#if notebook}}
-                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
-                            {{/if}}
-                            {{#if supply_pdf}}
-                            <br><a href="{{supply_pdf}}" class="notebook-link" download>📄 Supply: Python NumPy & Pandas Essentials (PDF)</a>
-                            {{/if}}
-                            {{/if}}
-                            {{#if (eq week 5)}}
-                            {{#if slides}}
-                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
-                            {{/if}}
-                            {{#if notebook}}
-                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
+                            {{#if (eq title "Data Visualization Practice")}}
+                            <br><a href="tur7-visualization.html" class="notebook-link" target="_blank" rel="noopener">📊 Xem tất cả bài tập</a>
+                            <br><a href="notebook/Tur7_Visualization_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
                             {{/if}}
                             {{#if (eq title "Python with NumPy and Pandas")}}
                             <br><a href="notebook/Tur3_Các thư viện quan trọng trong KHDL của Python_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
                             {{/if}}
-                            {{/if}}
-                            {{#if (eq week 6)}}
-                            {{#if slides}}
-                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
-                            {{/if}}
-                            {{#if notebook}}
-                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
-                            {{/if}}
-                            {{/if}}
-                            {{#if (eq week 7)}}
-                            {{#if slides}}
-                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
-                            {{/if}}
-                            {{#if notebook}}
-                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
-                            {{/if}}
                             {{#if (eq title "Data Input and Storage Practice")}}
                             <br><a href="notebook/Tur4_nhập_và_lưu_trữ_dữ_liệu_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
-                            {{/if}}
                             {{/if}}
                         </td>
                         <td data-label="Assessment">{{assessment}}</td>
