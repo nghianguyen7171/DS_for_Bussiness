@@ -186,6 +186,7 @@ lectures:
       - "Normalize quantitative variables"
       - "Create new features"
     materials: "Data transformation practice"
+    notebook: "notebook/Tur6_Sắp xếp và biến đổi dữ liệu.ipynb"
     activities:
       - "Apply practical data transformation techniques"
     assessment: "In-class discussion; homework"
