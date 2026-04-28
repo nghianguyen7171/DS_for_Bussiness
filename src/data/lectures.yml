@@ -187,6 +187,7 @@ lectures:
       - "Create new features"
     materials: "Data transformation practice"
     notebook: "notebook/Tur6_Sắp xếp và biến đổi dữ liệu.ipynb"
+    dataset_link: "https://drive.google.com/drive/folders/1Njqv0Kf7wcD334jsCoJmWIaTYxiTA5J2?usp=sharing"
     activities:
       - "Apply practical data transformation techniques"
     assessment: "In-class discussion; homework"
