@@ -688,13 +688,49 @@ git log --oneline -5
 
 ---
 
-**Last Updated:** January 21, 2026 (Enabled Week 2 notebook link; re-enabled Lecture 2 quiz)  
+**Last Updated:** April 28, 2026 (Completed Tur6 practical notebook solutions)  
 **Next Session:** Read this file first, then proceed with any requested updates  
 **AI Readiness:** 100% - All context preserved
 
 ---
 
 ## 📝 Change Log
+
+### April 28, 2026 - Completed Tur6 Practical Notebook
+
+**Change:** Reviewed and completed `Tur6_Sắp xếp và biến đổi dữ liệu.ipynb` as a full practical notebook for `Lec6_Sắp xếp và biến đổi dữ liệu.ipynb`.
+
+**User Request:** "Tur6... is the practice notebook for Lec6... Review and complete this practical notebook"
+
+**Solution Implemented:**
+- ✅ Filled solution cells for MultiIndex practice:
+  - Create MultiIndex (`Store`, `Dept`)
+  - Filter by store/dept (`loc`, `xs`)
+  - Groupby average sales by Store-Dept
+- ✅ Filled solution cells for combining/merging:
+  - `train` + `features` merge
+  - Missing-record diagnostics after merge
+  - Merge with `stores` for `Type`, `Size`
+  - Store/type average sales analytics
+- ✅ Filled solution cells for concatenation:
+  - Split by year (2010/2011/2012)
+  - Row concat and column concat
+  - Concat with keys to create top-level MultiIndex
+  - Integrity check before vs after concat
+- ✅ Filled solution cells for reshaping/pivoting:
+  - Store x Dept pivot table
+  - Store x Year pivot table
+  - `stack` / `unstack` round-trip transform
+  - Type x Year pivot table
+- ✅ Synced completed notebook from:
+  - `docs/notebook/Tur6_Sắp xếp và biến đổi dữ liệu.ipynb`
+  - to `notebook/Tur6_Sắp xếp và biến đổi dữ liệu.ipynb`
+
+**Current Status:**
+- ✅ Tur6 practical notebook now contains complete executable solutions aligned with Lec6 topics.
+- ✅ Source and docs copies are synchronized for future build/deploy.
+
+---
 
 ### November 10, 2025 - Lec8 Supervised Learning Notebook & Schedule Update
 
