@@ -1,8 +1,44 @@
 # 🔄 Project Context Backup - Data Science for Business Website
 
-**Created:** October 8, 2025  
-**Purpose:** Complete project context for future AI sessions  
-**Status:** ✅ Fully Built & Deployed to GitHub
+**Created:** October 8, 2025
+**Last updated:** July 10, 2026 — rebuilt on the NEU FDA course site template
+**Purpose:** Complete project context for future AI sessions
+**Status:** ✅ Built & deployed. GitHub Pages serves `docs/` from `main`.
+
+---
+
+## ⚠️ Read this first (July 10, 2026)
+
+This site was rebuilt on the **NEU FDA course site template**
+(https://github.com/nghianguyen7171/neu_fda_coursesite). The data shapes under
+`src/data/` are unchanged — this repo is where the template's architecture
+originated — but the markup, stylesheet, layout, and build guarantees are new.
+
+**Publishing model:** `npm run build` → `docs/` → committed → GitHub Pages
+serves `docs/` from `main`. **Pushing `main` publishes the site.** (This differs
+from `Intro_to_AI` and `ts_course`, which publish a curated tree to a `gh-pages`
+branch and require `./deploy.sh`. Do not confuse them.)
+
+**The build now fails, writing nothing, if:**
+- assessment weights in `course.yml` do not sum to 100%
+- a weight cannot be parsed as a number
+- a CLO maps to an objective that is not declared
+- any local link points at a file that does not exist
+- any in-page `#anchor` has no matching element
+
+**Removed:** `src/scripts/main.js`, `src/styles/_layout.scss`,
+`src/styles/_components.scss`, `src/partials/sections/answer-keys.hbs`. The site
+is now JavaScript-free; smooth scrolling and table overflow are CSS. The quiz
+apps under `Quiz/` keep their own scripts and are unaffected. **There is no
+longer a dark/light theme toggle button** — the site follows the reader's OS
+setting via `prefers-color-scheme`.
+
+**Solution gating:** `npm run build` strips `::: solution` blocks from Markdown.
+`npm run build:keys` renders them. Publishing answers requires opting in.
+
+Anything below that describes `src/scripts/`, `_layout.scss`, `_components.scss`,
+a theme toggle, or a hand-written navbar inside the Markdown page template is
+obsolete. It survives in git history at commit `3036697`.
 
 ---
 
@@ -58,7 +94,13 @@ Convert course syllabus content from `DS_BUSS.md` into a working GitHub Pages we
 - ✅ **Practice materials created** with comprehensive summary and exercises
 - ✅ **Quiz 5 fully functional** (was temporarily disabled, now active)
 - ✅ **Answer Keys Page** created with comprehensive midterm exam solutions
-- ✅ **Navigation Integration** - Answer Keys section added to main website
+- ⚠️ **Navigation Integration** — this was never actually true. The
+  `sections/answer-keys` partial was commented out of `index.hbs`, so the
+  `#answer-keys` anchor did not exist, and Week 8's `answer_keys_link` scrolled
+  nowhere. `course.yml` also pointed at `answer-keys.html` at the site root,
+  which 404'd; the real page is `Exam/answer-keys.html`. **Fixed 2026-07-10:**
+  the answer-keys block now lives inside the Resources section, where the anchor
+  is a real element, and it links `Exam/answer-keys.html`.
 - ✅ **Modern UI Design** - Beautiful, responsive answer keys page with statistics
 - ✅ **Study Features** - Topic breakdown, difficulty levels, study tips
 
@@ -69,42 +111,48 @@ Convert course syllabus content from `DS_BUSS.md` into a working GitHub Pages we
 ### Technology Stack
 ```yaml
 Build System:
-  - Node.js: Build automation
+  - Node.js: Build automation (build.js)
   - Handlebars.js: Templating engine
   - SCSS/Sass: Styling (compiles to CSS)
   - js-yaml: YAML parsing
   - marked: Markdown to HTML conversion
   - fs-extra: File operations
+  - glob: Partial discovery
 
 Frontend:
-  - Vanilla JavaScript: Interactivity
-  - CSS Custom Properties: Theme variables
-  - Responsive Design: Mobile-first approach
+  - NO JavaScript. Smooth scroll, sticky nav and table overflow are CSS.
+  - CSS Custom Properties: theme variables, driven by prefers-color-scheme
+  - Responsive Design: mobile-first
 
 Data:
-  - YAML: Structured content
-  - Markdown: Long-form content pages
+  - YAML: Structured content (src/data/)
+  - Markdown: Long-form content pages (src/pages/)
 
 Deployment:
   - GitHub Pages: Static hosting
-  - /docs folder: Build output directory
+  - /docs folder on `main`: build output. Pushing main publishes.
 ```
 
 ### Build Pipeline
 ```
-Source Files (src/) 
+Source Files (src/)
     ↓
-[build.js - Node.js Script]
+[build.js]
     ↓
 1. Load YAML data
-2. Register Handlebars partials
-3. Compile SCSS → CSS
-4. Render templates → HTML
-5. Convert Markdown → HTML pages
-6. Copy assets & quizzes
+2. VALIDATE course.yml   ← fails the build on bad weights / CLO mapping
+3. Register Handlebars helpers and partials
+4. Compile SCSS → CSS
+5. Copy assets, quizzes, notebooks, slides, Exam/
+6. Render index.hbs + Markdown pages through templates/base.hbs
+7. VALIDATE every local link and #anchor  ← fails the build on a dead link
+8. Write pages
     ↓
 Output (docs/) → GitHub Pages
 ```
+
+Validation runs **before** anything is written, so a failed build never leaves a
+half-generated site behind, and it exits non-zero.
 
 ---
 
@@ -113,78 +161,87 @@ Output (docs/) → GitHub Pages
 ### Source Directory (`src/`)
 ```
 src/
-├── index.hbs                    # Main page template
-├── partials/                    # Reusable components
-│   ├── navbar.hbs              # Navigation bar
-│   ├── hero.hbs                # Hero section
-│   ├── footer.hbs              # Footer
-│   └── sections/               # Page sections
-│       ├── overview.hbs        # Course overview
-│       ├── this-week.hbs       # Current week highlights
+├── index.hbs                    # Page composition: which sections, in order
+├── templates/
+│   └── base.hbs                # <html>, head, navbar, footer — ALL pages
+├── partials/
+│   ├── navbar.hbs              # Shared nav. page.prefix makes #anchors work
+│   ├── hero.hbs                #   from sub-pages (index.html#overview)
+│   ├── footer.hbs
+│   └── sections/
+│       ├── overview.hbs        # Course overview + prerequisites + software
+│       ├── this-week.hbs       # Current week, announcements, upcoming
 │       ├── instructors.hbs     # Instructor cards
-│       ├── outcomes.hbs        # Learning outcomes (CLOs)
+│       ├── outcomes.hbs        # Objectives + 25 CLOs
 │       ├── schedule.hbs        # 15-week schedule
-│       ├── quizzes.hbs         # Quiz links
-│       ├── assessment.hbs      # Grading info
-│       └── resources.hbs       # Resource links
-├── styles/                      # SCSS stylesheets
-│   ├── main.scss               # Main entry (imports others)
-│   ├── _variables.scss         # Colors, fonts, spacing
-│   ├── _layout.scss            # Grid, containers, base
-│   └── _components.scss        # UI components
-├── scripts/
-│   └── main.js                 # All JavaScript functionality
+│       ├── assignments.hbs     # HIDDEN — commented out of index.hbs
+│       ├── quizzes.hbs         # 7 quiz cards
+│       ├── assessment.hbs      # Grading table
+│       └── resources.hbs       # Links, course pages, answer-keys block
+├── styles/
+│   ├── _variables.scss         # Theme tokens — the one file a course edits
+│   └── main.scss               # Template sheet + DS-specific additions
 ├── data/                        # YAML data files
-│   ├── course.yml              # Course info, objectives, CLOs
-│   ├── instructors.yml         # Instructor details
-│   ├── lectures.yml            # 15-week schedule
-│   ├── assignments.yml         # Homework/projects
-│   ├── this-week.yml           # Current week data
-│   └── quizzes.yml             # Quiz metadata
+│   ├── course.yml              # Course info, objectives, CLOs, assessment
+│   ├── instructors.yml
+│   ├── lectures.yml            # 15-week schedule (+ answer_key, extra links)
+│   ├── assignments.yml         # Preserved, though the section is hidden
+│   ├── this-week.yml
+│   ├── quizzes.yml             # 7 quizzes
+│   └── answer-keys.yml
 └── pages/                       # Markdown content
-    ├── syllabus.md             # Full syllabus
-    ├── policies.md             # Course policies
-    ├── grading.md              # Grading details
-    └── resources.md            # Learning resources
+    ├── syllabus.md  policies.md  grading.md  resources.md
+    └── tur7-visualization.html  # copied through verbatim
 ```
+
+Removed in the July 2026 migration: `src/scripts/main.js`,
+`src/styles/_layout.scss`, `src/styles/_components.scss`,
+`src/partials/sections/answer-keys.hbs`.
 
 ### Build Output (`docs/`)
 ```
-docs/                            # GitHub Pages serves from here
-├── index.html                   # Main page
-├── syllabus.html               # Converted from MD
-├── policies.html               # Converted from MD
-├── grading.html                # Converted from MD
-├── resources.html              # Converted from MD
+docs/                            # GitHub Pages serves from here (branch: main)
+├── index.html                   # Single page, anchor sections
+├── syllabus.html  policies.html  grading.html  resources.html
+├── tur7-visualization.html
 ├── assets/
-│   ├── css/
-│   │   └── main.css            # Compiled from SCSS
-│   ├── js/
-│   │   └── main.js             # Copied from src
-│   └── images/                 # Instructor photos
-│       ├── Dr.TrongNghiaNguyen.jpeg
-│       ├── minhtrang.jpg
-│       └── damtienthanh.jpg
-└── quiz/                        # Interactive quizzes
-    ├── Lec02_quiz/             # Python Basics
-    ├── Lec03_quiz/             # Python Practice
-    ├── Lec04_quiz/             # NumPy & Pandas
-    └── Lec05_quiz/             # Advanced Operations
+│   ├── css/main.css            # Compiled from SCSS. NO assets/js any more.
+│   └── images/                 # Instructor photos + neu-logo.png, fda-logo.png
+├── quiz/                        # 7 self-contained quiz apps
+│   └── Lec01_quiz/ … Lec07_quiz/
+├── notebook/                    # 18 .ipynb only. notebook/data/ is NOT copied.
+├── slides/
+└── Exam/                        # Published in full, by explicit decision
 ```
 
 ### Root Files
 ```
-├── build.js                     # Node.js build script
-├── build.sh                     # Shell build script (chmod +x)
-├── deploy.sh                    # Shell deploy script (chmod +x)
-├── server.js                    # Dev server (live-reload)
-├── package.json                 # Dependencies
-├── .gitignore                   # Git exclusions
-├── README.md                    # User documentation
-├── DEPLOYMENT.md               # Deployment guide
-├── PROJECT_SUMMARY.md          # Project summary
-└── backup-context.md           # This file
+├── build.js                     # Node.js build script (validates, then writes)
+├── build.sh                     # Convenience wrapper around npm run build
+├── deploy.sh                    # Commits + pushes main (Pages serves docs/)
+├── server.js                    # Dev server
+├── package.json                 # build, build:keys, dev, clean
+├── .gitignore                   # Excludes 'Final exam/', notebook_test/,
+│                                #   docs/notebook/data/
+├── Quiz/                        # Quiz app sources (copied to docs/quiz)
+├── notebook/                    # Notebook sources; data/ subdir NOT published
+├── Exam/                        # Midterm papers, answer keys, question bank
+├── Final exam/                  # GITIGNORED — student submissions + marks
+└── backup-context.md            # This file
 ```
+
+### Publishing decisions (reviewed 2026-07-10)
+- **`Exam/` is published in full**, deliberately. Every file in it is reachable
+  at a guessable URL, including `Combined_Answer_Key_DS_CLC_1-8.md`,
+  `unique_questions.txt`, and `test_library_lec1_lec6.csv`. This was reviewed
+  and kept as-is.
+- **`Final exam/` is gitignored.** It holds the final exam papers, answer keys,
+  and student mini-project submissions under their real names. It was never
+  tracked; the gitignore entry prevents `git add -A` from publishing it.
+- **`docs/notebook/data/` is gitignored.** The build copies only `.ipynb` files
+  out of `notebook/`; the raw Walmart CSVs and other datasets are not published.
+- **`assets/` also holds nothing but CSS and images.** Do not add exam figures
+  there.
 
 ---
 
@@ -688,13 +745,319 @@ git log --oneline -5
 
 ---
 
-**Last Updated:** April 28, 2026 (Completed Tur6 practical notebook solutions)  
+**Last Updated:** June 3, 2026 (Final exam: answer keys thang 10)  
 **Next Session:** Read this file first, then proceed with any requested updates  
 **AI Readiness:** 100% - All context preserved
 
 ---
 
 ## 📝 Change Log
+
+### June 3, 2026 - Đáp án chấm thi: chuẩn hóa thang 10
+
+**Change:** Updated `generate_exam_answer_pdfs.py` and regenerated `Exam1/3/4/5_dap_an.pdf`: scoring scale 40→10 (Part A /6, Part B /4, total /10). MCQ 0,25/câu; tự luận 1 điểm/câu, 0,5/ý; rubric criteria scaled ×0,25.
+
+### June 3, 2026 - PDF đáp án chấm thi (Đề 1, 3, 4, 5)
+
+**Change:** Generated grading answer-key PDFs for exams used in final session (1, 3, 4, 5) in `Final exam/Đềthi/Đáp_án/`:
+- `Exam1_dap_an.pdf`, `Exam3_dap_an.pdf`, `Exam4_dap_an.pdf`, `Exam5_dap_an.pdf` (+ matching `.html`)
+- Source: `Exam{N}_answer_key.md` (MCQ + rubric) + verified reference answers from `TL.md`
+- Layout: score sheet, Part A 24-answer grid (2×12), Part B per-question rubric tables + reference code/explanations
+- Script: `Final exam/generate_exam_answer_pdfs.py`
+
+### June 3, 2026 - TL_questions: phong cách đề thi, bỏ ghi chú
+
+**Change:** Restyled `TL_questions.html` / `TL_questions.pdf` to match official exam format (`Exam1.md` Part B): Times New Roman, black/white, `### Câu N.` headers, `## PHẦN` sections, inline code blocks, **Đáp án:** under each question. Removed cover page, table of contents, colored badges, and legend (ghi chú).
+
+### June 3, 2026 - TL practice HTML/PDF: 45 câu tự luận kèm đáp án
+
+**Change:** Regenerated `Final exam/TL_questions.html` from `TL.md` with all **45** constructed-response items (including 15 supplemental questions 31–45), each with suggested answer block. Added `Final exam/generate_tl_questions.py` for reproducible rebuild. Exported **`Final exam/TL_questions.pdf`** (~557 KB) via Chrome headless print.
+
+**Layout:** Cover page, table of contents by lecture section, color-coded Dạng A/B badges, dark code blocks for prompts, green answer panels for code and prose answers. Print-friendly A4 CSS.
+
+**Counts verified:** 45 questions, 45 answers, 0 missing answer placeholders.
+
+### June 2, 2026 - Refreshed Exam6 with new MCQ bank entries
+
+**Change:** Rebuilt `Final exam/Exam6.md` Part A using the newly appended MCQs in `final_exam_all.csv` (rows 122+ prioritized), then synchronized `Final exam/Exam6_answer_key.md` Part A answers.
+
+**Overlap outcome:** Exam6 MCQ now has **0/24 overlap** versus each of Exam1–Exam5 individually, significantly reducing repetition compared to the previous Exam6 version.
+
+**Structure kept:** Part B (short essay section) preserved as-is; only Part A MCQ set and corresponding key answers were refreshed.
+
+### June 2, 2026 - Expanded final_exam_all.csv by 30 MCQs (Lec2-Lec7)
+
+**Change:** Added **30 new multiple-choice questions** directly into `Final exam/final_exam_all.csv`, distributed evenly across Lec2–Lec7:
+- Lec2: +5
+- Lec3: +5
+- Lec4: +5
+- Lec5: +5
+- Lec6: +5
+- Lec7: +5
+
+**Resulting counts per lecture in CSV:**
+- Lec2: 25
+- Lec3: 25
+- Lec4: 25
+- Lec5: 20
+- Lec6: 20
+- Lec7: 20
+
+**Total rows:** 120 → **150** questions.
+
+**Quality controls applied:**
+- Preserved existing CSV schema and quoting format
+- Avoided duplicate stems against current bank before append
+- Kept level/style aligned with existing exam bank (easy-to-medium, code-oriented)
+
+### June 2, 2026 - Final Exam 6 assembled
+
+**Change:** Created:
+- `Final exam/Exam6.md`
+- `Final exam/Exam6_answer_key.md`
+
+**Strategy applied:**
+- Maintained the same exam structure (24 MCQ + 4 short-essay with a/b).
+- Used only approved banks: `final_exam_all.csv` and `TL.md`.
+- Since 5 prior exams already consumed the full 120 MCQ bank, Exam6 uses a **minimum-repeat** selection strategy (prioritizing consistency and low recent overlap where possible).
+- Essay part selected by least-used prompt frequency from expanded TL bank, then paired into balanced a/b sub-questions.
+
+**Documentation note:** Exam6 key includes an explicit reuse note due to finite bank size constraints.
+
+### June 2, 2026 - Final Exam 5 assembled
+
+**Change:** Created:
+- `Final exam/Exam5.md`
+- `Final exam/Exam5_answer_key.md`
+
+**Design constraints honored:**
+- Same structure as previous exams (24 MCQ + 4 short-essay with a/b).
+- MCQ items sourced from `final_exam_all.csv` and selected to avoid repeats with Exam1–Exam4.
+- Essay items sourced from the expanded `TL.md` bank, using newly added questions (31–38 set) to minimize overlap.
+
+**Normalization:** Exam5 Part B was adjusted to preserve balanced style (a = write code, b = explain code) and consistent rubric labels in key.
+
+### June 2, 2026 - TL bank expansion (+15 questions)
+
+**Change:** Updated `Final exam/TL.md` by adding **15 new constructed-response questions** (Câu 31–45) directly in the same style as existing bank:
+- mixed Dạng A (requirement → write code) and Dạng B (code → explain),
+- coverage across Lec2–Lec7,
+- answer key section extended with model answers/explanations for all new items.
+
+**Also updated:** scoring note at the end of `TL.md` from 30 to 45 questions.
+
+### June 2, 2026 - Final Exam 3 assembled (non-overlap with Exam1 & Exam2)
+
+**Change:** Created:
+- `Final exam/Exam3.md`
+- `Final exam/Exam3_answer_key.md`
+
+**Constraints satisfied:**
+- Same structure as previous exams (24 MCQ + 4 short-essay questions with a/b parts).
+- Questions sourced only from `final_exam_all.csv` and `TL.md`.
+- Verified no repeated MCQ stems versus both `Exam1.md` and `Exam2.md`.
+
+**Normalization pass applied:** Reworked Part B in Exam3 and its key so each question has clear **a/b pairing** and rubric labels are consistent (`Ý a`, `Ý b`) with concrete answer hints.
+
+### June 2, 2026 - Exam2 wording normalization (Q2, Q3)
+
+**Change:** Updated `Final exam/Exam2.md` for two potentially ambiguous arithmetic questions:
+- Câu 2: from plain operation wording to explicit Python code form `print(10 // 3)`
+- Câu 3: from plain operation wording to explicit Python code form `print(10 % 3)`
+
+**Reason:** Reduce confusion with non-Python math interpretation while keeping the same correct options/keys.
+
+### June 2, 2026 - Final Exam 2 assembled (non-overlap with Exam 1)
+
+**Change:** Created:
+- `Final exam/Exam2.md`
+- `Final exam/Exam2_answer_key.md`
+
+**Constraints satisfied:**
+- Same exam structure as Exam1 (Part A 24 MCQ + Part B 4 short-essay questions with 2 sub-items each).
+- Questions sourced only from approved banks: `final_exam_all.csv` and `TL.md`.
+- No repeated MCQ stems from `Exam1.md` (automatic overlap check applied).
+- Short-essay set uses a different subset than Exam1 (new 8 prompts from TL bank).
+
+**Coverage (Exam2 Part A):** Balanced across Lec1–Lec8 with emphasis on Lec2–Lec6.
+
+### June 2, 2026 - Final Exam 1 assembled (MCQ + short essay)
+
+**Change:** Created `Final exam/Exam1.md` as a complete 60-minute exam paper with:
+- **Part A:** 24 MCQs × 1 point = 24 points (selected directly from `Final exam/final_exam_all.csv`)
+- **Part B:** 4 short-essay questions × 4 points = 16 points (built from `Final exam/TL.md`, 2 sub-items each).
+
+**Structure:** Clear timing guidance, points breakdown, and section separators. Total = 40 points.
+
+**Source integrity:** All questions were copied from the two approved banks only (`final_exam_all.csv` and `TL.md`), with HTML entities decoded for readability in markdown.
+
+### June 2, 2026 - Published TL questions HTML (no answers)
+
+**Change:** Created `Final exam/TL_questions.html` from `Final exam/TL.md` for student self-study. This export includes all 30 questions (Lec2–Lec7) and omits answer key/rubric entirely.
+
+**Format:** Clean printable/study HTML with six sections, clear question cards, and embedded code snippets for Dạng B prompts.
+
+### June 2, 2026 - Final exam constructed-response bank (TL.md)
+
+**Change:** Created `Final exam/TL.md` with 30 short constructed-response (tự luận) questions covering Lec2–Lec7, in two styles: **Dạng A** (requirement → student writes code) and **Dạng B** (code → student explains meaning/output). Includes a separate answer-key + grading rubric section (1 pt/question; 0.5 syntax + 0.5 logic).
+
+**Distribution:** Lec2 (5), Lec3 (5), Lec4 (4), Lec5 (5), Lec6 (6), Lec7 (5) = 30.
+
+**Constraint honored:** Questions intentionally do **not** duplicate the 120 MCQs in `final_exam_all.csv` (verified against existing lec2–7 items; used fresh tasks like `is_even`, string reverse `[::-1]`, `dict.get` default, `describe`/`info`, `nrows`, `usecols`, `to_excel`, median fillna, `str.strip`, `to_datetime`, pivot_table sum, multi-key sort, `nunique`, `barh`, `figsize`, `countplot`, `xticks rotation`).
+
+### May 19, 2026 - Mini-project grading Nhóm 2 (Pizza Place Sales — PDF)
+
+**Change:** Graded `submission/NHÓM 2_Pizza Place Sales.pdf` (34 pages, PDF accepted instead of notebook). Created `grading/Nhom2_grading.md` and `grading/Nhom2_grading.html`.
+
+**Score:** Official **7/10** (raw 9.4/10, no ML). Team: Tạ Quốc Đạt, Nguyễn Ngọc Minh, Nguyễn Ngọc Anh Thư, Nguyễn Thị Khánh Vy (KTQT CLC 66D). Strengths: full Colab workflow in PDF, merge+KPI, heatmaps, excellent Phần V storytelling. Weaknesses: no .ipynb, no ML, no FK check, May revenue contradiction in summary.
+
+### May 19, 2026 - Mini-project grading Nhóm 6 (Wine Tasting)
+
+**Change:** Graded `submission/Nhóm_6_Wine_tasting_.ipynb` (97 cells, Phần 0–8). Created `grading/Nhom6_grading.md` and `grading/Nhom6_grading.html`.
+
+**Score:** Official **7/10** (raw 9.85/10 + 0.5 ML). Strongest Wine submission: hierarchical median price imputation, pivot/MultiIndex/concat, seaborn viz, ML Pipeline (LR/KNN/DT/RF), storytelling + 3 business recommendations, CSV export. Weaknesses: many cells without saved outputs, R²≈0.54, ML on 6k sample only.
+
+**Team:** Trịnh Hương Ly, Bùi Như Quỳnh, Nguyễn Thanh Thu, Hoàng Bảo Ngọc.
+
+### May 19, 2026 - Mini-project grading Nhóm 3 (Pizza Place Sales)
+
+**Change:** Graded `Nhóm_03_Pizza_place_sales.ipynb` (37 cells, same dataset as Nhóm 1). Created `grading/Nhom3_grading.md` and `grading/Nhom3_grading.html`.
+
+**Score:** Official **6.5/10** (raw 8.8/10 with +0.4 ML). Strengths: detailed Markdown explanations, merge+set_index, Pareto 80/20, unstack, seaborn viz, LR R²=0.60. Weaknesses: thin cleaning (no dupes/FK), possible line-item vs order confusion for day-of-week, no final storytelling section.
+
+**Team:** Vũ Minh Châu, Dương Khánh Linh, Nguyễn Minh Trang.
+
+### May 19, 2026 - Mini-project grading Nhóm 5 (Wine Tasting)
+
+**Change:** Graded `submission/NHÓM 5_WINE_TASTING.ipynb` (10 cells). Created `grading/Nhom5_grading.md` and `grading/Nhom5_grading.html`.
+
+**Score:** Official **6.5/10** (raw 6.8/10, no ML bonus). Completes rubric sections a–d; weaknesses: no missing-value handling, duplicate load cells, thin notebook, no optional ML, basic matplotlib only.
+
+**Team:** Bùi Gia Bách, Vũ Đăng Khoa, Trần Quốc Thắng, Lê Công Nguyên Vũ.
+
+### May 19, 2026 - Mini-project grading Nhóm 4 (Customer Complaints)
+
+**Change:** Reviewed `Final exam/Mini_project_submission/submission/Nhóm 4 _Customer_Complaints.ipynb` against `Mini-project-midterm2.pdf` rubric. Created Vietnamese grading artifacts:
+- `Final exam/Mini_project_submission/grading/Nhom4_grading.md`
+- `Final exam/Mini_project_submission/grading/Nhom4_grading.html`
+
+**Score:** Official **7/10** (raw 9.5/10 + 0.5 ML bonus). Strengths: business-aware data cleaning, excellent storytelling/recommendations, 7 EDA charts, ML with class-imbalance handling. Weaknesses: no team member list in notebook, Phase structure vs lecture sections, no explicit pivot/melt, weak LR on minority class.
+
+**QA:** 12 questions prepared (general, per-skill, advanced). Note: team names must be confirmed at presentation.
+
+### May 19, 2026 - Mini-project grading Nhóm 1 (Pizza Place Sales)
+
+**Change:** Graded `Nhóm 1 - Pizza place sales.ipynb`; created `grading/Nhom1_grading.md` and `grading/Nhom1_grading.html`. Official score **7/10**.
+
+### May 9, 2026 - Combined exam CSV
+
+**Change:** Generated `Final exam/final_exam_all.csv` aggregating all 120 MCQs from `lec1.md`–`lec8.md` (10 + 20 + 20 + 20 + 15 + 15 + 15 + 5 = 120). Structure mirrors `docs/Exam/test_library_lec1_lec6.csv` with the same HTML-entity escaping (`&amp;`, `&lt;`, `&gt;`) and an extra leading column **"Bài giảng"** to mark the lecture.
+
+**CSV columns (in order):**
+1. `Bài giảng`  (e.g. "Lec3 - NumPy & Pandas")
+2. `Text đáp án`  (question stem; fenced code blocks inlined as ``Code: `…` ``)
+3. `Lựa chọn A`
+4. `Lựa chọn B`
+5. `Lựa chọn C`
+6. `Lựa chọn D`
+7. `Đáp án đúng`  (`A`/`B`/`C`/`D`)
+8. `Điểm`  (= 1)
+
+Per-lecture row counts and answer-letter distribution were verified at generation time (lec1: 10, lec2-4: 20 each, lec5-7: 15 each, lec8: 5).
+
+### May 9, 2026 - Lec8 final exam MCQs
+
+**Change:** Added `Final exam/lec8.md` with 5 simple, mostly theoretical MCQs covering core supervised-ML concepts from Lec8: definition of supervised learning, regression vs classification (house-price example), overfitting, Random Forest as ensemble of decision trees, accuracy metric. Distribution A:1 / B:2 / C:1 / D:1.
+
+**Files added:**
+- `Final exam/lec8.md`
+
+### May 9, 2026 - Final exam correctness audit
+
+**Change:** Reviewed all 95 questions across `Final exam/lec1.md` … `lec7.md`. 94 confirmed correct as written; 37 output-based questions also verified by running the equivalent Python (`lec2 Q1–Q20`, NumPy/Pandas computations in `lec3`, `lec4 Q15`, `lec5 Q6/Q12`, `lec6 Q14`) — all matched the keyed answer.
+
+**One issue fixed (`lec6.md` Question 7):** Original options included both `df.melt()` (keyed answer C) and `df.stack()` (also a valid wide → long operation, and explicitly described as such in Q15). To remove the contradiction, replaced the `df.stack()` distractor with `df.to_long()` (fictitious) and reworded the question to specifically describe `melt`'s behaviour ("sinh ra một cột `variable` chứa tên cột cũ và một cột `value` chứa giá trị"). Answer key updated.
+
+### May 9, 2026 - Final exam answer-letter rebalancing
+
+**Change:** Reordered the four options of every MCQ in `Final exam/lec1.md`–`lec7.md` so the correct-answer letters are evenly distributed (no skew toward A/B). Question wording, correct content, and answer-key explanations preserved; only option positions and key letters changed. Each file now ends with a "Distribution:" line.
+
+**Verified counts (A/B/C/D):**
+- lec1 → 3/3/2/2 (10 Qs)
+- lec2 → 5/5/5/5 (20 Qs)
+- lec3 → 5/5/5/5 (20 Qs)
+- lec4 → 5/5/5/5 (20 Qs)
+- lec5 → 4/4/4/3 (15 Qs)
+- lec6 → 4/4/4/3 (15 Qs)
+- lec7 → 4/4/4/3 (15 Qs)
+
+### May 8, 2026 - Lec7 final exam MCQs
+
+**Change:** Added `Final exam/lec7.md` with 15 easy coding MCQs for Lec7 (Data Visualization): pyplot/seaborn import conventions, line/bar/hist/scatter, `title`/`xlabel`/`legend`/`savefig`/`subplots`/`show`, pandas `Series.hist`, seaborn `regplot` and `boxplot`. Same structure (fenced snippet → 4 options → answer-key table) as `lec5.md`/`lec6.md`.
+
+**Files added:**
+- `Final exam/lec7.md`
+
+### May 8, 2026 - Lec5 & Lec6 final exam MCQs
+
+**Change:** Added two new exam files with 15 easy coding MCQs each (matching `lec2/lec3/lec4.md` style):
+- `Final exam/lec5.md` — Lec5 (Cleaning & Preparation): `isna`, `dropna`, `fillna`, `ffill`, count NaN, `duplicated`/`drop_duplicates`, MinMax/Standard scaler ranges, `MinMaxScaler` syntax, `str.upper/contains`, `LabelEncoder`, `get_dummies` cardinality.
+- `Final exam/lec6.md` — Lec6 (Sorting/Merging/Reshaping): MultiIndex via `set_index`, `pd.merge` + how (left/inner default), `pd.concat` axis 0 vs 1, `melt` vs `pivot`, `pivot_table`, `sort_values`/`sort_index`, `groupby().sum()`, `agg`, `apply(axis=1)`, `Series.map(dict)`, `stack/unstack`.
+
+**Files added:**
+- `Final exam/lec5.md`
+- `Final exam/lec6.md`
+
+### May 8, 2026 - Lec3 & Lec4 final exam MCQs
+
+**Change:** Added two new exam files mirroring `lec2.md` style (code-snippet → expected output, plus answer key with brief explanations):
+- `Final exam/lec3.md` — 20 easy MCQs over Lec3 (NumPy + Pandas basics): ndarray creation/shape, `np.zeros`, `np.arange`, vectorized ops, slicing, boolean indexing, sum, reshape; Pandas Series/DataFrame, `shape`, column → Series, `loc`, `head`, `columns`, aligned addition.
+- `Final exam/lec4.md` — 20 easy MCQs over Lec4 (Data Input/Storage): `pd.read_csv` (header/index_col/sep/skiprows), `to_csv` (index=False), `pd.read_excel`, `pd.read_json`, `json.loads`, `pd.read_html`, `requests.get`/`r.json()`, `sqlite3`, `pd.read_sql`/`to_sql`, reading CSV from URL.
+
+**Files added:**
+- `Final exam/lec3.md`
+- `Final exam/lec4.md`
+
+### May 8, 2026 - Lec2 final exam MCQs
+
+**Change:** Added `Final exam/lec2.md` with 20 beginner-level coding MCQs covering Lec2 (Python language): arithmetic/operators (`//`, `%`, `**`), type conversion, strings/f-strings, list/tuple/set/dict, indexing & slicing, immutability, conditionals, `for` + `range`, list comprehension, default args, lambda. Style mirrors `docs/Exam/test_library_lec1_lec6.csv` (code-snippet → expected output). Includes answer key with brief explanations and grading note.
+
+**Files added:**
+- `Final exam/lec2.md`
+
+### May 8, 2026 - Lec1 MCQ wording cleanup
+
+**Change:** Removed the "Theo bài giảng," lead-in from Q5 and Q6 in `Final exam/lec1.md` so the questions read as standalone MCQs.
+
+### May 8, 2026 - Lec1 MCQ difficulty calibration
+
+**Change:** Reworked Q5, Q7, Q8, Q9 of `Final exam/lec1.md` to be friendlier for students new to data science:
+- Q5: JSON key-value definition → Python as the popular DS language (more intuitive).
+- Q7: Definition of supervised learning → concrete examples (spam filter, house-price prediction) labeled “supervised because labels exist.”
+- Q8: Iris three-class classification → House-price example (numeric output) → regression (clearer contrast).
+- Q9: “Why do we use a test set?” phrased plainly (model performance on unseen data).
+Answer key updated accordingly.
+
+### May 8, 2026 - Final exam scaffold (Lec1)
+
+**Change:** Created new top-level folder `Final exam/` and added `Final exam/lec1.md` containing 10 easy multiple-choice questions with an answer key, derived from `notebook/Lec1_Giới thiệu về Khoa học dữ liệu.ipynb` (3 pillars of DS, data lifecycle, structured/JSON, descriptive analytics, supervised learning, Iris classification, train/test evaluation, Data Engineer role).
+
+**Files added:**
+- `Final exam/lec1.md`
+
+### May 8, 2026 - Notebook folder interpretation
+
+**Change:** Summarized how each file under `notebook/` presents lecture theory vs tutorial exercises (including Answer Key notebooks Tur3, Tur4, Tur7); no edits to notebooks.
+
+### May 8, 2026 - Lecture content summary (reference only)
+
+**Change:** Answered user request to list all course session content; source of truth remains `src/data/lectures.yml`.
+
+### May 8, 2026 - Project overview (no code changes)
+
+**Change:** User requested a high-level description of the repository. No files were modified except this backup context log.
+
+**Summary delivered:** Course static site (NEU “Basic Data Science in Economics and Business”) built with Node, Handlebars, SCSS, YAML, Markdown; output in `docs/` for GitHub Pages; includes quizzes, notebooks, exam materials, and teaching assets.
 
 ### April 28, 2026 - Completed Tur6 Practical Notebook
 
@@ -2800,5 +3163,71 @@ Students landing on homepage will see:
 - Quizzes section currently shows Lecture 1 and Lecture 2; other quizzes remain hidden.
 
 **Status:** ✅ Complete - Lecture 2 Quiz re-enabled on the webpage.
+
+---
+
+## 🔁 2026-07-10 — Rebuilt on the NEU FDA course site template
+
+**What changed:** the markup, stylesheet, and layout were replaced by the shared
+template (https://github.com/nghianguyen7171/neu_fda_coursesite). `src/data/`
+shapes are unchanged. All pages now share `src/templates/base.hbs`; the Markdown
+pages previously each carried a duplicated, hand-written copy of the navbar.
+
+**No content was lost.** Verified by diffing every link on the old live page
+against the new build: all 32 local and 10 external links survive. All ten
+anchors (`#home #overview #this-week #instructors #outcomes #schedule #quizzes
+#assessment #resources #main-content`) are preserved, so published deep links
+still work. Sub-pages now rewrite section fragments to `index.html#…`, so the
+shared navbar works from every page. Verified live: 40 local + 10 external links
+all return HTTP 200.
+
+### Bugs found and fixed
+
+1. **Dead `#assignments` nav link.** The navbar linked it while the section was
+   commented out of `index.hbs`. Link removed; the section stays hidden and
+   `assignments.yml` is untouched. Re-enable by uncommenting one line.
+
+2. **Dead `#answer-keys` anchor.** Week 8's `answer_keys_link` pointed at an
+   anchor that did not exist, for the same reason. The answer-keys block now
+   lives in the Resources section and links `Exam/answer-keys.html`, a page that
+   was deployed but orphaned.
+
+3. **Four links were hardcoded in the templates, not stored in data.** The three
+   answer-key notebooks (Tur3, Tur4, Tur7) were attached by matching the lecture
+   *title string* — `{{#if (eq title "Data Visualization Practice")}}` — and the
+   "Practice with Score Up" button was a literal `<a>` in `hero.hbs`. Rewriting
+   the markup silently dropped all four. They are now data: `answer_key` on the
+   right lectures, `links.practice` in `course.yml`. **Renaming a lecture can no
+   longer delete a link.**
+
+4. **Quizzes 5, 6, 7 were unreachable.** Built and deployed, but absent from
+   `quizzes.yml`, so nothing linked them. Now listed (weeks 8, 10, 12).
+
+5. **T14/T15 notebooks were orphaned.** Deployed under `slides/`, linked from
+   nowhere. Now attached to weeks 14 and 15 via `extra:`.
+
+6. **`build.sh` was about to leak exam figures.** It copied all of `assets/`,
+   which had come to hold generated figures for the unpublished exams in
+   `assessments/`. It now copies only `assets/css`.
+
+7. **The copy step pulled in raw datasets.** `notebook/data/` (Walmart CSVs and
+   others) was being copied into `docs/`; the old build copied only `.ipynb`.
+   Restored, and gitignored.
+
+### Removed
+- `src/scripts/main.js` (292 lines). It queried `.navbar-toggle`,
+  `.navbar-menu`, `.nav-link`, `.theme-toggle` — none of which exist in the new
+  markup. **The dark/light toggle button is gone**; the site still follows the
+  reader's OS setting via `prefers-color-scheme`.
+- `src/styles/_layout.scss`, `src/styles/_components.scss` — superseded by the
+  template stylesheet.
+- `src/partials/sections/answer-keys.hbs` — merged into `resources.hbs`.
+
+### Safety
+`git add -A` was staging 154 files from `Final exam/`, including student
+mini-project submissions under their real names. That directory, plus
+`notebook_test/` and `docs/notebook/data/`, is now gitignored.
+
+**Commit:** `1bb2223`. Pre-migration state: `3036697`.
 
 ---
