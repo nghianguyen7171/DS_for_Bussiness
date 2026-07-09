@@ -5,6 +5,7 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
+    "build:keys": "SOLUTIONS=1 node build.js",
     "dev": "node build.js && node server.js",
     "clean": "rm -rf docs"
   },

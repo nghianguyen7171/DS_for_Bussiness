@@ -1,35 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{course.title}} - {{course.code}}">
-    <title>{{course.title}} | National Economics University</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    {{> navbar}}
-    
-    <main id="main-content">
-        {{> hero}}
-        {{> sections/overview}}
-        {{> sections/this-week}}
-        {{> sections/instructors}}
-        {{> sections/outcomes}}
-        {{> sections/schedule}}
-        {{!-- Temporarily hidden for next semester --}}
-        {{!-- {{> sections/assignments}} --}}
-        {{> sections/quizzes}}
-        {{!-- {{> sections/answer-keys}} --}}
-        {{> sections/assessment}}
-        {{> sections/resources}}
-    </main>
-    
-    {{> footer}}
-    
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
+{{> hero}}
+{{> sections/overview}}
+{{> sections/this-week}}
+{{> sections/instructors}}
+{{> sections/outcomes}}
+{{> sections/schedule}}
 
+{{!-- Assignments stay hidden for next semester, as before. The navbar no longer
+      links "#assignments", so the dead anchor is gone. Re-enable by
+      uncommenting the line below; src/data/assignments.yml is untouched. --}}
+{{!-- {{> sections/assignments}} --}}
+
+{{> sections/quizzes}}
+{{> sections/assessment}}
+
+{{!-- The answer-keys block now lives inside the Resources section, where its
+      "#answer-keys" anchor is a real element. Week 8's answer_keys_link points
+      at that anchor; before this change the anchor did not exist. --}}
+{{> sections/resources}}

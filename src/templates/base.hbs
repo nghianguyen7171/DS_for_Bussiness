@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{#if page.title}}{{page.title}} · {{/if}}{{course.title}}</title>
+  <meta name="description" content="{{course.title}} — {{course.code}}, National Economics University.">
+  <link rel="stylesheet" href="{{url 'assets/css/main.css'}}">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  {{> navbar}}
+
+  <main id="main-content">
+    {{{content}}}
+  </main>
+
+  {{!-- No JavaScript. Smooth scrolling, sticky nav, and table overflow are all
+        CSS. The quiz apps under quiz/ ship their own scripts. --}}
+  {{> footer}}
+</body>
+</html>

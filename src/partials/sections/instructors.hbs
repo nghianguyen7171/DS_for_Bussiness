@@ -1,26 +1,19 @@
-<section id="instructors" class="section instructors">
-    <div class="container">
-        <h2 class="section-title">Instructors</h2>
-        
-        <div class="instructors-grid">
-            {{#each instructors.instructors}}
-            <div class="instructor-card">
-                <div class="instructor-image{{#if (eq name "Dr. Nguyen Trong Nghia")}} instructor-image-top{{/if}}">
-                    <img src="{{image}}" alt="{{name}}" loading="lazy">
-                </div>
-                <div class="instructor-info">
-                    {{#if website}}
-                    <h3><a href="{{website}}" target="_blank" rel="noopener noreferrer" class="instructor-name-link">{{name}}</a></h3>
-                    {{else}}
-                    <h3>{{name}}</h3>
-                    {{/if}}
-                    <p class="role">{{role}}</p>
-                    <p class="bio">{{bio}}</p>
-                    <a href="mailto:{{email}}" class="email">{{email}}</a>
-                </div>
-            </div>
-            {{/each}}
+<section id="instructors" class="section section-alt">
+  <div class="wrap">
+    <h2 class="section-title">Instructors</h2>
+    <div class="people-grid">
+      {{#each instructors.instructors}}
+      <div class="person">
+        <img class="person-photo" src="{{url this.image}}" alt="Photograph of {{this.name}}">
+        <div class="person-info">
+          <p class="person-role">{{this.role}}</p>
+          <p class="person-name"><a href="{{this.website}}">{{this.name}}</a></p>
+          <p class="person-line"><a href="mailto:{{this.email}}">{{this.email}}</a></p>
+          <p class="person-line"><a href="{{this.website}}">Profile page</a></p>
+          <p class="person-bio">{{this.bio}}</p>
         </div>
+      </div>
+      {{/each}}
     </div>
+  </div>
 </section>
-

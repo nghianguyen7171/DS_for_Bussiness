@@ -1,923 +1,981 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Basic Data Science in Economics and Business - FDA.6.1.2.01.V">
-    <title>Basic Data Science in Economics and Business | National Economics University</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic Data Science in Economics and Business</title>
+  <meta name="description" content="Basic Data Science in Economics and Business — FDA.6.1.2.01.V, National Economics University.">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <div class="navbar-brand">
-                <a href="#home" class="navbar-logo">
-                    <span class="logo-text">DS Business</span>
-                </a>
-                <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <span class="hamburger"></span>
-                </button>
-            </div>
-            
-            <div class="navbar-menu">
-                <ul class="navbar-nav">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#overview" class="nav-link">Overview</a></li>
-                    <li><a href="#instructors" class="nav-link">Instructors</a></li>
-                    <li><a href="#schedule" class="nav-link">Schedule</a></li>
-                    <li><a href="#quizzes" class="nav-link">Quizzes</a></li>
-                    <li><a href="syllabus.html" class="nav-link">Syllabus</a></li>
-                    <li><a href="resources.html" class="nav-link">Resources</a></li>
-                </ul>
-                <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="theme-icon">🌙</span>
-                </button>
-            </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/images/neu-logo.png" alt="National Economics University logo">
+        <img class="brand-logo" src="assets/images/fda-logo.png" alt="Faculty of Data Science and Artificial Intelligence logo">
+        <span class="brand-text">
+          <span class="brand-course">DS for Business</span>
+          <span class="brand-dept">National Economics University</span>
+        </span>
+      </a>
+  
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#quizzes">Quizzes</a>
+        <a href="#instructors">Instructors</a>
+        <a href="syllabus.html" >Syllabus</a>
+        <a href="grading.html" >Grading</a>
+        <a href="policies.html" >Policies</a>
+        <a href="resources.html" >Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="home" class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">FDA.6.1.2.01.V · Undergraduate</p>
+    <h1 class="hero-title">Basic Data Science in Economics and Business</h1>
+    <dl class="hero-facts">
+      <div><dt>Credits</dt><dd>3</dd></div>
+      <div><dt>In class</dt><dd>45 h</dd></div>
+      <div><dt>Self-study</dt><dd>90 h</dd></div>
+    </dl>
+    <p class="cta-row">
+      <a class="btn" href="syllabus.html">Full syllabus</a>
+      <a class="btn btn-quiet" href="https://nct-neu.github.io/Sach_Khoa_hoc_du_lieu_python/README.html">Course book</a>
+      <a class="btn btn-quiet" href="https://fit.neu.edu.vn/room/Le2MmM">Slides</a>
+      <a class="btn btn-quiet" href="https://fit.neu.edu.vn/scoreup/practice">Practice with Score Up</a>
+    </p>
+  </div>
+</section>
+<section id="overview" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Course overview</h2>
+    <div class="prose prose-narrow">
+      <p>This course provides an introductory foundation in data science thinking and techniques for students in economics, finance, and business administration. It equips learners to leverage and analyze data for decision-making in business environments, covering the complete lifecycle of a data science project from data collection and cleaning to visualization, modeling, and reporting. The course emphasizes hands-on learning with real-world datasets through exercises and small projects.</p>
+
+    </div>
+
+    <div class="subsection">
+      <h3>Prerequisites</h3>
+      <div class="prose prose-narrow">
+        <ul><li>Mathematics for Economists</li><li>Probability Theory and Mathematical Statistics (or Statistics in Economics and Business)</li></ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Software</h3>
+      <div class="prose prose-narrow">
+        <ul><li>Python 13.0 or higher</li><li>Jupyter Notebook or Google Colab</li><li>NumPy, Pandas, Matplotlib, Seaborn, scikit-learn</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="this-week" class="this-week">
+  <div class="wrap">
+    <p class="this-week-kicker">This week</p>
+    <h2 class="this-week-title">
+      <span class="this-week-num">Week 1</span>
+    </h2>
+
+    <ul class="todo">
+      <li>📚 Welcome to Basic Data Science in Economics and Business course</li><li>🎯 Introduction to Data Science concepts and workflow</li><li>📖 Review course syllabus and learning objectives</li><li>💻 Set up your development environment (Jupyter Notebook or Google Colab)</li><li>📓 Download Lecture 1 notebook from course schedule</li><li>🔍 Explore course materials and resources</li>
+    </ul>
+
+    <div class="announcements">
+      <h3 class="sub-head">Announcements</h3>
+      <div class="announcement">
+        <p class="announcement-head"><strong>Welcome to the Course!</strong> <span class="due">2025-01-10</span></p>
+        <p class="announcement-body">Welcome to Basic Data Science in Economics and Business! Please review the course syllabus, familiarize yourself with the schedule, and set up your development environment. Download the Lecture 1 notebook to get started.</p>
+      </div>
+      <div class="announcement">
+        <p class="announcement-head"><strong>Course Resources Available</strong> <span class="due">2025-01-10</span></p>
+        <p class="announcement-body">All course materials including notebooks, lecture slides, and resources are now available on the course website. Make sure to check the Schedule section for weekly materials.</p>
+      </div>
+    </div>
+
+    <div class="announcements">
+      <h3 class="sub-head">Upcoming</h3>
+      <ul class="todo">
+        <li>Week 2: Introduction to Python <span class="due">Next week</span></li>
+        <li>Week 3: Python Practice Session <span class="due">In 2 weeks</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="instructors" class="section section-alt">
+  <div class="wrap">
+    <h2 class="section-title">Instructors</h2>
+    <div class="people-grid">
+      <div class="person">
+        <img class="person-photo" src="assets/images/Dr.TrongNghiaNguyen.jpeg" alt="Photograph of Dr. Nguyen Trong Nghia">
+        <div class="person-info">
+          <p class="person-role">Lecture</p>
+          <p class="person-name"><a href="https://nghianguyen7171.github.io/">Dr. Nguyen Trong Nghia</a></p>
+          <p class="person-line"><a href="mailto:nghiant@neu.edu.vn">nghiant@neu.edu.vn</a></p>
+          <p class="person-line"><a href="https://nghianguyen7171.github.io/">Profile page</a></p>
+          <p class="person-bio">Member of the Business AI Lab (BAI LAB) research group and lecturer at the Department of Data Science and Artificial Intelligence, School of Technology, National Economics University. Holds a PhD in Computer Science from Chonnam National University, Korea (2025), with expertise in AI applications for business.</p>
         </div>
-    </nav>
-    
-    
-    <main id="main-content">
-        <section id="home" class="hero" role="banner">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Basic Data Science in Economics and Business</h1>
-                    <p class="hero-subtitle">FDA.6.1.2.01.V | 3 Credits | National Economics University</p>
-                    <p class="hero-description">This course provides an introductory foundation in data science thinking and techniques for students in economics, finance, and business administration. It equips learners to leverage and analyze data for decision-making in business environments, covering the complete lifecycle of a data science project from data collection and cleaning to visualization, modeling, and reporting. The course emphasizes hands-on learning with real-world datasets through exercises and small projects.
-        </p>
-                    <div class="hero-cta">
-                        <a href="syllabus.html" class="btn btn-primary">View Syllabus</a>
-                        <a href="#schedule" class="btn btn-secondary">Course Schedule</a>
-                        <a href="#quizzes" class="btn btn-accent">Practice Quizzes</a>
-                        <a href="https://fit.neu.edu.vn/scoreup/practice" target="_blank" rel="noopener noreferrer" class="btn btn-success">Practice with Score Up</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="overview" class="section overview">
-            <div class="container">
-                <h2 class="section-title">Course Overview</h2>
-                
-                <div class="overview-grid">
-                    <div class="overview-card">
-                        <h3>📊 Course Information</h3>
-                        <ul class="info-list">
-                            <li><strong>Course Code:</strong> FDA.6.1.2.01.V</li>
-                            <li><strong>Credits:</strong> 3</li>
-                            <li><strong>In-Class Hours:</strong> 45</li>
-                            <li><strong>Self-Study Hours:</strong> 90</li>
-                            <li><strong>Program:</strong> Undergraduate</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="overview-card">
-                        <h3>📚 Prerequisites</h3>
-                        <ul class="info-list">
-                            <li>Mathematics for Economists</li>
-                            <li>Probability Theory and Mathematical Statistics (or Statistics in Economics and Business)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="overview-card">
-                        <h3>🎯 Course Objectives</h3>
-                        <ul class="objectives-list">
-                            <li>
-                                <strong>G1:</strong> Understand data science roles and project lifecycle in business contexts.
-                            </li>
-                            <li>
-                                <strong>G2:</strong> Use Python programming with NumPy and Pandas for data processing.
-                            </li>
-                            <li>
-                                <strong>G3:</strong> Collect, clean, and wrangle data using transformations and aggregations.
-                            </li>
-                            <li>
-                                <strong>G4:</strong> Create data visualizations and present results in reports.
-                            </li>
-                            <li>
-                                <strong>G5:</strong> Apply machine learning models and evaluate performance metrics.
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="overview-card">
-                        <h3>💻 Required Software</h3>
-                        <ul class="info-list">
-                            <li>Python 13.0 or higher</li>
-                            <li>Jupyter Notebook or Google Colab</li>
-                            <li>NumPy, Pandas, Matplotlib, Seaborn, scikit-learn</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="this-week" class="section this-week">
-            <div class="container">
-                <h2 class="section-title">This Week (Week 1)</h2>
-                
-                <div class="week-grid">
-                    <div class="week-card highlights">
-                        <h3>📌 Week Highlights</h3>
-                        <ul>
-                            <li>📚 Welcome to Basic Data Science in Economics and Business course</li>
-                            <li>🎯 Introduction to Data Science concepts and workflow</li>
-                            <li>📖 Review course syllabus and learning objectives</li>
-                            <li>💻 Set up your development environment (Jupyter Notebook or Google Colab)</li>
-                            <li>📓 Download Lecture 1 notebook from course schedule</li>
-                            <li>🔍 Explore course materials and resources</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="week-card announcements">
-                        <h3>📢 Announcements</h3>
-                        <div class="announcement">
-                            <h4>Welcome to the Course!</h4>
-                            <p class="date">2025-01-10</p>
-                            <p>Welcome to Basic Data Science in Economics and Business! Please review the course syllabus, familiarize yourself with the schedule, and set up your development environment. Download the Lecture 1 notebook to get started.</p>
-                        </div>
-                        <div class="announcement">
-                            <h4>Course Resources Available</h4>
-                            <p class="date">2025-01-10</p>
-                            <p>All course materials including notebooks, lecture slides, and resources are now available on the course website. Make sure to check the Schedule section for weekly materials.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="week-card upcoming">
-                        <h3>🗓️ Coming Up</h3>
-                        <ul>
-                            <li><strong>Week 2: Introduction to Python</strong> - Next week</li>
-                            <li><strong>Week 3: Python Practice Session</strong> - In 2 weeks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="instructors" class="section instructors">
-            <div class="container">
-                <h2 class="section-title">Instructors</h2>
-                
-                <div class="instructors-grid">
-                    <div class="instructor-card">
-                        <div class="instructor-image instructor-image-top">
-                            <img src="assets/images/Dr.TrongNghiaNguyen.jpeg" alt="Dr. Nguyen Trong Nghia" loading="lazy">
-                        </div>
-                        <div class="instructor-info">
-                            <h3><a href="https://nghianguyen7171.github.io/" target="_blank" rel="noopener noreferrer" class="instructor-name-link">Dr. Nguyen Trong Nghia</a></h3>
-                            <p class="role">Lecture</p>
-                            <p class="bio">Member of the Business AI Lab (BAI LAB) research group and lecturer at the Department of Data Science and Artificial Intelligence, School of Technology, National Economics University. Holds a PhD in Computer Science from Chonnam National University, Korea (2025), with expertise in AI applications for business.</p>
-                            <a href="mailto:nghiant@neu.edu.vn" class="email">nghiant@neu.edu.vn</a>
-                        </div>
-                    </div>
-                    <div class="instructor-card">
-                        <div class="instructor-image">
-                            <img src="assets/images/minhtrang.jpg" alt="MSc. Nguyen Thi Minh Trang" loading="lazy">
-                        </div>
-                        <div class="instructor-info">
-                            <h3><a href="https://fda.neu.edu.vn/fda-members/ths-nguyen-thi-minh-trang/" target="_blank" rel="noopener noreferrer" class="instructor-name-link">MSc. Nguyen Thi Minh Trang</a></h3>
-                            <p class="role">Tutorial</p>
-                            <p class="bio">Lecturer at the Department of Data Science and Artificial Intelligence, School of Technology, National Economics University. Member of the Lab for Research and Technology Transfer of Data Science and Artificial Intelligence. Holds a Master&#x27;s degree in Business Analytics from Nottingham Trent University, UK (2023).</p>
-                            <a href="mailto:ntmtrang@neu.edu.vn" class="email">ntmtrang@neu.edu.vn</a>
-                        </div>
-                    </div>
-                    <div class="instructor-card">
-                        <div class="instructor-image">
-                            <img src="assets/images/damtienthanh.jpg" alt="MSc. Dam Tien Thanh" loading="lazy">
-                        </div>
-                        <div class="instructor-info">
-                            <h3><a href="https://fda.neu.edu.vn/fda-members/ths-dam-tien-thanh/" target="_blank" rel="noopener noreferrer" class="instructor-name-link">MSc. Dam Tien Thanh</a></h3>
-                            <p class="role">Tutorial</p>
-                            <p class="bio">Member of the DataOptLab research team, Department of Data Science and Artificial Intelligence, School of Technology, National Economics University. Graduated with Honors from the University of Technology – VNU (2020) and holds a Master&#x27;s degree from Phenikaa University (2023).</p>
-                            <a href="mailto:thanhtd@neu.edu.vn" class="email">thanhtd@neu.edu.vn</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="outcomes" class="section outcomes">
-            <div class="container">
-                <h2 class="section-title">Course Learning Outcomes (CLOs)</h2>
-                
-                <div class="outcomes-intro">
-                    <p>By the end of this course, students will be able to:</p>
-                </div>
-                
-                <div class="outcomes-by-objective">
-                    <div class="objective-group">
-                        <h3 class="objective-title">G1: Understand data science roles and project lifecycle in business contexts.</h3>
-                        <div class="clos-list">
-                            <div class="clo-item">
-                                <span class="clo-id">CLO1.1</span>
-                                <span class="clo-description">Present definitions and characteristics of data science.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO1.2</span>
-                                <span class="clo-description">Explain the role of data science in business domains.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO1.3</span>
-                                <span class="clo-description">Describe the main steps in the lifecycle of a data science project.</span>
-                                <span class="clo-level badge">Level III</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO1.4</span>
-                                <span class="clo-description">Distinguish common data types in business analytics.</span>
-                                <span class="clo-level badge">Level III</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO1.5</span>
-                                <span class="clo-description">Relate practical application examples of data science in economics and finance.</span>
-                                <span class="clo-level badge">Level III</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="objective-group">
-                        <h3 class="objective-title">G2: Use Python programming with NumPy and Pandas for data processing.</h3>
-                        <div class="clos-list">
-                            <div class="clo-item">
-                                <span class="clo-id">CLO2.1</span>
-                                <span class="clo-description">Write Python code using variables, data types, and basic loops.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO2.2</span>
-                                <span class="clo-description">Use NumPy to manipulate one- and two-dimensional arrays.</span>
-                                <span class="clo-level badge">Level I</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO2.3</span>
-                                <span class="clo-description">Operate with Pandas DataFrame: filtering, grouping, joining, computations.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO2.4</span>
-                                <span class="clo-description">Run notebooks in Jupyter or Google Colab.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO2.5</span>
-                                <span class="clo-description">Read and modify sample Python code for simple data tasks.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="objective-group">
-                        <h3 class="objective-title">G3: Collect, clean, and wrangle data using transformations and aggregations.</h3>
-                        <div class="clos-list">
-                            <div class="clo-item">
-                                <span class="clo-id">CLO3.1</span>
-                                <span class="clo-description">Read data from CSV, Excel, and simple web pages.</span>
-                                <span class="clo-level badge">Level III</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO3.2</span>
-                                <span class="clo-description">Identify missing data and apply suitable cleaning techniques.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO3.3</span>
-                                <span class="clo-description">Transform data types and create new features for analysis.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO3.4</span>
-                                <span class="clo-description">Perform aggregation, grouping, and pivoting.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO3.5</span>
-                                <span class="clo-description">Merge and combine multiple tables into one analytical dataset.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="objective-group">
-                        <h3 class="objective-title">G4: Create data visualizations and present results in reports.</h3>
-                        <div class="clos-list">
-                            <div class="clo-item">
-                                <span class="clo-id">CLO4.1</span>
-                                <span class="clo-description">Plot basic charts such as histogram, scatter plot, bar chart, and boxplot with Matplotlib/Seaborn.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO4.2</span>
-                                <span class="clo-description">Choose appropriate chart types for data and presentation objectives.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO4.3</span>
-                                <span class="clo-description">Interpret insights from charts and visual analysis.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO4.4</span>
-                                <span class="clo-description">Present analysis results as Markdown or PDF reports.</span>
-                                <span class="clo-level badge">Level NA</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO4.5</span>
-                                <span class="clo-description">Apply data storytelling in presenting results.</span>
-                                <span class="clo-level badge">Level I</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="objective-group">
-                        <h3 class="objective-title">G5: Apply machine learning models and evaluate performance metrics.</h3>
-                        <div class="clos-list">
-                            <div class="clo-item">
-                                <span class="clo-id">CLO5.1</span>
-                                <span class="clo-description">Apply linear regression to predict continuous variables in business.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO5.2</span>
-                                <span class="clo-description">Train simple binary classifiers such as decision trees and random forests.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO5.3</span>
-                                <span class="clo-description">Split data into training and test sets.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO5.4</span>
-                                <span class="clo-description">Evaluate model performance using MAE, RMSE, R², confusion matrix.</span>
-                                <span class="clo-level badge">Level I</span>
-                            </div>
-                            <div class="clo-item">
-                                <span class="clo-id">CLO5.5</span>
-                                <span class="clo-description">Interpret predictions and apply them to real contexts.</span>
-                                <span class="clo-level badge">Level II</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="schedule" class="section schedule">
-            <div class="container">
-                <h2 class="section-title">Course Schedule</h2>
-                
-                <div class="schedule-table-wrapper">
-                    <table class="schedule-table">
-                        <thead>
-                            <tr>
-                                <th>Week</th>
-                                <th>Type</th>
-                                <th>Topic</th>
-                                <th>Materials</th>
-                                <th>Assessment</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="">
-                                <td data-label="Week">1</td>
-                                <td data-label="Type"><span class="badge badge-Lecture">Lecture</span></td>
-                                <td data-label="Topic">
-                                    <strong>Introduction to Data Science and Applications in Economics and Business</strong>
-                                    <ul class="topic-list">
-                                        <li>Core concepts in data science</li>
-                                        <li>Data analysis vs. data science</li>
-                                        <li>What is modeling?</li>
-                                        <li>Introduction to Python</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Chapters 1, 2, 3
-                                    <br><a href="notebook/Lec1_Giới thiệu về Khoa học dữ liệu.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">2</td>
-                                <td data-label="Type"><span class="badge badge-Lecture">Lecture</span></td>
-                                <td data-label="Topic">
-                                    <strong>Python Programming Language</strong>
-                                    <ul class="topic-list">
-                                        <li>Variables in Python</li>
-                                        <li>Vectors and sequential data types</li>
-                                        <li>Conditional statements</li>
-                                        <li>Loops</li>
-                                        <li>Functions</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Chapter 4
-                                    <br><a href="notebook/Lec2_Giới thiệu ngôn ngữ Python.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">3</td>
-                                <td data-label="Type"><span class="badge badge-Practice">Practice</span></td>
-                                <td data-label="Topic">
-                                    <strong>Python Programming Practice</strong>
-                                    <ul class="topic-list">
-                                        <li>Variables in Python</li>
-                                        <li>Vectors and sequential data types</li>
-                                        <li>Conditional statements</li>
-                                        <li>Loops</li>
-                                        <li>Functions</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Basic Python practice
-                                    <br><a href="notebook/Tur2_Giới thiệu ngôn ngữ Python.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">4</td>
-                                <td data-label="Type"><span class="badge badge-Lecture">Lecture</span></td>
-                                <td data-label="Topic">
-                                    <strong>Python Libraries for Data Science</strong>
-                                    <ul class="topic-list">
-                                        <li>Data science libraries overview</li>
-                                        <li>NumPy arrays</li>
-                                        <li>Pandas DataFrame</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Chapters 5, 6
-                                    <br><a href="notebook/Lec3_Các thư viện quan trọng trong KHDL của Python.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                    <br><a href="slides/Python_NumPy_Pandas_Essentials.pdf" class="notebook-link" download>📄 Supply: Python NumPy & Pandas Essentials (PDF)</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">5</td>
-                                <td data-label="Type"><span class="badge badge-Practice">Practice</span></td>
-                                <td data-label="Topic">
-                                    <strong>Python with NumPy and Pandas</strong>
-                                    <ul class="topic-list">
-                                        <li>Work with NumPy arrays</li>
-                                        <li>Evaluate NumPy performance vs. native arrays</li>
-                                        <li>Practice basic Pandas DataFrame operations</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    NumPy practice; Pandas practice
-                                    <br><a href="notebook/Tur3_Các thư viện quan trọng trong KHDL của Python.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                    <br><a href="notebook/Tur3_Các thư viện quan trọng trong KHDL của Python_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">6</td>
-                                <td data-label="Type"><span class="badge badge-Lecture">Lecture</span></td>
-                                <td data-label="Topic">
-                                    <strong>Data Input and Storage</strong>
-                                    <ul class="topic-list">
-                                        <li>Read and write text formats</li>
-                                        <li>Web data collection</li>
-                                        <li>Read from Microsoft Excel</li>
-                                        <li>Interact with Web APIs</li>
-                                        <li>Interact with databases</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Chapter 7
-                                    <br><a href="notebook/Lec4_nhập_và_lưu_trữ_dữ_liệu_Python.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                </td>
-                                <td data-label="Assessment"></td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">7</td>
-                                <td data-label="Type"><span class="badge badge-Practice">Practice</span></td>
-                                <td data-label="Topic">
-                                    <strong>Data Input and Storage Practice</strong>
-                                    <ul class="topic-list">
-                                        <li>Read and write text formats</li>
-                                        <li>Web scraping/collection</li>
-                                        <li>Read Excel</li>
-                                        <li>Interact with Web APIs</li>
-                                        <li>Interact with databases</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Practice on data input and storage
-                                    <br><a href="notebook/Tur4_nhập_và_lưu_trữ_dữ_liệu.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                    <br><a href="notebook/Tur4_nhập_và_lưu_trữ_dữ_liệu_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
-                                </td>
-                                <td data-label="Assessment"></td>
-                            </tr>
-                            <tr class="midterm-row">
-                                <td data-label="Week">8</td>
-                                <td data-label="Type"><span class="badge badge-Midterm">Midterm</span></td>
-                                <td data-label="Topic">
-                                    <strong>Midterm 1</strong>
-                                    <ul class="topic-list">
-                                        <li>Midterm Exam 1</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    
-                                    <br><a href="#answer-keys" class="answer-keys-link">🔑 Đáp án thi</a>
-                                </td>
-                                <td data-label="Assessment">Midterm 1</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">8</td>
-                                <td data-label="Type"><span class="badge badge-Lecture">Lecture</span></td>
-                                <td data-label="Topic">
-                                    <strong>Data Preprocessing Lecture</strong>
-                                    <ul class="topic-list">
-                                        <li>Format data aligned to research goals</li>
-                                        <li>Handle outliers and missing values</li>
-                                        <li>Data cleaning techniques</li>
-                                        <li>Feature engineering</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Chapter 9
-                                    <br><a href="notebook/Lec5_Làm sạch và chuẩn bị dữ liệu.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">9</td>
-                                <td data-label="Type"><span class="badge badge-Practice">Practice</span></td>
-                                <td data-label="Topic">
-                                    <strong>Data Preprocessing Practice</strong>
-                                    <ul class="topic-list">
-                                        <li>Clean data, transform to desired formats</li>
-                                        <li>Detect and handle outliers with boxplots, Z-scores</li>
-                                        <li>Handle missing data by deletion, imputation, etc.</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Preprocessing practice
-                                    <br><a href="notebook/Tur5_Làm sạch và chuẩn bị dữ liệu.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">10</td>
-                                <td data-label="Type"><span class="badge badge-Lecture">Lecture</span></td>
-                                <td data-label="Topic">
-                                    <strong>Data Transformation and Feature Engineering</strong>
-                                    <ul class="topic-list">
-                                        <li>Reshape data between wide and long formats</li>
-                                        <li>Encode categorical variables</li>
-                                        <li>Normalize quantitative variables</li>
-                                        <li>Create new features from raw attributes</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Chapter 8
-                                    <br><a href="notebook/Lec6_Sắp xếp và biến đổi dữ liệu.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">11</td>
-                                <td data-label="Type"><span class="badge badge-Practice">Practice</span></td>
-                                <td data-label="Topic">
-                                    <strong>Data Transformation Practice</strong>
-                                    <ul class="topic-list">
-                                        <li>Reshape wide/long</li>
-                                        <li>Encode categorical variables</li>
-                                        <li>Normalize quantitative variables</li>
-                                        <li>Create new features</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Data transformation practice
-                                    <br><a href="notebook/Tur6_Sắp xếp và biến đổi dữ liệu.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                    <br><a href="https://drive.google.com/drive/folders/1Njqv0Kf7wcD334jsCoJmWIaTYxiTA5J2?usp&#x3D;sharing" class="notebook-link" target="_blank" rel="noopener">📂 Dataset</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">12</td>
-                                <td data-label="Type"><span class="badge badge-Lecture">Lecture</span></td>
-                                <td data-label="Topic">
-                                    <strong>Data Visualization</strong>
-                                    <ul class="topic-list">
-                                        <li>Basic charts: histogram, scatter, bar</li>
-                                        <li>Principles for selecting appropriate charts for one or multiple variables</li>
-                                        <li>Use of color, shape, and size to enhance interpretability</li>
-                                        <li>Interpret data via visualization</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Chapter 10
-                                    <br><a href="https://fit.neu.edu.vn/room/QLGK35?chap&#x3D;12#1" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
-                                    <br><a href="notebook/Lec7_Visualization.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">13</td>
-                                <td data-label="Type"><span class="badge badge-Practice">Practice</span></td>
-                                <td data-label="Topic">
-                                    <strong>Data Visualization Practice</strong>
-                                    <ul class="topic-list">
-                                        <li>Plot with Matplotlib and Seaborn</li>
-                                        <li>Apply visualization in analysis</li>
-                                        <li>Create simple dashboards in Python</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Visualization practice
-                                    <br><a href="notebook/Tur7_Visualization.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                    <br><a href="https://drive.google.com/drive/folders/17qHbWCxaHdlX6_NOv6dfOefSvxpn542t?usp&#x3D;sharing" class="notebook-link" target="_blank" rel="noopener">📤 Nộp bài tập</a>
-                                    <br><a href="tur7-visualization.html" class="notebook-link" target="_blank" rel="noopener">📊 Xem tất cả bài tập</a>
-                                    <br><a href="notebook/Tur7_Visualization_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">14</td>
-                                <td data-label="Type"><span class="badge badge-Lecture">Lecture</span></td>
-                                <td data-label="Topic">
-                                    <strong>Modeling with Data (Machine Learning)</strong>
-                                    <ul class="topic-list">
-                                        <li>Core ML concepts</li>
-                                        <li>Linear models for regression and classification</li>
-                                        <li>Decision trees</li>
-                                        <li>Tree ensembles</li>
-                                        <li>Model evaluation metrics</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Chapter 11
-                                    <br><a href="notebook/Lec8_SupML.ipynb" class="notebook-link" download>📓 Notebook</a>
-                                </td>
-                                <td data-label="Assessment">In-class discussion; homework</td>
-                            </tr>
-                            <tr class="">
-                                <td data-label="Week">15</td>
-                                <td data-label="Type"><span class="badge badge-Midterm &amp; Practice">Midterm &amp; Practice</span></td>
-                                <td data-label="Topic">
-                                    <strong>Midterm 2 &amp; Machine Learning Modeling Practice</strong>
-                                    <ul class="topic-list">
-                                        <li>Midterm Exam 2</li>
-                                        <li>Linear models for regression and classification</li>
-                                        <li>Decision trees</li>
-                                        <li>Tree ensembles</li>
-                                    </ul>
-                                </td>
-                                <td data-label="Materials">
-                                    Modeling practice
-                                </td>
-                                <td data-label="Assessment">Midterm 2</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="schedule-note">
-                    <p><strong>Note:</strong> Schedule is subject to change. Check course announcements for updates.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="quizzes" class="section quizzes">
-            <div class="container">
-                <h2 class="section-title">Practice Quizzes</h2>
-                
-                <div class="quizzes-intro">
-                    <p>Test your understanding with these interactive quizzes. Each quiz corresponds to lecture material and helps reinforce key concepts.</p>
-                </div>
-                
-                <div class="quizzes-grid">
-                    <div class="quiz-card">
-                        <div class="quiz-header">
-                            <h3>Lecture 1 Quiz: Giới thiệu về Khoa học dữ liệu</h3>
-                            <span class="quiz-week badge">Week 1</span>
-                        </div>
-                        <p class="quiz-description">30 câu hỏi trắc nghiệm về khái niệm Khoa học dữ liệu, quy trình phân tích, các lĩnh vực chuyên sâu, loại dữ liệu, và ứng dụng trong kinh tế &amp; kinh doanh.</p>
-                        <div class="quiz-topics">
-                            <strong>Topics covered:</strong>
-                            <ul>
-                                <li>Khái niệm Khoa học dữ liệu và 3 trụ cột</li>
-                                <li>Khoa học dữ liệu trong Kinh tế &amp; Kinh doanh</li>
-                                <li>Các lĩnh vực chuyên sâu (Data Engineering, Analytics, ML)</li>
-                                <li>Quy trình Khoa học dữ liệu (7 bước)</li>
-                                <li>Các loại dữ liệu (Structured, Semi-structured, Unstructured)</li>
-                                <li>Vai trò trong Khoa học dữ liệu (Data Engineer, Analyst, Scientist)</li>
-                                <li>Học máy (Supervised, Unsupervised, Reinforcement)</li>
-                                <li>Công cụ và ngôn ngữ lập trình</li>
-                            </ul>
-                        </div>
-                        <a href="quiz/Lec01_quiz/index.html" class="btn btn-quiz" target="_blank">Start Quiz</a>
-                    </div>
-                    <div class="quiz-card">
-                        <div class="quiz-header">
-                            <h3>Lecture 2 Quiz: Python Basics</h3>
-                            <span class="quiz-week badge">Week 2</span>
-                        </div>
-                        <p class="quiz-description">Test your understanding of Python fundamentals including variables, data types, and control structures.</p>
-                        <div class="quiz-topics">
-                            <strong>Topics covered:</strong>
-                            <ul>
-                                <li>Variables and data types</li>
-                                <li>Conditional statements</li>
-                                <li>Loops and iteration</li>
-                            </ul>
-                        </div>
-                        <a href="quiz/Lec02_quiz/index.html" class="btn btn-quiz" target="_blank">Start Quiz</a>
-                    </div>
-                    <div class="quiz-card">
-                        <div class="quiz-header">
-                            <h3>Lecture 3 Quiz: NumPy &amp; Pandas</h3>
-                            <span class="quiz-week badge">Week 4</span>
-                        </div>
-                        <p class="quiz-description">30 câu hỏi trắc nghiệm về NumPy và Pandas – mảng, DataFrame, và thao tác dữ liệu.</p>
-                        <div class="quiz-topics">
-                            <strong>Topics covered:</strong>
-                            <ul>
-                                <li>NumPy arrays và dtype</li>
-                                <li>Slicing, indexing, boolean indexing</li>
-                                <li>Pandas DataFrame và Series</li>
-                                <li>Đọc dữ liệu và thao tác cơ bản</li>
-                            </ul>
-                        </div>
-                        <a href="quiz/Lec03_quiz/index.html" class="btn btn-quiz" target="_blank">Start Quiz</a>
-                    </div>
-                    <div class="quiz-card">
-                        <div class="quiz-header">
-                            <h3>Lecture 4 Quiz: Nhập và Lưu Trữ Dữ Liệu</h3>
-                            <span class="quiz-week badge">Week 6</span>
-                        </div>
-                        <p class="quiz-description">30 câu hỏi trắc nghiệm về CSV, JSON, Web HTML, RSS/XML, Excel, API và SQL Database.</p>
-                        <div class="quiz-topics">
-                            <strong>Topics covered:</strong>
-                            <ul>
-                                <li>Đọc/ghi CSV, JSON</li>
-                                <li>Thu thập dữ liệu web (HTML, RSS/XML)</li>
-                                <li>Đọc Excel</li>
-                                <li>Web APIs và cơ sở dữ liệu</li>
-                            </ul>
-                        </div>
-                        <a href="quiz/Lec04_quiz/index.html" class="btn btn-quiz" target="_blank">Start Quiz</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="assessment" class="section assessment">
-            <div class="container">
-                <h2 class="section-title">Assessment & Grading</h2>
-                
-                <div class="assessment-table-wrapper">
-                    <table class="assessment-table">
-                        <thead>
-                            <tr>
-                                <th>Assessment Method</th>
-                                <th>Week</th>
-                                <th>Description</th>
-                                <th>Weight</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Method"><strong>Attendance/participation</strong></td>
-                                <td data-label="Week">Weeks 1–15</td>
-                                <td data-label="Description">Full in-class participation; homework evaluation; in-class engagement</td>
-                                <td data-label="Weight"><span class="weight-badge">10%</span></td>
-                            </tr>
-                            <tr>
-                                <td data-label="Method"><strong>Knowledge Check 1</strong></td>
-                                <td data-label="Week">Week 8</td>
-                                <td data-label="Description">Quiz/coding/presentation in class</td>
-                                <td data-label="Weight"><span class="weight-badge">20%</span></td>
-                            </tr>
-                            <tr>
-                                <td data-label="Method"><strong>Knowledge Check 2</strong></td>
-                                <td data-label="Week">Week 15</td>
-                                <td data-label="Description">Quiz/coding/presentation in class</td>
-                                <td data-label="Weight"><span class="weight-badge">20%</span></td>
-                            </tr>
-                            <tr>
-                                <td data-label="Method"><strong>Final exam</strong></td>
-                                <td data-label="Week">Per university exam schedule</td>
-                                <td data-label="Description">Computer-based multiple-choice exam</td>
-                                <td data-label="Weight"><span class="weight-badge">50%</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="policies-summary">
-                    <h3>Key Policies</h3>
-                    <div class="policies-grid">
-                        <div class="policy-card">
-                            <h4>📋 Eligibility</h4>
-                            <p>Students must achieve at least 5 points for class participation to be eligible for the final exam (per university regulations).</p>
-                        </div>
-                        <div class="policy-card">
-                            <h4>📅 Attendance</h4>
-                            <p>Students are responsible for attending all scheduled sessions. In cases of force majeure, students should self-study provided materials and complete assigned supplementary readings.</p>
-                        </div>
-                        <div class="policy-card">
-                            <h4>📝 Submissions</h4>
-                            <p>Failure to submit individual or group assignments as required will result in a score of 0 for that component. Late submissions are penalized by 1 point per day after the official deadline.</p>
-                        </div>
-                    </div>
-                    <a href="policies.html" class="btn btn-secondary">View Full Policies</a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="resources" class="section resources">
-            <div class="container">
-                <h2 class="section-title">Course Resources</h2>
-                
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <div class="resource-icon">📚</div>
-                        <h3>Course Textbook</h3>
-                        <p>Data Science in Economics and Business (Python Applications)</p>
-                        <a href="https://nct-neu.github.io/Sach_Khoa_hoc_du_lieu_python/README.html" class="btn btn-resource" target="_blank" rel="noopener">Access Textbook</a>
-                    </div>
-                    
-                    <div class="resource-card">
-                        <div class="resource-icon">📊</div>
-                        <h3>Slide Deck</h3>
-                        <p>Weekly lecture slides and presentation materials</p>
-                        <a href="https://fit.neu.edu.vn/room/Le2MmM" class="btn btn-resource" target="_blank" rel="noopener">View Slides</a>
-                    </div>
-                    
-                    <div class="resource-card">
-                        <div class="resource-icon">💻</div>
-                        <h3>GitHub Repository</h3>
-                        <p>Code examples, datasets, and supplementary materials</p>
-                        <a href="https://github.com/NCT-NEU/Sach_Khoa_hoc_du_lieu_python/tree/main" class="btn btn-resource" target="_blank" rel="noopener">Visit GitHub</a>
-                    </div>
-                    
-                    <div class="resource-card">
-                        <div class="resource-icon">🔧</div>
-                        <h3>Software & Tools</h3>
-                        <ul class="software-list">
-                            <li>Python 13.0 or higher</li>
-                            <li>Jupyter Notebook or Google Colab</li>
-                            <li>NumPy, Pandas, Matplotlib, Seaborn, scikit-learn</li>
-                        </ul>
-                        <a href="resources.html" class="btn btn-resource">Setup Guide</a>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-        
-    </main>
-    
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Basic Data Science in Economics and Business</h3>
-                    <p>FDA.6.1.2.01.V | 3 Credits</p>
-                    <p>National Economics University</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="syllabus.html">Syllabus</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="grading.html">Grading</a></li>
-                        <li><a href="policies.html">Policies</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Course Resources</h3>
-                    <ul>
-                        <li><a href="https://fit.neu.edu.vn/room/Le2MmM" target="_blank" rel="noopener">Slide Deck</a></li>
-                        <li><a href="https://nct-neu.github.io/Sach_Khoa_hoc_du_lieu_python/README.html" target="_blank" rel="noopener">Course Textbook</a></li>
-                        <li><a href="https://github.com/NCT-NEU/Sach_Khoa_hoc_du_lieu_python/tree/main" target="_blank" rel="noopener">GitHub Repository</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="mailto:nghiant@neu.edu.vn">Dr. Nguyen Trong Nghia</a></li>
-                        <li><a href="mailto:ntmtrang@neu.edu.vn">MSc. Nguyen Thi Minh Trang</a></li>
-                        <li><a href="mailto:thanhtd@neu.edu.vn">MSc. Dam Tien Thanh</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 National Economics University. All rights reserved.</p>
-                <p>Faculty of Data Science and Artificial Intelligence</p>
-            </div>
+      </div>
+      <div class="person">
+        <img class="person-photo" src="assets/images/minhtrang.jpg" alt="Photograph of MSc. Nguyen Thi Minh Trang">
+        <div class="person-info">
+          <p class="person-role">Tutorial</p>
+          <p class="person-name"><a href="https://fda.neu.edu.vn/fda-members/ths-nguyen-thi-minh-trang/">MSc. Nguyen Thi Minh Trang</a></p>
+          <p class="person-line"><a href="mailto:ntmtrang@neu.edu.vn">ntmtrang@neu.edu.vn</a></p>
+          <p class="person-line"><a href="https://fda.neu.edu.vn/fda-members/ths-nguyen-thi-minh-trang/">Profile page</a></p>
+          <p class="person-bio">Lecturer at the Department of Data Science and Artificial Intelligence, School of Technology, National Economics University. Member of the Lab for Research and Technology Transfer of Data Science and Artificial Intelligence. Holds a Master&#x27;s degree in Business Analytics from Nottingham Trent University, UK (2023).</p>
         </div>
-    </footer>
-    
-    
-    <script src="assets/js/main.js"></script>
+      </div>
+      <div class="person">
+        <img class="person-photo" src="assets/images/damtienthanh.jpg" alt="Photograph of MSc. Dam Tien Thanh">
+        <div class="person-info">
+          <p class="person-role">Tutorial</p>
+          <p class="person-name"><a href="https://fda.neu.edu.vn/fda-members/ths-dam-tien-thanh/">MSc. Dam Tien Thanh</a></p>
+          <p class="person-line"><a href="mailto:thanhtd@neu.edu.vn">thanhtd@neu.edu.vn</a></p>
+          <p class="person-line"><a href="https://fda.neu.edu.vn/fda-members/ths-dam-tien-thanh/">Profile page</a></p>
+          <p class="person-bio">Member of the DataOptLab research team, Department of Data Science and Artificial Intelligence, School of Technology, National Economics University. Graduated with Honors from the University of Technology – VNU (2020) and holds a Master&#x27;s degree from Phenikaa University (2023).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="outcomes" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Objectives and learning outcomes</h2>
+
+    <div class="subsection">
+      <h3>Course objectives</h3>
+      <div class="prose prose-narrow">
+        <ul>
+          <li><strong>G1.</strong> Understand data science roles and project lifecycle in business contexts.</li><li><strong>G2.</strong> Use Python programming with NumPy and Pandas for data processing.</li><li><strong>G3.</strong> Collect, clean, and wrangle data using transformations and aggregations.</li><li><strong>G4.</strong> Create data visualizations and present results in reports.</li><li><strong>G5.</strong> Apply machine learning models and evaluate performance metrics.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Course learning outcomes</h3>
+      <div class="table-scroll">
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th scope="col" class="col-clo">CLO</th>
+              <th scope="col" class="col-week">Obj.</th>
+              <th scope="col">Outcome</th>
+              <th scope="col" class="col-week">Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO1.1</span></td>
+              <td class="col-week">G1</td>
+              <td>Present definitions and characteristics of data science.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO1.2</span></td>
+              <td class="col-week">G1</td>
+              <td>Explain the role of data science in business domains.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO1.3</span></td>
+              <td class="col-week">G1</td>
+              <td>Describe the main steps in the lifecycle of a data science project.</td>
+              <td class="col-week">III</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO1.4</span></td>
+              <td class="col-week">G1</td>
+              <td>Distinguish common data types in business analytics.</td>
+              <td class="col-week">III</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO1.5</span></td>
+              <td class="col-week">G1</td>
+              <td>Relate practical application examples of data science in economics and finance.</td>
+              <td class="col-week">III</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO2.1</span></td>
+              <td class="col-week">G2</td>
+              <td>Write Python code using variables, data types, and basic loops.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO2.2</span></td>
+              <td class="col-week">G2</td>
+              <td>Use NumPy to manipulate one- and two-dimensional arrays.</td>
+              <td class="col-week">I</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO2.3</span></td>
+              <td class="col-week">G2</td>
+              <td>Operate with Pandas DataFrame: filtering, grouping, joining, computations.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO2.4</span></td>
+              <td class="col-week">G2</td>
+              <td>Run notebooks in Jupyter or Google Colab.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO2.5</span></td>
+              <td class="col-week">G2</td>
+              <td>Read and modify sample Python code for simple data tasks.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO3.1</span></td>
+              <td class="col-week">G3</td>
+              <td>Read data from CSV, Excel, and simple web pages.</td>
+              <td class="col-week">III</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO3.2</span></td>
+              <td class="col-week">G3</td>
+              <td>Identify missing data and apply suitable cleaning techniques.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO3.3</span></td>
+              <td class="col-week">G3</td>
+              <td>Transform data types and create new features for analysis.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO3.4</span></td>
+              <td class="col-week">G3</td>
+              <td>Perform aggregation, grouping, and pivoting.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO3.5</span></td>
+              <td class="col-week">G3</td>
+              <td>Merge and combine multiple tables into one analytical dataset.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO4.1</span></td>
+              <td class="col-week">G4</td>
+              <td>Plot basic charts such as histogram, scatter plot, bar chart, and boxplot with Matplotlib/Seaborn.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO4.2</span></td>
+              <td class="col-week">G4</td>
+              <td>Choose appropriate chart types for data and presentation objectives.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO4.3</span></td>
+              <td class="col-week">G4</td>
+              <td>Interpret insights from charts and visual analysis.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO4.4</span></td>
+              <td class="col-week">G4</td>
+              <td>Present analysis results as Markdown or PDF reports.</td>
+              <td class="col-week">NA</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO4.5</span></td>
+              <td class="col-week">G4</td>
+              <td>Apply data storytelling in presenting results.</td>
+              <td class="col-week">I</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO5.1</span></td>
+              <td class="col-week">G5</td>
+              <td>Apply linear regression to predict continuous variables in business.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO5.2</span></td>
+              <td class="col-week">G5</td>
+              <td>Train simple binary classifiers such as decision trees and random forests.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO5.3</span></td>
+              <td class="col-week">G5</td>
+              <td>Split data into training and test sets.</td>
+              <td class="col-week">II</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO5.4</span></td>
+              <td class="col-week">G5</td>
+              <td>Evaluate model performance using MAE, RMSE, R², confusion matrix.</td>
+              <td class="col-week">I</td>
+            </tr>
+            <tr>
+              <td class="col-clo"><span class="lec-title">CLO5.5</span></td>
+              <td class="col-week">G5</td>
+              <td>Interpret predictions and apply them to real contexts.</td>
+              <td class="col-week">II</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="schedule" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Schedule</h2>
+    <p class="section-note">
+      Fifteen weeks, alternating lecture and practice. Notebooks open in Jupyter
+      or Google Colab. Weeks marked <span class="pill pill-tbd">TBD</span> are not
+      yet finalized and publish no materials.
+    </p>
+
+    <div class="table-scroll">
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th scope="col" class="col-week">Week</th>
+            <th scope="col" class="col-type">Type</th>
+            <th scope="col">Topic</th>
+            <th scope="col" class="col-materials">Materials</th>
+            <th scope="col" class="col-due">Assessment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="">
+            <td class="col-week">1</td>
+            <td class="col-type"><span class="pill pill-Lecture">Lecture</span></td>
+            <td>
+              <span class="lec-title">Introduction to Data Science and Applications in Economics and Business</span>
+              <ul class="lec-topics">
+                <li>Core concepts in data science</li><li>Data analysis vs. data science</li><li>What is modeling?</li><li>Introduction to Python</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Introduce course resources and platforms</li><li>Deliver lecture content</li><li>Guide steps in a data science workflow: use Hanoi house prices, Iris classification, or customer search in a marketing campaign</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Chapters 1, 2, 3</p>
+                <a class="mat mat-slide" href="notebook/Lec1_Gi%E1%BB%9Bi%20thi%E1%BB%87u%20v%E1%BB%81%20Khoa%20h%E1%BB%8Dc%20d%E1%BB%AF%20li%E1%BB%87u.ipynb">Notebook</a>
+                
+                
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">2</td>
+            <td class="col-type"><span class="pill pill-Lecture">Lecture</span></td>
+            <td>
+              <span class="lec-title">Python Programming Language</span>
+              <ul class="lec-topics">
+                <li>Variables in Python</li><li>Vectors and sequential data types</li><li>Conditional statements</li><li>Loops</li><li>Functions</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Guide installing Jupyter Notebook or other Python execution platforms</li><li>Deliver lecture content</li><li>Demonstrate running Python on SmartDoc or Jupyter Notebook</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Chapter 4</p>
+                <a class="mat mat-slide" href="notebook/Lec2_Gi%E1%BB%9Bi%20thi%E1%BB%87u%20ng%C3%B4n%20ng%E1%BB%AF%20Python.ipynb">Notebook</a>
+                
+                
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">3</td>
+            <td class="col-type"><span class="pill pill-Practice">Practice</span></td>
+            <td>
+              <span class="lec-title">Python Programming Practice</span>
+              <ul class="lec-topics">
+                <li>Variables in Python</li><li>Vectors and sequential data types</li><li>Conditional statements</li><li>Loops</li><li>Functions</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Q&amp;A from lecture</li><li>Guide practice exercises</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Basic Python practice</p>
+                <a class="mat mat-slide" href="notebook/Tur2_Gi%E1%BB%9Bi%20thi%E1%BB%87u%20ng%C3%B4n%20ng%E1%BB%AF%20Python.ipynb">Notebook</a>
+                
+                
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">4</td>
+            <td class="col-type"><span class="pill pill-Lecture">Lecture</span></td>
+            <td>
+              <span class="lec-title">Python Libraries for Data Science</span>
+              <ul class="lec-topics">
+                <li>Data science libraries overview</li><li>NumPy arrays</li><li>Pandas DataFrame</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Guide installing Python add-on libraries</li><li>Deliver lecture content</li><li>Support executing example code</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Chapters 5, 6</p>
+                <a class="mat mat-slide" href="notebook/Lec3_C%C3%A1c%20th%C6%B0%20vi%E1%BB%87n%20quan%20tr%E1%BB%8Dng%20trong%20KHDL%20c%E1%BB%A7a%20Python.ipynb">Notebook</a>
+                
+                <a class="mat" href="slides/Python_NumPy_Pandas_Essentials.pdf">Supplement (PDF)</a>
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">5</td>
+            <td class="col-type"><span class="pill pill-Practice">Practice</span></td>
+            <td>
+              <span class="lec-title">Python with NumPy and Pandas</span>
+              <ul class="lec-topics">
+                <li>Work with NumPy arrays</li><li>Evaluate NumPy performance vs. native arrays</li><li>Practice basic Pandas DataFrame operations</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Q&amp;A from lecture</li><li>Guide practice exercises</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">NumPy practice; Pandas practice</p>
+                <a class="mat mat-slide" href="notebook/Tur3_C%C3%A1c%20th%C6%B0%20vi%E1%BB%87n%20quan%20tr%E1%BB%8Dng%20trong%20KHDL%20c%E1%BB%A7a%20Python.ipynb">Notebook</a>
+                <a class="mat" href="notebook/Tur3_C%C3%A1c%20th%C6%B0%20vi%E1%BB%87n%20quan%20tr%E1%BB%8Dng%20trong%20KHDL%20c%E1%BB%A7a%20Python_Answer_Key.ipynb">Answer key</a>
+                
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">6</td>
+            <td class="col-type"><span class="pill pill-Lecture">Lecture</span></td>
+            <td>
+              <span class="lec-title">Data Input and Storage</span>
+              <ul class="lec-topics">
+                <li>Read and write text formats</li><li>Web data collection</li><li>Read from Microsoft Excel</li><li>Interact with Web APIs</li><li>Interact with databases</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Introduce accessible data sources</li><li>Introduce libraries for multi-source ingestion</li><li>Deliver lecture per textbook</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Chapter 7</p>
+                <a class="mat mat-slide" href="notebook/Lec4_nh%E1%BA%ADp_v%C3%A0_l%C6%B0u_tr%E1%BB%AF_d%E1%BB%AF_li%E1%BB%87u_Python.ipynb">Notebook</a>
+                
+                
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              <span class="dash">—</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">7</td>
+            <td class="col-type"><span class="pill pill-Practice">Practice</span></td>
+            <td>
+              <span class="lec-title">Data Input and Storage Practice</span>
+              <ul class="lec-topics">
+                <li>Read and write text formats</li><li>Web scraping/collection</li><li>Read Excel</li><li>Interact with Web APIs</li><li>Interact with databases</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Execute SmartDoc commands to pull data in different formats</li><li>Modify parameters to collect data</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Practice on data input and storage</p>
+                <a class="mat mat-slide" href="notebook/Tur4_nh%E1%BA%ADp_v%C3%A0_l%C6%B0u_tr%E1%BB%AF_d%E1%BB%AF_li%E1%BB%87u.ipynb">Notebook</a>
+                <a class="mat" href="notebook/Tur4_nh%E1%BA%ADp_v%C3%A0_l%C6%B0u_tr%E1%BB%AF_d%E1%BB%AF_li%E1%BB%87u_Answer_Key.ipynb">Answer key</a>
+                
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              <span class="dash">—</span>
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">8</td>
+            <td class="col-type"><span class="pill pill-Midterm">Midterm</span></td>
+            <td>
+              <span class="lec-title">Midterm 1</span>
+              <ul class="lec-topics">
+                <li>Midterm Exam 1</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Administer Midterm 1</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                
+                
+                
+                
+                
+                
+                
+                <a class="mat" href="#answer-keys">Answer keys</a>
+            </td>
+            <td class="col-due">
+              Midterm 1
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">8</td>
+            <td class="col-type"><span class="pill pill-Lecture">Lecture</span></td>
+            <td>
+              <span class="lec-title">Data Preprocessing Lecture</span>
+              <ul class="lec-topics">
+                <li>Format data aligned to research goals</li><li>Handle outliers and missing values</li><li>Data cleaning techniques</li><li>Feature engineering</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Lecture on data preprocessing</li><li>Demonstrate cleaning techniques</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Chapter 9</p>
+                <a class="mat mat-slide" href="notebook/Lec5_L%C3%A0m%20s%E1%BA%A1ch%20v%C3%A0%20chu%E1%BA%A9n%20b%E1%BB%8B%20d%E1%BB%AF%20li%E1%BB%87u.ipynb">Notebook</a>
+                
+                
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">9</td>
+            <td class="col-type"><span class="pill pill-Practice">Practice</span></td>
+            <td>
+              <span class="lec-title">Data Preprocessing Practice</span>
+              <ul class="lec-topics">
+                <li>Clean data, transform to desired formats</li><li>Detect and handle outliers with boxplots, Z-scores</li><li>Handle missing data by deletion, imputation, etc.</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Guide practice on data cleaning</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Preprocessing practice</p>
+                <a class="mat mat-slide" href="notebook/Tur5_L%C3%A0m%20s%E1%BA%A1ch%20v%C3%A0%20chu%E1%BA%A9n%20b%E1%BB%8B%20d%E1%BB%AF%20li%E1%BB%87u.ipynb">Notebook</a>
+                
+                
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">10</td>
+            <td class="col-type"><span class="pill pill-Lecture">Lecture</span></td>
+            <td>
+              <span class="lec-title">Data Transformation and Feature Engineering</span>
+              <ul class="lec-topics">
+                <li>Reshape data between wide and long formats</li><li>Encode categorical variables</li><li>Normalize quantitative variables</li><li>Create new features from raw attributes</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Deliver content</li><li>Q&amp;A and examples</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Chapter 8</p>
+                <a class="mat mat-slide" href="notebook/Lec6_S%E1%BA%AFp%20x%E1%BA%BFp%20v%C3%A0%20bi%E1%BA%BFn%20%C4%91%E1%BB%95i%20d%E1%BB%AF%20li%E1%BB%87u.ipynb">Notebook</a>
+                
+                
+                
+                
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">11</td>
+            <td class="col-type"><span class="pill pill-Practice">Practice</span></td>
+            <td>
+              <span class="lec-title">Data Transformation Practice</span>
+              <ul class="lec-topics">
+                <li>Reshape wide/long</li><li>Encode categorical variables</li><li>Normalize quantitative variables</li><li>Create new features</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Apply practical data transformation techniques</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Data transformation practice</p>
+                <a class="mat mat-slide" href="notebook/Tur6_S%E1%BA%AFp%20x%E1%BA%BFp%20v%C3%A0%20bi%E1%BA%BFn%20%C4%91%E1%BB%95i%20d%E1%BB%AF%20li%E1%BB%87u.ipynb">Notebook</a>
+                
+                
+                
+                <a class="mat" href="https://drive.google.com/drive/folders/1Njqv0Kf7wcD334jsCoJmWIaTYxiTA5J2?usp&#x3D;sharing">Dataset</a>
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">12</td>
+            <td class="col-type"><span class="pill pill-Lecture">Lecture</span></td>
+            <td>
+              <span class="lec-title">Data Visualization</span>
+              <ul class="lec-topics">
+                <li>Basic charts: histogram, scatter, bar</li><li>Principles for selecting appropriate charts for one or multiple variables</li><li>Use of color, shape, and size to enhance interpretability</li><li>Interpret data via visualization</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Present theory and examples</li><li>Guide data storytelling</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Chapter 10</p>
+                <a class="mat mat-slide" href="notebook/Lec7_Visualization.ipynb">Notebook</a>
+                
+                
+                <a class="mat" href="https://fit.neu.edu.vn/room/QLGK35?chap&#x3D;12#1">Slides</a>
+                
+                
+                
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">13</td>
+            <td class="col-type"><span class="pill pill-Practice">Practice</span></td>
+            <td>
+              <span class="lec-title">Data Visualization Practice</span>
+              <ul class="lec-topics">
+                <li>Plot with Matplotlib and Seaborn</li><li>Apply visualization in analysis</li><li>Create simple dashboards in Python</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Implement illustrative charts</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Visualization practice</p>
+                <a class="mat mat-slide" href="notebook/Tur7_Visualization.ipynb">Notebook</a>
+                <a class="mat" href="notebook/Tur7_Visualization_Answer_Key.ipynb">Answer key</a>
+                
+                
+                
+                <a class="mat" href="https://drive.google.com/drive/folders/17qHbWCxaHdlX6_NOv6dfOefSvxpn542t?usp&#x3D;sharing">Submit</a>
+                
+                  <a class="mat" href="tur7-visualization.html">All exercises</a>
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">14</td>
+            <td class="col-type"><span class="pill pill-Lecture">Lecture</span></td>
+            <td>
+              <span class="lec-title">Modeling with Data (Machine Learning)</span>
+              <ul class="lec-topics">
+                <li>Core ML concepts</li><li>Linear models for regression and classification</li><li>Decision trees</li><li>Tree ensembles</li><li>Model evaluation metrics</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Supervised learning lecture</li><li>Example: house price prediction or customer classification</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Chapter 11</p>
+                <a class="mat mat-slide" href="notebook/Lec8_SupML.ipynb">Notebook</a>
+                
+                
+                
+                
+                
+                
+                  <a class="mat" href="slides/T14_C%C3%A1c%20m%C3%B4%20h%C3%ACnh%20h%E1%BB%8Dc%20m%C3%A1y%20c%C3%B3%20gi%C3%A1m%20s%C3%A1t.ipynb">T14 notebook</a>
+            </td>
+            <td class="col-due">
+              In-class discussion; homework
+            </td>
+          </tr>
+          <tr class="">
+            <td class="col-week">15</td>
+            <td class="col-type"><span class="pill pill-Midterm &amp; Practice">Midterm &amp; Practice</span></td>
+            <td>
+              <span class="lec-title">Midterm 2 &amp; Machine Learning Modeling Practice</span>
+              <ul class="lec-topics">
+                <li>Midterm Exam 2</li><li>Linear models for regression and classification</li><li>Decision trees</li><li>Tree ensembles</li>
+              </ul>
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul><li>Run scikit-learn models</li><li>Interpret model outputs</li></ul>
+              </details>
+            </td>
+            <td class="col-materials">
+                <p class="mat-text">Modeling practice</p>
+                
+                
+                
+                
+                
+                
+                
+                  <a class="mat" href="slides/T15_Th%E1%BB%B1c%20h%C3%A0nh%20c%C3%A1c%20m%C3%B4%20h%C3%ACnh%20h%E1%BB%8Dc%20m%C3%A1y%20c%C3%B3%20gi%C3%A1m%20s%C3%A1t.ipynb">T15 notebook</a>
+            </td>
+            <td class="col-due">
+              Midterm 2
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section id="quizzes" class="section section-alt">
+  <div class="wrap">
+    <h2 class="section-title">Quizzes</h2>
+    <p class="section-note">
+      Self-marking multiple-choice quizzes. They run entirely in your browser and
+      are not graded — use them to check your understanding after each lecture.
+    </p>
+
+    <div class="quiz-grid">
+      <article class="quiz-card">
+        <p class="quiz-week">Week 1</p>
+        <h3 class="quiz-title"><a href="quiz/Lec01_quiz/index.html">Lecture 1 Quiz: Giới thiệu về Khoa học dữ liệu</a></h3>
+        <p class="quiz-desc">30 câu hỏi trắc nghiệm về khái niệm Khoa học dữ liệu, quy trình phân tích, các lĩnh vực chuyên sâu, loại dữ liệu, và ứng dụng trong kinh tế &amp; kinh doanh.</p>
+        <ul class="quiz-topics">
+          <li>Khái niệm Khoa học dữ liệu và 3 trụ cột</li><li>Khoa học dữ liệu trong Kinh tế &amp; Kinh doanh</li><li>Các lĩnh vực chuyên sâu (Data Engineering, Analytics, ML)</li><li>Quy trình Khoa học dữ liệu (7 bước)</li><li>Các loại dữ liệu (Structured, Semi-structured, Unstructured)</li><li>Vai trò trong Khoa học dữ liệu (Data Engineer, Analyst, Scientist)</li><li>Học máy (Supervised, Unsupervised, Reinforcement)</li><li>Công cụ và ngôn ngữ lập trình</li>
+        </ul>
+        <p class="cta-row"><a class="btn btn-quiet" href="quiz/Lec01_quiz/index.html">Start quiz</a></p>
+      </article>
+      <article class="quiz-card">
+        <p class="quiz-week">Week 2</p>
+        <h3 class="quiz-title"><a href="quiz/Lec02_quiz/index.html">Lecture 2 Quiz: Python Basics</a></h3>
+        <p class="quiz-desc">Test your understanding of Python fundamentals including variables, data types, and control structures.</p>
+        <ul class="quiz-topics">
+          <li>Variables and data types</li><li>Conditional statements</li><li>Loops and iteration</li>
+        </ul>
+        <p class="cta-row"><a class="btn btn-quiet" href="quiz/Lec02_quiz/index.html">Start quiz</a></p>
+      </article>
+      <article class="quiz-card">
+        <p class="quiz-week">Week 4</p>
+        <h3 class="quiz-title"><a href="quiz/Lec03_quiz/index.html">Lecture 3 Quiz: NumPy &amp; Pandas</a></h3>
+        <p class="quiz-desc">30 câu hỏi trắc nghiệm về NumPy và Pandas – mảng, DataFrame, và thao tác dữ liệu.</p>
+        <ul class="quiz-topics">
+          <li>NumPy arrays và dtype</li><li>Slicing, indexing, boolean indexing</li><li>Pandas DataFrame và Series</li><li>Đọc dữ liệu và thao tác cơ bản</li>
+        </ul>
+        <p class="cta-row"><a class="btn btn-quiet" href="quiz/Lec03_quiz/index.html">Start quiz</a></p>
+      </article>
+      <article class="quiz-card">
+        <p class="quiz-week">Week 6</p>
+        <h3 class="quiz-title"><a href="quiz/Lec04_quiz/index.html">Lecture 4 Quiz: Nhập và Lưu Trữ Dữ Liệu</a></h3>
+        <p class="quiz-desc">30 câu hỏi trắc nghiệm về CSV, JSON, Web HTML, RSS/XML, Excel, API và SQL Database.</p>
+        <ul class="quiz-topics">
+          <li>Đọc/ghi CSV, JSON</li><li>Thu thập dữ liệu web (HTML, RSS/XML)</li><li>Đọc Excel</li><li>Web APIs và cơ sở dữ liệu</li>
+        </ul>
+        <p class="cta-row"><a class="btn btn-quiet" href="quiz/Lec04_quiz/index.html">Start quiz</a></p>
+      </article>
+      <article class="quiz-card">
+        <p class="quiz-week">Week 8</p>
+        <h3 class="quiz-title"><a href="quiz/Lec05_quiz/index.html">Lecture 5 Quiz: Làm sạch và chuẩn bị dữ liệu</a></h3>
+        <p class="quiz-desc">Bài tập trắc nghiệm về làm sạch dữ liệu, xử lý giá trị thiếu và chuẩn bị dữ liệu cho phân tích.</p>
+        <ul class="quiz-topics">
+          <li>Xử lý giá trị thiếu</li><li>Loại bỏ dữ liệu trùng lặp</li><li>Chuyển đổi kiểu dữ liệu</li><li>Chuẩn hoá và làm sạch dữ liệu</li>
+        </ul>
+        <p class="cta-row"><a class="btn btn-quiet" href="quiz/Lec05_quiz/index.html">Start quiz</a></p>
+      </article>
+      <article class="quiz-card">
+        <p class="quiz-week">Week 10</p>
+        <h3 class="quiz-title"><a href="quiz/Lec06_quiz/index.html">Lecture 6 Quiz: Sắp xếp và biến đổi dữ liệu</a></h3>
+        <p class="quiz-desc">30 câu hỏi trắc nghiệm tự động chấm điểm về sắp xếp, nhóm, tổng hợp và biến đổi dữ liệu.</p>
+        <ul class="quiz-topics">
+          <li>Sắp xếp và lọc dữ liệu</li><li>Group by và tổng hợp</li><li>Pivot và reshape</li><li>Kết hợp nhiều bảng dữ liệu</li>
+        </ul>
+        <p class="cta-row"><a class="btn btn-quiet" href="quiz/Lec06_quiz/index.html">Start quiz</a></p>
+      </article>
+      <article class="quiz-card">
+        <p class="quiz-week">Week 12</p>
+        <h3 class="quiz-title"><a href="quiz/Lec07_quiz/index.html">Lecture 7 Quiz: Data Visualization</a></h3>
+        <p class="quiz-desc">30 câu hỏi trắc nghiệm tự động chấm điểm về trực quan hoá dữ liệu với Matplotlib và Seaborn.</p>
+        <ul class="quiz-topics">
+          <li>Biểu đồ cơ bản: histogram, scatter, bar, boxplot</li><li>Chọn loại biểu đồ phù hợp</li><li>Matplotlib và Seaborn</li><li>Diễn giải thông tin từ biểu đồ</li>
+        </ul>
+        <p class="cta-row"><a class="btn btn-quiet" href="quiz/Lec07_quiz/index.html">Start quiz</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="assessment" class="section section-alt">
+  <div class="wrap">
+    <h2 class="section-title">Assessment</h2>
+    <div class="table-scroll">
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th scope="col">Component</th>
+            <th scope="col" class="col-date">Week</th>
+            <th scope="col" class="col-week">Weight</th>
+            <th scope="col">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="lec-title">Attendance/participation</span>
+              <p class="lec-sub">Full in-class participation; homework evaluation; in-class engagement</p>
+            </td>
+            <td class="col-date">Weeks 1–15</td>
+            <td class="col-week"><strong>10%</strong></td>
+            <td>Roll call; homework evaluation; learning attitude</td>
+          </tr>
+          <tr>
+            <td><span class="lec-title">Knowledge Check 1</span>
+              <p class="lec-sub">Quiz/coding/presentation in class</p>
+            </td>
+            <td class="col-date">Week 8</td>
+            <td class="col-week"><strong>20%</strong></td>
+            <td>Quiz/coding performance</td>
+          </tr>
+          <tr>
+            <td><span class="lec-title">Knowledge Check 2</span>
+              <p class="lec-sub">Quiz/coding/presentation in class</p>
+            </td>
+            <td class="col-date">Week 15</td>
+            <td class="col-week"><strong>20%</strong></td>
+            <td>Quiz/coding performance</td>
+          </tr>
+          <tr>
+            <td><span class="lec-title">Final exam</span>
+              <p class="lec-sub">Computer-based multiple-choice exam</p>
+            </td>
+            <td class="col-date">Per university exam schedule</td>
+            <td class="col-week"><strong>50%</strong></td>
+            <td>Multiple-choice questions</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-note">
+      Full details on <a href="grading.html">Grading</a> and
+      <a href="policies.html">Policies</a>.
+    </p>
+  </div>
+</section>
+
+<section id="resources" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Resources</h2>
+
+    <div class="subsection">
+      <h3>Course links</h3>
+      <dl class="ref-list">
+        <dt><a href="https://nct-neu.github.io/Sach_Khoa_hoc_du_lieu_python/README.html"><cite>Khoa học dữ liệu với Python</cite></a></dt>
+        <dd>The course book, read online.</dd>
+        <dt><a href="https://github.com/NCT-NEU/Sach_Khoa_hoc_du_lieu_python/tree/main"><cite>Course book source on GitHub</cite></a></dt>
+        <dd>Notebooks and text for the course book.</dd>
+        <dt><a href="https://fit.neu.edu.vn/room/Le2MmM"><cite>Lecture slides (FIT room)</cite></a></dt>
+        <dd>Slide decks hosted on the faculty platform.</dd>
+      </dl>
+    </div>
+
+    <div class="subsection">
+      <h3>Course pages</h3>
+      <div class="prose prose-narrow">
+        <ul>
+          <li><a href="syllabus.html">Syllabus</a> — objectives, outcomes, weekly plan</li>
+          <li><a href="grading.html">Grading</a> — how each component is marked</li>
+          <li><a href="policies.html">Policies</a> — attendance, submission, conduct</li>
+          <li><a href="resources.html">Reading and tools</a> — full resource list</li>
+          <li><a href="tur7-visualization.html">Tutorial 7: Visualization</a> — worked walkthrough</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 id="answer-keys">Đáp án tổng hợp cho 8 đề thi DS_CLC (1-8)</h3>
+      <div class="prose prose-narrow">
+        <p>Tài liệu tổng hợp đáp án chi tiết cho tất cả câu hỏi trong 8 đề thi giữa kỳ với giải thích từng bước và phân tích theo chủ đề</p>
+        <ul>
+          <li>8 exams, 320 questions</li>
+          <li>219 unique questions (84% match rate)</li>
+        </ul>
+        <p><a class="btn btn-quiet" href="Exam/answer-keys.html">Open the answer keys</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-course">Basic Data Science in Economics and Business</p>
+        <p class="footer-meta">FDA.6.1.2.01.V · 3 credits · Undergraduate</p>
+      </div>
+      <div>
+        <p class="footer-meta">Faculty of Data Science and Artificial Intelligence</p>
+        <p class="footer-meta">National Economics University</p>
+        <p class="footer-meta"><a href="https://github.com/NCT-NEU/Sach_Khoa_hoc_du_lieu_python/tree/main">Course book on GitHub</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
-

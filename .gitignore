@@ -30,3 +30,12 @@ yarn-error.log*
 # OS
 Thumbs.db
 
+
+# Final exam papers, answer keys, and student mini-project submissions
+# (real student names and work). Never tracked, never published.
+Final exam/
+notebook_test/
+
+# Raw datasets used by the notebooks. Not published: the build copies only
+# .ipynb files out of notebook/.
+docs/notebook/data/

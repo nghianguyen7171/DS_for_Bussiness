@@ -1,41 +1,39 @@
-<section id="this-week" class="section this-week">
-    <div class="container">
-        <h2 class="section-title">This Week (Week {{thisWeek.week_current}})</h2>
-        
-        <div class="week-grid">
-            <div class="week-card highlights">
-                <h3>📌 Week Highlights</h3>
-                <ul>
-                    {{#each thisWeek.highlights}}
-                    <li>{{{this}}}</li>
-                    {{/each}}
-                </ul>
-            </div>
-            
-            {{#if thisWeek.announcements}}
-            <div class="week-card announcements">
-                <h3>📢 Announcements</h3>
-                {{#each thisWeek.announcements}}
-                <div class="announcement">
-                    <h4>{{title}}</h4>
-                    <p class="date">{{date}}</p>
-                    <p>{{content}}</p>
-                </div>
-                {{/each}}
-            </div>
-            {{/if}}
-            
-            {{#if thisWeek.upcoming}}
-            <div class="week-card upcoming">
-                <h3>🗓️ Coming Up</h3>
-                <ul>
-                    {{#each thisWeek.upcoming}}
-                    <li><strong>{{event}}</strong> - {{date}}</li>
-                    {{/each}}
-                </ul>
-            </div>
-            {{/if}}
-        </div>
-    </div>
-</section>
+{{#if thisWeek.week_current}}
+<section id="this-week" class="this-week">
+  <div class="wrap">
+    <p class="this-week-kicker">This week</p>
+    <h2 class="this-week-title">
+      <span class="this-week-num">Week {{thisWeek.week_current}}</span>
+    </h2>
 
+    {{#if thisWeek.highlights}}
+    <ul class="todo">
+      {{#each thisWeek.highlights}}<li>{{this}}</li>{{/each}}
+    </ul>
+    {{/if}}
+
+    {{#if thisWeek.announcements}}
+    <div class="announcements">
+      <h3 class="sub-head">Announcements</h3>
+      {{#each thisWeek.announcements}}
+      <div class="announcement">
+        <p class="announcement-head"><strong>{{this.title}}</strong> <span class="due">{{this.date}}</span></p>
+        <p class="announcement-body">{{this.content}}</p>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if thisWeek.upcoming}}
+    <div class="announcements">
+      <h3 class="sub-head">Upcoming</h3>
+      <ul class="todo">
+        {{#each thisWeek.upcoming}}
+        <li>{{this.event}} <span class="due">{{this.date}}</span></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+  </div>
+</section>
+{{/if}}

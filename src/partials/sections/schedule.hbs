@@ -1,77 +1,69 @@
-<section id="schedule" class="section schedule">
-    <div class="container">
-        <h2 class="section-title">Course Schedule</h2>
-        
-        <div class="schedule-table-wrapper">
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th>Week</th>
-                        <th>Type</th>
-                        <th>Topic</th>
-                        <th>Materials</th>
-                        <th>Assessment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each lectures.lectures}}
-                    <tr class="{{#if (eq type 'Midterm')}}midterm-row{{/if}}">
-                        <td data-label="Week">{{week}}</td>
-                        <td data-label="Type"><span class="badge badge-{{type}}">{{type}}</span></td>
-                        <td data-label="Topic">
-                            <strong>{{title}}</strong>
-                            {{#if topics}}
-                            <ul class="topic-list">
-                                {{#each topics}}
-                                <li>{{this}}</li>
-                                {{/each}}
-                            </ul>
-                            {{/if}}
-                        </td>
-                        <td data-label="Materials">
-                            {{#if materials}}{{materials}}{{/if}}
-                            {{#if slides}}
-                            <br><a href="{{slides}}" class="notebook-link" target="_blank" rel="noopener">📑 Slides</a>
-                            {{/if}}
-                            {{#if notebook}}
-                            <br><a href="{{notebook}}" class="notebook-link" download>📓 Notebook</a>
-                            {{/if}}
-                            {{#if supply_pdf}}
-                            <br><a href="{{supply_pdf}}" class="notebook-link" download>📄 Supply: Python NumPy & Pandas Essentials (PDF)</a>
-                            {{/if}}
-                            {{#if submission_link}}
-                            <br><a href="{{submission_link}}" class="notebook-link" target="_blank" rel="noopener">📤 Nộp bài tập</a>
-                            {{/if}}
-                            {{#if dataset_link}}
-                            <br><a href="{{dataset_link}}" class="notebook-link" target="_blank" rel="noopener">📂 Dataset</a>
-                            {{/if}}
-                            {{#if answer_keys_link}}
-                            <br><a href="{{answer_keys_link}}" class="answer-keys-link">🔑 Đáp án thi</a>
-                            {{/if}}
-                            {{#if visualization_page_link}}
-                            <br><a href="{{visualization_page_link}}" class="visualization-link">✨ Xem tất cả bài tập</a>
-                            {{/if}}
-                            {{#if (eq title "Data Visualization Practice")}}
-                            <br><a href="tur7-visualization.html" class="notebook-link" target="_blank" rel="noopener">📊 Xem tất cả bài tập</a>
-                            <br><a href="notebook/Tur7_Visualization_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
-                            {{/if}}
-                            {{#if (eq title "Python with NumPy and Pandas")}}
-                            <br><a href="notebook/Tur3_Các thư viện quan trọng trong KHDL của Python_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
-                            {{/if}}
-                            {{#if (eq title "Data Input and Storage Practice")}}
-                            <br><a href="notebook/Tur4_nhập_và_lưu_trữ_dữ_liệu_Answer_Key.ipynb" class="notebook-link" download>🔑 Answer Key</a>
-                            {{/if}}
-                        </td>
-                        <td data-label="Assessment">{{assessment}}</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="schedule-note">
-            <p><strong>Note:</strong> Schedule is subject to change. Check course announcements for updates.</p>
-        </div>
-    </div>
-</section>
+<section id="schedule" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Schedule</h2>
+    <p class="section-note">
+      Fifteen weeks, alternating lecture and practice. Notebooks open in Jupyter
+      or Google Colab. Weeks marked <span class="pill pill-tbd">TBD</span> are not
+      yet finalized and publish no materials.
+    </p>
 
+    <div class="table-scroll">
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th scope="col" class="col-week">Week</th>
+            <th scope="col" class="col-type">Type</th>
+            <th scope="col">Topic</th>
+            <th scope="col" class="col-materials">Materials</th>
+            <th scope="col" class="col-due">Assessment</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each lectures.lectures}}
+          <tr class="{{#unless (isReleased this.status)}}row-unreleased{{/unless}}">
+            <td class="col-week">{{this.week}}</td>
+            <td class="col-type"><span class="pill pill-{{this.type}}">{{this.type}}</span></td>
+            <td>
+              <span class="lec-title">{{this.title}}</span>
+              {{#unless (isReleased this.status)}}
+                <span class="pill pill-{{this.status}}">{{statusLabel this.status}}</span>
+              {{/unless}}
+              {{#if this.topics}}
+              <ul class="lec-topics">
+                {{#each this.topics}}<li>{{this}}</li>{{/each}}
+              </ul>
+              {{/if}}
+              {{#if this.activities}}
+              <details class="lec-activities">
+                <summary>Class activities</summary>
+                <ul>{{#each this.activities}}<li>{{this}}</li>{{/each}}</ul>
+              </details>
+              {{/if}}
+            </td>
+            <td class="col-materials">
+              {{#if (isReleased this.status)}}
+                {{#if this.materials}}<p class="mat-text">{{this.materials}}</p>{{/if}}
+                {{#if this.notebook}}<a class="mat mat-slide" href="{{url this.notebook}}">Notebook</a>{{/if}}
+                {{#if this.answer_key}}<a class="mat" href="{{url this.answer_key}}">Answer key</a>{{/if}}
+                {{#if this.supply_pdf}}<a class="mat" href="{{url this.supply_pdf}}">Supplement (PDF)</a>{{/if}}
+                {{#if this.slides}}<a class="mat" href="{{this.slides}}">Slides</a>{{/if}}
+                {{#if this.dataset_link}}<a class="mat" href="{{this.dataset_link}}">Dataset</a>{{/if}}
+                {{#if this.submission_link}}<a class="mat" href="{{this.submission_link}}">Submit</a>{{/if}}
+                {{#if this.answer_keys_link}}<a class="mat" href="{{url this.answer_keys_link}}">Answer keys</a>{{/if}}
+                {{#if this.extra}}
+                  {{#each this.extra}}<a class="mat" href="{{url this.href}}">{{this.label}}</a>{{/each}}
+                {{/if}}
+              {{else}}
+                <span class="dash">—</span>
+              {{/if}}
+            </td>
+            <td class="col-due">
+              {{#if this.assessment}}{{this.assessment}}{{else}}<span class="dash">—</span>{{/if}}
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

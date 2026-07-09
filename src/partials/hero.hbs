@@ -1,16 +1,17 @@
-<section id="home" class="hero" role="banner">
-    <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title">{{course.title}}</h1>
-            <p class="hero-subtitle">{{course.code}} | {{course.credits}} Credits | National Economics University</p>
-            <p class="hero-description">{{course.description}}</p>
-            <div class="hero-cta">
-                <a href="syllabus.html" class="btn btn-primary">View Syllabus</a>
-                <a href="#schedule" class="btn btn-secondary">Course Schedule</a>
-                <a href="#quizzes" class="btn btn-accent">Practice Quizzes</a>
-                <a href="https://fit.neu.edu.vn/scoreup/practice" target="_blank" rel="noopener noreferrer" class="btn btn-success">Practice with Score Up</a>
-            </div>
-        </div>
-    </div>
+<section id="home" class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">{{course.code}} · {{course.program}}</p>
+    <h1 class="hero-title">{{course.title}}</h1>
+    <dl class="hero-facts">
+      <div><dt>Credits</dt><dd>{{course.credits}}</dd></div>
+      <div><dt>In class</dt><dd>{{course.hours.in_class}} h</dd></div>
+      <div><dt>Self-study</dt><dd>{{course.hours.self_study}} h</dd></div>
+    </dl>
+    <p class="cta-row">
+      <a class="btn" href="{{url 'syllabus.html'}}">Full syllabus</a>
+      {{#if course.links.book}}<a class="btn btn-quiet" href="{{course.links.book}}">Course book</a>{{/if}}
+      {{#if course.links.slides}}<a class="btn btn-quiet" href="{{course.links.slides}}">Slides</a>{{/if}}
+      {{#if course.links.practice}}<a class="btn btn-quiet" href="{{course.links.practice}}">Practice with Score Up</a>{{/if}}
+    </p>
+  </div>
 </section>
-

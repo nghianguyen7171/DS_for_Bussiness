@@ -45,3 +45,38 @@ quizzes:
       - "Thu thập dữ liệu web (HTML, RSS/XML)"
       - "Đọc Excel"
       - "Web APIs và cơ sở dữ liệu"
+
+  # Quizzes 5–7 were built and deployed but never listed here, so nothing on the
+  # site linked them. They have been reachable at their URLs the whole time.
+  - id: "quiz5"
+    title: "Lecture 5 Quiz: Làm sạch và chuẩn bị dữ liệu"
+    week: 8
+    description: "Bài tập trắc nghiệm về làm sạch dữ liệu, xử lý giá trị thiếu và chuẩn bị dữ liệu cho phân tích."
+    link: "quiz/Lec05_quiz/index.html"
+    topics:
+      - "Xử lý giá trị thiếu"
+      - "Loại bỏ dữ liệu trùng lặp"
+      - "Chuyển đổi kiểu dữ liệu"
+      - "Chuẩn hoá và làm sạch dữ liệu"
+
+  - id: "quiz6"
+    title: "Lecture 6 Quiz: Sắp xếp và biến đổi dữ liệu"
+    week: 10
+    description: "30 câu hỏi trắc nghiệm tự động chấm điểm về sắp xếp, nhóm, tổng hợp và biến đổi dữ liệu."
+    link: "quiz/Lec06_quiz/index.html"
+    topics:
+      - "Sắp xếp và lọc dữ liệu"
+      - "Group by và tổng hợp"
+      - "Pivot và reshape"
+      - "Kết hợp nhiều bảng dữ liệu"
+
+  - id: "quiz7"
+    title: "Lecture 7 Quiz: Data Visualization"
+    week: 12
+    description: "30 câu hỏi trắc nghiệm tự động chấm điểm về trực quan hoá dữ liệu với Matplotlib và Seaborn."
+    link: "quiz/Lec07_quiz/index.html"
+    topics:
+      - "Biểu đồ cơ bản: histogram, scatter, bar, boxplot"
+      - "Chọn loại biểu đồ phù hợp"
+      - "Matplotlib và Seaborn"
+      - "Diễn giải thông tin từ biểu đồ"

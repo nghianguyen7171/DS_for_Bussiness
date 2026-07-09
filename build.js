@@ -1,436 +1,313 @@
+/**
+ * Basic Data Science in Economics and Business — course site builder.
+ *
+ * Aligned with the NEU FDA course site template:
+ *   https://github.com/nghianguyen7171/neu_fda_coursesite
+ *
+ * This repo is where the template's architecture originated, so the data shapes
+ * under src/data/ are unchanged. What the template adds:
+ *
+ *   1. The build FAILS if assessment weights do not sum to 100%, or if a CLO
+ *      maps to an objective that is not declared.
+ *   2. The build FAILS if any generated page links to a local file that does
+ *      not exist, or to an in-page #anchor with no matching element. The old
+ *      navbar linked "#assignments" while that section was commented out of
+ *      index.hbs, so the link scrolled nowhere.
+ *   3. Solution gating: `::: solution` blocks in Markdown are stripped by the
+ *      default build and rendered only by `npm run build:keys`.
+ *   4. All pages share one layout (src/templates/base.hbs). The Markdown pages
+ *      previously each carried a duplicated hand-written copy of the navbar.
+ *
+ * Exam/ is copied to docs/ in full, as it always has been. Every file in it is
+ * publicly reachable at a guessable URL, including the answer keys and the
+ * question bank. That is a reviewed, deliberate choice — not an oversight.
+ */
+
 const fs = require('fs-extra');
 const path = require('path');
 const Handlebars = require('handlebars');
 const yaml = require('js-yaml');
 const { marked } = require('marked');
 const sass = require('sass');
-const { glob } = require('glob');
+const { globSync } = require('glob');
 
-// Paths
-const SRC_DIR = path.join(__dirname, 'src');
-const DOCS_DIR = path.join(__dirname, 'docs');
-const DATA_DIR = path.join(SRC_DIR, 'data');
-const PAGES_DIR = path.join(SRC_DIR, 'pages');
-const ASSETS_SRC = path.join(SRC_DIR, 'assets');
-const ASSETS_DEST = path.join(DOCS_DIR, 'assets');
+const ROOT = __dirname;
+const SRC = path.join(ROOT, 'src');
+const DOCS = path.join(ROOT, 'docs');
+const PAGES = path.join(SRC, 'pages');
 
-// Register Handlebars helpers
-Handlebars.registerHelper('eq', function(a, b) {
-  return a === b;
-});
+const WITH_SOLUTIONS = process.env.SOLUTIONS === '1';
 
-Handlebars.registerHelper('gt', function(a, b) {
-  return a > b;
-});
+const log = (...a) => console.log(...a);
+const fail = (msg) => {
+  console.error(`\nBuild failed: ${msg}\n`);
+  process.exit(1);
+};
 
-Handlebars.registerHelper('lt', function(a, b) {
-  return a < b;
-});
+// ---------------------------------------------------------------- data
 
-// Convert hyphenated string to camelCase
-function toCamelCase(str) {
-  return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
-}
-
-// Load all YAML data files
 function loadData() {
-  console.log('📦 Loading data files...');
+  const dir = path.join(SRC, 'data');
   const data = {};
-  
-  const dataFiles = fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.yml') || f.endsWith('.yaml'));
-  
-  dataFiles.forEach(file => {
-    const filePath = path.join(DATA_DIR, file);
-    const fileName = path.basename(file, path.extname(file));
-    const content = fs.readFileSync(filePath, 'utf8');
-    
-    // Handle different naming conventions
-    const parsedData = yaml.load(content);
-    
-    if (fileName === 'this-week') {
-      data.thisWeek = parsedData;
-    } else {
-      // Convert hyphenated names to camelCase
-      const camelCaseName = toCamelCase(fileName);
-      data[camelCaseName] = parsedData;
-    }
-    
-    console.log(`  ✓ Loaded ${file}`);
-  });
-  
+  for (const file of fs.readdirSync(dir).filter((f) => /\.ya?ml$/.test(f))) {
+    const key = path.basename(file, path.extname(file)).replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+    data[key] = yaml.load(fs.readFileSync(path.join(dir, file), 'utf8'));
+  }
   return data;
 }
 
-// Register Handlebars partials
-function registerPartials() {
-  console.log('🔧 Registering Handlebars partials...');
-  
-  const partialsDir = path.join(SRC_DIR, 'partials');
-  
-  function registerPartialsInDir(dir, prefix = '') {
-    const items = fs.readdirSync(dir);
-    
-    items.forEach(item => {
-      const itemPath = path.join(dir, item);
-      const stat = fs.statSync(itemPath);
-      
-      if (stat.isDirectory()) {
-        registerPartialsInDir(itemPath, prefix + item + '/');
-      } else if (item.endsWith('.hbs')) {
-        const partialName = prefix + path.basename(item, '.hbs');
-        const content = fs.readFileSync(itemPath, 'utf8');
-        Handlebars.registerPartial(partialName, content);
-        console.log(`  ✓ Registered partial: ${partialName}`);
+function validateCourse(course) {
+  if (!course) fail('src/data/course.yml is missing or empty.');
+
+  const items = (course.assessment && course.assessment.items) || [];
+  if (!items.length) fail('course.yml defines no assessment items.');
+
+  const total = items.reduce((sum, item) => {
+    const n = parseFloat(String(item.weight).replace('%', ''));
+    if (Number.isNaN(n)) fail(`assessment item "${item.name}" has an unparseable weight: ${item.weight}`);
+    return sum + n;
+  }, 0);
+
+  if (Math.abs(total - 100) > 0.01) {
+    fail(
+      `assessment weights sum to ${total}%, not 100%.\n` +
+        items.map((i) => `    ${String(i.weight).padStart(5)}  ${i.name}`).join('\n')
+    );
+  }
+
+  const objectives = new Set((course.objectives || []).map((o) => o.id));
+  for (const clo of course.learning_outcomes || []) {
+    if (!objectives.has(clo.objective)) {
+      fail(`${clo.id} maps to objective "${clo.objective}", which is not defined in course.yml.`);
+    }
+  }
+
+  log(`  validated: ${items.length} assessment items sum to 100%, ${(course.learning_outcomes || []).length} CLOs mapped`);
+}
+
+/**
+ * Every local href/src in a generated page must resolve to a real file under
+ * docs/ (which is the web root), and every "#anchor" must have a matching id.
+ */
+function validateLinks(pages) {
+  const missingFiles = [];
+  const deadAnchors = [];
+
+  for (const [name, html] of Object.entries(pages)) {
+    const ids = new Set([...html.matchAll(/id="([^"]+)"/g)].map((m) => m[1]));
+
+    for (const m of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+      const raw = m[1].replace(/&#x3D;/g, '=');
+      if (/^(https?:)?\/\//.test(raw) || raw.startsWith('mailto:')) continue;
+
+      if (raw.startsWith('#')) {
+        const id = raw.slice(1);
+        if (id && !ids.has(id)) deadAnchors.push(`${name} -> #${id}`);
+        continue;
       }
-    });
+
+      const target = decodeURIComponent(raw.split('#')[0]);
+      if (!target) continue;
+      // macOS stores Vietnamese filenames decomposed (NFD) while the HTML
+      // carries them composed (NFC). Accept either on disk.
+      const ok =
+        fs.existsSync(path.join(DOCS, target.normalize('NFC'))) ||
+        fs.existsSync(path.join(DOCS, target.normalize('NFD')));
+      if (!ok) missingFiles.push(`${name} -> ${target}`);
+    }
   }
-  
-  registerPartialsInDir(partialsDir);
+
+  if (missingFiles.length || deadAnchors.length) {
+    let msg = '';
+    if (missingFiles.length) {
+      msg += `${missingFiles.length} link(s) point at files that do not exist:\n`;
+      msg += [...new Set(missingFiles)].map((t) => `    ${t}`).join('\n') + '\n';
+    }
+    if (deadAnchors.length) {
+      msg += `${deadAnchors.length} in-page anchor(s) have no matching element:\n`;
+      msg += [...new Set(deadAnchors)].map((t) => `    ${t}`).join('\n');
+    }
+    fail(msg);
+  }
+
+  log('  validated: every local link resolves, every in-page anchor exists');
 }
 
-// Compile SCSS to CSS
-function compileStyles() {
-  console.log('🎨 Compiling SCSS...');
-  
-  const scssFile = path.join(SRC_DIR, 'styles', 'main.scss');
-  const outputFile = path.join(DOCS_DIR, 'assets', 'css', 'main.css');
-  
-  fs.ensureDirSync(path.dirname(outputFile));
-  
-  const result = sass.compile(scssFile, {
-    style: 'compressed',
-    sourceMap: false
+// ------------------------------------------------------- markdown + solutions
+
+const SOLUTION_RE = /^::: *solution *$\n([\s\S]*?)^::: *$/gm;
+
+function processSolutions(md) {
+  if (!WITH_SOLUTIONS) return md.replace(SOLUTION_RE, '');
+  return md.replace(
+    SOLUTION_RE,
+    (_, body) => `\n<div class="solution">\n<p class="solution-label">Solution</p>\n\n${body.trim()}\n\n</div>\n`
+  );
+}
+
+function parseFrontmatter(raw) {
+  const m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(raw);
+  if (!m) return { data: {}, body: raw };
+  return { data: yaml.load(m[1]) || {}, body: raw.slice(m[0].length) };
+}
+
+// ---------------------------------------------------------------- templating
+
+function registerHelpers(course) {
+  const baseurl = (course.baseurl || '').replace(/\/$/, '');
+
+  // docs/ is the web root of …github.io/DS_for_Bussiness/, so internal links
+  // stay relative. encodeURI handles the Vietnamese notebook filenames, which
+  // contain spaces and diacritics.
+  Handlebars.registerHelper('url', (p) => {
+    if (!p) return baseurl || './';
+    if (/^(https?:)?\/\//.test(p) || p.startsWith('mailto:')) return p;
+    const clean = encodeURI(String(p).replace(/^\//, '').normalize('NFC'));
+    return baseurl ? `${baseurl}/${clean}` : clean;
   });
-  
-  fs.writeFileSync(outputFile, result.css);
-  console.log(`  ✓ Compiled to ${outputFile}`);
+
+  Handlebars.registerHelper('eq', (a, b) => a === b);
+  Handlebars.registerHelper('gt', (a, b) => a > b);
+  Handlebars.registerHelper('concat', (...args) => args.slice(0, -1).join(''));
+  Handlebars.registerHelper('year', () => new Date().getFullYear());
+  Handlebars.registerHelper('md', (s) => new Handlebars.SafeString(marked.parse(String(s || ''))));
+  Handlebars.registerHelper('mdInline', (s) => new Handlebars.SafeString(marked.parseInline(String(s || ''))));
+  Handlebars.registerHelper('isReleased', (status) => (status || 'released') === 'released');
+  Handlebars.registerHelper('statusLabel', (status) => ({ draft: 'Draft', tbd: 'TBD' }[status] || ''));
 }
 
-// Copy JavaScript files
-function copyScripts() {
-  console.log('📝 Copying JavaScript files...');
-  
-  const srcScripts = path.join(SRC_DIR, 'scripts');
-  const destScripts = path.join(DOCS_DIR, 'assets', 'js');
-  
-  fs.ensureDirSync(destScripts);
-  fs.copySync(srcScripts, destScripts);
-  console.log(`  ✓ Copied scripts to ${destScripts}`);
-}
-
-// Copy assets (images, etc.)
-function copyAssets() {
-  console.log('🖼️  Copying assets...');
-  
-  // Copy from src/assets if it exists
-  if (fs.existsSync(ASSETS_SRC)) {
-    fs.copySync(ASSETS_SRC, ASSETS_DEST);
-    console.log(`  ✓ Copied src/assets to ${ASSETS_DEST}`);
+function registerPartials() {
+  const dir = path.join(SRC, 'partials');
+  for (const file of globSync('**/*.hbs', { cwd: dir })) {
+    Handlebars.registerPartial(file.replace(/\.hbs$/, ''), fs.readFileSync(path.join(dir, file), 'utf8'));
   }
-  
-  // Copy instructor images from img/ to docs/assets/images/
-  const imgSrc = path.join(__dirname, 'img');
-  const imgDest = path.join(DOCS_DIR, 'assets', 'images');
-  
+}
+
+const tpl = (rel) => Handlebars.compile(fs.readFileSync(path.join(SRC, rel), 'utf8'));
+
+// ---------------------------------------------------------------- copy steps
+
+function compileStyles() {
+  const out = sass.compile(path.join(SRC, 'styles', 'main.scss'), { style: 'compressed' });
+  fs.outputFileSync(path.join(DOCS, 'assets', 'css', 'main.css'), out.css);
+  log('  styles: assets/css/main.css');
+}
+
+function copyAssets() {
+  const src = path.join(SRC, 'assets');
+  if (fs.existsSync(src)) fs.copySync(src, path.join(DOCS, 'assets'));
+
+  const imgSrc = path.join(ROOT, 'img');
+  const imgDest = path.join(DOCS, 'assets', 'images');
   if (fs.existsSync(imgSrc)) {
     fs.ensureDirSync(imgDest);
-    
-    // Copy specific instructor images
-    const images = ['Dr.TrongNghiaNguyen.jpeg', 'minhtrang.jpg', 'damtienthanh.jpg'];
-    images.forEach(img => {
-      const src = path.join(imgSrc, img);
-      const dest = path.join(imgDest, img);
-      if (fs.existsSync(src)) {
-        fs.copySync(src, dest);
-        console.log(`  ✓ Copied ${img}`);
-      }
-    });
-  }
-}
-
-// Copy quiz files
-function copyQuizzes() {
-  console.log('❓ Copying quiz files...');
-  
-  const quizSrc = path.join(__dirname, 'Quiz');
-  const quizDest = path.join(DOCS_DIR, 'quiz');
-  
-  if (fs.existsSync(quizSrc)) {
-    fs.copySync(quizSrc, quizDest);
-    console.log(`  ✓ Copied quiz files to ${quizDest}`);
-  }
-}
-
-// Copy notebook files
-function copyNotebooks() {
-  console.log('📓 Copying notebook files...');
-  
-  const notebookSrc = path.join(__dirname, 'notebook');
-  const notebookDest = path.join(DOCS_DIR, 'notebook');
-  
-  if (fs.existsSync(notebookSrc)) {
-    fs.ensureDirSync(notebookDest);
-    
-    // Copy only .ipynb files (not the guides)
-    const notebooks = fs.readdirSync(notebookSrc).filter(f => f.endsWith('.ipynb'));
-    
-    notebooks.forEach(file => {
-      const srcPath = path.join(notebookSrc, file);
-      const destPath = path.join(notebookDest, file);
-      fs.copySync(srcPath, destPath);
-      console.log(`  ✓ Copied ${file}`);
-    });
-  }
-}
-
-// Copy slides/materials (PDFs, etc.) to docs for course supply materials
-function copySlides() {
-  console.log('📑 Copying slides & supply materials...');
-  
-  const slidesSrc = path.join(__dirname, 'slides');
-  const slidesDest = path.join(DOCS_DIR, 'slides');
-  
-  if (fs.existsSync(slidesSrc)) {
-    fs.ensureDirSync(slidesDest);
-    const files = fs.readdirSync(slidesSrc);
-    files.forEach(file => {
-      const srcPath = path.join(slidesSrc, file);
-      if (fs.statSync(srcPath).isFile()) {
-        fs.copySync(srcPath, path.join(slidesDest, file));
-        console.log(`  ✓ Copied ${file}`);
-      }
-    });
-  }
-}
-
-function copyExamFiles() {
-  console.log('📚 Copying exam files...');
-  
-  const examSrc = path.join(__dirname, 'Exam');
-  const examDest = path.join(DOCS_DIR, 'Exam');
-  
-  if (fs.existsSync(examSrc)) {
-    fs.ensureDirSync(examDest);
-    
-    // Copy all files from Exam directory
-    const examFiles = fs.readdirSync(examSrc);
-    
-    examFiles.forEach(file => {
-      const srcPath = path.join(examSrc, file);
-      const destPath = path.join(examDest, file);
-      
-      if (fs.statSync(srcPath).isFile()) {
-        fs.copySync(srcPath, destPath);
-        console.log(`  ✓ Copied ${file}`);
-      }
-    });
-    
-    // Also copy the HTML answer keys page
-    const htmlAnswerKeysSrc = path.join(examSrc, 'answer-keys.html');
-    const htmlAnswerKeysDest = path.join(examDest, 'answer-keys.html');
-    if (fs.existsSync(htmlAnswerKeysSrc)) {
-      fs.copySync(htmlAnswerKeysSrc, htmlAnswerKeysDest);
-      console.log(`  ✓ Copied answer-keys.html`);
+    for (const img of ['Dr.TrongNghiaNguyen.jpeg', 'minhtrang.jpg', 'damtienthanh.jpg', 'neu-logo.png', 'fda-logo.png']) {
+      const s = path.join(imgSrc, img);
+      if (fs.existsSync(s)) fs.copySync(s, path.join(imgDest, img));
     }
   }
+  log('  assets copied');
 }
 
-// Render index.html from Handlebars template
-function renderIndex(data) {
-  console.log('📄 Rendering index.html...');
-  
-  const templatePath = path.join(SRC_DIR, 'index.hbs');
-  const templateContent = fs.readFileSync(templatePath, 'utf8');
-  const template = Handlebars.compile(templateContent);
-  
-  const html = template(data);
-  
-  const outputPath = path.join(DOCS_DIR, 'index.html');
-  fs.writeFileSync(outputPath, html);
-  console.log(`  ✓ Created ${outputPath}`);
-}
-
-// Convert Markdown pages to HTML and copy HTML files
-function renderMarkdownPages(data) {
-  console.log('📝 Converting Markdown pages...');
-  
-  if (!fs.existsSync(PAGES_DIR)) {
-    console.log('  ⚠️  No pages directory found');
-    return;
-  }
-  
-  // Copy HTML files directly
-  const htmlFiles = fs.readdirSync(PAGES_DIR).filter(f => f.endsWith('.html'));
-  htmlFiles.forEach(file => {
-    const srcPath = path.join(PAGES_DIR, file);
-    const destPath = path.join(DOCS_DIR, file);
-    fs.copySync(srcPath, destPath);
-    console.log(`  ✓ Copied ${file}`);
-  });
-  
-  const mdFiles = fs.readdirSync(PAGES_DIR).filter(f => f.endsWith('.md'));
-  
-  // Create a simple HTML template for markdown pages
-  const pageTemplate = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}} | Data Science for Business</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <div class="navbar-brand">
-                <a href="index.html" class="navbar-logo">
-                    <span class="logo-text">DS Business</span>
-                </a>
-                <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <span class="hamburger"></span>
-                </button>
-            </div>
-            
-            <div class="navbar-menu">
-                <ul class="navbar-nav">
-                    <li><a href="index.html#home" class="nav-link">Home</a></li>
-                    <li><a href="index.html#overview" class="nav-link">Overview</a></li>
-                    <li><a href="index.html#instructors" class="nav-link">Instructors</a></li>
-                    <li><a href="index.html#schedule" class="nav-link">Schedule</a></li>
-                    <li><a href="index.html#quizzes" class="nav-link">Quizzes</a></li>
-                    <li><a href="syllabus.html" class="nav-link">Syllabus</a></li>
-                    <li><a href="resources.html" class="nav-link">Resources</a></li>
-                </ul>
-                <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="theme-icon">🌙</span>
-                </button>
-            </div>
-        </div>
-    </nav>
-    
-    <main id="main-content" class="markdown-content">
-        {{{content}}}
-    </main>
-    
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2025 National Economics University. All rights reserved.</p>
-                <p>Faculty of Data Science and Artificial Intelligence</p>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="assets/js/main.js"></script>
-</body>
-</html>`;
-  
-  const compiledTemplate = Handlebars.compile(pageTemplate);
-  
-  mdFiles.forEach(file => {
-    const mdPath = path.join(PAGES_DIR, file);
-    const mdContent = fs.readFileSync(mdPath, 'utf8');
-    
-    // Convert markdown to HTML
-    const htmlContent = marked(mdContent);
-    
-    // Extract title from first h1 if present
-    const titleMatch = mdContent.match(/^# (.+)$/m);
-    const title = titleMatch ? titleMatch[1] : path.basename(file, '.md');
-    
-    const html = compiledTemplate({
-      title: title,
-      content: htmlContent
-    });
-    
-    const outputPath = path.join(DOCS_DIR, file.replace('.md', '.html'));
-    fs.writeFileSync(outputPath, html);
-    console.log(`  ✓ Created ${path.basename(outputPath)}`);
-  });
-}
-
-// Create CNAME file for custom domain (if needed)
-function createCNAME() {
-  // Uncomment and modify if you have a custom domain
-  // const cnamePath = path.join(DOCS_DIR, 'CNAME');
-  // fs.writeFileSync(cnamePath, 'yourdomain.com');
-  // console.log('  ✓ Created CNAME file');
-}
-
-// Main build function
-async function build() {
-  console.log('🚀 Starting build process...\n');
-  
-  try {
-    // Clean docs directory
-    console.log('🧹 Cleaning docs directory...');
-    if (fs.existsSync(DOCS_DIR)) {
-      fs.removeSync(DOCS_DIR);
+/**
+ * Copy a top-level directory into docs/.
+ *
+ * `filter` applies to files. `dirs` controls whether sub-directories are
+ * copied: the quiz apps need theirs, but notebook/ has a data/ sub-directory of
+ * raw datasets (Walmart CSVs and the like) that has never been published and
+ * would add megabytes to the repo.
+ */
+function copyTree(from, to, label, { filter, dirs = false } = {}) {
+  const src = path.join(ROOT, from);
+  if (!fs.existsSync(src)) return;
+  const dest = path.join(DOCS, to);
+  fs.ensureDirSync(dest);
+  let n = 0;
+  for (const file of fs.readdirSync(src)) {
+    if (file.startsWith('.')) continue;
+    const s = path.join(src, file);
+    if (fs.statSync(s).isDirectory()) {
+      if (!dirs) continue;
+      fs.copySync(s, path.join(dest, file));
+      n++;
+      continue;
     }
-    fs.ensureDirSync(DOCS_DIR);
-    console.log('  ✓ Cleaned\n');
-    
-    // Load data
-    const data = loadData();
-    console.log('');
-    
-    // Register partials
-    registerPartials();
-    console.log('');
-    
-    // Compile styles
-    compileStyles();
-    console.log('');
-    
-    // Copy scripts
-    copyScripts();
-    console.log('');
-    
-    // Copy assets
-    copyAssets();
-    console.log('');
-    
-    // Copy quizzes
-    copyQuizzes();
-    console.log('');
-    
-    // Copy slides & supply materials
-    copySlides();
-    console.log('');
-    
-    // Copy notebooks
-    copyNotebooks();
-    console.log('');
-    
-    // Copy exam files
-    copyExamFiles();
-    console.log('');
-    
-    // Render index
-    renderIndex(data);
-    console.log('');
-    
-    // Render markdown pages
-    renderMarkdownPages(data);
-    console.log('');
-    
-    // Create CNAME if needed
-    createCNAME();
-    
-    console.log('\n✅ Build completed successfully!');
-    console.log(`\n📂 Output directory: ${DOCS_DIR}`);
-    console.log('\n🌐 To preview locally:');
-    console.log('   1. Run: npm run dev');
-    console.log('   2. Or open docs/index.html in your browser\n');
-    
-  } catch (error) {
-    console.error('\n❌ Build failed:', error);
-    process.exit(1);
+    if (filter && !filter(file)) continue;
+    fs.copySync(s, path.join(dest, file));
+    n++;
   }
+  log(`  ${label}: ${n} item(s)`);
 }
 
-// Run build
-build();
+// ---------------------------------------------------------------- main
 
+function main() {
+  log(`\nBuilding ${WITH_SOLUTIONS ? 'INSTRUCTOR (with solutions)' : 'PUBLIC'} site -> docs/\n`);
+
+  const data = loadData();
+  validateCourse(data.course);
+
+  registerHelpers(data.course);
+  registerPartials();
+
+  const ctx = { ...data, withSolutions: WITH_SOLUTIONS };
+
+  fs.ensureDirSync(DOCS);
+
+  compileStyles();
+  copyAssets();
+
+  // Quiz/ holds a self-contained app per quiz (index.html + app.js + style.css).
+  copyTree('Quiz', 'quiz', 'quizzes', { dirs: true });
+  copyTree('notebook', 'notebook', 'notebooks', { filter: (f) => f.endsWith('.ipynb') });
+  copyTree('slides', 'slides', 'slides');
+  copyTree('Exam', 'Exam', 'exam files');
+
+  const base = tpl('templates/base.hbs');
+  const generated = {};
+
+  // `prefix` makes the shared navbar work from every page: on the home page the
+  // section links are bare "#overview" fragments; on a sub-page they must be
+  // "index.html#overview", or they would scroll nowhere.
+  const indexContent = tpl('index.hbs')(ctx);
+  generated['index.html'] = base({
+    ...ctx,
+    content: new Handlebars.SafeString(indexContent),
+    page: { nav: 'home', prefix: '' },
+  });
+
+  if (fs.existsSync(PAGES)) {
+    // Standalone HTML pages pass through untouched (tur7-visualization.html).
+    for (const file of fs.readdirSync(PAGES).filter((f) => f.endsWith('.html'))) {
+      fs.copySync(path.join(PAGES, file), path.join(DOCS, file));
+      log(`  page (verbatim): ${file}`);
+    }
+
+    for (const file of fs.readdirSync(PAGES).filter((f) => f.endsWith('.md'))) {
+      const slug = path.basename(file, '.md');
+      const { data: fm, body } = parseFrontmatter(fs.readFileSync(path.join(PAGES, file), 'utf8'));
+      const expanded = Handlebars.compile(body)(ctx);
+      const html = marked.parse(processSolutions(expanded));
+      // These pages have no frontmatter; fall back to their first heading so the
+      // browser tab reads "Grading · …" rather than "grading · …".
+      const heading = (/^#\s+(.+)$/m.exec(body) || [])[1];
+      generated[`${slug}.html`] = base({
+        ...ctx,
+        content: new Handlebars.SafeString(`<div class="wrap section"><article class="prose">${html}</article></div>`),
+        page: { title: fm.title || heading || slug, nav: slug, prefix: 'index.html' },
+      });
+    }
+  }
+
+  for (const [name, html] of Object.entries(generated)) {
+    fs.outputFileSync(path.join(DOCS, name), html);
+    log(`  page: ${name}`);
+  }
+
+  validateLinks(generated);
+
+  if (WITH_SOLUTIONS) log('\n  NOTE: this build renders solution blocks. Do not publish docs/.');
+  log('\nDone.\n');
+}
+
+main();

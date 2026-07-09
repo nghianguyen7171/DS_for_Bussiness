@@ -13,6 +13,8 @@ links:
   slides: "https://fit.neu.edu.vn/room/Le2MmM"
   book: "https://nct-neu.github.io/Sach_Khoa_hoc_du_lieu_python/README.html"
   github: "https://github.com/NCT-NEU/Sach_Khoa_hoc_du_lieu_python/tree/main"
+  # Was hardcoded as a button in hero.hbs rather than living in data.
+  practice: "https://fit.neu.edu.vn/scoreup/practice"
 
 description: |
   This course provides an introductory foundation in data science thinking and techniques for students in economics, finance, and business administration. It equips learners to leverage and analyze data for decision-making in business environments, covering the complete lifecycle of a data science project from data collection and cleaning to visualization, modeling, and reporting. The course emphasizes hands-on learning with real-world datasets through exercises and small projects.

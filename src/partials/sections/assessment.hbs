@@ -1,48 +1,33 @@
-<section id="assessment" class="section assessment">
-    <div class="container">
-        <h2 class="section-title">Assessment & Grading</h2>
-        
-        <div class="assessment-table-wrapper">
-            <table class="assessment-table">
-                <thead>
-                    <tr>
-                        <th>Assessment Method</th>
-                        <th>Week</th>
-                        <th>Description</th>
-                        <th>Weight</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each course.assessment.items}}
-                    <tr>
-                        <td data-label="Method"><strong>{{name}}</strong></td>
-                        <td data-label="Week">{{week}}</td>
-                        <td data-label="Description">{{description}}</td>
-                        <td data-label="Weight"><span class="weight-badge">{{weight}}</span></td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="policies-summary">
-            <h3>Key Policies</h3>
-            <div class="policies-grid">
-                <div class="policy-card">
-                    <h4>📋 Eligibility</h4>
-                    <p>{{course.policies.eligibility}}</p>
-                </div>
-                <div class="policy-card">
-                    <h4>📅 Attendance</h4>
-                    <p>{{course.policies.attendance}}</p>
-                </div>
-                <div class="policy-card">
-                    <h4>📝 Submissions</h4>
-                    <p>{{course.policies.submission}}</p>
-                </div>
-            </div>
-            <a href="policies.html" class="btn btn-secondary">View Full Policies</a>
-        </div>
+<section id="assessment" class="section section-alt">
+  <div class="wrap">
+    <h2 class="section-title">Assessment</h2>
+    <div class="table-scroll">
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th scope="col">Component</th>
+            <th scope="col" class="col-date">Week</th>
+            <th scope="col" class="col-week">Weight</th>
+            <th scope="col">Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each course.assessment.items}}
+          <tr>
+            <td><span class="lec-title">{{this.name}}</span>
+              {{#if this.description}}<p class="lec-sub">{{this.description}}</p>{{/if}}
+            </td>
+            <td class="col-date">{{this.week}}</td>
+            <td class="col-week"><strong>{{this.weight}}</strong></td>
+            <td>{{this.criteria}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
+    <p class="section-note">
+      Full details on <a href="{{url 'grading.html'}}">Grading</a> and
+      <a href="{{url 'policies.html'}}">Policies</a>.
+    </p>
+  </div>
 </section>
-

@@ -1,50 +1,52 @@
-<section id="resources" class="section resources">
-    <div class="container">
-        <h2 class="section-title">Course Resources</h2>
-        
-        <div class="resources-grid">
-            <div class="resource-card">
-                <div class="resource-icon">📚</div>
-                <h3>Course Textbook</h3>
-                <p>Data Science in Economics and Business (Python Applications)</p>
-                <a href="{{course.links.book}}" class="btn btn-resource" target="_blank" rel="noopener">Access Textbook</a>
-            </div>
-            
-            <div class="resource-card">
-                <div class="resource-icon">📊</div>
-                <h3>Slide Deck</h3>
-                <p>Weekly lecture slides and presentation materials</p>
-                <a href="{{course.links.slides}}" class="btn btn-resource" target="_blank" rel="noopener">View Slides</a>
-            </div>
-            
-            <div class="resource-card">
-                <div class="resource-icon">💻</div>
-                <h3>GitHub Repository</h3>
-                <p>Code examples, datasets, and supplementary materials</p>
-                <a href="{{course.links.github}}" class="btn btn-resource" target="_blank" rel="noopener">Visit GitHub</a>
-            </div>
-            
-            <div class="resource-card">
-                <div class="resource-icon">🔧</div>
-                <h3>Software & Tools</h3>
-                <ul class="software-list">
-                    {{#each course.software}}
-                    <li>{{this}}</li>
-                    {{/each}}
-                </ul>
-                <a href="resources.html" class="btn btn-resource">Setup Guide</a>
-            </div>
-            
-            {{!-- Temporarily hidden --}}
-            {{!--
-            <div class="resource-card">
-                <div class="resource-icon">🔍</div>
-                <h3>Score Look-up</h3>
-                <p>Tra cứu điểm thi giữa kỳ theo lớp học và thông tin sinh viên</p>
-                <a href="https://neu-class-manager.vercel.app/" class="btn btn-resource" target="_blank" rel="noopener">Check Scores</a>
-            </div>
-            --}}
-        </div>
-    </div>
-</section>
+<section id="resources" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Resources</h2>
 
+    <div class="subsection">
+      <h3>Course links</h3>
+      <dl class="ref-list">
+        {{#if course.links.book}}
+        <dt><a href="{{course.links.book}}"><cite>Khoa học dữ liệu với Python</cite></a></dt>
+        <dd>The course book, read online.</dd>
+        {{/if}}
+        {{#if course.links.github}}
+        <dt><a href="{{course.links.github}}"><cite>Course book source on GitHub</cite></a></dt>
+        <dd>Notebooks and text for the course book.</dd>
+        {{/if}}
+        {{#if course.links.slides}}
+        <dt><a href="{{course.links.slides}}"><cite>Lecture slides (FIT room)</cite></a></dt>
+        <dd>Slide decks hosted on the faculty platform.</dd>
+        {{/if}}
+      </dl>
+    </div>
+
+    <div class="subsection">
+      <h3>Course pages</h3>
+      <div class="prose prose-narrow">
+        <ul>
+          <li><a href="{{url 'syllabus.html'}}">Syllabus</a> — objectives, outcomes, weekly plan</li>
+          <li><a href="{{url 'grading.html'}}">Grading</a> — how each component is marked</li>
+          <li><a href="{{url 'policies.html'}}">Policies</a> — attendance, submission, conduct</li>
+          <li><a href="{{url 'resources.html'}}">Reading and tools</a> — full resource list</li>
+          <li><a href="{{url 'tur7-visualization.html'}}">Tutorial 7: Visualization</a> — worked walkthrough</li>
+        </ul>
+      </div>
+    </div>
+
+    {{#if answerKeys}}
+    <div class="subsection">
+      <h3 id="answer-keys">{{answerKeys.title}}</h3>
+      <div class="prose prose-narrow">
+        <p>{{answerKeys.description}}</p>
+        {{#if answerKeys.stats}}
+        <ul>
+          <li>{{answerKeys.stats.total_exams}} exams, {{answerKeys.stats.total_questions}} questions</li>
+          <li>{{answerKeys.stats.unique_questions}} unique questions ({{answerKeys.stats.match_rate}} match rate)</li>
+        </ul>
+        {{/if}}
+        <p><a class="btn btn-quiet" href="{{url answerKeys.link}}">Open the answer keys</a></p>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</section>

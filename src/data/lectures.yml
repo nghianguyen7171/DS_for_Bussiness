@@ -78,6 +78,8 @@ lectures:
       - "Practice basic Pandas DataFrame operations"
     materials: "NumPy practice; Pandas practice"
     notebook: "notebook/Tur3_Các thư viện quan trọng trong KHDL của Python.ipynb"
+    # Was hardcoded in schedule.hbs, matched on the lecture title string.
+    answer_key: "notebook/Tur3_Các thư viện quan trọng trong KHDL của Python_Answer_Key.ipynb"
     activities:
       - "Q&A from lecture"
       - "Guide practice exercises"
@@ -113,6 +115,7 @@ lectures:
       - "Interact with databases"
     materials: "Practice on data input and storage"
     notebook: "notebook/Tur4_nhập_và_lưu_trữ_dữ_liệu.ipynb"
+    answer_key: "notebook/Tur4_nhập_và_lưu_trữ_dữ_liệu_Answer_Key.ipynb"
     activities:
       - "Execute SmartDoc commands to pull data in different formats"
       - "Modify parameters to collect data"
@@ -220,6 +223,10 @@ lectures:
     materials: "Visualization practice"
     notebook: "notebook/Tur7_Visualization.ipynb"
     submission_link: "https://drive.google.com/drive/folders/17qHbWCxaHdlX6_NOv6dfOefSvxpn542t?usp=sharing"
+    answer_key: "notebook/Tur7_Visualization_Answer_Key.ipynb"
+    extra:
+      - label: "All exercises"
+        href: "tur7-visualization.html"
     activities:
       - "Implement illustrative charts"
     assessment: "In-class discussion; homework"
@@ -236,6 +243,10 @@ lectures:
       - "Model evaluation metrics"
     materials: "Chapter 11"
     notebook: "notebook/Lec8_SupML.ipynb"
+    # Deployed under slides/ but linked from nowhere until 2026-07-10.
+    extra:
+      - label: "T14 notebook"
+        href: "slides/T14_Các mô hình học máy có giám sát.ipynb"
     activities:
       - "Supervised learning lecture"
       - "Example: house price prediction or customer classification"
@@ -251,6 +262,9 @@ lectures:
       - "Decision trees"
       - "Tree ensembles"
     materials: "Modeling practice"
+    extra:
+      - label: "T15 notebook"
+        href: "slides/T15_Thực hành các mô hình học máy có giám sát.ipynb"
     activities:
       - "Run scikit-learn models"
       - "Interpret model outputs"

@@ -1,29 +1,40 @@
-<section id="outcomes" class="section outcomes">
-    <div class="container">
-        <h2 class="section-title">Course Learning Outcomes (CLOs)</h2>
-        
-        <div class="outcomes-intro">
-            <p>By the end of this course, students will be able to:</p>
-        </div>
-        
-        <div class="outcomes-by-objective">
-            {{#each course.objectives}}
-            <div class="objective-group">
-                <h3 class="objective-title">{{id}}: {{description}}</h3>
-                <div class="clos-list">
-                    {{#each ../course.learning_outcomes}}
-                    {{#if (eq objective ../id)}}
-                    <div class="clo-item">
-                        <span class="clo-id">{{id}}</span>
-                        <span class="clo-description">{{description}}</span>
-                        <span class="clo-level badge">Level {{level}}</span>
-                    </div>
-                    {{/if}}
-                    {{/each}}
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-</section>
+<section id="outcomes" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Objectives and learning outcomes</h2>
 
+    <div class="subsection">
+      <h3>Course objectives</h3>
+      <div class="prose prose-narrow">
+        <ul>
+          {{#each course.objectives}}<li><strong>{{this.id}}.</strong> {{this.description}}</li>{{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Course learning outcomes</h3>
+      <div class="table-scroll">
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th scope="col" class="col-clo">CLO</th>
+              <th scope="col" class="col-week">Obj.</th>
+              <th scope="col">Outcome</th>
+              <th scope="col" class="col-week">Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each course.learning_outcomes}}
+            <tr>
+              <td class="col-clo"><span class="lec-title">{{this.id}}</span></td>
+              <td class="col-week">{{this.objective}}</td>
+              <td>{{this.description}}</td>
+              <td class="col-week">{{this.level}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
